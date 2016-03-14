@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		343830B41C95CB0D00CC9522 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343830B31C95CB0D00CC9522 /* AppDelegate.swift */; };
+		343830B61C95CB0D00CC9522 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343830B51C95CB0D00CC9522 /* ViewController.swift */; };
+		343830B91C95CB0D00CC9522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343830B71C95CB0D00CC9522 /* Main.storyboard */; };
+		343830BC1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 343830BA1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodeld */; };
+		343830BE1C95CB0D00CC9522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343830BD1C95CB0D00CC9522 /* Assets.xcassets */; };
+		343830C11C95CB0D00CC9522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343830BF1C95CB0D00CC9522 /* LaunchScreen.storyboard */; };
+		343830C91C95CC3F00CC9522 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343830C81C95CC3F00CC9522 /* TableViewController.swift */; };
+		343830CB1C95CD4700CC9522 /* hill-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 343830CA1C95CD4700CC9522 /* hill-background.png */; };
+		343830CD1C95CDC000CC9522 /* placeholder-camera-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 343830CC1C95CDC000CC9522 /* placeholder-camera-green.png */; };
+		34A710E11C95EFAA00C11A9B /* blacktexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A710E01C95EFAA00C11A9B /* blacktexture.png */; };
+		34A711011C96162900C11A9B /* Match30x30grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A710FD1C96162900C11A9B /* Match30x30grey.png */; };
+		34A711021C96162900C11A9B /* QRcode30x30grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A710FE1C96162900C11A9B /* QRcode30x30grey.png */; };
+		34A711031C96162900C11A9B /* Wrench30x30grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A710FF1C96162900C11A9B /* Wrench30x30grey.png */; };
+		34A711091C9649C600C11A9B /* AlienFilled30x30green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A711081C9649C600C11A9B /* AlienFilled30x30green.png */; };
+		34A7110B1C96510400C11A9B /* Match30x30_ed.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A7110A1C96510400C11A9B /* Match30x30_ed.png */; };
+		34A7110F1C96529F00C11A9B /* Wrench30x30_ed.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A7110E1C96529F00C11A9B /* Wrench30x30_ed.png */; };
+		34A711111C9652F100C11A9B /* QRcode30x30.png in Resources */ = {isa = PBXBuildFile; fileRef = 34A711101C9652F100C11A9B /* QRcode30x30.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		343830B01C95CB0D00CC9522 /* Static Table Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Static Table Images.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		343830B31C95CB0D00CC9522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		343830B51C95CB0D00CC9522 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		343830B81C95CB0D00CC9522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		343830BB1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Static_Table_Images.xcdatamodel; sourceTree = "<group>"; };
+		343830BD1C95CB0D00CC9522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		343830C01C95CB0D00CC9522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		343830C21C95CB0D00CC9522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343830C81C95CC3F00CC9522 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		343830CA1C95CD4700CC9522 /* hill-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hill-background.png"; sourceTree = "<group>"; };
+		343830CC1C95CDC000CC9522 /* placeholder-camera-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-camera-green.png"; sourceTree = "<group>"; };
+		34A710E01C95EFAA00C11A9B /* blacktexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacktexture.png; sourceTree = "<group>"; };
+		34A710FD1C96162900C11A9B /* Match30x30grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Match30x30grey.png; sourceTree = "<group>"; };
+		34A710FE1C96162900C11A9B /* QRcode30x30grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRcode30x30grey.png; sourceTree = "<group>"; };
+		34A710FF1C96162900C11A9B /* Wrench30x30grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wrench30x30grey.png; sourceTree = "<group>"; };
+		34A711081C9649C600C11A9B /* AlienFilled30x30green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienFilled30x30green.png; sourceTree = "<group>"; };
+		34A7110A1C96510400C11A9B /* Match30x30_ed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Match30x30_ed.png; sourceTree = "<group>"; };
+		34A7110E1C96529F00C11A9B /* Wrench30x30_ed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wrench30x30_ed.png; sourceTree = "<group>"; };
+		34A711101C9652F100C11A9B /* QRcode30x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QRcode30x30.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		343830AD1C95CB0D00CC9522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		343830A71C95CB0D00CC9522 = {
+			isa = PBXGroup;
+			children = (
+				343830B21C95CB0D00CC9522 /* Static Table Images */,
+				343830B11C95CB0D00CC9522 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		343830B11C95CB0D00CC9522 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				343830B01C95CB0D00CC9522 /* Static Table Images.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		343830B21C95CB0D00CC9522 /* Static Table Images */ = {
+			isa = PBXGroup;
+			children = (
+				343830CA1C95CD4700CC9522 /* hill-background.png */,
+				343830CC1C95CDC000CC9522 /* placeholder-camera-green.png */,
+				34A710E01C95EFAA00C11A9B /* blacktexture.png */,
+				34A7110A1C96510400C11A9B /* Match30x30_ed.png */,
+				34A710FD1C96162900C11A9B /* Match30x30grey.png */,
+				34A7110E1C96529F00C11A9B /* Wrench30x30_ed.png */,
+				34A711101C9652F100C11A9B /* QRcode30x30.png */,
+				34A710FE1C96162900C11A9B /* QRcode30x30grey.png */,
+				34A710FF1C96162900C11A9B /* Wrench30x30grey.png */,
+				34A711081C9649C600C11A9B /* AlienFilled30x30green.png */,
+				343830B31C95CB0D00CC9522 /* AppDelegate.swift */,
+				343830B51C95CB0D00CC9522 /* ViewController.swift */,
+				343830C81C95CC3F00CC9522 /* TableViewController.swift */,
+				343830B71C95CB0D00CC9522 /* Main.storyboard */,
+				343830BD1C95CB0D00CC9522 /* Assets.xcassets */,
+				343830BF1C95CB0D00CC9522 /* LaunchScreen.storyboard */,
+				343830C21C95CB0D00CC9522 /* Info.plist */,
+				343830BA1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodeld */,
+			);
+			path = "Static Table Images";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		343830AF1C95CB0D00CC9522 /* Static Table Images */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343830C51C95CB0D00CC9522 /* Build configuration list for PBXNativeTarget "Static Table Images" */;
+			buildPhases = (
+				343830AC1C95CB0D00CC9522 /* Sources */,
+				343830AD1C95CB0D00CC9522 /* Frameworks */,
+				343830AE1C95CB0D00CC9522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Static Table Images";
+			productName = "Static Table Images";
+			productReference = 343830B01C95CB0D00CC9522 /* Static Table Images.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		343830A81C95CB0D00CC9522 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tingbo Chen";
+				TargetAttributes = {
+					343830AF1C95CB0D00CC9522 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = LJL8G936JS;
+					};
+				};
+			};
+			buildConfigurationList = 343830AB1C95CB0D00CC9522 /* Build configuration list for PBXProject "Static Table Images" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 343830A71C95CB0D00CC9522;
+			productRefGroup = 343830B11C95CB0D00CC9522 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				343830AF1C95CB0D00CC9522 /* Static Table Images */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		343830AE1C95CB0D00CC9522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A711091C9649C600C11A9B /* AlienFilled30x30green.png in Resources */,
+				34A711021C96162900C11A9B /* QRcode30x30grey.png in Resources */,
+				34A7110F1C96529F00C11A9B /* Wrench30x30_ed.png in Resources */,
+				34A7110B1C96510400C11A9B /* Match30x30_ed.png in Resources */,
+				343830CB1C95CD4700CC9522 /* hill-background.png in Resources */,
+				34A711031C96162900C11A9B /* Wrench30x30grey.png in Resources */,
+				343830C11C95CB0D00CC9522 /* LaunchScreen.storyboard in Resources */,
+				343830BE1C95CB0D00CC9522 /* Assets.xcassets in Resources */,
+				343830CD1C95CDC000CC9522 /* placeholder-camera-green.png in Resources */,
+				343830B91C95CB0D00CC9522 /* Main.storyboard in Resources */,
+				34A711111C9652F100C11A9B /* QRcode30x30.png in Resources */,
+				34A710E11C95EFAA00C11A9B /* blacktexture.png in Resources */,
+				34A711011C96162900C11A9B /* Match30x30grey.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		343830AC1C95CB0D00CC9522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343830B61C95CB0D00CC9522 /* ViewController.swift in Sources */,
+				343830B41C95CB0D00CC9522 /* AppDelegate.swift in Sources */,
+				343830BC1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodeld in Sources */,
+				343830C91C95CC3F00CC9522 /* TableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		343830B71C95CB0D00CC9522 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				343830B81C95CB0D00CC9522 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		343830BF1C95CB0D00CC9522 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				343830C01C95CB0D00CC9522 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		343830C31C95CB0D00CC9522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		343830C41C95CB0D00CC9522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		343830C61C95CB0D00CC9522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Static Table Images/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Static-Table-Images";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		343830C71C95CB0D00CC9522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Static Table Images/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Static-Table-Images";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		343830AB1C95CB0D00CC9522 /* Build configuration list for PBXProject "Static Table Images" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343830C31C95CB0D00CC9522 /* Debug */,
+				343830C41C95CB0D00CC9522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343830C51C95CB0D00CC9522 /* Build configuration list for PBXNativeTarget "Static Table Images" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343830C61C95CB0D00CC9522 /* Debug */,
+				343830C71C95CB0D00CC9522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		343830BA1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				343830BB1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodel */,
+			);
+			currentVersion = 343830BB1C95CB0D00CC9522 /* Static_Table_Images.xcdatamodel */;
+			path = Static_Table_Images.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 343830A81C95CB0D00CC9522 /* Project object */;
+}
