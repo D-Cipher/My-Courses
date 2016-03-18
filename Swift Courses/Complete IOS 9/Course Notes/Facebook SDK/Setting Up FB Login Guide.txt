@@ -1,0 +1,46 @@
+#Setting up FB Login:
+
+##1) Drag in to Frameworks from My SDKs:
+-FBSDKCoreKit.framework
+-FBSDKLoginKit.framework
+
+##2) Add Path in Build Settings
+-search "Search Paths"
+-in "Framework Search Paths" add "/Users/tingbochen/Documents/'My SDKs'/FacebookSDKs-iOS"
+
+##3) Set up Bridging Headers
+-In "Supporting Files" > "ParseStarterProject-Bridging-Header.h"
+-add: "#import <FBSDKCoreKit/FBSDKCoreKit.h>"
+-change: "//#import <ParseFacebookUtils/PFFacebookUtils.h>" to "#import <ParseFacebookUtilsV4/PFFacebookUtils.h>"
+-find framework: "ParseFacebookUtilsV4.framework" in the app folder and drag into Frameworks.
+-move to trash framework: "ParseFacebookUtilsV4.framework"
+
+##4) Create a new app in developer.facebook.com
+-go to "Get Started with the Facebook SDK" > "Choose Platform"
+-Click IOS
+
+##5) Configure info.plist
+-follow the instructions in facebook
+
+##6) Update AppDelegate.swift
+-In func application...
+ + PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+ - instead of "return true", "return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)"
+ 
+ + at the end of the file: 
+'''
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject) -> Bool {
+            return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+    }
+'''
+
+##7) Make App Public
+-In "Settings" add email
+-In "App Review" > "Do you want to make this app and all its live features available to the general public?" > "Yes"

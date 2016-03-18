@@ -1,0 +1,47 @@
+#Set up Firebase Using Pods
+
+###Initialize CocoaPods in Xcode Project
+
+Make sure your xcode project is closed, then run following:
+'''
+$ cd my-project-directory
+$ pod init
+$ open -a Xcode Podfile 
+'''
+
+Change Pod file:
+-Uncomment and change "platform :ios, '8.0'" to "platform :ios, '9.0'"
+-Uncomment "user_frameworks!"
+-Add the following:
+'''
+pod 'Firebase', '>= 2.5.0'
+'''
+
+Then run the command:
+'''
+$ pod install
+$ open my-project.xcworkspace
+'''
+
+###Import Firebase into App
+
+Create a Bridging Header
+-Click on the "my-project" xcode file
+-File>New File>Cocoa Touch Class
+-Class: delete
+-Subclass of: NSObject
+-Language: Objective-C
+-Note: Make sure there is a popup that asks whether to create with Bridging Header, and you want to click "Create Bridging Header". 
+-delete the "delete.h" and "delete.m" files.
+
+Change Bridging Header file
+In the bridging header file add the following:
+'''
+#import "Firebase/Firebase.h"
+'''
+
+Make sure to add Social.framework
+General > Linked Frameworks and Libraries > + > Social.framework
+
+Then build the project.
+
