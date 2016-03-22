@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3471F5661C9E4C4000F7DDF5 /* JSQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471F5651C9E4C4000F7DDF5 /* JSQViewController.swift */; };
 		34A1BFAD1C9A4C4200E8C216 /* FriendsTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A1BFAC1C9A4C4200E8C216 /* FriendsTabController.swift */; };
 		34C91B201C7377D500384C49 /* loginFB.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C91B1F1C7377D500384C49 /* loginFB.png */; };
 		34C91B261C73A50400384C49 /* Timber_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C91B251C73A50400384C49 /* Timber_logo.png */; };
@@ -28,10 +29,12 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81801A49E10C00E65899 /* ParseUI.framework */; };
+		E15FCC62A7B39B0A2EC1FFF1 /* Pods_Messaging_Realtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA608B351C7C70B8216B304 /* Pods_Messaging_Realtime.framework */; };
 		FA8D1F808B2883EC9AD12E39 /* Pods_Firebase_Starter_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2F9A2D97774BC5624B2FE4 /* Pods_Firebase_Starter_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3471F5651C9E4C4000F7DDF5 /* JSQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSQViewController.swift; sourceTree = "<group>"; };
 		34A1BFAC1C9A4C4200E8C216 /* FriendsTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTabController.swift; sourceTree = "<group>"; };
 		34C91B1F1C7377D500384C49 /* loginFB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginFB.png; sourceTree = SOURCE_ROOT; };
 		34C91B251C73A50400384C49 /* Timber_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Timber_logo.png; sourceTree = "<group>"; };
@@ -41,6 +44,9 @@
 		34DCB65B1C712C5800573704 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		34FD6B901C99E9350041A0B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		34FD6B921C99ECB10041A0B0 /* ChatRoomController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		5B2BFF8A09F7B3A7DD3E11E1 /* Pods-Messaging Realtime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging Realtime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging Realtime/Pods-Messaging Realtime.debug.xcconfig"; sourceTree = "<group>"; };
+		5CA608B351C7C70B8216B304 /* Pods_Messaging_Realtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Messaging_Realtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D84CE86DFDEFC46B94E1044 /* Pods-Messaging Realtime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messaging Realtime.release.xcconfig"; path = "Pods/Target Support Files/Pods-Messaging Realtime/Pods-Messaging Realtime.release.xcconfig"; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* Messaging Realtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Messaging Realtime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA81491A49DA1800E65899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 				81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
 				FA8D1F808B2883EC9AD12E39 /* Pods_Firebase_Starter_Project.framework in Frameworks */,
+				E15FCC62A7B39B0A2EC1FFF1 /* Pods_Messaging_Realtime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +120,7 @@
 				34C91B2D1C73AD9000384C49 /* ProfileTabController.swift */,
 				34FD6B921C99ECB10041A0B0 /* ChatRoomController.swift */,
 				34A1BFAC1C9A4C4200E8C216 /* FriendsTabController.swift */,
+				3471F5651C9E4C4000F7DDF5 /* JSQViewController.swift */,
 				81BA814E1A49DA1800E65899 /* Main.storyboard */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
@@ -142,6 +150,7 @@
 				81BA81801A49E10C00E65899 /* ParseUI.framework */,
 				81BA81751A49E0C500E65899 /* System Frameworks */,
 				EA2F9A2D97774BC5624B2FE4 /* Pods_Firebase_Starter_Project.framework */,
+				5CA608B351C7C70B8216B304 /* Pods_Messaging_Realtime.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +171,8 @@
 			children = (
 				D55246EE867A6581D2607A63 /* Pods-Firebase Starter Project.debug.xcconfig */,
 				932FCD6B3BE6E1A69EF16989 /* Pods-Firebase Starter Project.release.xcconfig */,
+				5B2BFF8A09F7B3A7DD3E11E1 /* Pods-Messaging Realtime.debug.xcconfig */,
+				7D84CE86DFDEFC46B94E1044 /* Pods-Messaging Realtime.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -251,7 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Firebase Starter Project/Pods-Firebase Starter Project-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Messaging Realtime/Pods-Messaging Realtime-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D7A3BDDF40B4B6A530012B8 /* Check Pods Manifest.lock */ = {
@@ -295,7 +306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Firebase Starter Project/Pods-Firebase Starter Project-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Messaging Realtime/Pods-Messaging Realtime-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -310,6 +321,7 @@
 				34FD6B931C99ECB10041A0B0 /* ChatRoomController.swift in Sources */,
 				34C91B2E1C73AD9000384C49 /* ProfileTabController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				3471F5661C9E4C4000F7DDF5 /* JSQViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +421,7 @@
 		};
 		81BA81651A49DA1800E65899 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D55246EE867A6581D2607A63 /* Pods-Firebase Starter Project.debug.xcconfig */;
+			baseConfigurationReference = 5B2BFF8A09F7B3A7DD3E11E1 /* Pods-Messaging Realtime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -433,7 +445,7 @@
 		};
 		81BA81661A49DA1800E65899 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 932FCD6B3BE6E1A69EF16989 /* Pods-Firebase Starter Project.release.xcconfig */;
+			baseConfigurationReference = 7D84CE86DFDEFC46B94E1044 /* Pods-Messaging Realtime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

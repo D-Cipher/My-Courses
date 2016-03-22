@@ -1,0 +1,22 @@
+let firebase = Firebase(url: "https://msg-realtimeapp.firebaseio.com/")
+
+//Read from firebase
+        firebase.observeEventType(FEventType.Value) { (snapshot: FDataSnapshot!) -> Void in
+            
+            //print(snapshot.value)
+            
+            if let snapshot = snapshot.value["user"] {
+                if let name = snapshot?.objectForKey("name") {
+                    self.textLabel.text = name as? String
+                }
+                
+                if let isOnline = snapshot?.objectForKey("isOnline") as? Bool {
+                    if isOnline == true {
+                        self.view.backgroundColor = UIColor.greenColor()
+                    } else if isOnline == false {
+                        self.view.backgroundColor = UIColor.redColor()
+                    }
+                }
+            }
+            
+        }

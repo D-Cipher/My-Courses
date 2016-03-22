@@ -4,6 +4,7 @@
 //  Copyright 2011-present Parse Inc. All rights reserved.
 //
 #import "Firebase/Firebase.h"
+#import "JSQMessagesViewController/JSQMessages.h"
 
 #ifndef ParseStarterProject_Bridging_Header_h
 #define ParseStarterProject_Bridging_Header_h

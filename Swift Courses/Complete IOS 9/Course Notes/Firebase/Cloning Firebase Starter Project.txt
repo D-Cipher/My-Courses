@@ -6,6 +6,7 @@
 -Click "Rename" when asked "Rename project content items"
 -Under "Manage Schemes" change the checkmarked scheme to new name.
 -In General > Identity change Bundle Identifier to new name.
+-Change the name of the build target in podfile to the new name.
 
 ##Create a new app in Parse, Facebook, Firebase.
 -In developer.facebook need to add the Bundle Identifier.
@@ -43,5 +44,3 @@ In viewcontroller change:
 '''
 let firebase = Firebase(url: "paste_new_Firebase_url")
 '''
-
-
