@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3457C2461C7BA2720072F58C /* Tab Bar Nav Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Bar Nav Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3457C2461C7BA2720072F58C /* TabNav Bar Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TabNav Bar Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3457C2491C7BA2720072F58C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3457C24B1C7BA2720072F58C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3457C24E1C7BA2720072F58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		3457C2471C7BA2720072F58C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3457C2461C7BA2720072F58C /* Tab Bar Nav Controller.app */,
+				3457C2461C7BA2720072F58C /* TabNav Bar Template.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3457C2451C7BA2720072F58C /* Tab Bar Nav Controller */ = {
+		3457C2451C7BA2720072F58C /* TabNav Bar Template */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3457C25B1C7BA2720072F58C /* Build configuration list for PBXNativeTarget "Tab Bar Nav Controller" */;
+			buildConfigurationList = 3457C25B1C7BA2720072F58C /* Build configuration list for PBXNativeTarget "TabNav Bar Template" */;
 			buildPhases = (
 				3457C2421C7BA2720072F58C /* Sources */,
 				3457C2431C7BA2720072F58C /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "Tab Bar Nav Controller";
+			name = "TabNav Bar Template";
 			productName = "Tab Bar Nav Controller";
-			productReference = 3457C2461C7BA2720072F58C /* Tab Bar Nav Controller.app */;
+			productReference = 3457C2461C7BA2720072F58C /* TabNav Bar Template.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3457C2411C7BA2720072F58C /* Build configuration list for PBXProject "Tab Bar Nav Controller" */;
+			buildConfigurationList = 3457C2411C7BA2720072F58C /* Build configuration list for PBXProject "TabNav Bar Template" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -119,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3457C2451C7BA2720072F58C /* Tab Bar Nav Controller */,
+				3457C2451C7BA2720072F58C /* TabNav Bar Template */,
 			);
 		};
 /* End PBXProject section */
@@ -259,7 +259,7 @@
 				INFOPLIST_FILE = "Tab Bar Nav Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Tab-Bar-Nav-Controller";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TabNav Bar Template";
 			};
 			name = Debug;
 		};
@@ -270,14 +270,14 @@
 				INFOPLIST_FILE = "Tab Bar Nav Controller/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Tab-Bar-Nav-Controller";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "TabNav Bar Template";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3457C2411C7BA2720072F58C /* Build configuration list for PBXProject "Tab Bar Nav Controller" */ = {
+		3457C2411C7BA2720072F58C /* Build configuration list for PBXProject "TabNav Bar Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3457C2591C7BA2720072F58C /* Debug */,
@@ -286,13 +286,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3457C25B1C7BA2720072F58C /* Build configuration list for PBXNativeTarget "Tab Bar Nav Controller" */ = {
+		3457C25B1C7BA2720072F58C /* Build configuration list for PBXNativeTarget "TabNav Bar Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3457C25C1C7BA2720072F58C /* Debug */,
 				3457C25D1C7BA2720072F58C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
