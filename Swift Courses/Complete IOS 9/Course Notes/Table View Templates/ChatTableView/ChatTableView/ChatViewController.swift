@@ -16,6 +16,8 @@ class ChatViewController: UIViewController {
     
     private var messages = [Message]()
     
+    private var bottomConstraint: NSLayoutConstraint!
+    
     private let cellIdentifier = "Cell"
     
     override func viewDidLoad() {
@@ -40,20 +42,26 @@ class ChatViewController: UIViewController {
         view.addSubview(newMessageArea)
         
         newMessageField.translatesAutoresizingMaskIntoConstraints = false
-        newMessageArea.addSubview(newMessageField)
         newMessageField.scrollEnabled = false
+        newMessageArea.addSubview(newMessageField)
+        
         
         let sendButton = UIButton()
         sendButton.translatesAutoresizingMaskIntoConstraints = false
-        newMessageArea.addSubview(sendButton)
-        sendButton.setTitle("Send", forState: .Normal)
         sendButton.setContentHuggingPriority(251, forAxis: .Horizontal)
+        sendButton.setContentCompressionResistancePriority(751, forAxis: .Horizontal)
+        sendButton.setTitle("Send", forState: .Normal)
+        sendButton.addTarget(self, action: Selector("pressedSend:"), forControlEvents: .TouchUpInside)
+        newMessageArea.addSubview(sendButton)
         
+        //Set up constraints
+        bottomConstraint = newMessageArea.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor)
+        bottomConstraint.active = true
         
         let messageAreaConstraints: [NSLayoutConstraint] = [
             newMessageArea.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
             newMessageArea.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor),
-            newMessageArea.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+            //newMessageArea.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
             //newMessageArea.heightAnchor.constraintEqualToConstant(50)
             
             newMessageField.leadingAnchor.constraintEqualToAnchor(newMessageArea.leadingAnchor, constant: 10),
@@ -87,6 +95,23 @@ class ChatViewController: UIViewController {
         
         NSLayoutConstraint.activateConstraints(tableViewConstraints)
         
+        //Detect when keyboard pops up and hides
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        
+        /*
+        //Tap Recognizer to close keyboard
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
+        tapRecognizer.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tapRecognizer)
+        */
+        
+        tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag //Close keyboard on drag
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.scrollToBottom(true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -94,7 +119,54 @@ class ChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Animates the Message Text Field Area when keyboard shows and hides
+    func keyboardWillShow(notification: NSNotification) {
+        updateBottomConstraint(notification)
+        tableView.scrollToBottom(true)
+    }
+    func keyboardWillHide(notification: NSNotification) {
+        updateBottomConstraint(notification)
+    }
     
+    //Updates Bottom Constraint of Message Text Field Area
+    func updateBottomConstraint(notification: NSNotification) {
+        if let userInfo = notification.userInfo, frame = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue, animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue {
+            
+            let newFrame = view.convertRect(frame, fromView: (UIApplication.sharedApplication().delegate?.window)!)
+            
+            bottomConstraint.constant = newFrame.origin.y - CGRectGetHeight(view.frame) //Get the height of the keyboard
+            
+            UIView.animateWithDuration(animationDuration, animations: {
+                self.view.layoutIfNeeded()
+            })
+            
+        }
+    }
+    
+    //Function that controls send button
+    func pressedSend(button: UIButton) {
+        guard let text = newMessageField.text where text.characters.count > 0 else {return}
+        let message = Message()
+        message.text = text
+        message.incoming = false
+        messages.append(message)
+        newMessageField.text = ""
+        tableView.reloadData()
+        tableView.scrollToBottom(false)
+        
+        /*
+        //For testing
+        for eachMessage in messages {
+            print(eachMessage.text)
+        }
+        */
+    }
+    
+    
+    //Hides keyboard on tap (Not Used)
+    func handleSingleTap(recongnizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
 
 extension ChatViewController: UITableViewDataSource {
