@@ -10,11 +10,13 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: CGRectZero, style: .Grouped)
     
     private let newMessageField = UITextView()
     
-    private var messages = [Message]()
+    private var sections = [NSDate: [Message]]()
+    
+    private var dates = [NSDate]()
     
     private var bottomConstraint: NSLayoutConstraint!
     
@@ -25,24 +27,46 @@ class ChatViewController: UIViewController {
         
         //Add dummy data
         var localIncoming = true
+        var date = NSDate(timeIntervalSince1970: 1100000000)
         
         for i in 0...10 {
             let m = Message()
             //m.text = String(i) for testing
-            m.text = "this is a longer message."
+            m.text = "this is a long message. a very very long message. feel free to ignore this message."
+            m.timestamp = date
             m.incoming = localIncoming
             localIncoming = !localIncoming
-            messages.append(m)
+            
+            addMessage(m)
+            
+            if i%2 == 0 {
+                date = NSDate(timeInterval: 60*60*24, sinceDate: date)
+            }
+            
+            /*
+            //For Testing Date
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "MMM dd, YYYY"
+            print(formatter.stringFromDate(m.timestamp!))
+            */
         }
+ 
         
         //Create Message Field Area and Message Field and sendButton
         let newMessageArea = UIView()
-        newMessageArea.backgroundColor = UIColor.lightGrayColor()
+        newMessageArea.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+        newMessageArea.layer.borderWidth = 2
+        newMessageArea.layer.borderColor = UIColor.lightGrayColor().CGColor
         newMessageArea.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(newMessageArea)
         
         newMessageField.translatesAutoresizingMaskIntoConstraints = false
         newMessageField.scrollEnabled = false
+        newMessageField.layer.borderWidth = 2
+        newMessageField.layer.borderColor = UIColor.lightGrayColor().CGColor
+        newMessageField.layer.cornerRadius = 10
+        newMessageField.layer.masksToBounds = true
+        newMessageField.font = UIFont(name: "Helvetica", size: 16)
         newMessageArea.addSubview(newMessageField)
         
         
@@ -51,6 +75,10 @@ class ChatViewController: UIViewController {
         sendButton.setContentHuggingPriority(251, forAxis: .Horizontal)
         sendButton.setContentCompressionResistancePriority(751, forAxis: .Horizontal)
         sendButton.setTitle("Send", forState: .Normal)
+        sendButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
+        sendButton.setTitleColor(UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0), forState: .Normal)
+        sendButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
+        
         sendButton.addTarget(self, action: Selector("pressedSend:"), forControlEvents: .TouchUpInside)
         newMessageArea.addSubview(sendButton)
         
@@ -74,7 +102,6 @@ class ChatViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activateConstraints(messageAreaConstraints)
-        
         
         //Create Table for Chat Bubbles
         tableView.registerClass(ChatCell.self, forCellReuseIdentifier: cellIdentifier) //register ChatCell for reuse
@@ -108,6 +135,7 @@ class ChatViewController: UIViewController {
         
         tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag //Close keyboard on drag
         
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None //Removes all separators
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -149,17 +177,34 @@ class ChatViewController: UIViewController {
         let message = Message()
         message.text = text
         message.incoming = false
-        messages.append(message)
+        message.timestamp = NSDate()
+        addMessage(message)
         newMessageField.text = ""
+        
         tableView.reloadData()
         tableView.scrollToBottom(false)
         
         /*
-        //For testing
+        //For testing message text
         for eachMessage in messages {
             print(eachMessage.text)
         }
         */
+    }
+    
+    //Create message
+    func addMessage(message: Message) {
+        guard let date = message.timestamp else {return}
+        let calendar = NSCalendar.currentCalendar()
+        let startDay = calendar.startOfDayForDate(date)
+        
+        var messages = sections[startDay]
+        if messages == nil {
+            dates.append(startDay)
+            messages = [Message]()
+        }
+        messages!.append(message)
+        sections[startDay] = messages
     }
     
     
@@ -167,26 +212,95 @@ class ChatViewController: UIViewController {
     func handleSingleTap(recongnizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+    
 }
 
 extension ChatViewController: UITableViewDataSource {
     
+    func getMessages(section: Int) -> [Message] {
+        let date = dates[section]
+        
+        return sections[date]!
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return dates.count
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return getMessages(section).count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatCell
         
+        let messages = getMessages(indexPath.section)
         let message = messages[indexPath.row]
         
         cell.messageLabel.text = message.text
+        cell.messageLabel.textAlignment = .Left
+        
+        if message.incoming == true {
+            cell.messageLabel.textColor = UIColor.blackColor()
+        } else if message.incoming == false {
+            cell.messageLabel.textColor = UIColor.whiteColor()
+        }
+        
         cell.incoming(message.incoming)
         
-        cell.separatorInset = UIEdgeInsetsMake(0, tableView.bounds.size.width, 0, 0) //removes tableView seperators
+        cell.backgroundColor = UIColor.clearColor()
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.clearColor()
+        
+        let paddingView = UIView()
+        paddingView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(paddingView)
+        
+        let dateLabel = UILabel()
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        paddingView.addSubview(dateLabel)
+        
+        let constraints: [NSLayoutConstraint] = [
+            paddingView.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            paddingView.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
+            dateLabel.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            dateLabel.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
+            
+            paddingView.heightAnchor.constraintEqualToAnchor(dateLabel.heightAnchor, constant: 5),
+            paddingView.widthAnchor.constraintEqualToAnchor(dateLabel.widthAnchor, constant: 10),
+            
+            view.heightAnchor.constraintEqualToAnchor(paddingView.heightAnchor)
+        ]
+        
+        NSLayoutConstraint.activateConstraints(constraints)
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM dd, YYYY"
+        
+        dateLabel.text = formatter.stringFromDate(dates[section])
+
+        paddingView.layer.cornerRadius = 10
+        paddingView.layer.masksToBounds = true
+        paddingView.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
+        dateLabel.textColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0)
+        
+        return view
+    }
+    
+    //Correct for spacing between sections
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
 }

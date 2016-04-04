@@ -29,17 +29,17 @@ class ChatCell: UITableViewCell {
         messageLabel.centerXAnchor.constraintEqualToAnchor(bubbleImageView.centerXAnchor).active = true
         messageLabel.centerYAnchor.constraintEqualToAnchor(bubbleImageView.centerYAnchor).active = true
         
-        bubbleImageView.widthAnchor.constraintEqualToAnchor(messageLabel.widthAnchor, constant: 50).active = true
+        bubbleImageView.widthAnchor.constraintEqualToAnchor(messageLabel.widthAnchor, constant: 40).active = true
         bubbleImageView.heightAnchor.constraintEqualToAnchor(messageLabel.heightAnchor, constant: 20).active = true
         
         outgoingConstraints = [
             bubbleImageView.trailingAnchor.constraintEqualToAnchor(contentView.trailingAnchor, constant: -25),
-            bubbleImageView.leadingAnchor.constraintGreaterThanOrEqualToAnchor(contentView.centerXAnchor)
+            bubbleImageView.leadingAnchor.constraintGreaterThanOrEqualToAnchor(contentView.leadingAnchor, constant: 70)
         ]
         
         incomingConstraints = [
             bubbleImageView.leadingAnchor.constraintEqualToAnchor(contentView.leadingAnchor, constant: 25),
-            bubbleImageView.trailingAnchor.constraintLessThanOrEqualToAnchor(contentView.centerXAnchor)
+            bubbleImageView.trailingAnchor.constraintLessThanOrEqualToAnchor(contentView.trailingAnchor, constant: -70)
         ]
         
         bubbleImageView.topAnchor.constraintEqualToAnchor(contentView.topAnchor, constant: 10).active = true
@@ -68,8 +68,6 @@ class ChatCell: UITableViewCell {
             bubbleImageView.image = makeBubble().outgoing
         }
     }
-    
-    
     
     //Make Chat Bubbles
     func makeBubble() -> (incoming: UIImage, outgoing: UIImage) {
@@ -104,11 +102,5 @@ class ChatCell: UITableViewCell {
     }
     
 }
-
-
-
-
-
-
 
 
