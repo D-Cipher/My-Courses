@@ -1,4 +1,4 @@
-﻿Git Commands
+Git Commands
 
 Configuring Git:
 git config --global user.name "D-Cipher"
@@ -35,3 +35,13 @@ git status - displays untracked files
 git add . - adds all new files
 git add -u - udates changes
 git commit -m "Message" -commits your changes
+
+
+*Note: if "git pull origin master" gives "Please enter a commit message to explain why this merge is necessary"
+-Press i to enter insert mode.
+-Type a message
+-Press esc to go back to command mode.
+-Type :w followed by enter to save.
+-Type :q followed by enter to quit.
+
+

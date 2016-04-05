@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ChatViewController: UIViewController {
 
@@ -22,36 +23,27 @@ class ChatViewController: UIViewController {
     
     private let cellIdentifier = "Cell"
     
+    var context: NSManagedObjectContext?  //Access from AppDelegate.swift
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Add dummy data
-        var localIncoming = true
-        var date = NSDate(timeIntervalSince1970: 1100000000)
-        
-        for i in 0...10 {
-            let m = Message()
-            //m.text = String(i) for testing
-            m.text = "this is a long message. a very very long message. feel free to ignore this message."
-            m.timestamp = date
-            m.incoming = localIncoming
-            localIncoming = !localIncoming
+        //Get saved messages from core data
+        do {
+            let request = NSFetchRequest(entityName: "Message")
             
-            addMessage(m)
+            request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
             
-            if i%2 == 0 {
-                date = NSDate(timeInterval: 60*60*24, sinceDate: date)
+            if let result = try context?.executeFetchRequest(request) as? [Message] {
+                for message in result {
+                    addMessage(message)
+                }
+                
             }
-            
-            /*
-            //For Testing Date
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "MMM dd, YYYY"
-            print(formatter.stringFromDate(m.timestamp!))
-            */
+        } catch {
+            print("fetch error")
         }
  
-        
         //Create Message Field Area and Message Field and sendButton
         let newMessageArea = UIView()
         newMessageArea.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
@@ -187,12 +179,26 @@ class ChatViewController: UIViewController {
     
     //Function that controls send button
     func pressedSend(button: UIButton) {
+        
         guard let text = newMessageField.text where text.characters.count > 0 else {return}
-        let message = Message()
+        
+        guard let context = context else {return}
+        
+        guard let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {return}
+        
         message.text = text
-        message.incoming = false
+        message.isIncoming = false
         message.timestamp = NSDate()
         addMessage(message)
+        
+        //Save new message to core data
+        do {
+            try context.save()
+        } catch {
+            print("save context error")
+            return
+        }
+        
         newMessageField.text = ""
         
         tableView.reloadData()
@@ -204,6 +210,7 @@ class ChatViewController: UIViewController {
             print(eachMessage.text)
         }
         */
+        
     }
     
     //Create message
@@ -215,9 +222,15 @@ class ChatViewController: UIViewController {
         var messages = sections[startDay]
         if messages == nil {
             dates.append(startDay)
+            
+            dates = dates.sort({$0.earlierDate($1) == $0}) // Orders dates
+            
             messages = [Message]()
         }
         messages!.append(message)
+        
+        messages!.sortInPlace{$0.timestamp!.earlierDate($1.timestamp!) == $0.timestamp!} //sorts by date
+        
         sections[startDay] = messages
     }
     
@@ -260,13 +273,13 @@ extension ChatViewController: UITableViewDataSource {
         cell.messageLabel.text = message.text
         cell.messageLabel.textAlignment = .Left
         
-        if message.incoming == true {
+        if message.isIncoming == true {
             cell.messageLabel.textColor = UIColor.blackColor()
-        } else if message.incoming == false {
+        } else if message.isIncoming == false {
             cell.messageLabel.textColor = UIColor.whiteColor()
         }
         
-        cell.incoming(message.incoming)
+        cell.incoming(message.isIncoming)
         
         cell.backgroundColor = UIColor.clearColor()
         
