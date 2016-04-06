@@ -1,0 +1,31 @@
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) { () -> Void in
+            print("This is run on the background queue")
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                print("This is run on the main queue, after the previous code in outer block")
+            })
+
+        }
+        
+
+        //Notes from --> Youtube video hacking with swift project 9 GCD
+
+        /*
+         Queues:
+         
+         QOS_CLASS_USER_INTERACTIVE - functions critical to keep the userinterface running (gaming)
+         
+         QOS_CLASS_USER_INITIATED - tasks that users requested and are waiting to continue (loading profile, loading up app)
+         
+         QOS_CLASS_UTILITY - long running tasks that the user is aware of but not desperate for right now. (posting a picture)
+         
+         QOS_CLASS_BACKGROUND - long running tasks that users are not necessarily aware of, don't care how far through it is.
+        
+        */
+        
+        
+    }
