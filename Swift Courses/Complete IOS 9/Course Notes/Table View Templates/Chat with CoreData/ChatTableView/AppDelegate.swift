@@ -30,15 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = vlight_grey
         UITabBar.appearance().tintColor = UIColor.greenColor()
         
+        
         //Set up NSManagedObjectContext
-        
-        let nav = window!.rootViewController as! UINavigationController
-        let svc = nav.topViewController as! ChatViewController
-        
+        let root = window!.rootViewController as! LoginViewController
         let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         context.persistentStoreCoordinator = CDHelper.sharedInstance.coordinator
-        
-        svc.context = context
+        root.context = context
         
         return true
     }

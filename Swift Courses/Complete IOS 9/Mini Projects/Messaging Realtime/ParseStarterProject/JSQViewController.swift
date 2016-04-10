@@ -48,15 +48,20 @@ class JSQViewController: JSQMessagesViewController {
                 self.messageKey_ls.append(value.key as! String)
                 if let message = value.value as? NSDictionary {
                     
-                    let date = message["date"] as! NSTimeInterval
+                    //let date = message["date"] as! NSTimeInterval
                     
                     let recieveSenderId = message["senderID"] as! String
                     
-                    let recieveDisplayName = message["senderDisplayName"] as! String
+                    //let recieveDisplayName = message["senderDisplayName"] as! String
+                    
+                    let recieveDisplayName = "aaa"
+                    
                     
                     self.createAvatar(recieveSenderId, senderDisplayName: recieveDisplayName, color: UIColor.greenColor(), textcolor: UIColor.whiteColor())
                     
-                    let jsqMessage = JSQMessage(senderId: recieveSenderId, senderDisplayName: recieveDisplayName, date: NSDate(timeIntervalSince1970: date), text: message["message"] as! String)
+                    //let jsqMessage = JSQMessage(senderId: recieveSenderId, senderDisplayName: recieveDisplayName, date: NSDate(timeIntervalSince1970: date), text: message["message"] as! String)
+                    
+                    let jsqMessage = JSQMessage(senderId: recieveSenderId, senderDisplayName: recieveDisplayName, date: NSDate(), text: message["message"] as! String)
                     
                     self.jsqMessages_ls.append(jsqMessage)
                     

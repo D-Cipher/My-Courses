@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		340F68101CB029E0007132F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F680F1CB029E0007132F4 /* AppDelegate.swift */; };
-		340F68121CB029E0007132F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F68111CB029E0007132F4 /* ChatViewController.swift */; };
+		340F68121CB029E0007132F4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F68111CB029E0007132F4 /* MessageViewController.swift */; };
 		340F68151CB029E0007132F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340F68131CB029E0007132F4 /* Main.storyboard */; };
 		340F68171CB029E0007132F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340F68161CB029E0007132F4 /* Assets.xcassets */; };
 		340F681A1CB029E0007132F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340F68181CB029E0007132F4 /* LaunchScreen.storyboard */; };
 		340F68221CB02BF1007132F4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F68211CB02BF1007132F4 /* Message.swift */; };
-		340F68241CB02C2D007132F4 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F68231CB02C2D007132F4 /* ChatCell.swift */; };
+		340F68241CB02C2D007132F4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F68231CB02C2D007132F4 /* MessageCell.swift */; };
 		347D43571CB2EC0F0069CA75 /* Magnifier30x30.png in Resources */ = {isa = PBXBuildFile; fileRef = 347D43561CB2EC0F0069CA75 /* Magnifier30x30.png */; };
 		347D43591CB308E80069CA75 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 347D43581CB308E80069CA75 /* camera.png */; };
 		34FF66D11CB1C7BD003A54A9 /* UITableView+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF66D01CB1C7BD003A54A9 /* UITableView+Scroll.swift */; };
@@ -22,13 +22,13 @@
 /* Begin PBXFileReference section */
 		340F680C1CB029DF007132F4 /* ChatTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		340F680F1CB029E0007132F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		340F68111CB029E0007132F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		340F68111CB029E0007132F4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		340F68141CB029E0007132F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		340F68161CB029E0007132F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		340F68191CB029E0007132F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		340F681B1CB029E0007132F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		340F68211CB02BF1007132F4 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		340F68231CB02C2D007132F4 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		340F68231CB02C2D007132F4 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		347D43561CB2EC0F0069CA75 /* Magnifier30x30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Magnifier30x30.png; sourceTree = "<group>"; };
 		347D43581CB308E80069CA75 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		34FF66D01CB1C7BD003A54A9 /* UITableView+Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Scroll.swift"; sourceTree = "<group>"; };
@@ -67,9 +67,9 @@
 				347D43561CB2EC0F0069CA75 /* Magnifier30x30.png */,
 				347D43581CB308E80069CA75 /* camera.png */,
 				340F680F1CB029E0007132F4 /* AppDelegate.swift */,
-				340F68111CB029E0007132F4 /* ChatViewController.swift */,
+				340F68111CB029E0007132F4 /* MessageViewController.swift */,
 				340F68211CB02BF1007132F4 /* Message.swift */,
-				340F68231CB02C2D007132F4 /* ChatCell.swift */,
+				340F68231CB02C2D007132F4 /* MessageCell.swift */,
 				34FF66D01CB1C7BD003A54A9 /* UITableView+Scroll.swift */,
 				340F68131CB029E0007132F4 /* Main.storyboard */,
 				340F68161CB029E0007132F4 /* Assets.xcassets */,
@@ -155,8 +155,8 @@
 			files = (
 				34FF66D11CB1C7BD003A54A9 /* UITableView+Scroll.swift in Sources */,
 				340F68221CB02BF1007132F4 /* Message.swift in Sources */,
-				340F68241CB02C2D007132F4 /* ChatCell.swift in Sources */,
-				340F68121CB029E0007132F4 /* ChatViewController.swift in Sources */,
+				340F68241CB02C2D007132F4 /* MessageCell.swift in Sources */,
+				340F68121CB029E0007132F4 /* MessageViewController.swift in Sources */,
 				340F68101CB029E0007132F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

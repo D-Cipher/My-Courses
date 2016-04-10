@@ -6,9 +6,133 @@
 //  Copyright © 2016 Tingbo Chen. All rights reserved.
 //
 
+/*
+ ====Notes On adding Core Data=====
+ 
+ 1) Add "CDHelper.swift" addon to project.
+ *Note: If project was set up with core data:
+ -clear out any items related to core data in AppDelegate.swift
+ -delete the model file
+ 
+ 2) In CDHelper.swift, add your project's name to .sqlite
+ """
+ let url = self.storesDirectory.URLByAppendingPathComponent("Your Project Name.sqlite")
+ """
+ 
+ 3) In MessageViewController.swift add:
+ """
+ var context: NSManagedObjectContext?
+ """
+ 
+ 4) In AppDelegate.swift add:
+ """
+ //Core Data: Setup Context
+ let root = window!.rootViewController as! LoginViewController
+ let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+ context.persistentStoreCoordinator = CDHelper.sharedInstance.coordinator
+ root.context = context
+ """
+ 
+ 5) Pass the context set up in root to MessageViewController.swift
+ User prepareForSegue to pass the context variable till it reaches the Message VC. Example:
+ """
+ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+ 
+ let tab = segue.destinationViewController as! UITabBarController
+ let nav = tab.viewControllers![0] as! UINavigationController
+ let chatTabVC = nav.topViewController as! ChatTabController
+ 
+ chatTabVC.context = context
+ }
+ """
+ 
+ 6) Set up Core Data Model:
+ -Add model:
+ File > New File > IOS > Core Data > Data Model > Name: "Model" > Save
+ 
+ -DELETE Message.swift
+ 
+ -Create a new Message.swift with Model:
+    (+) Add Entity -> Name: "Message"
+    Under Attributes add (+):
+        +Attribute: text ; Type: String
+        +Attribute: incoming ; Type: Bool
+        +Attribute: timestamp ; Type: Date
+ 
+ Editor > Create NSManagedObject Subclass... > Select Model > Select Message > Create
+ 
+ *This will generate the new Message.swift and Message+CoreDataProperties.swift
+ 
+ 7) Set up new Message.swift file:
+ """
+ class Message: NSManagedObject {
+ 
+ var isIncoming: Bool {
+    get {
+        guard let incoming = incoming else {return false}
+        return incoming.boolValue
+    } set (incoming) {
+        self.incoming = incoming
+        }
+    }
+ }
+ """
+ 
+ 8) Update message entity in the MessageViewController.swift
+ -In viewDidLoad DELETE the dummy data, everything from "var localIncoming ...." to end of the for loop.
+ -In pressedSend DELETE "let message = Message()" and add new initialization using core data:
+ """
+ guard let context = context else {return}
+ guard let message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: context) as? Message else {return}
+ """
+ -Change all instances of .incoming to .isIncoming:
+ -Under pressedSent: "message.incoming = false" to "message.isIncoming = false"
+ -cellforRowAtIndexPath: "cell.incoming(message.incoming)" to "cell.incoming(message.isIncoming)"
+ 
+ 9) Get saved messages from core data. In viewDidLoad add:
+ """
+ do {
+    let request = NSFetchRequest(entityName: "Message")
+ 
+    request.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: false)]
+ 
+    if let result = try context?.executeFetchRequest(request) as? [Message] {
+ 
+        for message in result {
+            addMessage(message)
+            }
+        }
+    } catch {
+        print("fetch error")
+    }
+ """
+ 
+ 10) Save new messages in the pressedSend method to core data:
+ after "addMessage(message)" add:
+ """
+ do {
+    try context.save()
+ } catch {
+    print("save context error")
+    return
+ }
+ 
+ 11) Sort messages by time:
+ Add following to addMessage function after "dates.append(startDay)"
+ """
+ dates = dates.sort({$0.earlierDate($1) == $0})
+ """
+ 
+ Add following to addMessage function after "messages!.append(message)"
+ """
+ messages!.sortInPlace{$0.timestamp!.earlierDate($1.timestamp!) == $0.timestamp!}
+ """
+ */
+
+
 import UIKit
 
-class ChatViewController: UIViewController {
+class MessageViewController: UIViewController {
 
     private let tableView = UITableView(frame: CGRectZero, style: .Grouped)
     
@@ -118,7 +242,7 @@ class ChatViewController: UIViewController {
         NSLayoutConstraint.activateConstraints(messageAreaConstraints)
         
         //Create Table for Chat Bubbles
-        tableView.registerClass(ChatCell.self, forCellReuseIdentifier: cellIdentifier) //register ChatCell for reuse
+        tableView.registerClass(MessageCell.self, forCellReuseIdentifier: cellIdentifier) //register ChatCell for reuse
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 44
@@ -234,7 +358,7 @@ class ChatViewController: UIViewController {
     
 }
 
-extension ChatViewController: UITableViewDataSource {
+extension MessageViewController: UITableViewDataSource {
     
     func getMessages(section: Int) -> [Message] {
         let date = dates[section]
@@ -252,7 +376,7 @@ extension ChatViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessageCell
         
         let messages = getMessages(indexPath.section)
         let message = messages[indexPath.row]
@@ -323,7 +447,7 @@ extension ChatViewController: UITableViewDataSource {
     
 }
 
-extension ChatViewController: UITableViewDelegate {
+extension MessageViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
