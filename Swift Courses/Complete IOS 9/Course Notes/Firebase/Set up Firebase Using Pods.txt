@@ -12,12 +12,12 @@ $ open -a Xcode Podfile
 Change Pod file:
 -Uncomment and change "platform :ios, '8.0'" to "platform :ios, '9.0'"
 -Uncomment "user_frameworks!"
--Add the following:
+-Add the following after "target ... do":
 '''
-pod 'Firebase', '>= 2.5.0'
+pod 'Firebase', '>= 2.5.1'
 '''
 
-Then run the command:
+Save, close, then run the command:
 '''
 $ pod install
 $ open my-project.xcworkspace
@@ -44,4 +44,21 @@ Make sure to add Social.framework
 General > Linked Frameworks and Libraries > + > Social.framework
 
 Then build the project.
+
+###Send First Message to Firebase
+First set up firebase link:
+'''
+import Firebase
+let firebase = Firebase(url: "https://my-project-on-firebase.firebaseio.com")
+'''
+
+Then in viewDidLoad add the following and test.
+'''
+firebase.setValue("Hi Firebase!")
+        
+firebase.observeEventType(FEventType.Value) { (snapshot: FDataSnapshot!) in
+            print(snapshot.value)
+'''
+
+
 
