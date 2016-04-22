@@ -1,15 +1,15 @@
 import UIKit
 
-func validate(value: String) -> Bool {
-    
-    let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
-    
-    var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-    
-    var result =  phoneTest.evaluateWithObject(value)
-    
-    return result
-    
+let stripped_number = "12312312342"
+
+if stripped_number.characters.count == 10 {
+    let stringts: NSMutableString = NSMutableString(string: stripped_number)
+    stringts.insertString("-", atIndex: 3)
+    stringts.insertString("-", atIndex: 7)
+    let formatted_phoneNum = String(stringts)
+    print(formatted_phoneNum)
+} else {
+    let formatted_phoneNum = "number"
+    print(formatted_phoneNum)
 }
 
-validate("3148073944")
