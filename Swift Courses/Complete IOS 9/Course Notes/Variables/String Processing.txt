@@ -1,11 +1,6 @@
-/*
-String Processing
+//String Processing
 
-*/
-
-import UIKit
-
-var newString = "Hello Rob"
+var newString = "Hello Cy"
 
 //Spliting a string
 for letter in newString.characters {
@@ -25,7 +20,7 @@ newTypeString.substringFromIndex(6) //Not the first six characters
 
 newTypeString.substringWithRange(NSRange(location: 3, length: 5)) //start act three and go five characers
 
-newTypeString.containsString("Rob")
+newTypeString.containsString("Cy")
 
 newTypeString.uppercaseString
 

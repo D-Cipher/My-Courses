@@ -1,7 +1,5 @@
 //: Array Variables (Lists)
 
-import UIKit
-
 var num_ls = [17,24,13,47]
 
 num_ls[0]

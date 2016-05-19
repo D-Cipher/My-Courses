@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Music Player Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MusicPlayerController" customModule="My_First_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="album-placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="YTy-BK-WIh">
+                                <rect key="frame" x="0.0" y="96" width="414" height="414"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJN-w5-ADH">
+                                <rect key="frame" x="20" y="39" width="374" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rQ3-Cy-fTr">
+                                <rect key="frame" x="18" y="525" width="378" height="31"/>
+                                <connections>
+                                    <action selector="scrubberAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="YpK-am-4G1"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6d-Kx-bdu">
+                                <rect key="frame" x="102" y="663" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXr-BY-396"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKT-dy-9Lf">
+                                <rect key="frame" x="274" y="663" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pxg-Nd-bL3"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yAX-OU-r1D">
+                                <rect key="frame" x="100" y="617" width="208" height="31"/>
+                                <connections>
+                                    <action selector="volumeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="CB5-0F-jqB"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-q5-1Cw">
+                                <rect key="frame" x="173" y="663" width="68" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgB-ZH-BMW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d14-vc-42I">
+                                <rect key="frame" x="331" y="617" width="67" height="30"/>
+                                <state key="normal" title="Unshuffle"/>
+                                <connections>
+                                    <action selector="shuffleButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ru9-pm-YWg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HD-rs-S6a">
+                                <rect key="frame" x="20" y="617" width="67" height="30"/>
+                                <state key="normal" title="Loop"/>
+                                <connections>
+                                    <action selector="loopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mx9-uH-rmV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA0-7w-1RC">
+                                <rect key="frame" x="20" y="551" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t24-4y-FDa">
+                                <rect key="frame" x="308" y="551" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="backButtonOutlet" destination="A6d-Kx-bdu" id="xVD-hC-ewd"/>
+                        <outlet property="currentTimeLabel" destination="YA0-7w-1RC" id="4OT-QZ-6Mu"/>
+                        <outlet property="durationLabel" destination="t24-4y-FDa" id="D6g-WF-20S"/>
+                        <outlet property="loopButtonOutlet" destination="4HD-rs-S6a" id="KSE-SB-Hnn"/>
+                        <outlet property="nameLabel" destination="IJN-w5-ADH" id="0mE-Z0-YFS"/>
+                        <outlet property="nextButtonOutlet" destination="xKT-dy-9Lf" id="k1v-ZY-GEj"/>
+                        <outlet property="playButtonOutlet" destination="cO3-q5-1Cw" id="tbj-wu-EXh"/>
+                        <outlet property="scrubberOutlet" destination="rQ3-Cy-fTr" id="a9V-aK-fLO"/>
+                        <outlet property="shuffleButtonOutlet" destination="d14-vc-42I" id="y6u-P7-zq1"/>
+                        <outlet property="volumeOutlet" destination="yAX-OU-r1D" id="Rpu-gW-bdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211" y="289"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="album-placeholder.png" width="500" height="500"/>
+    </resources>
+</document>

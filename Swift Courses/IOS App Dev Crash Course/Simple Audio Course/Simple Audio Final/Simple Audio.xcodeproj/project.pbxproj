@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		340474F41CDAE0FC0004AFAF /* Battle at the misty valley.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474EB1CDAE0FC0004AFAF /* Battle at the misty valley.mp3 */; };
+		340474F51CDAE0FC0004AFAF /* Breath of Freedom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474EC1CDAE0FC0004AFAF /* Breath of Freedom.mp3 */; };
+		340474F61CDAE0FC0004AFAF /* Classical-bwv-bach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474ED1CDAE0FC0004AFAF /* Classical-bwv-bach.mp3 */; };
+		340474F71CDAE0FC0004AFAF /* Dawn of a New Era.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474EE1CDAE0FC0004AFAF /* Dawn of a New Era.mp3 */; };
+		340474F81CDAE0FC0004AFAF /* High Hopes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474EF1CDAE0FC0004AFAF /* High Hopes.mp3 */; };
+		340474F91CDAE0FC0004AFAF /* Intro-Sonet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474F01CDAE0FC0004AFAF /* Intro-Sonet.mp3 */; };
+		340474FA1CDAE0FC0004AFAF /* Neverending Dream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474F11CDAE0FC0004AFAF /* Neverending Dream.mp3 */; };
+		340474FB1CDAE0FC0004AFAF /* Path of Loneliness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474F21CDAE0FC0004AFAF /* Path of Loneliness.mp3 */; };
+		340474FC1CDAE0FC0004AFAF /* Twilight Poem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474F31CDAE0FC0004AFAF /* Twilight Poem.mp3 */; };
+		340474FE1CDAE1040004AFAF /* The silent Force.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 340474FD1CDAE1040004AFAF /* The silent Force.mp3 */; };
+		34E9CA811CDAA89300A8D0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */; };
+		34E9CA831CDAA89300A8D0DC /* MusicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */; };
+		34E9CA861CDAA89300A8D0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA841CDAA89300A8D0DC /* Main.storyboard */; };
+		34E9CA881CDAA89300A8D0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA871CDAA89300A8D0DC /* Assets.xcassets */; };
+		34E9CA8B1CDAA89300A8D0DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		340474EB1CDAE0FC0004AFAF /* Battle at the misty valley.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle at the misty valley.mp3"; sourceTree = "<group>"; };
+		340474EC1CDAE0FC0004AFAF /* Breath of Freedom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Breath of Freedom.mp3"; sourceTree = "<group>"; };
+		340474ED1CDAE0FC0004AFAF /* Classical-bwv-bach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Classical-bwv-bach.mp3"; sourceTree = "<group>"; };
+		340474EE1CDAE0FC0004AFAF /* Dawn of a New Era.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dawn of a New Era.mp3"; sourceTree = "<group>"; };
+		340474EF1CDAE0FC0004AFAF /* High Hopes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "High Hopes.mp3"; sourceTree = "<group>"; };
+		340474F01CDAE0FC0004AFAF /* Intro-Sonet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Intro-Sonet.mp3"; sourceTree = "<group>"; };
+		340474F11CDAE0FC0004AFAF /* Neverending Dream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Neverending Dream.mp3"; sourceTree = "<group>"; };
+		340474F21CDAE0FC0004AFAF /* Path of Loneliness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Path of Loneliness.mp3"; sourceTree = "<group>"; };
+		340474F31CDAE0FC0004AFAF /* Twilight Poem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Twilight Poem.mp3"; sourceTree = "<group>"; };
+		340474FD1CDAE1040004AFAF /* The silent Force.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The silent Force.mp3"; sourceTree = "<group>"; };
+		34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Audio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerController.swift; sourceTree = "<group>"; };
+		34E9CA851CDAA89300A8D0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		34E9CA871CDAA89300A8D0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34E9CA8A1CDAA89300A8D0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34E9CA8C1CDAA89300A8D0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34E9CA7A1CDAA89300A8D0DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		340474FF1CDAE11C0004AFAF /* Sample Music */ = {
+			isa = PBXGroup;
+			children = (
+				340474FD1CDAE1040004AFAF /* The silent Force.mp3 */,
+				340474EB1CDAE0FC0004AFAF /* Battle at the misty valley.mp3 */,
+				340474EC1CDAE0FC0004AFAF /* Breath of Freedom.mp3 */,
+				340474ED1CDAE0FC0004AFAF /* Classical-bwv-bach.mp3 */,
+				340474EE1CDAE0FC0004AFAF /* Dawn of a New Era.mp3 */,
+				340474EF1CDAE0FC0004AFAF /* High Hopes.mp3 */,
+				340474F01CDAE0FC0004AFAF /* Intro-Sonet.mp3 */,
+				340474F11CDAE0FC0004AFAF /* Neverending Dream.mp3 */,
+				340474F21CDAE0FC0004AFAF /* Path of Loneliness.mp3 */,
+				340474F31CDAE0FC0004AFAF /* Twilight Poem.mp3 */,
+			);
+			name = "Sample Music";
+			sourceTree = "<group>";
+		};
+		34E9CA741CDAA89300A8D0DC = {
+			isa = PBXGroup;
+			children = (
+				34E9CA7F1CDAA89300A8D0DC /* Simple Audio */,
+				34E9CA7E1CDAA89300A8D0DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		34E9CA7E1CDAA89300A8D0DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34E9CA7F1CDAA89300A8D0DC /* Simple Audio */ = {
+			isa = PBXGroup;
+			children = (
+				340474FF1CDAE11C0004AFAF /* Sample Music */,
+				34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */,
+				34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */,
+				34E9CA841CDAA89300A8D0DC /* Main.storyboard */,
+				34E9CA871CDAA89300A8D0DC /* Assets.xcassets */,
+				34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */,
+				34E9CA8C1CDAA89300A8D0DC /* Info.plist */,
+			);
+			path = "Simple Audio";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34E9CA7C1CDAA89300A8D0DC /* Simple Audio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34E9CA8F1CDAA89300A8D0DC /* Build configuration list for PBXNativeTarget "Simple Audio" */;
+			buildPhases = (
+				34E9CA791CDAA89300A8D0DC /* Sources */,
+				34E9CA7A1CDAA89300A8D0DC /* Frameworks */,
+				34E9CA7B1CDAA89300A8D0DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Simple Audio";
+			productName = "Simple Audio";
+			productReference = 34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34E9CA751CDAA89300A8D0DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Tingbo Chen";
+				TargetAttributes = {
+					34E9CA7C1CDAA89300A8D0DC = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = LJL8G936JS;
+					};
+				};
+			};
+			buildConfigurationList = 34E9CA781CDAA89300A8D0DC /* Build configuration list for PBXProject "Simple Audio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 34E9CA741CDAA89300A8D0DC;
+			productRefGroup = 34E9CA7E1CDAA89300A8D0DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34E9CA7C1CDAA89300A8D0DC /* Simple Audio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34E9CA7B1CDAA89300A8D0DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E9CA8B1CDAA89300A8D0DC /* LaunchScreen.storyboard in Resources */,
+				340474FA1CDAE0FC0004AFAF /* Neverending Dream.mp3 in Resources */,
+				340474F41CDAE0FC0004AFAF /* Battle at the misty valley.mp3 in Resources */,
+				340474F61CDAE0FC0004AFAF /* Classical-bwv-bach.mp3 in Resources */,
+				340474FB1CDAE0FC0004AFAF /* Path of Loneliness.mp3 in Resources */,
+				340474F81CDAE0FC0004AFAF /* High Hopes.mp3 in Resources */,
+				34E9CA881CDAA89300A8D0DC /* Assets.xcassets in Resources */,
+				340474FE1CDAE1040004AFAF /* The silent Force.mp3 in Resources */,
+				34E9CA861CDAA89300A8D0DC /* Main.storyboard in Resources */,
+				340474FC1CDAE0FC0004AFAF /* Twilight Poem.mp3 in Resources */,
+				340474F71CDAE0FC0004AFAF /* Dawn of a New Era.mp3 in Resources */,
+				340474F91CDAE0FC0004AFAF /* Intro-Sonet.mp3 in Resources */,
+				340474F51CDAE0FC0004AFAF /* Breath of Freedom.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34E9CA791CDAA89300A8D0DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34E9CA831CDAA89300A8D0DC /* MusicPlayerController.swift in Sources */,
+				34E9CA811CDAA89300A8D0DC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		34E9CA841CDAA89300A8D0DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34E9CA851CDAA89300A8D0DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34E9CA8A1CDAA89300A8D0DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		34E9CA8D1CDAA89300A8D0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		34E9CA8E1CDAA89300A8D0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		34E9CA901CDAA89300A8D0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Simple Audio/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Simple-Audio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		34E9CA911CDAA89300A8D0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Simple Audio/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tbc.Simple-Audio";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34E9CA781CDAA89300A8D0DC /* Build configuration list for PBXProject "Simple Audio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E9CA8D1CDAA89300A8D0DC /* Debug */,
+				34E9CA8E1CDAA89300A8D0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34E9CA8F1CDAA89300A8D0DC /* Build configuration list for PBXNativeTarget "Simple Audio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34E9CA901CDAA89300A8D0DC /* Debug */,
+				34E9CA911CDAA89300A8D0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34E9CA751CDAA89300A8D0DC /* Project object */;
+}

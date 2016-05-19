@@ -1,7 +1,5 @@
 //: Conditional Statements
 
-import UIKit
-
 var age: Double = 27
 
 if age >= 18 {

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "81BA81441A49DA1800E65899"
-               BuildableName = "Facebook Starter Project.app"
+               BuildableName = "Timber.app"
                BlueprintName = "Timber"
                ReferencedContainer = "container:Timber.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "Facebook Starter Project.app"
+            BuildableName = "Timber.app"
             BlueprintName = "Timber"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "Facebook Starter Project.app"
+            BuildableName = "Timber.app"
             BlueprintName = "Timber"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "81BA81441A49DA1800E65899"
-            BuildableName = "Facebook Starter Project.app"
+            BuildableName = "Timber.app"
             BlueprintName = "Timber"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
