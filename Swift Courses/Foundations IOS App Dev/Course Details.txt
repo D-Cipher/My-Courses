@@ -1,0 +1,8 @@
+IOS App Development - Foundations
+-Full Length Video Sessions building 10 Apps.
+- Build 4 Major apps including InstaGram, Tinder, SnapChat, Uber Clones.  
+
+IOS App Development - Foundations Live
+-3 Lectures 3 hour each session of IOS Development
+-Slowly teach IOS Development 
+-Build the Major Components of Simple Audio App, An App with Tables and multiple views, And App that uses parse or the equivelant. 

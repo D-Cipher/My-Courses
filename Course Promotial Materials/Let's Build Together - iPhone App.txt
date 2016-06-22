@@ -1,0 +1,46 @@
+Let's Build Together - iPhone App
+
+Whooh Hi Everybody!
+
+We are hosting another crash course on iOS app development! In this course we will learn about the Xcode environment and the Swift language by building a fully deployable app together. This course is for beginners, no coding experience needed.
+
+We can do almost anything when we work together with our friends! So we are gonna make new friends and work together to build a simple version of the iPhone music player app.
+
+What you we will learn
+
+• Become comfortable working with the Xcode environment.
+
+• How to work with ViewController, Stroyboard, and IBOutlets.
+
+• How to use basic variables, basic object oriented programming, functions, arrays, conditionals, loops.
+
+• Simple animations.
+
+Requirements
+
+• OSX computer - We will be in the microsoft store ironically, but that also means you guys will have to bring a mac.
+
+• Please try to install Xcode ahead of time, it's a free: https://developer.apple.com/xcode/
+
+• No prior programming experience needed. 
+
+About the instructor
+
+Hi, I'm Cy, Data Scientist / Developer / Entrepreneur. 
+
+I'm passionate about using data analytics and building data driven products to help government and business leaders meet their challenges. Visit my website at cynonymous.com to learn more.
+
+Details
+
+Date: Thursday, May 26th, 2016
+
+Time: 6:30pm - 9pm
+
+Location: 
+Microsoft Store, Pentagon City Mall
+1100 South Hayes Street, Arlington, VA
+
+Notes: 
+ATTENTION! The Pentagon City Mall's parking is NOT free, but the FREE parking across the Army Navy Drive from Macy's is open to the general public from 5pm.
+
+Have a Stu-u-u-pendous Day!

@@ -1,0 +1,8 @@
+IOS App Development - A Crash Course
+-Longer Video Session on IOS App Development
+-Build full Simple Audio App
+
+
+IOS App Development - Crash Course Live
+-Short 3 hour session of IOS Development
+-Build the Major Components of Simple Audio App

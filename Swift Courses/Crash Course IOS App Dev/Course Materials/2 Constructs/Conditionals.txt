@@ -1,0 +1,32 @@
+"""
+Conditional Statements
+"""
+
+age = 27
+name = "Will"
+isMale = True
+
+#if statement
+if age >= 18:
+    print("You can play")
+else:
+    print("You are too young")
+
+#if and / or
+if name == "Will" and age >= 18:
+    print("You can play")
+elif name != "Will" or age < 18:
+    print("You are too young")
+
+#if with Bool
+if isMale == True:
+    print("You are the man!")
+else:
+    pass
+
+"""
+// Quick Challenge: Have a username and password and check 
+if the username and password are equal to a specific value 
+and if they are then let the user in and if not, 
+tell the user which one is wrong.
+"""

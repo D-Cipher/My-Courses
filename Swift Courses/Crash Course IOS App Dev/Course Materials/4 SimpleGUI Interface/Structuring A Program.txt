@@ -1,0 +1,15 @@
+***Notes
+Get Simple GUI for Python
+http://stackoverflow.com/questions/16387770/how-to-integrate-simplegui-with-python-2-7-and-3-0-shell
+https://pypi.python.org/pypi/SimpleGUICS2Pygame/
+https://pypi.python.org/pypi/SimpleGUITk
+
+Program structure
+	Globals
+	Helper functions
+	Classes
+	Define event handlers
+	Create a frame
+	Register event handlers
+	Start frame
+	

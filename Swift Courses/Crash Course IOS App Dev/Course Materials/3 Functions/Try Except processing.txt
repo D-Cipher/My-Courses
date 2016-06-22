@@ -1,0 +1,19 @@
+#Try Except
+
+def divby(num):
+    try:
+        return 21 / num
+    except ZeroDivisionError:
+        print("Error: divided by 0")
+
+print(divby(2))
+print(divby(12))
+print(divby(0))
+print(divby(1))
+
+"""
+//Quick Challenge: create a function that asks the user
+to type in the number of shoes they own. If the number is greater than 4,
+print "that is alot of shoes", if it is less than 4, print "poor you",
+if it is a negative number or an error then print "Error"
+"""

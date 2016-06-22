@@ -1,0 +1,23 @@
+//: Dictionary Variables
+
+import UIKit
+
+var my_dict = ["computer": "something to play Call of Duty on", "coffee" : "best drink ever"]
+
+print(my_dict["coffee"]!)
+
+print(my_dict.count)
+
+my_dict["pen"] = "old fashioned writing implement"
+
+my_dict.removeValueForKey("computer")
+
+print(my_dict)
+
+// Quick Challenge: Create a dictionary which will store the prices of three items on a menu and then print the total cost of the three items 
+
+var menu = ["burger":12.34, "fried chicken" : 8.67, "steak" : 20.88]
+
+var totalCost:Double = (menu["burger"]! + menu["fried chicken"]! + menu["steak"]!)
+
+print("The total cost of the three itemse is: " + String(totalCost))

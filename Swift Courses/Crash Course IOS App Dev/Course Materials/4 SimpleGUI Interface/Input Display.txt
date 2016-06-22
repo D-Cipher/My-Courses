@@ -1,0 +1,22 @@
+"""
+Using SimpleGUI s Input display
+"""
+
+import simplegui
+
+message_GLOBAL = ""
+
+def text_input(text):
+    global message_GLOBAL
+    message_GLOBAL = text
+    
+def draw(canvas):
+    canvas.draw_text(message_GLOBAL, [50,112], 48, "White")
+    
+# Create a frame and assign callbacks to event handlers
+frame = simplegui.create_frame("Home", 300, 200)
+frame.add_input('My label', text_input, 50)
+frame.set_draw_handler(draw)
+
+# Start the frame animation
+frame.start()

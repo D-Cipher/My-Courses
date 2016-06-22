@@ -1,0 +1,27 @@
+"""
+Basic Variables
+"""
+
+#Float
+x = 1
+float()
+
+#Integer
+y = 1.0
+int()
+
+#String 
+z = "1"
+str()
+
+#Bool
+j = True
+bool()
+
+#String
+i = "True"
+
+"""
+Quick Challenge: Create a Floating and an Integer, multiply 
+them together and give the result as part of a string
+"""

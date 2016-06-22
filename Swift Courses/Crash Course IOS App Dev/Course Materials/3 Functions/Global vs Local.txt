@@ -1,0 +1,14 @@
+#Global vs Local
+
+global_example = 42
+
+def sumfunc(num):
+    global global_example
+    local_example = 19
+
+    total = global_example + local_example + num
+
+    return total
+
+print(sumfunc(5))
+

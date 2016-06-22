@@ -1,0 +1,42 @@
+//: For Loops
+
+import UIKit
+
+var blank_list: [AnyObject] = []
+
+for var i = 1; i<10; i = i + 1 { //can also be written i++
+    //print(i)
+}
+
+/*
+//Quick Challenge: print the even numbers from 2 to 20
+
+for var i = 1; i<=20; i = i + 1 {
+    if i % 2 == 0 {
+        print(i)
+    }
+}
+*/
+
+var num_ls = [0, 3, 9, 91]
+
+//desplay array
+for i in num_ls {
+    print(i)
+}
+
+//minipulating members of the array
+for (index, value) in num_ls.enumerate() {
+    num_ls[index] = value + 1
+}
+print(num_ls)
+
+//Quick Challenge: Create an array take the array and half all of the values.
+
+var num_ls2:[Double] = [213,142,525,2465,5647]
+
+for (index, value) in num_ls2.enumerate() {
+    num_ls2[index] = value / 2
+}
+print(num_ls2)
+

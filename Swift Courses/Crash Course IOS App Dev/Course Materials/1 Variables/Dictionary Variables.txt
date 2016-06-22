@@ -1,0 +1,23 @@
+bugoutBag = {"knife" : "sharp", "gun" : "long", "cantine" : "round"}
+print(bugoutBag["knife"])
+
+#check if a key or value is in dict
+print("gun" in bugoutBag.keys())
+print("long" in bugoutBag.values())
+
+#get all keys or values of a dict
+all_keys = list(bugoutBag.keys())
+print(all_keys)
+all_values = list(bugoutBag.values())
+print(all_values)
+
+#make dictionary into list of tuples
+bugout_ls = list(bugoutBag.items())
+print(bugout_ls)
+
+#get method - gets a value with given key
+bugoutBag.get("knife", "not in bag")
+bugoutBag.get("flashlight", "not in bag")
+
+#setdefault method - adds a key and value IF not there.
+bugoutBag.setdefault("bandana", "red")

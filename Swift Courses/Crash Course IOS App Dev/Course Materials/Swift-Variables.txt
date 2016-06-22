@@ -1,0 +1,116 @@
+//Programming Fundementals: Variables
+
+import UIKit
+
+//=======Basic Variables: String, Bool, Int, Double, Float=======
+
+//Note: A variable stores information
+
+var songName = "Hello"
+
+var favoriteSong = true
+
+var songNum = 100
+
+var song_double = 100.1
+
+var song_float: Float = 100.1
+
+Float(song_double)
+
+//Basic Math and Conversion
+songNum = songNum + 1
+songNum += 1
+
+let currentSong = "the current song is: " + String(songNum)
+
+print(currentSong)
+
+var songNumHalf = songNum / 2
+
+var songNumDoubled = songNum * 2
+
+var songNumModulo = songNum % 2
+
+/* Practice Problem: Create a Int and a Double and multiply them together and
+ convert the result into a string.
+ 
+ Answer:
+ var num1: Double = 30.22
+ var num2: Int = 123
+ 
+ var ans: Double = num1 * Double(num2)
+ 
+ print("The answer is: " + String(ans))
+ 
+ */
+
+
+//==========Advanced Variables: Arrays, Dictionaries===========
+
+//Arrays (Lists)
+var songList = ["Hello", "Happy", "Work", "Royals", "Team"]
+
+songList[0]
+
+songList.count
+
+songList.append("Lights")
+
+songList.removeAtIndex(0)
+
+songList.removeLast()
+
+print(songList)
+
+songList.sort()
+
+var empty_list: [AnyObject] = []
+
+/* Practice Problem: Create a list five different numbers. Take the first and last numbers and remove them from the list. Then take their multiple and append it back into the list
+ 
+ Answer:
+ var num_ls = [21,24,11,33,27]
+ 
+ let last_num = num_ls.count - 1
+ 
+ let result = num_ls[0] * num_ls[last_num]
+ 
+ num_ls.removeAtIndex(last_num)
+ 
+ num_ls.removeAtIndex(0)
+ 
+ print(num_ls)
+ 
+ num_ls.append(result)
+ 
+ */
+
+
+//Dictionaries
+
+var songGenre = [String : AnyObject]()
+
+songGenre = ["Hello" : "Soul", "Happy" : "Soul", "Work" : "Hip Hop",
+             "Royals" : ["Pop", "Icono Pop"], "Team" : "Pop"]
+
+songGenre["Hello"]
+
+songGenre["Royals"]![0]
+
+songGenre["Lights"] = "Pop"
+
+songGenre.count
+
+songGenre.removeValueForKey("Royals")
+
+print(songGenre)
+
+/* Practice Problem: Create a dictionary of foods and prices then add up to total prices of all of the foods in the dictionary
+
+var food_dict = ["Country Fried Steak" : 8.99, "Sausage and Biscuits" : 6.79, "New York Strip" : 17.99]
+
+var totalCost = 0.0
+
+totalCost = food_dict["Country Fried Steak"]! + food_dict["Sausage and Biscuits"]! + food_dict["New York Strip"]!  */
+

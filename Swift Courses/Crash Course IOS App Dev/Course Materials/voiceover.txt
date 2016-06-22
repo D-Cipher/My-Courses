@@ -1,0 +1,22 @@
+Xcode is Apple coding application. It is used by progmmars to built all kinds of apps, from the basic ones to the most complex apps. 
+
+Before we start, lets talk about some features in Xcode.
+
+When we open a Xcode (project, etc.) window, we will see different panels, buttons and dropdowns. 
+
+We can get our project info from the top ribbon. It displays basic information such as the name, date and filepath of our project. This will become very handy when we are working on several projects at the same time.
+
+
+The left panel is the main control area. We can lookup files, storyboard and launch history here. 
+
+The right panel contains coding selections (?). It has information about variables and attributes. We can also find Xcode default features here.
+
+The bottom panel give us details about the output.
+
+We can use the top right buttons to open or close each panel. Lets close the bottom panel now. 
+
+The toolbar has some of the most important buttons. Lets me introduce them quickly.
+
+We can choose the generation of IPhone which the code will feed to in the phone selection dropdown (?). This depends on the IPhone we are working on. Lets choose the latest IPhone, IPhone 6s plus.
+
+The run button activates the simulator. The simulator is a testing application in our computer environment. It is recommanded to test the apps in a real phone from time to time. 

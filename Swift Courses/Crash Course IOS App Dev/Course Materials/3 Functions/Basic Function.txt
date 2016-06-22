@@ -1,0 +1,35 @@
+import random
+
+#===Greeting function
+def greeting_function(name):
+    print("Hello " + name)
+
+greeting_function("Alice")
+greeting_function("Carmen")
+
+#===Magic Eight ball Function
+def eightBall(num):
+
+    fortune = None
+    
+    if num == 1: 
+        fortune = "It certainly will happen"
+    elif num == 2:
+        fortune = "You can count on it"
+    elif num == 3:
+        fortune = "Busy now ask me later"
+    elif num == 4:
+        fortune = "Doubtful"
+    elif num == 5:
+        fortune = "Sorry, not a chance"
+    else:
+        pass
+
+    return fortune
+
+print("Ask your yes/no question here:")
+input()
+
+your_num = random.randrange(1,6)
+
+print(eightBall(your_num))

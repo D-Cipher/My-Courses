@@ -1,0 +1,32 @@
+"""
+While Loops
+"""
+
+#Basic while loop
+y = 1
+
+while y < 10:
+    print(y)
+    y += 1
+
+#Infinate loop with break
+name = ""
+
+while True:
+    print("please type your name.")
+    name = input()
+    if name == "your name":
+        break
+
+print("thank you")
+
+
+"""
+//Quick Challenge: Desplay the first 10 of the 5x 
+table 5,10,15,20...
+"""
+
+"""
+//Quick Challenge: create array of 7 numbers and 
+subtract 1 from each of them
+"""

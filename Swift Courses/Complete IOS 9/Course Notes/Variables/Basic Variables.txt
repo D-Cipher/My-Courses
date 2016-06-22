@@ -2,7 +2,7 @@
 
 import UIKit
 
-// Four of the most common variable types: Strings, Int, Double, Bool
+// Four of the most common variable types: Strings, Int, Float, Double, Bool
 var name:String = "Win"
 print("Hello " + name + "!")
 

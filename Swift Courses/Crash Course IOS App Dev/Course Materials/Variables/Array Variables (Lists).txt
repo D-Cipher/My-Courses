@@ -1,0 +1,26 @@
+//: Array Variables (Lists)
+
+var num_ls = [17,24,13,47]
+
+num_ls[0]
+
+num_ls.count
+
+num_ls.append(56)
+
+num_ls.removeLast()
+
+num_ls.removeAtIndex(3)
+
+print(num_ls)
+
+num_ls.sort()
+
+var empty_list: [AnyObject] = []
+
+// Quick Challenge: Create an array of three different numbers and then remove the middle one and add an item to the end of the array which is the two remaining numbers multiplied together
+var num_ls2 = [21,42,54]
+num_ls2.removeAtIndex(1)
+var sumRemain:Int = num_ls2[0] + num_ls2[1]
+num_ls2.append(sumRemain)
+
