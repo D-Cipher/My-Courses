@@ -1,0 +1,23 @@
+"""
+Using the Python language, have the function LetterCapitalize(str) take the str parameter being passed and capitalize the first letter of each word. Words will be separated by only one space. 
+"""
+
+import re
+
+def LetterCapitalize(string):
+    
+    word_split = re.findall("\S+", string)
+    
+    new_word_ls = []
+    
+    for i in range(len(word_split)):
+        new_word_ls.append(word_split[i].capitalize())
+        
+    new_sen = " ".join(new_word_ls)
+    
+    return new_sen
+    
+print(LetterCapitalize("hello world"))
+#Input = "hello world" Output = "Hello World"
+print(LetterCapitalize("i ran there"))
+#Input = "i ran there" Output = "I Ran There"

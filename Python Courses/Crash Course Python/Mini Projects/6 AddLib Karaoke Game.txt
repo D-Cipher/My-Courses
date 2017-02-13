@@ -1,0 +1,136 @@
+"""
+Add-Lib Karaoke is a game for two or more friends. Follow the computer instructions as it asks for a list of words which it will substitute for blanks in a hit song. Once all the blanks are filled the lyrics of the song will start playing and you and you're friends must try to sing the – often comical or nonsensical - the substituted lyrics.
+"""
+import random
+from sys import stdout
+
+class Deck:
+  def __init__(self):
+    self.selectedSong = {}
+    self.drawRandom()
+    
+  def __str__(self):
+    return str(self.selectedSong)
+  
+  @staticmethod  
+  def playList(number):
+    badRomance = {-101:"Singing: Bad Romance by Lady Gaga (press enter)", -100: "...", -99:"Rah rah ah-ah-ah!",-98:"Ro mah ro-mah-mah", -97: "Gaga ooh-la-la!", -96:"wantya ba ro-mance", 0:["I want your ","two syllable noun",None],1:["I want your ", "two syllable noun",None],2:["I want your ","three syllable noun",None],3:["As long as it's ","one syllable adjective that rhymes with I or ME",None],4:[" ","one syllable noun",None],-4:"I want your...",5:["I want your ","two syllable noun",None],6:["The touch of your ","one syllable body part",None],7:["I want your leather studded ","one syllable verb",None], -7:" in the sand.", "pattern":[-101, -100, -99,-98,-97,-96,0,1,2,3,-4,4,4,4,4,-4,4,5,6,7,-7,-4,4,4,4,4,-4,4]}
+    
+    songList = [badRomance]
+    
+    return songList[number]
+  
+  def getSong(self):
+    return self.selectedSong
+  
+  def drawRandom(self):
+    self.selectedSong = dict(self.playList(random.randrange(0,1)))
+
+class GameMachnics:
+  def __init__(self):
+    name = "test"
+    self.modifiedSong = {}
+    
+  def __str__(self):
+    return self.modifiedSong
+    
+  def playLibs(self, selectedSong):
+    
+    inputWords = {}
+    
+    askRange = list(range(0, max(selectedSong["pattern"]) + 1))
+    
+    random.shuffle(askRange)
+    
+    for number in askRange:
+      lookup = selectedSong[number][1]
+      word = input(lookup + ": ").lower()
+      while word == "":
+        print("Please type a valid word")
+        word = input(lookup + ": ").lower()
+      
+      inputWords[number] = str(word)
+      stdout.flush()
+    
+    for number in selectedSong["pattern"]:
+      if number >= 0:
+        selectedSong[number][2] = str(inputWords[number]) 
+      else: pass
+    
+    self.modifiedSong = selectedSong
+    
+    return self.modifiedSong
+  
+  def playSong(self):
+    print(" ")
+    print("=" * 10)
+    print(" ")
+    for number in self.modifiedSong["pattern"]:
+      lookup = ""
+      if number >= 0:
+        lookup = self.modifiedSong[number][0] + str(self.modifiedSong[number][2])
+      else:
+        lookup = self.modifiedSong[number]
+        
+      print(lookup)
+      input().lower()
+    
+    print("=" * 10)
+    print(" ")
+    #print(self.modifiedSong)
+
+class GameInstance:
+  def __init__(self, deck, gameMec):
+    self.killgame = False
+    self.deck = deck
+    self.gameMec = gameMec
+    self.play_game()
+  
+  def play_game(self):
+    title = "Add-Lib Karaoke"
+    description = """Add-Lib Karaoke is a game for two or more friends. Follow the computer instructions as it asks for a list of words which it will substitute for blanks in a hit song. Once all the blanks are filled the lyrics of the song will start playing and you and you're friends must try to sing the – often comical or nonsensical - the substituted lyrics."""
+    commands = """Commands: play(p), shuffle(s), new, quit"""
+    ln50 = "-" * 50
+    confirm = "Are you sure you want to do that? (y) or (n):"
+    
+    print(title)
+    print(ln50)
+    print(description)
+    print(commands)
+    print(ln50)
+    
+    self.killgame = False
+    
+    while self.killgame == False:
+      action = input("Action: ").lower()
+      
+      if action == "quit":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+          self.killgame = True
+        else: pass
+      elif action == "new":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+            print(title)
+            print(ln50)
+            print(description)
+            print(commands)
+            print(ln50)
+          
+      elif action in ("play","p"):
+        print("=" * 10)
+        print(" ")
+        song = self.deck.getSong()
+        self.gameMec.playLibs(song)
+        self.gameMec.playSong()
+        print("Did you enjoy the Add-lib song? Press p to play again.")
+      elif action in ("shuffle song", "s"):
+        print("Coming soon")
+      else:
+        print(commands)
+      stdout.flush()
+
+deck = Deck()
+gameMec = GameMachnics()
+gameInst = GameInstance(deck, gameMec)

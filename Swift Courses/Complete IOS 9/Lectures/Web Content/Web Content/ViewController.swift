@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(string: "https://www.stackoverflow.com")!
+        let url = NSURL(string: "https://ipoke.herokuapp.com")!
         
         //Simple Display Web Content
         webView.loadRequest(NSURLRequest(URL: url))

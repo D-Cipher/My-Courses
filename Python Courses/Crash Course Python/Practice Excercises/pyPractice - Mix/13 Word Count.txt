@@ -1,0 +1,31 @@
+"""
+Using the Python language, have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces. 
+"""
+import re
+
+#===Regex
+def WordCount(string):
+    
+    extract = re.findall("\S+", string)
+    
+    word_count = len(extract)
+    
+    return word_count
+
+print(WordCount("one 22 three"))
+#expected: 3
+
+#===Non-Regex
+def WordCount2(sen):
+    
+    word_split = list(sen.split(" "))
+    
+    word_count = len(word_split)
+    
+    return word_count
+
+print(WordCount2("one 22 three"))
+#expected: 3
+
+#Input = "Hello World"Output = 2
+#Input = "one 22 three"Output = 3

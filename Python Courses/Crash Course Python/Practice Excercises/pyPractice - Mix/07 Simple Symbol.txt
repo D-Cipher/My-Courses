@@ -1,0 +1,91 @@
+"""
+Using the Python language, have the function SimpleSymbols(str) 
+take the str parameter being passed and determine if it is an 
+acceptable sequence by either returning the string true or 
+false. The str parameter will be composed of + and = symbols 
+with several letters between them (ie. ++d+===+c++==a) and for 
+the string to be true each letter must be surrounded by a + 
+symbol. So the string to the left would be false. The string 
+will not be empty and will have at least one letter. 
+"""
+
+#=====Regex
+import re
+
+def SimpleSymbols(string): 
+    
+    num_letters = len(re.findall("[a-zA-Z]",string))
+    
+    left_check = re.findall("([+])[a-zA-Z]",string)
+    
+    right_check = re.findall("[a-zA-Z]([+])",string)
+    
+    #Check correct number of "+"
+    if (len(left_check) == num_letters
+        ) and (len(right_check) == num_letters):
+        return "True"
+    else:
+        return "False"
+
+print(SimpleSymbols("+d+=3=+s+"))
+#expected: True
+print(SimpleSymbols("f++d+"))
+#expected: False
+
+
+#=====Non-Regex
+from string import ascii_lowercase as ascii_lowercase
+
+def SimpleSymbols2(string): 
+    
+    letter_dict = {x:i for i, x in enumerate(ascii_lowercase, 0)}
+    
+    str_split = []
+    
+    #Splits the string
+    for i in range(len(string)):
+        str_split.append(string[i])
+    
+    #Confirm letter and identify left and right characters:
+    
+    left_chars = []
+    right_chars = []
+    
+    for i in range(len(str_split)):
+        if str_split[0].isalpha()==True:
+            return False
+        elif str_split[-1].isalpha()==True:
+            return False
+        elif str_split[i].isalpha() == True:
+            left_chars.append(str_split[i-1])
+            right_chars.append(str_split[i+1])
+        else:
+            pass
+    
+    error_check = []
+    
+    #Check All "left_char" are "+"
+    for i in range(len(left_chars)):
+        if left_chars[i] != "+":
+            error_check.append(left_chars[i])
+        else:
+            pass
+    
+    #Check All "right_char" are "+"
+    for i in range(len(right_chars)):
+        if right_chars[i] != "+":
+            error_check.append(right_chars[i])
+        else:
+            pass
+    
+    #Return True if error free
+    if len(error_check) == 0:
+        return True
+    else:
+        return False
+    
+print(SimpleSymbols2("+d+=3=+s+"))
+#expected: True
+
+print(SimpleSymbols2("f++d+"))
+#expected: False

@@ -1,0 +1,51 @@
+"""
+Using the Python language, have the function LetterChanges(str) 
+take the str parameter being passed and modify it using the 
+following algorithm. Replace every letter in the string 
+with the letter following it in the alphabet (ie. c becomes d, z becomes a). 
+Then capitalize every vowel in this new string (a, e, i, o, u) and 
+finally return this modified string. 
+"""
+
+from string import ascii_lowercase as ascii_lowercase
+
+def LetterChanges2(word): 
+    
+    letter_dict = {x:i for i, x in enumerate(ascii_lowercase, 0)}
+    inverse_dict = {v: k for k, v in letter_dict.items()}
+    
+    original = []
+    
+    #Splits the string
+    for i in range(len(word)):
+        original.append(word[i])
+    
+    cypher = []    
+    
+    #Checks alpha and encrypt
+    for i in range(len(original)):
+        if (original[i] in letter_dict) == True:
+            cypher.append(inverse_dict[
+                (letter_dict[original[i]] + 1) % 26])
+        else:
+            cypher.append(original[i])
+    
+    vowl_dict = {"a":"A", "e":"E", "i":"I", "o":"O", "u":"U"}
+    
+    final_cypher = []
+    
+    #Capitalize vowels
+    for i in range(len(cypher)):
+        if (cypher[i] in vowl_dict) == True:
+            final_cypher.append(vowl_dict[cypher[i]])
+        else:
+            final_cypher.append(cypher[i])
+            
+    new_word = "".join(final_cypher)
+        
+    return new_word
+
+print(LetterChanges2("hello*3"))
+#expected: "Ifmmp*3"
+print(LetterChanges2("fun times!"))
+#expected: "gvO Ujnft!"

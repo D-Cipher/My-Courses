@@ -1,0 +1,25 @@
+"""
+Using the Python language, have the function ExOh(str) take
+the str parameter being passed and return the string true if 
+there is an equal number of x's and o's, otherwise return 
+the string false. Only these two letters will be entered in 
+the string, no punctuation or numbers. For example: if str is 
+"xooxxxxooxo" then the output should return false because there 
+are 6 x's and 5 o's.
+"""
+import re
+
+def ExOh(string):
+    
+    extract_x = len(re.findall("x", string))
+    extract_o = len(re.findall("o", string))
+    
+    if extract_x == extract_o:
+        return "True"
+    else:
+        return "False"
+
+print(ExOh("xooxxo"))   
+#Input = "xooxxo" Output = "true"
+print(ExOh("x"))
+#Input = "x" Output = "false"

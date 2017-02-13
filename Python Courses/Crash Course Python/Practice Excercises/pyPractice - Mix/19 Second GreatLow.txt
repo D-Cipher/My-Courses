@@ -1,0 +1,37 @@
+"""
+Using the JavaScript language, have the function SecondGreatLow(arr) take the array of numbers stored in arr and return the second lowest and second greatest numbers, respectively, separated by a space. For example: if arr contains [7, 7, 12, 98, 106] the output should be 12 98. The array will not be empty and will contain at least 2 numbers. It can get tricky if there's just two numbers!
+""" 
+
+def SecondGreatLow(arr):
+    
+    result = []
+    
+    if len(arr) > 2:
+        min_num = min(arr)
+        max_num = max(arr)
+        
+        bw_MinMax = []
+        
+        for i in arr:
+            if i != min_num and i != max_num:
+                bw_MinMax.append(i)
+        
+        sec_low = min(bw_MinMax)
+        sec_great = max(bw_MinMax)
+        
+        result.append(sec_low)
+        result.append(sec_great)
+    
+    elif len(arr) == 2:
+        result = arr
+    
+    else:
+        result = "not valid array"
+        
+    return result
+
+print(SecondGreatLow([1,42,42,180]))
+#Input = 1, 42, 42, 180Output = "42 42"
+print(SecondGreatLow([4,90]))
+#Input = 4, 90Output = "90 4"
+print(SecondGreatLow([2]))

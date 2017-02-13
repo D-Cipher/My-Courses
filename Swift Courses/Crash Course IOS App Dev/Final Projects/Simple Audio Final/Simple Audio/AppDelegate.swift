@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Simple Audio
 //
-//  Created by Tingbo Chen on 5/4/16.
+//  Created by Tingbo Chen on 7/22/16.
 //  Copyright © 2016 Tingbo Chen. All rights reserved.
 //
 

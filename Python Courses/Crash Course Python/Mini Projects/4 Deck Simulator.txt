@@ -1,0 +1,129 @@
+"""
+Create a program that simulates a generic 52 card poker deck. The program should have the ability to draw cards and each time a card is drawn the deck will be reduced by the card drawn. Also the deck should have the ability to shuffle the remaining cards and the ability to create a new deck. 
+"""
+
+import random
+import re
+from sys import stdout
+  
+class PokerDeck:
+  def __init__(self):
+    self.suitValueDict = {"C":"Clubs","S":"Spades","H":"Hearts","D":"Dimonds"}
+    self.possible_suits = ("C", "S", "H", "D")
+    self.possible_ranks = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J","Q","K")
+    self.card_drawn = ""
+    self.all_cards = []
+    
+    self.new_deck()
+  
+  def __str__(self):
+    card_deck = ""
+    for item in self.all_cards:
+      card_deck += str(item) + " "
+    return card_deck
+    
+  def new_deck(self):
+    self.card_drawn = ""
+    self.all_cards = []
+
+    for suit in self.possible_suits:
+      for rank in self.possible_ranks:
+        self.all_cards.append(suit + rank)
+    self.shuffle()
+  
+  def deckCount(self):
+    return len(self.all_cards)
+  
+  def getCard(self):
+    return self.card_drawn
+    
+  def getSuit(self):
+    suit = ""
+    if self.card_drawn != "":
+      suit = re.findall(r"(\S)", self.card_drawn)[0]
+    else: pass
+    return suit
+  
+  def getRank(self):
+    rank = ""
+    if self.card_drawn != "":
+      rank = re.findall(r"\S(.+)", self.card_drawn)[0]
+    else: pass
+    return rank
+    
+  def getSuitValue(self):
+    suitValue = ""
+    suit = self.getSuit()
+    if suit != "":
+      suitValue = self.suitValueDict[suit]
+    else: pass
+    return suitValue
+    
+  def shuffle(self):
+    return random.shuffle(self.all_cards)
+    
+  def deal_card(self):
+    if len(self.all_cards) > 0:
+      self.card_drawn = self.all_cards.pop(0)
+    else:
+      self.card_drawn = ""
+    return self.card_drawn
+
+#class GameMechanics:
+#  def __init__(self):
+#  def __str__(self):    
+    
+class GameInstance:
+  def __init__(self):
+    self.killgame = False
+    self.play_game()
+  
+  def play_game(self):
+    title = "Deck Simulator"
+    description = """The following is a generic deck simulator of the standard 52 card poker deck. Use the following commands to deal and suffle cards."""
+    commands = """Commands: deal(d), shuffle(s), see cards(c), new, quit"""
+    ln50 = "-" * 50
+    confirm = "Are you sure you want to do that? (y) or (n):"
+    print(title)
+    print(ln50)
+    print(description)
+    print(commands)
+    print(ln50)
+    
+    self.killgame = False
+    
+    while self.killgame == False:
+      action = input("Action: ").lower()
+      
+      if action == "quit":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+          self.killgame = True
+        else: pass
+      elif action == "new":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+            print(title)
+            print(ln50)
+            print(description)
+            print(commands)
+            print(ln50)
+            deck.new_deck()
+      elif action in ("deal","d"):
+        print(deck.deal_card())
+        #print(deck.getSuit())
+        #print(deck.getRank())
+      elif action in ("shuffle", "s"):
+        deck.shuffle()
+        print("Deck shuffled")
+      elif action in ("see", "c"):
+        print(deck)
+        print("======")
+      else:
+        print(commands)
+      stdout.flush()
+			
+deck = PokerDeck()
+game = GameInstance()
+
+#VALUES = {"A":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":11, "Q":12, "K":13}

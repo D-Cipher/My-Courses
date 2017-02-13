@@ -1,0 +1,52 @@
+"""
+Using the Python language, have the function LetterCountI(str) take the str parameter being passed and return the first word with the greatest number of repeated letters. For example: "Today, is the greatest day ever!" should return greatest because it has 2 e's (and 2 t's) and it comes before ever which also has 2 e's. If there are no words with repeating letters return -1. Words will be separated by spaces. 
+"""
+
+import re
+
+def FirstDouble(message):
+    wordsplit = re.findall("\w+", message)
+    #print(wordsplit) #for testing
+    loop_count = len(wordsplit)
+
+    matches = []
+    
+    #patternRe = re.compile(r"(.)\S*\1")
+    #extract_pat = patternRe.search(message).group()
+        
+    while loop_count > 0:
+        
+        try:
+            #Extract the pattern
+            patternRe = re.compile(r"(.)\S*\1")
+            extract_pat = patternRe.search(message).group()
+            #print(extract_pat) #for testing
+            
+            #Extract the word with pattern
+            Re_obj = "\S*"+extract_pat+"\S*"
+            extract_word = re.search(Re_obj, message).group()
+            #print(extract_word) #for testing
+        except:
+            extract_word = " "
+    
+        #False positive test
+        space_extract = re.findall("\s", extract_word)
+        if len(space_extract) == 0:
+            matches.append(extract_word)
+        else:
+            pass
+    
+        wordsplit.pop(0)
+        message = " ".join(wordsplit)
+        loop_count += -1
+        
+    if len(matches) == 0:
+        return -1
+    else:
+        return matches[0]
+
+print(FirstDouble("Hello apple pie"))
+#Input = "Hello apple pie" Output = "Hello"
+print(FirstDouble("No words"))
+#Input = "No words" Output = -1
+

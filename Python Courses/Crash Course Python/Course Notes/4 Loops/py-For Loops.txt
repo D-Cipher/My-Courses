@@ -1,0 +1,63 @@
+#Programming Fundementals: For Loops and While Loops
+
+#========For Loops========
+
+num_ls = [1,2,3,4,5]
+
+for number in num_ls:
+  answer = number + 1
+  print(answer)
+
+#getting all even numbers
+basic_nums = range(1,11)
+even_nums = []
+
+for item in basic_nums:
+  if item % 2 == 0:
+    even_nums.append(item)
+  else: pass
+
+print(even_nums)
+
+playList = ["Hello", "Happy", "Work", "Royals", "Team", "Happy"]
+searchedSong = "Happy"
+inList = False
+songNum = None
+
+for song in playList:
+  if searchedSong == song:
+    inList = True
+  else: pass
+
+print(inList)
+
+for i in range(len(playList)):
+  if searchedSong == playList[i]:
+    songNum = i
+  else: pass
+
+print(songNum)
+
+if inList == True:
+  print(songNum)
+else:
+  print("Not in list")    
+
+
+print(set(playList)) #Sets are like Arrays except they have no ordering, do not allow duplicates, and are not mutible.
+
+"""
+Practice Problem: Create a list of numbers and set each number that is greater than 7 to zero. Print the resulting list.
+Answer:
+"""
+
+numberList = range(1,21)
+resultList = []
+
+for number in numberList:
+  if number > 7:
+    resultList.append(0)
+  else:
+    resultList.append(number)
+    
+print(resultList)

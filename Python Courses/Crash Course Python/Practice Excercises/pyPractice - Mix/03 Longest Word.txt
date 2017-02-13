@@ -1,0 +1,40 @@
+"""
+Using the Python language, have the function LongestWord(sen) take the sen parameter being passed and return the largest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. 
+"""
+
+#=====Regex
+import re
+
+def LongestWord(string):
+    
+    word_split = re.findall("[a-zA-Z]+", string)
+    
+    word_len = []
+    
+    for i in range(len(word_split)):
+        word_len.append(len(word_split[i]))
+        
+    longest_loc = word_len.index(max(word_len))
+    
+    return word_split[longest_loc]
+
+print(LongestWord("fun&!! time"))
+#Input = "fun&!! time" Output = "time"
+print(LongestWord("I love dogs"))
+#Input = "I love dogs" Output = "love"
+
+#=====Non-Regex
+def LongestWord2(sen): 
+    
+    cypher = list(sen.split(" "))
+    
+    letter_count = []
+    
+    for i in range(len(cypher)):
+        letter_count.append(sum(c.isalpha() for c in cypher[i]))
+        
+    longest_loc = letter_count.index(max(letter_count))
+    
+    return cypher[longest_loc]
+
+print (LongestWord2("this is a sentence@!# also sentence$%%") )

@@ -1,0 +1,79 @@
+//Programming Fundementals: Functions, etc.
+
+import UIKit
+
+//====Functions====
+
+var songList = ["Hello", "Happy", "Work"] //Global Variables
+
+func trackPlayer(songNum: Int) -> String {
+    
+    let playSong = "Now Playing: " + songList[songNum] //Local Variables
+    
+    return playSong
+}
+
+print(trackPlayer(2))
+
+func dice() {
+    
+    let diceRoll = arc4random_uniform(6) + 1
+    
+    print(diceRoll)
+    
+}
+
+dice()
+
+/* Practice Problem: Create a function that simulates a "Magic 8 ball". The idea is the function will give you a random fortune every time it's called.
+ 
+ Answer:
+
+func eightBall() -> String {
+    
+    var fortune = "none"
+    
+    let randNum = arc4random_uniform(5) + 1
+    
+    if randNum == 1 {
+        fortune = "It certainly will happen"
+    } else if randNum == 2 {
+        fortune = "You can count on it"
+    } else if randNum == 3 {
+        fortune = "Busy now ask me later"
+    } else if randNum == 4 {
+        fortune = "Doubtful"
+    } else if randNum == 5 {
+        fortune = "Sorry, not a chance"
+    } else {
+        
+    }
+    
+    return fortune
+}
+
+print(eightBall())
+ */
+
+
+//=====Do Try Statement====
+
+enum diveByError: ErrorType {
+    case Zero
+}
+
+func divide(numerator: Int, denominator: Int) throws -> Int {
+    
+    guard denominator != 0 else {throw diveByError.Zero}
+    
+    return numerator / denominator
+}
+
+do {
+    try print(divide(4, denominator: 0))
+    
+} catch {
+    
+    print("Cannot Divide by Zero")
+}
+

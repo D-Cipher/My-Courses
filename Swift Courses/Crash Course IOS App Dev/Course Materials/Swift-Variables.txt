@@ -72,11 +72,11 @@ var empty_list: [AnyObject] = []
  Answer:
  var num_ls = [21,24,11,33,27]
  
- let last_num = num_ls.count - 1
+ let last_index = num_ls.count - 1
  
- let result = num_ls[0] * num_ls[last_num]
+ let result = num_ls[0] * num_ls[last_index]
  
- num_ls.removeAtIndex(last_num)
+ num_ls.removeAtIndex(last_index)
  
  num_ls.removeAtIndex(0)
  

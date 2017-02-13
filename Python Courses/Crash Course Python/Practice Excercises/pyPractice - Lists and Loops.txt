@@ -1,0 +1,101 @@
+"""
+Create a list that contains first 6 prime numbers in ascending order. (This list should be created manually.) Print out the 2nd, 4th, and 6th numbers as a list.
+Answer:
+primeSix = [1,2,3,5,7,11]
+ansList = []
+
+for i in range(len(primeSix)):
+  if i == 1 or i == 3 or i == 5:
+    ansList.append(primeSix[i])
+  else: pass
+
+print(ansList)
+"""
+
+"""
+Given the list a = [5, 3, 1, -1, -3, 5], make a new reference b to a. Update the first entry in b to be zero. What happened to the first entry in a? Explain your answer (in a comment).
+Answer:
+a = [5, 3, 1, -1, -3, 5]
+b = a 
+b[0] = 0
+
+print(a) #changes to 0 because b is a reference of a. there is no new list that is created as you might intuit.
+"""
+
+"""
+Given the list a = [5, 3, 1, -1, -3, 5], make a new copy b of the list a using the function list. Update the first entry in b to be zero. What happened to the first entry in a? Explain your answer (in a comment).
+Answer:
+a = [5, 3, 1, -1, -3, 5]
+b = list(a)
+b[0] = 0
+
+print(a)
+print(b) #in this case list a does not change because the list() function creates a new list.
+"""
+
+"""
+Write a function add_vector(vList,wList), that takes two lists of equal length and adds each item in the list to the item in the corresponding list, and then creates a new list of the sums. For instance, the first item of vList should be added to the first item of wList.Remember that each item's addition should be performed independently on each corresponding element of the lists. Hint: returning v + w does not work
+Answer:
+def add_vector(vList, wList):
+  if len(vList) != len(wList):
+    return "Error: List length must be equal"
+  else: pass
+
+  ansList = []
+
+  for i in range(len(vList)):
+    item = vList[i] + wList[i]
+    ansList.append(item)
+  return ansList
+  
+print(add_vector([1,2,3,4],[10,12,14,17]))
+"""
+"""
+Write a function day_to_number(day) that uses the day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] and returns the position of the given day in that list. Write a for loop to implement this function, then look up and use the Python list method that can perform this.
+Answer:
+def day_to_number(day):
+  day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  ans = day_list.index(day)
+  return ans
+  
+print(day_to_number("Friday"))
+
+def day_to_number2(day):
+  day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  ans = None
+  for i in range(len(day_list)):
+    if  day_list[i] == day:
+      ans = i
+    else: pass
+  return ans
+
+print(day_to_number2("Friday"))
+"""
+"""
+Write a function string_list_join(string_list) that takes a list of strings as input and returns a single string that is the concatenation of the strings in the list. Use a 𝚏𝚘𝚛 loop to implement this function then look up and then look up and use the Python list method that can perform this.
+Answer:
+def string_list_join(wordList):
+  output = ""
+  for word in wordList:
+    output += word
+  return output
+print(string_list_join(["dog","cat","rat"]))
+
+def string_list_join2(wordList):
+  output = "".join(wordList)
+  return output
+  
+print(string_list_join2(["dog","cat","rat"]))
+"""
+"""
+Create a function that takes takes day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] and converts it into a dictionary with the keys being the days and the value being the number corresponding to where it is at in the list.
+Answer:
+def dayDict_create():
+  day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  dayDict = {}
+  for day in day_list:
+    dayDict[day] = day_list.index(day)
+    
+  return dayDict
+print(dayDict_create())
+"""

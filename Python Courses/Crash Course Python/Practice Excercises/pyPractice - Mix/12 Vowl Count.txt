@@ -1,0 +1,51 @@
+"""
+Using the Python language, have the function VowelCount(str) take the str string parameter being passed and return the number of vowels the string contains (ie. "All cows eat grass" would return 5). Do not count y as a vowel for this challenge.
+"""
+import re
+
+#=====Regex
+def VowelCount(string):
+    
+    vowl_list = re.findall("[aeiouAEIOU]", string)
+    
+    v_count = len(vowl_list)
+    
+    return v_count
+
+print(VowelCount("hello"))
+#expected: 2
+
+print(VowelCount("coderbytE"))
+#expected: 3
+
+#=====Non-Regex
+def VowelCount2(string):
+    vowl_dict = {"a":1, "e":2, "i":3, "o":4, "u":5}
+    vowl_dict_caps = {"A":1, "E":2, "I":3, "O":4, "U":5}
+    
+    str_split = []
+    
+    #Splits the string
+    for i in range(len(string)):
+        str_split.append(string[i])
+        
+    
+    vowl_list = []
+    
+    #Append Vowls
+    for i in range(len(str_split)):
+        if (((str_split[i] in vowl_dict) == True)
+            or ((str_split[i] in vowl_dict_caps) == True)):
+            vowl_list.append(str_split[i])
+    
+    v_count = len(vowl_list)
+    
+    return v_count
+
+print(VowelCount2("hello"))
+#expected: 2
+
+print(VowelCount2("coderbytE"))
+#expected: 3
+#Input = "hello"Output = 2
+#Input = "coderbyte"Output = 3

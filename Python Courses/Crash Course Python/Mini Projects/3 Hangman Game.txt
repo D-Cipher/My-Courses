@@ -1,0 +1,84 @@
+"""
+Create a program that simulates the classic game Hangman. Hangman is a word guessing game in which you have a certain number of guesses to guess a secret word. The word to guess is represented by a row of dashes, representing each letter of the word. When a correct letter is guessed the letter is revealed. When all of the letters are revealed before the number of guesses has been exhausted then the player wins.
+"""
+import random
+
+answer_ls = []
+answer = ""
+blankCount = 1
+totalGuesses = 10
+guesses = []
+blanks = []
+  
+def guessValidate(word):
+  global totalGuesses
+  
+  word_ls = list(word)
+  
+  totalGuesses -= len(word_ls)
+  
+  for letter in word_ls:
+    guesses.append(letter)
+    
+  for letter in answer_ls:
+    if letter in guesses:
+      num = answer_ls.index(letter)  
+      blanks[num] = letter
+      answer_ls[num] = ""
+    else: pass
+  
+  clue = " ".join(blanks)
+  return clue
+
+def guessRemain():
+  global blankCount
+  blankCount = blanks.count("__")
+  output = ""
+  
+  lettersGuessed = ", ".join(guesses)
+  
+  if blankCount > 0 and totalGuesses > 0:
+    output = str(totalGuesses) + " guesses remaining. Letters guessed: " + lettersGuessed
+  elif blankCount > 0 and totalGuesses <= 0:
+    output = "Game Over! Answer was: " + answer
+    
+  elif blankCount <= 0 and totalGuesses > 0:
+    output = "Congrats! You win."
+    
+  return output
+
+def setAnswer():
+  global answer_ls, answer
+  possibleAnswers = ["hello", "work", "happy", "flower", "needle", "piquant", "attract", "present", "strip", "waiting", "flagrant", "vegie", "paltry", "science", "laugh", "wide", "middle", "market", "savory", "invent", "command", "ignore", "gray", "chubby", "trail", "rampant", "lame", "voice", "plough", "blot", "beauty", "prickly", "increase", "tremble", "abject", "open", "fright"]
+  length = len(possibleAnswers)
+  
+  randAnswer = possibleAnswers[random.randrange(0, length)]
+  
+  answer_ls = list(randAnswer)
+  
+  answer = "".join(answer_ls)
+  
+  for letter in answer_ls:
+    blanks.append("__")
+  
+  output = " ".join(blanks)
+  return output
+
+def gameInstance():
+  print("Welcome to Hangman. You have 10 guesses to guess a word.")
+  print(" ")
+  print(setAnswer())
+  print(" ")
+  
+  while totalGuesses > 0:
+    if blankCount <= 0:
+      break
+    else:
+      userInput = input("Guess: ").lower()
+      print(" ")
+      print(guessValidate(userInput))
+      print(" ")
+      print(guessRemain())
+      print(" ")
+
+gameInstance()

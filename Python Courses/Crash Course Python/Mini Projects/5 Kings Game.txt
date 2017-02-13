@@ -1,0 +1,200 @@
+"""
+Create a program that simulates the classic drinking game Kings.
+
+Kings is a 4 or more player party game requires players sit in circle with a cup is placed in the center of the table known as the King s Cup. Players take turns drawing cards from a standard 52 card deck with each card having a different action associated with it, which can be read with the r command. The play goes around the table with each player drawing one card at a time. When a king is drawn, in addition to the action the drawer can pour a beverage into the King s cup. The game is over when a player draws the last king and he must drink the King s cup.
+"""
+
+import random
+import re
+from sys import stdout
+  
+class PokerDeck:
+  def __init__(self):
+    self.suitValueDict = {"C":"Clubs","S":"Spades","H":"Hearts","D":"Dimonds"}
+    self.possible_suits = ("C", "S", "H", "D")
+    self.possible_ranks = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J","Q","K")
+    self.card_drawn = ""
+    self.all_cards = []
+    
+    self.new_deck()
+  
+  def __str__(self):
+    card_deck = ""
+    for item in self.all_cards:
+      card_deck += str(item) + " "
+    return card_deck
+    
+  def new_deck(self):
+    self.card_drawn = ""
+    self.all_cards = []
+
+    for suit in self.possible_suits:
+      for rank in self.possible_ranks:
+        self.all_cards.append(suit + rank)
+    self.shuffle()
+  
+  def deckCount(self):
+    return len(self.all_cards)
+  
+  def getCard(self):
+    return self.card_drawn
+    
+  def getSuit(self):
+    suit = ""
+    if self.card_drawn != "":
+      suit = re.findall(r"(\S)", self.card_drawn)[0]
+    else: pass
+    return suit
+  
+  def getRank(self):
+    rank = ""
+    if self.card_drawn != "":
+      rank = re.findall(r"\S(.+)", self.card_drawn)[0]
+    else: pass
+    return rank
+    
+  def getSuitValue(self):
+    suitValue = ""
+    suit = self.getSuit()
+    if suit != "":
+      suitValue = self.suitValueDict[suit]
+    else: pass
+    return suitValue
+    
+  def shuffle(self):
+    return random.shuffle(self.all_cards)
+    
+  def deal_card(self):
+    if len(self.all_cards) > 0:
+      self.card_drawn = self.all_cards.pop(0)
+    else:
+      self.card_drawn = ""
+    return self.card_drawn
+
+class GameMechanics:
+  def __init__(self):
+    self.kingsDrawn = 0
+    self.valueDict = {
+      "A":["Rocket", "When this card is drawn, a player must stand up shout a number equal to the number of players minus 1, at which point another player must shout the number below it and so on and so forth (in a countdown manner). The last person will be left with the number zero and he or she must to drink. If at any point players shout the same number, the countdown ends and those players drink."],
+      "2":["Clue","The drawer shouts an adjective, then each player must shout an object in the room that can be described by that adjective. Play continues until everyone gone. Players that either cannot come up with an object or the object they said is considered too far off by the majority of players drinks. The drawer breaks ties if majority of players cannot agree on wether the object fits the adjective."], 
+      "3":["Bees", "The drawer shouts a number and then everyone has to guess higher, lower, dead on, or virgin as to whether the number is higher/lower/dead on to the age when the player learned about the birds n bees. If a player thinks the player has never learned then he can shout virgin. Everyone who guessed wrong drinks. If everyone guessed right then drawer drinks."], 
+      "4":["False","The drawer shouts a fact about himself that can be either true or false. Then the other players vote on whether the fact is a lie. If the majority of players vote correctly then the drawer drinks, if they are wrong, everyone but the drawer drinks. If no consensus can be reached then everyone but the drawer drinks. Game is played 3 times."], 
+      "5":["Five Guys","All the guys drink"], 
+      "6":["Chicks","All the girls drink"], 
+      "7":["Lemon","In a clockwise fashion beginning with the drawer, each player says the next number in the natural number series starting with one. However, if the number is a multiple of seven or eleven, or has a seven in it such as 37, the person must say Lemon instead of the number AND the play is now reversed going in a counterclockwise fashon. For example, the first person says 1, the second says 2...3, 4, 5, 6, Lemon, the direction reversed to counter clockwise with the person who just said 6 saying 8 and continues until the person who should say 11 instead says Lemon and direction reverses again. Play continues until someone makes a mistake in the series and consequently drinks."], 
+      "8":["Interrogate","Drawer points at a player and shouts a question, then that player points at another player and shouts a question. Players can point and ask a player that just previously ask them a question. When a player shouts something that is not a question or when a player repeats a question that is already asked, play is stopped and he must drink."], 
+      "9":["Rhyme","Drawer shouts a word, then in a clockwise fashion the next player must shout a word that rhymes with the previous word. When a player shouts something that does not rhyme or when a player repeats a word that is already shouted, play is stopped and he must drink."], 
+      "10":["Catagories","Drawer shouts a catagory like sports cars, movie stars, counties in asia, then each player in a clockwise fashion must shout something that fits into that catagory. When a player shouts something that does not fit or when a player repeats a word that is already shouted, play is stopped and he must drink."],
+      "J":["Once upon a time","Drawer shouts Once upon a time. Then the next player in a clockwise fashion must shout a Once upon a time and a sentence of their own choice. The third player adds on to the sentence by saying the previous two words and their own third word, and so on.The first person to mess up drinks."], 
+      "Q":["Your Highness","Drawer picks two players and assign them one of two roles, one must be the princess and the other a courting prince. The players must play out a scene in wich courting prince proposes to the princess. Then the remaining player votes on which one gave the more convincing performance. The one who did not drinks. If they both gave a convincing performance then the drawer drinks. Reqirements are the prince must get down on one knee infornt of the princess and the princess must curtsy to the prince."], 
+      "K":["Rule", "Drawer gets to add beverage to the Kings cup. If the Drawer has drawn the last king, game is over and he must drink the King s cup. Otherwise, drawer gets to make up a rule and players that break the rule must drink. Example rules are Ke$ha rule, each player must repeat the last word they say say. Or three word sentences, player must say everything in three word sentences or less. Or must refer to your self in the plural or in the third person. Or Left handed, everyone must hold there drink with their left hand."]
+      }
+    
+  def __str__(self):
+    return self.kingsDrawn
+    
+  def getValue(self, rank):
+    output = ""
+    
+    if rank == "K":
+      self.kingsDrawn += 1
+    else:
+      pass
+    
+    if self.kingsDrawn < 4:
+      output = self.valueDict[rank][0]
+    else:
+      output =  "Game OVER! LAST KING! Drink from the Kings Cup!"
+      
+    return output
+    
+  def getDescrip(self, rank):
+    return self.valueDict[rank][1]
+    
+  def getKingsRemain(self):
+    return (4 - self.kingsDrawn)
+    
+class GameInstance:
+  def __init__(self, mechanics):
+    self.killgame = False
+    self.mechanics = mechanics
+    self.play_game()
+  
+  def play_game(self):
+    title = "Kings Simulator"
+    description = """The following is simulation of the a variant of the classic drinking game Kings. This 4 or more player party game requires players sit in circle with a cup is placed in the center of the table known as the King s Cup. Players take turns drawing cards from a standard 52 card deck with each card having a different action associated with it, which can be read with the r command. The play goes around the table with each player drawing one card at a time. When a king is drawn, in addition to the action the drawer can pour a beverage into the King s cup. The game is over when a player draws the last king and he must drink the King s cup."""
+    commands = """Commands: deal(d), shuffle(s), read description(r), kings left in deck (k), new, quit"""
+    ln50 = "-" * 50
+    confirm = "Are you sure you want to do that? (y) or (n):"
+    print(title)
+    print(ln50)
+    print(description)
+    print(commands)
+    print(ln50)
+    
+    self.killgame = False
+    
+    while self.killgame == False:
+      action = input("Action: ").lower()
+      
+      if action == "quit":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+          self.killgame = True
+        else: pass
+      elif action == "new":
+        comaction = input(confirm).lower()
+        if comaction == "y":
+            print(title)
+            print(ln50)
+            print(description)
+            print(commands)
+            print(ln50)
+            deck.new_deck()
+      elif action in ("deal","d"):
+        if self.mechanics.getKingsRemain() > 0:
+          deck.deal_card()
+          suitValue = deck.getSuitValue()
+          rank = deck.getRank()
+          value = self.mechanics.getValue(rank)
+          print(rank + " of " + suitValue + " = " + value)
+          print(" ")
+        else: 
+          print("Last King has been drawn. Game Over.")
+          self.killgame = True
+          
+      elif action in ("shuffle", "s"):
+        deck.shuffle()
+        print("Deck shuffled")
+        print(" ")
+        
+      elif action in ("read", "r"):
+        #print(deck)
+        if deck.getCard() != "":
+          rank = deck.getRank()
+          value = self.mechanics.getValue(rank)
+          descrip = self.mechanics.getDescrip(rank)
+          print(" ")
+          print(value + " - " + descrip)
+          print(" ")
+          print("======")
+          print(" ")
+        else:
+          print("No card drawn. Please press d to draw a card.")
+          print(" ")
+      
+      elif action in ("king", "k"):
+        remain = str(self.mechanics.getKingsRemain())
+        print(remain + " Kings left in the deck")
+        print(" ")
+      
+      else:
+        print(commands)
+        print(" ")
+      stdout.flush()
+			
+deck = PokerDeck()
+gameMec = GameMechanics()
+game = GameInstance(gameMec)
+
+#VALUES = {"A":1, "2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":11, "Q":12, "K":13}

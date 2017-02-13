@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  My First App
 //
-//  Created by Tingbo Chen on 5/4/16.
+//  Created by Tingbo Chen on 6/8/16.
 //  Copyright © 2016 Tingbo Chen. All rights reserved.
 //
 

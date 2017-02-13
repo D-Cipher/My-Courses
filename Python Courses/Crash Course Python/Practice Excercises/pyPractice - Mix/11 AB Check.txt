@@ -1,0 +1,75 @@
+"""
+Using the JavaScript language, have the function ABCheck(str) 
+take the str parameter being passed and return the string true if 
+the characters a and b are separated by exactly 3 places anywhere 
+in the string at least once (ie. "lane borrowed" would result in 
+true because there is exactly three characters between a and b). 
+Otherwise return the string false. 
+"""
+import re
+
+#=====Regex
+def ABCheck(string):
+    
+    extract_ab = re.findall("(a)...(b)",string)
+    
+    extract_ba = re.findall("(b)...(a)",string)
+    
+    if len(extract_ab) > 0 or len(extract_ba) > 0:
+        return "True"
+    else:
+        return "False"
+
+print(ABCheck("after badly"))
+#expected: false
+
+print(ABCheck("Laura sobs"))
+#expected: true
+
+print(ABCheck("bftar gadly"))
+#expected: false
+
+#=====Non-Regex
+def ABCheck2(string): 
+    
+    str_split = []
+    
+    #Splits the string
+    for i in range(len(string)):
+        str_split.append(string[i])
+    
+    id_letters = [] 
+    
+    for i in range(len(str_split)):
+        if str_split[i] == "a":
+            if i+4 <= (len(str_split) - 1):
+                id_letters.append(str_split[i+4])
+            else:
+                pass
+        else:
+            pass
+    
+    find_b = []
+    
+    for i in range(len(id_letters)):
+        if id_letters[i] == "b":
+            find_b.append(id_letters[i])
+        else:
+            pass
+    
+    if len(find_b) >= 1:
+        return "true"
+    else:
+        return "false"
+    
+print(ABCheck2("after badly"))
+#expected: false
+
+print(ABCheck2("Laura sobs"))
+#expected: true
+
+print(ABCheck2("bftar gadly"))
+#expected: false
+
+#Input = "after badly" Output = "false"
+#Input = "Laura sobs" Output = "true"

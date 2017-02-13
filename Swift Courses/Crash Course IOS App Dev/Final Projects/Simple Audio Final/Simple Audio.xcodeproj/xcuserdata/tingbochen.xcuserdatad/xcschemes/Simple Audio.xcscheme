@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "34E9CA7C1CDAA89300A8D0DC"
+               BlueprintIdentifier = "342C6E6D1D4299FD0044C118"
                BuildableName = "Simple Audio.app"
                BlueprintName = "Simple Audio"
                ReferencedContainer = "container:Simple Audio.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34E9CA7C1CDAA89300A8D0DC"
+            BlueprintIdentifier = "342C6E6D1D4299FD0044C118"
             BuildableName = "Simple Audio.app"
             BlueprintName = "Simple Audio"
             ReferencedContainer = "container:Simple Audio.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34E9CA7C1CDAA89300A8D0DC"
+            BlueprintIdentifier = "342C6E6D1D4299FD0044C118"
             BuildableName = "Simple Audio.app"
             BlueprintName = "Simple Audio"
             ReferencedContainer = "container:Simple Audio.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34E9CA7C1CDAA89300A8D0DC"
+            BlueprintIdentifier = "342C6E6D1D4299FD0044C118"
             BuildableName = "Simple Audio.app"
             BlueprintName = "Simple Audio"
             ReferencedContainer = "container:Simple Audio.xcodeproj">

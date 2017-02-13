@@ -1,0 +1,26 @@
+"""
+Using the Python language, have the function AlphabetSoup(str) take the str string parameter being passed and return the string with the letters in alphabetical order (ie. hello becomes ehllo). Assume numbers and punctuation symbols will not be included in the string. 
+"""
+
+def AlphabetSoup(string):
+    
+    str_split = []
+    
+    #Splits the string
+    for i in range(len(string)):
+        str_split.append(string[i])
+    
+    #Sorts
+    str_split.sort()
+    
+    #Joins
+    new_str = "".join(str_split)
+    
+    return new_str
+    
+print(AlphabetSoup("hello"))
+#expected: "ehllo"
+print(AlphabetSoup("coderbyte"))
+#Input = "coderbyte" Output = "bcdeeorty"
+print(AlphabetSoup("hooplah"))
+#Input = "hooplah" Output = "ahhloop"

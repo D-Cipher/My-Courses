@@ -1,0 +1,182 @@
+"""
+Write a Python function that takes a parameter miles and returns the number of feet in miles. 
+
+Answer:
+miles = 13
+
+def miles_to_feet(mi_input):
+  conversion = mi_input * 5280
+  return conversion
+  
+print(miles_to_feet(miles))
+"""
+
+"""
+Write a Python function that takes three parameters hours min sec and returns the total number of seconds for hours, minutes and seconds. 
+
+Answer:
+def total_seconds(hr_inp, min_inp, sec_inp):
+  hrSec = hr_inp*60*60
+  minSec = min_inp*60
+  
+  ans = hrSec + minSec + sec_inp
+  
+  return ans
+
+print(total_seconds(7,21,37))
+"""
+
+"""
+Write a Python function that takes two parameters 𝚠𝚒𝚍𝚝𝚑 and 𝚑𝚎𝚒𝚐𝚑𝚝 corresponding to the lengths of the sides of a rectangle and returns the perimeter of the rectangle in inches. 
+Answer:
+def rectangle_perimeter(w_inp, h_inp):
+  ans = 2*w_inp + 2*h_inp
+  return ans
+  
+print(rectangle_perimeter(4,7))
+"""
+
+"""
+Write a Python function that takes two parameters width and height corresponding to the lengths of the sides of a rectangle and returns the area of the rectangle.
+
+Answer:
+def rectangle_area(w_inp, h_inp):
+  ans = w_inp*h_inp
+  return ans
+  
+print(rectangle_area(4,7))
+"""
+
+"""
+Write a Python function that takes a single parameter radius corresponding to the radius of a circle in inches and returns the the circumference of a circle with radius radius in inches. DO NOT use π=3.14, instead use the math module to supply a higher-precision approximation to π. 
+Answer:
+import math 
+
+def circle_circumference(radius_inp):
+  pi = math.pi
+  ans=2*pi*radius_inp
+  return ans
+
+print(circle_circumference(8))
+"""
+
+"""
+Write a Python function that takes a single parameter radius corresponding to the radius of a circle in inches and returns the the area of a circle with radius in square inches. Do not use π=3.14, instead use the math module to supply a higher-precision approximation to π. 
+Answer:
+import math
+
+def circle_area(radius_inp):
+  pi = math.pi
+  ans=(pi*radius_inp)**2
+  return ans
+  
+print(circle_area(8))
+"""
+
+"""
+Write a Python function that takes three parameters present value, interest rate and years and returns the future value of prsent value dollars invested at percent interest, compounded annually for a number of years years.
+
+Answer:
+def future_value(pres_value, ins_rate, years):
+  ans = float(pres_value)*(1+ins_rate)**float(years)
+  return ans
+  
+print(future_value(1000,0.07,10))
+"""
+
+"""
+Write a Python function called name_tag that takes as input the parameters first_name and last_name (strings) and returns a string of the form "My name is % %" where the percents are the strings first name and last name . Reference the test cases in the provided template for an exact description of the format of the returned string.
+
+Answer:
+def name_tag(first_name, last_name):
+  greeting = "My name is " + first_name + " " + last_name
+  return greeting
+
+print(name_tag("Alex", "Smith"))
+"""
+
+"""
+Write a Python function name_and_age that takes as input the parameters name (a string) and age (a number) and returns a string of the form "% is % years old" where the percents are the string forms of name and age. Reference the test cases in the provided template for an exact description of the format of the returned string. 
+
+Answer:
+def name_and_age(name_inp, age_inp):
+  
+  ans = name_inp + " is " + str(age_inp) + " years old"
+  
+  return ans
+
+print(name_and_age("Alex",23))
+"""
+
+"""
+Write a Python function that takes as the parameters x0, y0, x1 and y1, and returns the distance between the points (x0,y0) and (x1,y1).
+Answer:
+import math
+
+def point_distance(point_A, point_B):
+  distance = math.sqrt((point_A[0] - point_B[0])**2 + (point_A[1] - point_B[1])**2)
+  return distance
+
+print(point_distance((2,2),(5,6)))
+"""
+
+"""
+Challenge: Write a Python function triangle_area that takes the parameters x0, y0, x1, y1, x2, and y2, and returns the area of the triangle with vertices (x0,y0), (x1,y1) and (x2,y2). (Hint: use the function as a helper function and apply Heron's formula.) 
+
+Answer:
+import math
+
+def point_distance(point_A, point_B):
+  distance = math.sqrt((point_A[0] - point_B[0])**2 + (point_A[1] - point_B[1])**2)
+  return distance
+
+def triangle_area(pt_x,pt_y,pt_z):
+  xySide = point_distance(pt_x, pt_y)
+  xzSide = point_distance(pt_x, pt_z)
+  yzSide = point_distance(pt_y, pt_z)
+  
+  semiPrm = (1/2)*(xySide + xzSide + yzSide)
+  
+  ans = math.sqrt(semiPrm*(semiPrm-xySide)*(semiPrm-xzSide)*(semiPrm-yzSide))
+  
+  return ans
+
+print(triangle_area((0,0),(3,4),(1,1)))
+"""
+
+"""
+Challenge: Write a Python function that takes an integer number in the range [0,100), i.e., at least 0, but less than 100. It prints the message "The tens digit is % and the ones digit is %", where the percent signs should be replaced with the appropriate values. (Hint: Try using the arithmetic operators for integer division // and remainder % to find the two digits.)
+
+Test these three numbers: 42, 99, 5
+
+Answer: 
+def get_digits(num_inp):
+  ones_dig = num_inp % 10
+  tens_dig = num_inp // 10
+  ans = "tens dig is " + str(tens_dig) + " and the ones dig is " + str(ones_dig)
+  return ans
+
+print(get_digits(42))
+print(get_digits(99))
+print(get_digits(5))
+"""
+
+"""
+Challenge: Powerball is lottery game in which 6 numbers are drawn at random. Players can purchase a lottery ticket with a specific number combination and, if the number on the ticket matches the numbers generated in a random drawing, the player wins a massive jackpot. Write a Python function powerball that takes no arguments and prints the message "Today's numbers are %, %, %, %, and %.". The first five numbers should be random integers in the range [1,60), i.e., at least 1, but less than 60. In reality, these five numbers must all be distinct, but for this problem, I WILL ALLOW duplicates. The Powerball number is a random integer in the range [1,36), i.e., at least 1 but less than 36. Use the random module and the function random.randrange to generate the appropriate random numbers. Note that this function should print the desired message, rather than returning it as a string. 
+
+Answer:
+import random
+
+def powerball():
+  num_1 = random.randrange(1, 60)
+  num_2 = random.randrange(1, 60)
+  num_3 = random.randrange(1, 60)
+  num_4 = random.randrange(1, 60)
+  pwr_ball = random.randrange(1, 36)
+  
+  statement = "Today's powerball numbers are: " + str(num_1) + ", " + str(num_2) + ", " + str(num_3) + ", " + str(num_4) + ", " + " and the power ball is " + str(pwr_ball)
+  
+  return statement
+
+print(powerball())
+"""

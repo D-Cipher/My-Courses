@@ -1,0 +1,18 @@
+"""
+Using the Python language, have the function SimpleAdding(num) add up all the numbers from 1 to num. For the test cases, the parameter num will be any number from 1 to 1000. 
+"""
+def SimpleAdding(num): 
+    
+    num_ls = []
+    
+    for i in range(num):
+        num_ls.append(i + 1)
+    
+    summation = sum(num_ls)
+    
+    return summation
+
+print(SimpleAdding(12))
+#Input = 12Output = 78
+print(SimpleAdding(140))
+#Input = 140Output = 9870

@@ -1,0 +1,83 @@
+"""
+Using the Python language, have the function Palindrome(str)
+take the str parameter being passed and return the string 
+true if the parameter is a palindrome, (the string is the 
+same forward as it is backward) otherwise return the string
+false. For example: "racecar" is also "racecar" backwards. 
+Punctuation and numbers will not be part of the string. 
+"""
+import re
+
+#=====Regex
+def Palindrome(string):
+    
+    str_lower = string.lower()
+    
+    extract = re.findall("[a-zA-Z]", string)
+    
+    test_ls = []
+    
+    for i in range(len(extract)):
+        test_ls.append(extract[i])
+    
+    test_ls.reverse()
+
+    mismatch = []
+    
+    for i in range(len(test_ls)):
+        if test_ls[i] != extract[i]:
+            mismatch.append(test_ls[i])
+        else:
+            pass
+
+    if len(mismatch) == 0:
+        return "True"
+    else:
+        return "False"
+    
+    #return extract
+    
+print(Palindrome("never odd or even"))
+#expected: true
+print(Palindrome("never odd or even x"))
+#expected: false
+
+
+#=====Non-Regex
+from string import ascii_lowercase as ascii_lowercase
+
+def Palindrome2(string):
+    
+    original_str = []
+    test_str = []
+    
+    #Splits the string
+    for i in range(len(string)):
+        if string[i].isalpha() == True:
+            original_str.append(string[i])
+            test_str.append(string[i])
+        else:
+            pass
+    
+    #Reverse order test_str
+    test_str.reverse()
+    
+    #Testing for mismatches
+    mismatches = []
+    
+    for i in range(len(original_str)):
+        if original_str[i] != test_str[i]:
+            mismatches.append(original_str[i])
+        else:
+            pass
+        
+    if len(mismatches) == 0:
+        return "true"
+    else:
+        return "false"
+
+print(Palindrome2("never odd or even"))
+#expected: true
+
+print(Palindrome2("never odd or even x"))
+#expected: false

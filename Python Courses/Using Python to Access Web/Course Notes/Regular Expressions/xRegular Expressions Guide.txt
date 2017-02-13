@@ -16,7 +16,8 @@ $ 	Matches the END of the line
 )	Indicates where string EXTRACTION is to end
 
 Basic Extraction:
-extract = re.findall("[a-zA-Z]+", string)
+extract = re.findall("[a-zA-Z]+", string) #splits string into list of words
+extract = re.findall("\S(.+)", string) #find anyting after first non-whitespace 
 
 Complex Extraction:
 message = "parort folila carrot matia rtetoo melone"

@@ -7,45 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34D3FF271CF751C600328D88 /* Battle at the misty valley.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF1D1CF751C600328D88 /* Battle at the misty valley.mp3 */; };
-		34D3FF281CF751C600328D88 /* Breath of Freedom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF1E1CF751C600328D88 /* Breath of Freedom.mp3 */; };
-		34D3FF291CF751C600328D88 /* Classical-bwv-bach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF1F1CF751C600328D88 /* Classical-bwv-bach.mp3 */; };
-		34D3FF2A1CF751C600328D88 /* Dawn of a New Era.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF201CF751C600328D88 /* Dawn of a New Era.mp3 */; };
-		34D3FF2B1CF751C600328D88 /* High Hopes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF211CF751C600328D88 /* High Hopes.mp3 */; };
-		34D3FF2C1CF751C600328D88 /* Intro-Sonet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF221CF751C600328D88 /* Intro-Sonet.mp3 */; };
-		34D3FF2D1CF751C600328D88 /* Neverending Dream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF231CF751C600328D88 /* Neverending Dream.mp3 */; };
-		34D3FF2E1CF751C600328D88 /* Path of Loneliness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF241CF751C600328D88 /* Path of Loneliness.mp3 */; };
-		34D3FF2F1CF751C600328D88 /* The silent Force.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF251CF751C600328D88 /* The silent Force.mp3 */; };
-		34D3FF301CF751C600328D88 /* Twilight Poem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34D3FF261CF751C600328D88 /* Twilight Poem.mp3 */; };
-		34E9CA811CDAA89300A8D0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */; };
-		34E9CA831CDAA89300A8D0DC /* MusicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */; };
-		34E9CA861CDAA89300A8D0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA841CDAA89300A8D0DC /* Main.storyboard */; };
-		34E9CA881CDAA89300A8D0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA871CDAA89300A8D0DC /* Assets.xcassets */; };
-		34E9CA8B1CDAA89300A8D0DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */; };
+		342C6E721D4299FE0044C118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C6E711D4299FE0044C118 /* AppDelegate.swift */; };
+		342C6E741D4299FE0044C118 /* MusicPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C6E731D4299FE0044C118 /* MusicPlayerController.swift */; };
+		342C6E771D4299FE0044C118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342C6E751D4299FE0044C118 /* Main.storyboard */; };
+		342C6E791D4299FE0044C118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 342C6E781D4299FE0044C118 /* Assets.xcassets */; };
+		342C6E7C1D4299FE0044C118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 342C6E7A1D4299FE0044C118 /* LaunchScreen.storyboard */; };
+		34664B281D455EBF0008C333 /* Battle at the misty valley.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B1E1D455EBF0008C333 /* Battle at the misty valley.mp3 */; };
+		34664B291D455EBF0008C333 /* Breath of Freedom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B1F1D455EBF0008C333 /* Breath of Freedom.mp3 */; };
+		34664B2A1D455EBF0008C333 /* Classical-bwv-bach.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B201D455EBF0008C333 /* Classical-bwv-bach.mp3 */; };
+		34664B2B1D455EBF0008C333 /* Dawn of a New Era.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B211D455EBF0008C333 /* Dawn of a New Era.mp3 */; };
+		34664B2C1D455EBF0008C333 /* High Hopes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B221D455EBF0008C333 /* High Hopes.mp3 */; };
+		34664B2D1D455EBF0008C333 /* Intro-Sonet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B231D455EBF0008C333 /* Intro-Sonet.mp3 */; };
+		34664B2E1D455EBF0008C333 /* Neverending Dream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B241D455EBF0008C333 /* Neverending Dream.mp3 */; };
+		34664B2F1D455EBF0008C333 /* Path of Loneliness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B251D455EBF0008C333 /* Path of Loneliness.mp3 */; };
+		34664B301D455EBF0008C333 /* The silent Force.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B261D455EBF0008C333 /* The silent Force.mp3 */; };
+		34664B311D455EBF0008C333 /* Twilight Poem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 34664B271D455EBF0008C333 /* Twilight Poem.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34D3FF1D1CF751C600328D88 /* Battle at the misty valley.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle at the misty valley.mp3"; sourceTree = "<group>"; };
-		34D3FF1E1CF751C600328D88 /* Breath of Freedom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Breath of Freedom.mp3"; sourceTree = "<group>"; };
-		34D3FF1F1CF751C600328D88 /* Classical-bwv-bach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Classical-bwv-bach.mp3"; sourceTree = "<group>"; };
-		34D3FF201CF751C600328D88 /* Dawn of a New Era.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dawn of a New Era.mp3"; sourceTree = "<group>"; };
-		34D3FF211CF751C600328D88 /* High Hopes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "High Hopes.mp3"; sourceTree = "<group>"; };
-		34D3FF221CF751C600328D88 /* Intro-Sonet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Intro-Sonet.mp3"; sourceTree = "<group>"; };
-		34D3FF231CF751C600328D88 /* Neverending Dream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Neverending Dream.mp3"; sourceTree = "<group>"; };
-		34D3FF241CF751C600328D88 /* Path of Loneliness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Path of Loneliness.mp3"; sourceTree = "<group>"; };
-		34D3FF251CF751C600328D88 /* The silent Force.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The silent Force.mp3"; sourceTree = "<group>"; };
-		34D3FF261CF751C600328D88 /* Twilight Poem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Twilight Poem.mp3"; sourceTree = "<group>"; };
-		34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Audio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerController.swift; sourceTree = "<group>"; };
-		34E9CA851CDAA89300A8D0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		34E9CA871CDAA89300A8D0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		34E9CA8A1CDAA89300A8D0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		34E9CA8C1CDAA89300A8D0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		342C6E6E1D4299FD0044C118 /* Simple Audio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simple Audio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		342C6E711D4299FE0044C118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		342C6E731D4299FE0044C118 /* MusicPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerController.swift; sourceTree = "<group>"; };
+		342C6E761D4299FE0044C118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		342C6E781D4299FE0044C118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		342C6E7B1D4299FE0044C118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		342C6E7D1D4299FE0044C118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34664B1E1D455EBF0008C333 /* Battle at the misty valley.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Battle at the misty valley.mp3"; sourceTree = "<group>"; };
+		34664B1F1D455EBF0008C333 /* Breath of Freedom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Breath of Freedom.mp3"; sourceTree = "<group>"; };
+		34664B201D455EBF0008C333 /* Classical-bwv-bach.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Classical-bwv-bach.mp3"; sourceTree = "<group>"; };
+		34664B211D455EBF0008C333 /* Dawn of a New Era.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dawn of a New Era.mp3"; sourceTree = "<group>"; };
+		34664B221D455EBF0008C333 /* High Hopes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "High Hopes.mp3"; sourceTree = "<group>"; };
+		34664B231D455EBF0008C333 /* Intro-Sonet.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Intro-Sonet.mp3"; sourceTree = "<group>"; };
+		34664B241D455EBF0008C333 /* Neverending Dream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Neverending Dream.mp3"; sourceTree = "<group>"; };
+		34664B251D455EBF0008C333 /* Path of Loneliness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Path of Loneliness.mp3"; sourceTree = "<group>"; };
+		34664B261D455EBF0008C333 /* The silent Force.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The silent Force.mp3"; sourceTree = "<group>"; };
+		34664B271D455EBF0008C333 /* Twilight Poem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Twilight Poem.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		34E9CA7A1CDAA89300A8D0DC /* Frameworks */ = {
+		342C6E6B1D4299FD0044C118 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,63 +55,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		34D3FF311CF751CC00328D88 /* Sample Music */ = {
+		342C6E651D4299FD0044C118 = {
 			isa = PBXGroup;
 			children = (
-				34D3FF1D1CF751C600328D88 /* Battle at the misty valley.mp3 */,
-				34D3FF1E1CF751C600328D88 /* Breath of Freedom.mp3 */,
-				34D3FF1F1CF751C600328D88 /* Classical-bwv-bach.mp3 */,
-				34D3FF201CF751C600328D88 /* Dawn of a New Era.mp3 */,
-				34D3FF211CF751C600328D88 /* High Hopes.mp3 */,
-				34D3FF221CF751C600328D88 /* Intro-Sonet.mp3 */,
-				34D3FF231CF751C600328D88 /* Neverending Dream.mp3 */,
-				34D3FF241CF751C600328D88 /* Path of Loneliness.mp3 */,
-				34D3FF251CF751C600328D88 /* The silent Force.mp3 */,
-				34D3FF261CF751C600328D88 /* Twilight Poem.mp3 */,
-			);
-			name = "Sample Music";
-			sourceTree = "<group>";
-		};
-		34E9CA741CDAA89300A8D0DC = {
-			isa = PBXGroup;
-			children = (
-				34E9CA7F1CDAA89300A8D0DC /* Simple Audio */,
-				34E9CA7E1CDAA89300A8D0DC /* Products */,
+				342C6E701D4299FE0044C118 /* Simple Audio */,
+				342C6E6F1D4299FD0044C118 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		34E9CA7E1CDAA89300A8D0DC /* Products */ = {
+		342C6E6F1D4299FD0044C118 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */,
+				342C6E6E1D4299FD0044C118 /* Simple Audio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		34E9CA7F1CDAA89300A8D0DC /* Simple Audio */ = {
+		342C6E701D4299FE0044C118 /* Simple Audio */ = {
 			isa = PBXGroup;
 			children = (
-				34D3FF311CF751CC00328D88 /* Sample Music */,
-				34E9CA801CDAA89300A8D0DC /* AppDelegate.swift */,
-				34E9CA821CDAA89300A8D0DC /* MusicPlayerController.swift */,
-				34E9CA841CDAA89300A8D0DC /* Main.storyboard */,
-				34E9CA871CDAA89300A8D0DC /* Assets.xcassets */,
-				34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */,
-				34E9CA8C1CDAA89300A8D0DC /* Info.plist */,
+				34664B321D455ECC0008C333 /* Music */,
+				342C6E711D4299FE0044C118 /* AppDelegate.swift */,
+				342C6E731D4299FE0044C118 /* MusicPlayerController.swift */,
+				342C6E751D4299FE0044C118 /* Main.storyboard */,
+				342C6E781D4299FE0044C118 /* Assets.xcassets */,
+				342C6E7A1D4299FE0044C118 /* LaunchScreen.storyboard */,
+				342C6E7D1D4299FE0044C118 /* Info.plist */,
 			);
 			path = "Simple Audio";
+			sourceTree = "<group>";
+		};
+		34664B321D455ECC0008C333 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				34664B1E1D455EBF0008C333 /* Battle at the misty valley.mp3 */,
+				34664B1F1D455EBF0008C333 /* Breath of Freedom.mp3 */,
+				34664B201D455EBF0008C333 /* Classical-bwv-bach.mp3 */,
+				34664B211D455EBF0008C333 /* Dawn of a New Era.mp3 */,
+				34664B221D455EBF0008C333 /* High Hopes.mp3 */,
+				34664B231D455EBF0008C333 /* Intro-Sonet.mp3 */,
+				34664B241D455EBF0008C333 /* Neverending Dream.mp3 */,
+				34664B251D455EBF0008C333 /* Path of Loneliness.mp3 */,
+				34664B261D455EBF0008C333 /* The silent Force.mp3 */,
+				34664B271D455EBF0008C333 /* Twilight Poem.mp3 */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		34E9CA7C1CDAA89300A8D0DC /* Simple Audio */ = {
+		342C6E6D1D4299FD0044C118 /* Simple Audio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 34E9CA8F1CDAA89300A8D0DC /* Build configuration list for PBXNativeTarget "Simple Audio" */;
+			buildConfigurationList = 342C6E801D4299FE0044C118 /* Build configuration list for PBXNativeTarget "Simple Audio" */;
 			buildPhases = (
-				34E9CA791CDAA89300A8D0DC /* Sources */,
-				34E9CA7A1CDAA89300A8D0DC /* Frameworks */,
-				34E9CA7B1CDAA89300A8D0DC /* Resources */,
+				342C6E6A1D4299FD0044C118 /* Sources */,
+				342C6E6B1D4299FD0044C118 /* Frameworks */,
+				342C6E6C1D4299FD0044C118 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -119,26 +119,26 @@
 			);
 			name = "Simple Audio";
 			productName = "Simple Audio";
-			productReference = 34E9CA7D1CDAA89300A8D0DC /* Simple Audio.app */;
+			productReference = 342C6E6E1D4299FD0044C118 /* Simple Audio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		34E9CA751CDAA89300A8D0DC /* Project object */ = {
+		342C6E661D4299FD0044C118 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Tingbo Chen";
 				TargetAttributes = {
-					34E9CA7C1CDAA89300A8D0DC = {
-						CreatedOnToolsVersion = 7.3;
+					342C6E6D1D4299FD0044C118 = {
+						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LJL8G936JS;
 					};
 				};
 			};
-			buildConfigurationList = 34E9CA781CDAA89300A8D0DC /* Build configuration list for PBXProject "Simple Audio" */;
+			buildConfigurationList = 342C6E691D4299FD0044C118 /* Build configuration list for PBXProject "Simple Audio" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -146,64 +146,64 @@
 				en,
 				Base,
 			);
-			mainGroup = 34E9CA741CDAA89300A8D0DC;
-			productRefGroup = 34E9CA7E1CDAA89300A8D0DC /* Products */;
+			mainGroup = 342C6E651D4299FD0044C118;
+			productRefGroup = 342C6E6F1D4299FD0044C118 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				34E9CA7C1CDAA89300A8D0DC /* Simple Audio */,
+				342C6E6D1D4299FD0044C118 /* Simple Audio */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		34E9CA7B1CDAA89300A8D0DC /* Resources */ = {
+		342C6E6C1D4299FD0044C118 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E9CA8B1CDAA89300A8D0DC /* LaunchScreen.storyboard in Resources */,
-				34D3FF301CF751C600328D88 /* Twilight Poem.mp3 in Resources */,
-				34D3FF2F1CF751C600328D88 /* The silent Force.mp3 in Resources */,
-				34D3FF2D1CF751C600328D88 /* Neverending Dream.mp3 in Resources */,
-				34D3FF271CF751C600328D88 /* Battle at the misty valley.mp3 in Resources */,
-				34D3FF291CF751C600328D88 /* Classical-bwv-bach.mp3 in Resources */,
-				34D3FF2E1CF751C600328D88 /* Path of Loneliness.mp3 in Resources */,
-				34D3FF2B1CF751C600328D88 /* High Hopes.mp3 in Resources */,
-				34E9CA881CDAA89300A8D0DC /* Assets.xcassets in Resources */,
-				34E9CA861CDAA89300A8D0DC /* Main.storyboard in Resources */,
-				34D3FF2A1CF751C600328D88 /* Dawn of a New Era.mp3 in Resources */,
-				34D3FF2C1CF751C600328D88 /* Intro-Sonet.mp3 in Resources */,
-				34D3FF281CF751C600328D88 /* Breath of Freedom.mp3 in Resources */,
+				342C6E7C1D4299FE0044C118 /* LaunchScreen.storyboard in Resources */,
+				34664B311D455EBF0008C333 /* Twilight Poem.mp3 in Resources */,
+				34664B301D455EBF0008C333 /* The silent Force.mp3 in Resources */,
+				34664B2E1D455EBF0008C333 /* Neverending Dream.mp3 in Resources */,
+				34664B281D455EBF0008C333 /* Battle at the misty valley.mp3 in Resources */,
+				34664B2A1D455EBF0008C333 /* Classical-bwv-bach.mp3 in Resources */,
+				34664B2F1D455EBF0008C333 /* Path of Loneliness.mp3 in Resources */,
+				34664B2C1D455EBF0008C333 /* High Hopes.mp3 in Resources */,
+				342C6E791D4299FE0044C118 /* Assets.xcassets in Resources */,
+				342C6E771D4299FE0044C118 /* Main.storyboard in Resources */,
+				34664B2B1D455EBF0008C333 /* Dawn of a New Era.mp3 in Resources */,
+				34664B2D1D455EBF0008C333 /* Intro-Sonet.mp3 in Resources */,
+				34664B291D455EBF0008C333 /* Breath of Freedom.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		34E9CA791CDAA89300A8D0DC /* Sources */ = {
+		342C6E6A1D4299FD0044C118 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E9CA831CDAA89300A8D0DC /* MusicPlayerController.swift in Sources */,
-				34E9CA811CDAA89300A8D0DC /* AppDelegate.swift in Sources */,
+				342C6E741D4299FE0044C118 /* MusicPlayerController.swift in Sources */,
+				342C6E721D4299FE0044C118 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		34E9CA841CDAA89300A8D0DC /* Main.storyboard */ = {
+		342C6E751D4299FE0044C118 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				34E9CA851CDAA89300A8D0DC /* Base */,
+				342C6E761D4299FE0044C118 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		34E9CA891CDAA89300A8D0DC /* LaunchScreen.storyboard */ = {
+		342C6E7A1D4299FE0044C118 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				34E9CA8A1CDAA89300A8D0DC /* Base */,
+				342C6E7B1D4299FE0044C118 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		34E9CA8D1CDAA89300A8D0DC /* Debug */ = {
+		342C6E7E1D4299FE0044C118 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -253,10 +253,11 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		34E9CA8E1CDAA89300A8D0DC /* Release */ = {
+		342C6E7F1D4299FE0044C118 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,11 +291,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		34E9CA901CDAA89300A8D0DC /* Debug */ = {
+		342C6E811D4299FE0044C118 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -305,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		34E9CA911CDAA89300A8D0DC /* Release */ = {
+		342C6E821D4299FE0044C118 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -319,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		34E9CA781CDAA89300A8D0DC /* Build configuration list for PBXProject "Simple Audio" */ = {
+		342C6E691D4299FD0044C118 /* Build configuration list for PBXProject "Simple Audio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34E9CA8D1CDAA89300A8D0DC /* Debug */,
-				34E9CA8E1CDAA89300A8D0DC /* Release */,
+				342C6E7E1D4299FE0044C118 /* Debug */,
+				342C6E7F1D4299FE0044C118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		34E9CA8F1CDAA89300A8D0DC /* Build configuration list for PBXNativeTarget "Simple Audio" */ = {
+		342C6E801D4299FE0044C118 /* Build configuration list for PBXNativeTarget "Simple Audio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34E9CA901CDAA89300A8D0DC /* Debug */,
-				34E9CA911CDAA89300A8D0DC /* Release */,
+				342C6E811D4299FE0044C118 /* Debug */,
+				342C6E821D4299FE0044C118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 34E9CA751CDAA89300A8D0DC /* Project object */;
+	rootObject = 342C6E661D4299FD0044C118 /* Project object */;
 }

@@ -1,0 +1,54 @@
+#Programming Fundementals: Try Statements, Error Catching
+
+#=======Try Statements=======
+def divBy(numerator,denominator):
+  try:
+    answer = numerator/denominator
+    return answer
+  except ZeroDivisionError:
+    print("Error: dividing by zero")
+
+print(divBy(2,3))
+print(divBy(12,1))
+print(divBy(20,0))
+print(divBy(1,7))
+
+
+#Input Validation:
+def fbFriends():
+  try:
+    numFriends = int(input("How many facebook friends do you have?"))
+    
+    if numFriends >= 500:
+      print("That's too many friends")
+    else:
+      print("That's not alot")
+
+  except ValueError:
+    print("Please enter a number")
+
+fbFriends()
+
+def twFollowers():
+  while True:
+    try:
+      numFollowers = int(input("How many twitter followers do you have?"))
+      
+      if numFollowers >= 500:
+        print("That's too many followers")
+      else:
+        print("That's not alot")
+      break
+
+    except ValueError:
+      print("Please enter a number")
+
+twFollowers()
+
+
+"""
+//Quick Challenge: create a function that asks the user
+to type in the number of shoes they own. If the number is greater than 4,
+print "that is alot of shoes", if it is less than 4, print "poor you",
+if it is a negative number or an error then print "Error"
+"""

@@ -1,0 +1,22 @@
+"""
+Using the Python language, have the function TimeConvert(num) take the num parameter being passed and return the number of hours and minutes the parameter converts to (ie. if num = 63 then the output should be 1:3). Separate the number of hours and minutes with a colon.
+"""
+
+def TimeConvert(num):
+    
+    mins = num % 60
+    
+    hours = int((num - mins)/60)
+    
+    time_conv = str(hours) + ":" + str(mins)
+    
+    return time_conv
+
+print(TimeConvert(126))
+#expected: "2:6"
+
+print(TimeConvert(45))
+#expected: "0:45"
+
+#Input = 126Output = "2:6"
+#Input = 45Output = "0:45"

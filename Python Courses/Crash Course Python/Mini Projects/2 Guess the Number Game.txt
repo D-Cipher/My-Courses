@@ -1,0 +1,45 @@
+"""
+Create a program in which the computer picks a random number between 1 and 10.
+The user then guesses a number and the computer tells the user whether he was right or wrong and gives the correct answer. The user only has a total of 4 guesses. If the user’s guess was wrong then the computer will tell user, too high or too low, and he’s remaining guesses. If he guesses right or runs out of guesses, the game ends.
+"""
+
+import random
+
+def guessNum(num):
+    
+    guesses = 4
+    
+    secret_num = random.randrange(1,11)
+    
+    match = False
+    
+    message = None
+    
+    while guesses > 0:
+        
+        if num == secret_num:
+            match = True
+            message = "Your guess "+str(num)+" was right!"
+            print(message)
+            break
+        
+        elif num > secret_num:
+            message = "Too high. You have "+str(guesses) +" guesses remaining."
+            guesses += -1
+            print(message)
+            num = int(input())
+
+        elif num < secret_num:
+            message = "Too low. You have "+str(guesses) +" guesses remaining."
+            guesses += -1
+            print(message)
+            num = int(input())
+        else:
+            pass
+    
+    if guesses <= 0:
+        message = "Game over. Correct answer: " + str(secret_num)
+        print(message)
+
+print("Guess what number I picked?")
+guessNum(int(input()))
