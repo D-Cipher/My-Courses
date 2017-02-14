@@ -15,7 +15,7 @@ Altering Directories:
 touch DATA - picks up directory "DATA"
 mv Data Documents - Moves it to "Documents"
 mkdir DATA - Makes directory called "DATA"
-rm - removes directorys
+rm - removes directories
 
 Link Git Hub to local Git repo:
 git init - innitializes empty git repo in current directory

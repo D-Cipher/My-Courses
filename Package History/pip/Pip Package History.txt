@@ -1,0 +1,17 @@
+Pip Packages
+
+Navigating and Vewing Directories:
+cd /Users/tingbochen/Documents/ - MAC navigates to directory
+cd C:/Users/wcai/Desktop/"5 Personal Projects"/ - PC navigates to directory
+cd .. - Go back a directory
+ls - lists directories in current directory
+pwd - Print working directory
+
+Pip Commands:
+pip3 install --upgrade pip
+pip3 search django
+
+Package History:
+pip3 install jupyter
+
+

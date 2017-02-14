@@ -1,0 +1,19 @@
+#Programming Fundementals: String Processing
+
+#=======String Processing===========
+
+name = "Wen"
+age = "23"
+
+introduce = "My name is {name} and I am {age} years old.".format(name=name,age=age)
+
+introduce = "hello my name is Wen"
+
+introduce.upper()
+
+introduce.lower()
+
+introduce.split()
+
+tweet = "Go Team! #Sports"
+tweet.split("#")

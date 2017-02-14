@@ -1,0 +1,10 @@
+#Map Function - preform func on each element of a list
+
+def times2(var):
+    return var*2
+
+seq = [1,2,3,4,5]
+
+ans = list(map(times2, seq))
+
+print(ans)

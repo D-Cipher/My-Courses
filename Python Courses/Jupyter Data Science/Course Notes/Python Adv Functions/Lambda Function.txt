@@ -1,0 +1,11 @@
+#Lambda - shorthand way to write a function
+#lambda inputVar:returnOperation
+
+seq = [1,2,3,4,5]
+
+multiply3 = lambda var:var*2
+print(multiply3(5))
+
+ans = list(map(multiply3,seq))
+
+print(ans)

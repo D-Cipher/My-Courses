@@ -1,0 +1,18 @@
+#For Loops List Comprehension
+
+x = [1,2,3,4]
+ans = []
+#Basic
+for num in x:
+    ans.append(num**2)
+print(ans)
+
+#Advanced
+x = [1,2,3,4]
+ans = [num**2 for num in x]
+print(ans)
+
+#Advanced Alt
+x = [1,2,3,4]
+ans = [x[i]**2 for i in range(len(x))]
+print(ans)

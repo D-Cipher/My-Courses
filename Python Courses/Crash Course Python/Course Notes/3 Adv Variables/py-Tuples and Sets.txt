@@ -16,6 +16,14 @@ coord_list = ([1,2],[3,4])
 
 print(coord_list[0])
 
+#unpacking tuples:
+
+tupList = [(1,2),(2,3),(3,4)]
+
+for a,b in tupList:
+    print(a)
+
+
 #Sets
 #unordered, unique elements 
 uniqueNum = set(example_list)

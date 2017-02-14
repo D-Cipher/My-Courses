@@ -2,5 +2,4 @@ Installed by website:
 -pip ---https://www.youtube.com/watch?v=zPMr0lEMqpo
 -Pygame 1.9.2 for py3.4 ---https://bitbucket.org/pygame/pygame/downloads
 -SimpleGUICS2Pygame --- pip intall SimpleGUICS2Pygame
--ipython --- pip install "ipython[notebook]"
 

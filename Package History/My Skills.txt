@@ -1,0 +1,38 @@
+My Skills
+
+Data Analysis:
+-Jupyter
+-R Studio
+-Excel VBA
+
+Simulations / Machine Learning
+-Python
+~Scikit Learn
+
+Game Development
+-Kivy
+~Pycharm
+
+App Building
+-Swift
+
+Web Development
+-HTML/CSS/JS
+-Wordpress
+~Django
+
+Webscraping
+~Python
+
+Automation / Scripting
+~Python
+
+Others
+-SPSS
+~Tableau
+
+Need to Learn:
+-REASTful web services and n-tier archetecture
+-LoadRunner / Jmeter
+-Hadoop
+
