@@ -13,5 +13,6 @@ pip3 search django
 
 Package History:
 pip3 install jupyter
+pip3 install numpy
 
 

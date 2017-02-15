@@ -32,7 +32,9 @@ Others
 ~Tableau
 
 Need to Learn:
--REASTful web services and n-tier archetecture
+-REASTful web services and n-tier architecture
 -LoadRunner / Jmeter
 -Hadoop
-
+-Xhr
+-relational & nonrelational db
+-algorithms
