@@ -12,7 +12,12 @@ pip3 install --upgrade pip
 pip3 search django
 
 Package History:
+
+Data science
 pip3 install jupyter
 pip3 install numpy
+pip3 install pandas
 
-
+Aws
+pip3 install awscli
+pip3 install boto3

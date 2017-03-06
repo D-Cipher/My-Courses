@@ -1,0 +1,31 @@
+#npArrays Methods
+import numpy as np
+
+#Creating Arrays
+np.arange(0,10) #creates array 1 to 9
+
+np.zeros(3) #creates array of zeros
+
+np.zeros((2,3)) #2 by 3 matrix of zeros
+
+np.ones((2,3)) #2 by 3 matrix of ones
+
+np.linspace(0,1,10) #10 evenly spaced points from 0 to 1
+
+np.eye(4) #4x4 matrix with diagonal of 1s
+
+#Creating Matrix
+numls = np.arange(50)
+
+numls_matrix = numls.reshape(5,10) #change the dim of array to 5x5 matrix (rows x rols == elements in array)
+
+
+"""
+Practice: create a matrix 5x5 of values 1 to 50 and get the columns 3 to end.
+"""
+
+matrix5x5 = np.arange(1,26).reshape(5,5)
+
+print(matrix5x5)
+
+matrix5x5[:,2:]

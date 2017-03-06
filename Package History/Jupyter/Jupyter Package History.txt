@@ -12,6 +12,7 @@ jupyter notebook  - runs jupyter
 command+Q  - quits all instances
 
 Package History:
-
+conda pandas 
+pip3 pandas
 
 

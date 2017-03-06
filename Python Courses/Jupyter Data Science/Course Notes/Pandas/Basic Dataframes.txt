@@ -1,0 +1,32 @@
+import numpy as np
+import pandas as pd
+
+from numpy.random import randn
+
+#Create a Data Frame
+np.random.seed(101)
+
+dataMatrix = pd.DataFrame(
+    randn(5,4),
+    ["A","B","C","D","E"],
+    ["W","X","Y","Z"]) #pd.DataFrame(data,row,column)
+
+print(dataMatrix)
+
+
+#Indexing data frames
+dataMatrix["W"] #Select columns
+dataMatrix[["W","Z"]] #get multiple columns
+
+dataMatrix.loc["C"] #Select row with label
+dataMatrix.iloc[2] #Select row with index
+
+dataMatrix.loc["B","Y"] #get cell [row,col]
+dataMatrix.loc[["A","B"],["W","Y"]] #subset of data frame
+
+
+#Changing columns and rows
+dataMatrix["sumYZ"] = dataMatrix["Y"] + dataMatrix["Z"]
+dataMatrix.drop("W", axis=1, inplace=True) #axis=1 specifies columns, inplace specify apply changes to dataframe
+dataMatrix.drop("E", axis=0) #drops row, but did not apply to matrix
+

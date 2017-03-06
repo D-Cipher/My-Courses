@@ -1,0 +1,24 @@
+What is Aws data warehouse service called?
+-Redshift
+
+What does an AWS Region consist of?
+-An independent collection of AWS computing resources in a defined geographic area.
+
+An AWS VPC is a component of which AWS service?
+-Network Service. (Virtual Private Cloud)
+
+What allows organizations to do complex analysis on large volumes of data?
+-Elastic Map Reduce
+
+How many regions are there on the AWS platform currently? 
+-11
+
+Which statement best describes Availability Zones?
+-Distinct locations from within an AWS region that are engineered to be isolated from failures
+
+Amazon's highly scaleable DNS service is called
+-Route53
+
+What service offers object based (file based) storage?
+-Simple Storage Service (S3)
+

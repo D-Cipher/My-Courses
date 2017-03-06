@@ -1,0 +1,87 @@
+AWS Global Network:
+Region = Geographic area
+Availability Zone = Data Center or Multiple Data Centers
+Edge Location = Content Delivery Network, for Cashe
+
+
+Network Content Delivery:
+VPC = Virtual Private Cloud, virtual data center
+**Need to know how to build a VPC from memory
+Route53 = DNS service, looking up ip addresses, 53 is the DNS port
+Cloud Front = content delivery network
+Direct Connect = Connecting up office through a dedicated line
+EC2 = Elastic Compute Cloud, virtual machine in the cloud
+Elastic Beanstalk = Deploy code to AWS, provision all underlining infrastructure around it.
+Lambda = Serverless host, upload code and code will respond to events.
+
+
+Storage
+S3 = Object based storage, virtual disk in the cloud to store objects. Not used for installing a database, application or game (block based).
+Glacier = Archive files from S3 off, don't need instant access.
+EFS = Elastic file service, blocked based storage for applications and games
+Storage Gateway = Connecting up S3 to local servers
+
+
+Databases
+RDS = Relational database service, mySQL, aurora, etc.
+DynamoDB = Non-Relational database service, noSQL database
+Redshift = Database Warehouse solution, run queries when need to run reports.
+*Need for the Big Data Certification (which I want)
+Elasticache = way of caching your data.
+
+
+Migration
+Snowball = move TB of data into the cloud
+DMS = migrate onpremise database to the cloud
+SMS = Server Migration Services, migrate virtual machines
+
+
+Analytics
+Athena = Allow running sql queries on S3
+EMR = Bigdata processing, process large amount of data with Hadoop
+Cloud Search and Elastic Search = Allows for search engines
+Kinesis = Streaming and analyzing realtime data, ei: sentiment analysis, financial analysis
+*Need for Big Data Cert
+Data pipeline = move data around
+Quick Sight = business analytics tool and data visualization dashboards
+
+
+Security and Identity
+IAM = Signin and authenticate users
+WAF = Firewall solution
+
+
+Management tools
+Cloud Watch = monitor performance 
+Cloud Formation = way of turning infrastructure into code, document that describes your Aws infrastructure.
+
+
+Application Services
+SWF = Simple work flow services, coordinating automated tasks with human tasks
+API Gateway = allow users access backend data securely
+
+
+Developer Tools
+CodeCommit = github, store code
+CodeBuild = compiling code
+CodeDeploy = deploy code
+CodePipeline = testing code
+
+
+Mobile Services
+Mobile Hub = Design features for mobile apps
+Cognito = Sign in using creditials
+
+
+Artificial Intelligence 
+lex = embed alexa to ur programs
+Polly = text to speech to mp3
+Machine Learning = Analyze data set through amazon machine learning.
+Rekognition = facial recognition
+
+
+Messaging
+SNS = simple notification services 
+SQS = decoupling que system
+SES = send and recieve emails
+

@@ -1,0 +1,29 @@
+EC2 Overview
+
+Elastic Compute Cloud (EC2) - web service provides resizable compute capacity in the cloud. A computer in the cloud.
+
+Pricing models:
+-On Demand = pay fixed rate by the hour with no commitment
+-Reserved = capacity reservation for 1 to 3 year terms
+-Spot = bid for a price you want for instant capacity, supply and demand. If a spot instance is terminated you will not be charged for partial hour of usage, but if you terminate you will be charged.
+
+Instance types:
+T2 - Low cost general purpose Web servers
+M3, M4 - General Purpose for App servers
+C3, C4 - Compute Optimized, DBs and CPU intensive apps
+R3 - RAM intensive, memory intensive apps
+G2 - Graphics/GPU
+I2 - IOPS intensive, High speed storage, NoSQL data warehousing
+D2 - Dense Storage, Fileservers, Hadoop
+
+
+EBS
+Create storage volumes and attach them to EC2 instances. A disk in the cloud.
+-IOPS = input output per second
+
+Volume types:
+-General Purpose SSD (GP2) - 3 IOPS per GB
+-Provisioned IOPS SSD (IO1) - Designed for IO intensive apps like large relational or NoSQL databases.
+-Magnatic - low cost infrequent services for file servers.
+
+ 

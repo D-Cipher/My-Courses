@@ -1,0 +1,38 @@
+#Conditional Selection
+
+import numpy as np
+import pandas as pd
+from numpy.random import randn
+
+np.random.seed(101)
+dfrm = pd.DataFrame(
+    randn(5,4),
+    ["A","B","C","D","E"],
+    ["W","X","Y","Z"]) 
+print(dfrm)
+
+#Single Conditions
+dfrm[dfrm > 0] #Filter out all data less than 0
+
+dfrm[dfrm["X"]>0] #Filter data where column X > 0
+
+dfrm[dfrm["X"]>0]["W"] #Grabs W col where condition met
+
+dfrm[dfrm["X"]>0][["Y","X"]] #Grabs Y and X
+
+
+#Multiple Conditions
+dfrm[(dfrm["X"]>0) & (dfrm["Y"]>1)] #use & for "and"; use | for "or"
+
+
+#Setting the Index
+dfrm.reset_index() #rest index, to apply to dfrm .reset_index(inplace=True)
+
+#Creating a new Index
+st_ind = "CA NY WY OR CO".split()
+
+dfrm["States"] = st_ind #Creates column called States
+
+dfrm.set_index("States") #Creates new index
+
+

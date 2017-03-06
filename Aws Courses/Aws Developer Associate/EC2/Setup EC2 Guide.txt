@@ -1,0 +1,61 @@
+#Setup EC2 Guide
+
+This is a guide on launching an instance of Amazon Web Service's EC2 Virtual Server.
+
+##Objective
+Once set up, we should be able to SSH into our EC2 via the command line (Linux, MAC). For windows, PuTTY (see PuTTY guide).
+
+In the command line:
+'''
+ssh ec2-user@54.209.96.172 -i
+'''
+
+
+##Selecting and Configuring
+1) In the AWS console select EC2
+2) Choose a virtual machine, ei: "Amazon Linux AMI 2016.09.1 (HVM)"
+3) Choose a virtual disk, ei: "General purpose t2.micro"
+
+4) Configure instance details
+Important: select an IAM role. If you do not have a role create a new IAM role. This will allow you to CLI using roles instead using credentials. This way no credentials are stored on the instance. For more details see "Setup IAM Guide".
+'''
+IAM role = "S3-Admin-Access"
+'''
+
+
+5) Add Storage (default is fine)
+6) Add a tag, specifically name.
+'''
+Key = "Name", Value = "EC2-testMachine" 
+'''
+
+##Security Config
+Very importantly, we need to setup security group.
+
+1) Select create new security group
+
+2) Give the security group a name, ei: "WebDMZ"
+
+3) Add rules, standard are SSH and HTTP
+'''
+Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "Custom", "0.0.0.0/0"
+
+Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "Custom", "0.0.0.0/0, ::/0"
+'''
+
+##Key Pair
+We now need to set up a EC2 key on our computer. 
+
+1) Hit Launch and a pop up will prompt you for a key pair. If you have a key you can select "Choose an existing key pair".
+
+2) If you do not have a key pair choose "Create new key pair" and download key pair. 
+
+For windows users you will need to convert key pair to PuTTY key. See PuTTY key guide for instructions on this.
+
+Save key and note the location, ei: MyEC2Key.pem
+
+##SSH into EC2
+Congrats your first EC2 is Launched. Now to access (for Linux and Mac), in the command line type in "ssh ec2-user@" and the public ip address of your EC2 instance, ei:
+'''
+ssh ec2-user@54.209.96.172 -i MyEC2Key.pem
+'''

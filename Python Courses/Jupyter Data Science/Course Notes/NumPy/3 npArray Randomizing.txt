@@ -1,0 +1,8 @@
+#npArrays Randomizing
+import numpy as np
+
+np.random.randint(0,50,6) #6 random nums between 0 and 50
+
+np.random.rand(5,5) #5x5 matrix of uniformly distributed randoms bw 0 and 1
+
+np.random.randn(5,5) #5x5 matrix of normally distributed randoms bw -1 and 1, center=0

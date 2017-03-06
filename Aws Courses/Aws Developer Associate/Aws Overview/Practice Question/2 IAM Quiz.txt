@@ -1,0 +1,38 @@
+Which statement best describes IAM?
+-IAM allows you to manage users, groups, roles corresponding level of access to AWS Platform.
+
+Which are features of IAM?
+-Centralized control of AWS accounts
+-Integrates with existing active directory accout allowing single sign on
+-Granular access control to AWS resources
+
+What is the name of the service to allow users to use their social media account to gain temporary access to the AWS platform? 
+-Web Identity Federation
+
+What is the API call used to obtain temporary security credentials when authenticating using Web Identity Federation?
+-AssumeRoleWithWebIdentity
+
+What is the name of the API call to request temporary security credentials from the AWS platform when federating with Active Directory? 
+-AssumeRoleWithSAML
+
+When using active directory to authenticate to AWS what are the correct steps performed?
+1) User navigates to ADFS webserver
+2) User enters single sign on credentials
+3) User web browser recieves a SAML assertion from AD server
+4) User bowser posts SAML assertion to AWS SAML end point and AssumeRoleWithSAML API request temporary security credentials
+5) User able to access AWS Console
+
+What does SAML stand for?
+-SAML stands for Security Assertion Markup Language.
+
+What is AWS sign-in endpoint for SAML?
+-The AWS sign-in endpoint for SAML is https://signin.aws.amazon.com/saml
+
+When using Web Identity Federation to allow a user to access an AWS service (such as an S3 bucket) what is the correct order of steps? 
+1) User authenticates with facebook first
+2) User given an ID token by facebook
+3) An API call, AssumeRoleWithWebIdentity, is then used in conjunction with ID token.
+4) User granted temporary security credentials.
+
+
+

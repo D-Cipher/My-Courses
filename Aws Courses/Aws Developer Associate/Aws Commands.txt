@@ -1,0 +1,9 @@
+Aws Commands
+
+Navigating and Vewing Directories:
+aws s3 ls - lists directories in the S3 service
+pwd - Print working directory
+
+Creating Buckets in S3:
+aws s3 mb s3://dcy-bucket - creates a bucket named dcy-bucket
+

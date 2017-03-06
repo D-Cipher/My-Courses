@@ -1,9 +1,0 @@
-#Random Sampling
-
-import numpy as np
-
-np.random.rand(5,5) #5x5 array of uniformly distributed random nums
-
-np.random.randn(5,5) #5x5 array of normally distributed random nums, center=0
-
-np.random.randint(1,101,10) #10 random ints from (1,101]

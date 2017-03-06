@@ -1,0 +1,26 @@
+#Numpy array Indexing
+import numpy as np
+
+my_list = [1,2,3,4]
+
+arr = np.array(my_list)
+
+my_matrix = [[1,2,3],
+             [4,5,6],
+             [7,8,9]]
+
+np_matrix = np.array(my_matrix)
+
+np_matrix[0:2,1:3]
+
+np_matrix[:,0]
+
+#Conditional Indexing
+
+numls = np.arange(1,11)
+
+greater5 = numls > 5 #create array of bool where element > 5
+
+numls[greater5] #create an array where elements meet bool criteria
+
+numls[numls > 5] #shorthand

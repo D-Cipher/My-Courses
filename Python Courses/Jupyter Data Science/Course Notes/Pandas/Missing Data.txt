@@ -1,0 +1,19 @@
+Handling Missing Data
+
+import numpy as np
+import pandas as pd
+
+data_dict = {"A":[1,2,np.nan],"B":[5,np.nan,np.nan],"C":[1,2,3]}
+
+dfrm = pd.DataFrame(data_dict)
+
+dfrm
+
+#Drop NA method
+dfrm.dropna(thresh=2) #Drops row wth atleast 2 non-null values
+    #Note: dfrm.dropna(axis=1) #Drops col with null values
+
+#Fill NA
+dfrm.fillna(value=0) #Fills NA with zeros
+
+dfrm["A"].fillna(value=dfrm["A"].mean()) #Fills NA in col A with mean col A

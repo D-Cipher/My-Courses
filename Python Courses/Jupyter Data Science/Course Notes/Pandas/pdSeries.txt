@@ -1,0 +1,21 @@
+#pdSeries
+
+#main diff bw pdSeries and npArray is series can have axis labels
+
+# Creating a series
+labels = ["a","b","c"]
+myData = np.array([10,20,30])
+pd.Series(data=myData, index=labels)
+
+dataDict = {"a":10, "b":20, "c":30}
+pd.Series(dataDict)
+
+countries1 = pd.Series([1,2,3,4],["USA", "Germany", "USSR","Japan"])
+countries2 = pd.Series([1,2,5,4],["USA", "Germany", "Italy","Japan"])
+
+print(countries1)
+
+#Idexing series
+
+countries1[1]
+countries1 + countries2
