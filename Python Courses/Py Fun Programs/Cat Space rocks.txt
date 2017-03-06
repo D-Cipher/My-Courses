@@ -1,0 +1,543 @@
+# program template for Spaceship
+import simplegui
+import math
+import random
+
+# User interface
+WIDTH = 800
+HEIGHT = 600
+typeface = 'sans-serif'
+typesize = 20
+gain_lives_typesize = typesize + 60
+
+# Init globals
+sound_group = set([])
+score = 0
+lives = 0
+high_score = False
+level_modifier = 1
+level = 1
+time = 0
+taco_group = set([])
+colour = 0
+colour_shifting_up = True
+eye_opacity = 0
+eye_shifting_up = True
+turning = False
+
+class ImageInfo:
+    def __init__(self, center, size, radius = 0, lifespan = None, animated = False):
+        self.center = center
+        self.size = size
+        self.radius = radius
+        if lifespan:
+            self.lifespan = lifespan
+        else:
+            self.lifespan = float('inf')
+        self.animated = animated
+
+    def get_center(self):
+        return self.center
+
+    def get_size(self):
+        return self.size
+
+    def get_radius(self):
+        return self.radius
+
+    def get_lifespan(self):
+        return self.lifespan
+
+    def get_animated(self):
+        return self.animated
+
+# art assets created by Kim Lathrop, may be freely re-used in non-commercial projects, please credit Kim
+    
+# debris images - debris1_brown.png, debris2_brown.png, debris3_brown.png, debris4_brown.png
+#                 debris1_blue.png, debris2_blue.png, debris3_blue.png, debris4_blue.png, debris_blend.png
+debris_info = ImageInfo([320, 240], [640, 480])
+debris_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/debris1_brown.png")
+
+# splash image
+splash_info = ImageInfo([200, 150], [400, 300])
+splash_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/splash.png")
+
+# ship image
+ship_info = ImageInfo([45, 45], [90, 90], 35)
+ship_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/double_ship.png")
+
+# missile image - shot1.png, shot2.png, shot3.png
+missile_info = ImageInfo([5,5], [10, 10], 3, 50)
+missile_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/shot3.png")
+
+# asteroid images - asteroid_blue.png, asteroid_brown.png, asteroid_blend.png
+asteroid_info = ImageInfo([45, 45], [90, 90], 40)
+asteroid_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/asteroid_blend.png")
+
+# animated explosion - explosion_orange.png, explosion_blue.png, explosion_blue2.png, explosion_alpha.png
+explosion_info = ImageInfo([64, 64], [128, 128], 17, 24, True)
+explosion_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/explosion_alpha.png")
+
+# Taco
+taco_info = ImageInfo([200, 200], [400, 400], 40, 600)
+taco_image = simplegui.load_image('http://dl.dropbox.com/s/foj9xijrsxr7cgd/Double_Decker_Taco.png')
+
+# nebula images - nebula_brown.png, nebula_blue.png
+nebula_info = ImageInfo([400, 300], [800, 600])
+#nebula_image = simplegui.load_image("http://commondatastorage.googleapis.com/codeskulptor-assets/lathrop/nebula_brown.png")
+nebula_image = simplegui.load_image('http://dl.dropbox.com/s/vl74u7vtlaqfc1a/the_kitten_from_space_nebula_fog_bell_cats_800x600_hd-wallpaper-1518430.jpg')
+
+# sound assets purchased from sounddogs.com, please do not redistribute
+soundtrack = simplegui.load_sound("http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/soundtrack.mp3")
+missile_sound = simplegui.load_sound("http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/missile.mp3")
+missile_sound.set_volume(1.0)
+#ship_thrust_sound = simplegui.load_sound("http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/thrust.mp3")
+explosion_sound = simplegui.load_sound("http://commondatastorage.googleapis.com/codeskulptor-assets/sounddogs/explosion.mp3")
+
+# More sound assets from the web
+ship_thrust_sound = simplegui.load_sound('http://dl.dropbox.com/s/cekgwegi8ctibix/thrust1.mp3')
+level_up_sound = simplegui.load_sound('http://dl.dropbox.com/s/g5wwuf69wel9fjd/f8b973_Super_Mario_Bros_Coin_Sound_Effect.mp3')
+taco_sound = simplegui.load_sound('http://dl.dropbox.com/s/uzfku85yb5x2mdj/3fc83f_Super_Mario_Bros_1_Up_Sound_Effect.mp3')
+taco_sound.set_volume(0.6)
+gain_lives_sound = simplegui.load_sound('http://dl.dropbox.com/s/5iebkkhwvp7owyi/ffc054_Super_Mario_Bros_Power_Up_Appears_Sound_Effect.mp3')
+gain_lives_sound.set_volume(0.7)
+splash_screen_soundtrack = simplegui.load_sound('http://dl.dropbox.com/s/ft635f5wickq0xp/ie_Short_Cow_MooMeow_Mix_Comm-KevanGC-2007570186.mp3')
+
+# helper functions
+def angle_to_vector(ang):
+    return [math.cos(ang), math.sin(ang)]
+
+def dist(p,q):
+    return math.sqrt((p[0] - q[0]) ** 2+(p[1] - q[1]) ** 2)
+
+def uniform(lower, upper):
+    range = upper - lower
+    return random.random() * range + lower
+
+def process_sprite_group(set, canvas):
+    for sprite in list(set):
+        sprite.draw(canvas)
+        sprite.update()
+        if sprite.update() == True:
+            set.remove(sprite)
+
+def group_collide(group, other_object, type1 = None, type2 = None):
+    tmp = set(group)
+    collisions = 0
+    for sprite in list(group):
+        if sprite.collide(other_object):
+            if type1 == 'rock':
+                if random.randrange(0, 16) == 0 and type2 != 'ship':
+                    taco_group.add(Sprite(sprite.get_position(), [0, -0.2], 0, 0, taco_image, taco_info, taco_sound, 'taco'))
+                explosion_group.add(Sprite(sprite.get_position(), [0, 0], uniform(0, 6.283), 0, \
+                                           explosion_image, explosion_info, explosion_sound))
+            group.remove(sprite)
+            collisions += 1
+    return collisions
+
+def group_group_collide(group1, group2):
+    collision_count = 0
+    for sprite in list(group1):
+        collisions = group_collide(group2, sprite, 'rock')
+        if collisions:
+            group1.discard(sprite)
+            collision_count += collisions
+    return collision_count
+                
+class Ship:
+    def __init__(self, pos, vel, angle, image, info):
+        self.pos = [pos[0],pos[1]]
+        self.vel = [vel[0],vel[1]]
+        self.thrust = False
+        self.thrust_flag = False
+        self.angle = angle
+        self.angle_vel = 0
+        self.image = image
+        self.image_center = info.get_center()
+        self._image_center = list(self.image_center)
+        self.image_size = info.get_size()
+        self.radius = info.get_radius()
+        self.forward_vector = [0, 0]
+        self.speed = 0.35
+        self.friction = 1 - 0.015
+        self.rotation_speed = 0.07
+        
+    def draw(self, canvas):
+        global ship_damage
+        if self.thrust == True and self.thrust_flag == False:
+            self.thrust_flag = True
+            self._image_center[0] += self.image_size[0]
+        elif self.thrust == False and self.thrust_flag == True:
+            self.thrust_flag = False
+            self._image_center = list(self.image_center)
+        if ship_damage:
+            if time % 6 <= 2:
+                canvas.draw_image(self.image, self._image_center, self.image_size, self.pos, self.image_size, self.angle)
+                if time >= collision_time + 60:
+                    ship_damage = False
+        else:
+            canvas.draw_image(self.image, self._image_center, self.image_size, self.pos, self.image_size, self.angle)
+
+    def update(self):
+        # Glide
+        for i in range(2):
+            self.pos[i] += self.vel[i]
+            self.vel[i] *= self.friction
+            if -0.01 < self.vel[i] < 0.01:
+                self.vel[i] = 0
+        # Rotate
+        self.angle += self.angle_vel
+        # Accelerate
+        self.forward_vector = angle_to_vector(self.angle)
+        if self.thrust == True:
+            for i in range(2):
+                self.vel[i] += self.forward_vector[i] * self.speed
+        # Frame wrap
+        self.pos[0] %= WIDTH
+        self.pos[1] %= HEIGHT
+    
+    def get_position(self):
+        return self.pos
+    
+    def get_radius(self):
+        return self.radius          
+    
+    def turn(self, direction):
+            global turning
+            turning = True
+            self.angle_vel -= self.rotation_speed * direction
+    
+    def thrusters(self, boolean):
+        self.thrust = boolean
+        if self.thrust == True:
+            ship_thrust_sound.play()
+            sound_group.add(ship_thrust_sound)
+        elif self.thrust == False:
+            ship_thrust_sound.rewind()
+    
+    def shoot(self):
+        global a_missile
+        pos = [self.pos [i] + (self.forward_vector[i] * self.radius) for i in range(2)]
+        vel = [self.vel[i] + 8 * self.forward_vector[i] for i in range(2)]
+        ang = self.angle
+        missile_group.add(Sprite(pos, vel, ang, 0, missile_image, missile_info, missile_sound))
+    
+class Sprite:
+    def __init__(self, pos, vel, ang, ang_vel, image, info, sound = None, type = None):
+        self.pos = [pos[0],pos[1]]
+        self.vel = [vel[0],vel[1]]
+        self.angle = ang
+        self.angle_vel = ang_vel
+        self.image = image
+        self.image_center = info.get_center()
+        self.image_size = info.get_size()
+        self.radius = info.get_radius()
+        self.lifespan = info.get_lifespan()
+        self.animated = info.get_animated()
+        self.age = 0
+        self.type = type
+        if sound:
+            sound.rewind()
+            sound.play()
+            sound_group.add(sound)
+   
+    def draw(self, canvas):
+        if self.animated:
+            canvas.draw_image(self.image, [self.image_center[0] + self.image_size[0] * self.age, self.image_center[1]], \
+                              self.image_size, self.pos, self.image_size, self.angle)
+        elif self.type == 'taco':
+            if self.lifespan - self.age < 60:
+                if time % 4 <= 1:
+                    canvas.draw_image(self.image, self.image_center, self.image_size, self.pos, [100, 100], self.angle)
+            else:
+                canvas.draw_image(self.image, self.image_center, self.image_size, self.pos, [100, 100], self.angle)
+        else:    
+            canvas.draw_image(self.image, self.image_center, self.image_size, self.pos, self.image_size, self.angle)
+    
+    def update(self):
+        # Glide
+        for i in range(2):
+            self.pos[i] += self.vel[i]
+        # Rotate
+        self.angle += self.angle_vel
+        # Frame wrap
+        self.pos[0] %= WIDTH
+        self.pos[1] %= HEIGHT
+        # Lifespan
+        self.age += 1
+        if self.age >= self.lifespan:
+            return True
+        
+    def get_position(self):
+        return self.pos
+                                
+    def get_radius(self):
+        return self.radius
+        
+    def collide(self, other_object):
+        if dist(self.get_position(), other_object.get_position()) < self.radius + other_object.get_radius():
+            return True
+        else:
+            return False
+        
+    def safe_spawn(self, other_object):
+        if dist(self.get_position(), other_object.get_position()) > self.radius * 3 + other_object.get_radius() * 3:
+            return True
+
+# Draw handler
+def draw(canvas):
+    global gain_lives_text, eye_opacity, colour_shifting_up, eye_shifting_up, colour, time, lives, score, started, level, \
+    new_level, collision_time, ship_damage, high_score, gain_lives_typesize, gain_lives_time, gain_lives_top_margin, \
+    level_up_time, level_modifier, gain_lives_opacity
+    
+    # user interface
+    top_margin = frame.get_canvas_textwidth('A', typesize, typeface) * 2
+    side_margin = 50
+    
+    # animiate background
+    time += 1
+    # Nebula
+    canvas.draw_image(nebula_image, nebula_info.get_center(), nebula_info.get_size(), [WIDTH / 2, HEIGHT / 2], [WIDTH, HEIGHT])
+    # Eyes
+    if started and new_level:
+        hsla1 = 'hsla(0, 90%, 20%,' + str(eye_opacity) + ')'
+        hsla2 = 'hsla(15, 100%, 70%,' + str(eye_opacity) + ')'
+        canvas.draw_circle([600, 381], 9, 8, hsla1, hsla2)
+        canvas.draw_circle([706, 371], 8, 8, hsla1, hsla2)
+        if eye_shifting_up:
+            if eye_opacity < 0.6:
+                eye_opacity += 0.06
+            else:
+                eye_shifting_up = False
+        else:
+            if eye_opacity > 0:
+                eye_opacity -= (0.52 / 50)
+            else:
+                eye_shifting_up = True
+    # Debris
+    wtime = (time / 4) % WIDTH
+    center = debris_info.get_center()
+    size = debris_info.get_size()
+    canvas.draw_image(debris_image, center, size, (wtime - WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
+    canvas.draw_image(debris_image, center, size, (wtime + WIDTH / 2, HEIGHT / 2), (WIDTH, HEIGHT))
+
+    # draw ship and sprites
+    process_sprite_group(taco_group, canvas)
+    my_ship.draw(canvas)
+    process_sprite_group(rock_group, canvas)
+    process_sprite_group(missile_group, canvas)
+    process_sprite_group(explosion_group, canvas)
+    
+    # update ship
+    my_ship.update()
+    
+    # Ship collision with rocks
+    if ship_damage != True:
+        if group_collide(rock_group, my_ship, 'rock', 'ship') > 0:
+            # Losing lives
+            lives -= 1
+            # Ship damage
+            ship_damage = True
+            collision_time = int(time)
+            
+    # Ship collision with taco
+    if group_collide(taco_group, my_ship, 'taco'):
+        # Gaining lives
+        lives += 1
+        gain_lives_typesize = typesize + 180
+        gain_lives_top_margin = top_margin + 180
+        gain_lives_time = 60
+        gain_lives_text = str(lives)
+        gain_lives_opacity = 0.1
+        gain_lives_sound.rewind()
+        gain_lives_sound.play()
+        sound_group.add(gain_lives_sound)
+        
+    # Missile collision with rocks
+    missile_and_rock_collide = group_group_collide(missile_group, rock_group)
+    if missile_and_rock_collide > 0:
+        '''
+        Level up
+        '''
+        if score % 8 + missile_and_rock_collide >= 8:
+            level_up_sound.play()
+            sound_group.add(level_up_sound)
+            level += 1
+            new_level = True
+            level_up_time = int(time)
+            level_modifier += 0.3
+        # Score update
+        score += missile_and_rock_collide
+        
+    # Track high score
+    if high_score < score or None:
+        high_score = score
+
+    # Lives OSD
+    _lives = 'LIVES:  ' + str(lives)
+    canvas.draw_text(_lives, [2 + side_margin, 2 + top_margin], typesize, 'Green', typeface)
+    canvas.draw_text(_lives, [side_margin, top_margin], typesize, 'Lime', typeface)
+    
+    # Score OSD
+    _score = 'SCORE:  ' + str(score)
+    canvas.draw_text(_score, [2 + WIDTH - side_margin - frame.get_canvas_textwidth(_score, typesize, typeface), \
+                              2 + top_margin], typesize, 'Teal', typeface)
+    canvas.draw_text(_score, [WIDTH - side_margin - frame.get_canvas_textwidth(_score, typesize, typeface), \
+                              top_margin], typesize, 'Aqua', typeface)
+
+    # Splash Screen
+    if not started:
+        # Title OSD
+        canvas.draw_image(splash_image, splash_info.get_center(), 
+                          splash_info.get_size(), [WIDTH / 2, HEIGHT / 2.06], 
+                          splash_info.get_size())
+        
+        # Controls OSD
+        controls = ('Up/T - Move Forward', 'Left/Right - Turn Left/Right', 'Space - Fire Weapon', 'Click/Enter - Start New Game')
+        for i in range(len(controls)):
+            canvas.draw_text(controls[i], [1 + side_margin, 1 + HEIGHT - top_margin * (1 + i)], 0.7 * typesize, 'gray', typeface)
+            canvas.draw_text(controls[i], [side_margin, HEIGHT - top_margin * (1 + i)], 0.7 * typesize, 'white', typeface)
+        
+        # High score OSD
+        if high_score:
+            canvas.draw_text('HIGH SCORE: ' + str(high_score), [2 + WIDTH / 2 - frame.get_canvas_textwidth\
+                             ('HIGH SCORE: ' + str(high_score), typesize * 2, typeface) / 2, 2 + top_margin + 15], \
+                             typesize * 2, 'Purple', typeface)
+            canvas.draw_text('HIGH SCORE: ' + str(high_score), [WIDTH / 2 - frame.get_canvas_textwidth\
+                             ('HIGH SCORE: ' + str(high_score), typesize * 2, typeface) / 2, top_margin + 15], \
+                             typesize * 2, 'hsl(' + str(colour) + ', 100%, 75%)', typeface)
+            if colour_shifting_up:
+                if colour < 360:
+                    colour += 2
+                else:
+                    colour_shifting_up = False
+            else:
+                if colour > 0:
+                    colour -= 2
+                else:
+                    colour_shifting_up = True
+        
+    # Level up graphics
+    if started and new_level:
+        # Level OSD
+        _level = 'LEVEL' + str(level)
+        if time % 4 <= 2:
+            canvas.draw_text(_level, [3 + WIDTH / 2 - 0.5 * (frame.get_canvas_textwidth(_level, typesize * 2, typeface)), 
+                                      3 + HEIGHT / 3], typesize * 2, 'Maroon', typeface)
+            canvas.draw_text(_level, [WIDTH / 2 - 0.5 * (frame.get_canvas_textwidth(_level, typesize * 2, typeface)), 
+                                      HEIGHT / 3], typesize * 2, 'White', typeface)
+        # Timer
+        if time == level_up_time + 60:
+            eye_opacity = 0
+            new_level = False
+            
+    # Gain lives graphics
+    if gain_lives_time > 0:
+        gain_lives_time -= 1
+        gain_lives_typesize -= 3
+        gain_lives_top_margin -= 3
+        if gain_lives_time >= 40:
+            gain_lives_opacity += (0.8 / 20)
+        if time % 2 == 0:
+            canvas.draw_text(gain_lives_text, [side_margin + frame.get_canvas_textwidth('LIVES:  ', typesize, typeface), \
+                                               gain_lives_top_margin], gain_lives_typesize, \
+                             'hsla(0, 100%, 100%, ' + str(gain_lives_opacity) + ')', typeface)
+        
+    # Reset
+    if lives <= 0 and started:
+        reset()
+        
+# Control functions
+def click(pos):
+    center = [WIDTH / 2, HEIGHT / 2]
+    size = splash_info.get_size()
+    inwidth = (center[0] - size[0] / 2) < pos[0] < (center[0] + size[0] / 2)
+    inheight = (center[1] - size[1] / 2) < pos[1] < (center[1] + size[1] / 2)
+    if (not started) and inwidth and inheight:
+        start()
+        
+def keydown(key):
+    if key == simplegui.KEY_MAP['left']:
+        my_ship.turn(1)
+    if key == simplegui.KEY_MAP['right']:
+        my_ship.turn(-1)
+    if key == simplegui.KEY_MAP['up'] or key == simplegui.KEY_MAP['T']:
+        my_ship.thrusters(True)
+    if started:
+        if key == simplegui.KEY_MAP['space']:
+            my_ship.shoot()
+            
+    if (not started) and key == 13:
+        start()
+        
+def keyup(key):
+    if turning == True:
+        if key == simplegui.KEY_MAP['left']:
+            my_ship.turn(-1)
+        if key == simplegui.KEY_MAP['right']:
+            my_ship.turn(1)
+    if key == simplegui.KEY_MAP['up'] or key == simplegui.KEY_MAP['T']:
+        my_ship.thrusters(False)
+
+# Event handlers
+def rock_spawner():
+    global rock_group
+    
+    pos = [random.randrange(0, WIDTH), random.randrange(0, HEIGHT)]
+    vel = [uniform(0.4, 0.7) * random.choice([-1, 1]) * level_modifier, uniform(0.4, 0.7) * random.choice([-1, 1]) * level_modifier]
+    ang = uniform(0, 6.283)
+    ang_vel = uniform(0.001, 0.01) * random.choice([-1, 1])
+    if started and len(rock_group) < 6:
+        a_rock = Sprite(pos, vel, ang, ang_vel, asteroid_image, asteroid_info)
+        if a_rock.safe_spawn(my_ship):
+            rock_group.add(a_rock)
+        else:
+            rock_spawner()
+
+def start():
+    global started, level_up_time, score, lives, level, level_modifier
+    
+    started = True
+    level_up_time = int(time)
+    lives = 3
+    score = 0
+    level = 1
+    level_modifier = 1
+    splash_screen_soundtrack.rewind()
+    soundtrack.play()
+    level_up_sound.play()
+            
+def reset():
+    global new_level, ship_damage, explosion_group, started, my_ship, level_up, rock_group, \
+    missile_group, taco_group, sound_group, gain_lives_time, turning, eye_opacity, gain_lives_opacity
+
+    started = False
+    new_level = True
+    ship_damage = False
+    gain_lives_time = 0
+    gain_lives_opacity = 0.1
+    eye_opacity = 0
+    turning = False
+    rock_group = set([])
+    missile_group = set([])
+    explosion_group = set([])
+    taco_group = set([])
+    for sound in sound_group:
+        sound.rewind()
+        sound_group.remove(sound)
+    my_ship = Ship([WIDTH / 2, HEIGHT / 2], [0, 0], 0, ship_image, ship_info)
+    soundtrack.rewind()
+    splash_screen_soundtrack.play()
+    
+frame = simplegui.create_frame("Asteroids", WIDTH, HEIGHT)
+
+frame.set_draw_handler(draw)
+frame.set_keydown_handler(keydown)
+frame.set_keyup_handler(keyup)
+frame.set_mouseclick_handler(click)
+
+timer = simplegui.create_timer(1000.0, rock_spawner)
+
+reset()
+timer.start()
+frame.start()
