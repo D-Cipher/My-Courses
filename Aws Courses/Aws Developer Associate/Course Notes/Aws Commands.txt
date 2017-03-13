@@ -1,5 +1,10 @@
 Aws Commands
 
+General Commands:
+sudo su - root privileges
+yum update - update machine
+yum install httpd - installs apache
+
 Navigating and Vewing Directories:
 aws s3 ls - lists directories in the S3 service
 pwd - Print working directory

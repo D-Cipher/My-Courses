@@ -6,6 +6,8 @@ Pricing models:
 -On Demand = pay fixed rate by the hour with no commitment
 -Reserved = capacity reservation for 1 to 3 year terms
 -Spot = bid for a price you want for instant capacity, supply and demand. If a spot instance is terminated you will not be charged for partial hour of usage, but if you terminate you will be charged.
+-Dedicated Hosts = Physical EC2 dedicated for your use paid by the hour.
+
 
 Instance types:
 T2 - Low cost general purpose Web servers
@@ -16,14 +18,21 @@ G2 - Graphics/GPU
 I2 - IOPS intensive, High speed storage, NoSQL data warehousing
 D2 - Dense Storage, Fileservers, Hadoop
 
+Note: one subnet goes to one availability zone.
 
-EBS
-Create storage volumes and attach them to EC2 instances. A disk in the cloud.
+EBS - Allows you to reate storage volumes and attach them to EC2 instances. A disk in the cloud.
 -IOPS = input output per second
 
 Volume types:
--General Purpose SSD (GP2) - 3 IOPS per GB
+-General Purpose SSD (GP2) - Balance price and performance 3 IOPS per GB
 -Provisioned IOPS SSD (IO1) - Designed for IO intensive apps like large relational or NoSQL databases.
--Magnatic - low cost infrequent services for file servers.
+-Magnatic Throughput Optimized HHD (ST1) - Data written in sequence for Data warehouses and Big data. Cannot be boot volumes.
+-Magnatic Cold HDD (SC1) - Low cost infrequent services for file servers. Cannot be boot volumes
+-Magnetic (Standard) - Lowest cost infrequent data storage. Bootable.
 
- 
+
+Security Groups - Virtual firewall. One instance can have multiple security groups, and add rules to each security group to allow traffic from and to your website.
+-Any rule change you make to your security group applies immediately.
+-Security group rules are stateful, meaning for any inbound rules outbound rules are added automatically.
+
+

@@ -11,22 +11,30 @@ ssh ec2-user@54.209.96.172 -i
 '''
 
 
-##Selecting and Configuring
+##Selecting AMI
 1) In the AWS console select EC2
 2) Choose a virtual machine, ei: "Amazon Linux AMI 2016.09.1 (HVM)"
 3) Choose a virtual disk, ei: "General purpose t2.micro"
 
-4) Configure instance details
-Important: select an IAM role. If you do not have a role create a new IAM role. This will allow you to CLI using roles instead using credentials. This way no credentials are stored on the instance. For more details see "Setup IAM Guide".
+
+##Configure instance details
+1) Network - Create a new virtual private cloud (VPC). Virtual data center to provision your resources.
+
+2) IAM role - Select an IAM role. If you do not have a role create a new IAM role. This will allow you to CLI using roles instead using credentials. This way no credentials are stored on the instance. For more details see "Setup IAM Guide".
 '''
 IAM role = "S3-Admin-Access"
 '''
 
+##Add Storage and Tags
+1) Add Storage (default is fine)
 
-5) Add Storage (default is fine)
-6) Add a tag, specifically name.
+2) Add a tag, specifically name.
 '''
-Key = "Name", Value = "EC2-testMachine" 
+Key = "Name", Value = "Easy-Machine" 
+Key = "Type", Value = "t2-micro_1gig"
+Key = "Department", Value = "Network System Infrastructure"
+Key = "Team", Value = "Data Science"
+Key = "StaffID", Value = "23554" 
 '''
 
 ##Security Config
@@ -38,9 +46,11 @@ Very importantly, we need to setup security group.
 
 3) Add rules, standard are SSH and HTTP
 '''
-Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "Custom", "0.0.0.0/0"
+Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "My IP", "86.158.67.104/32"
 
 Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "Custom", "0.0.0.0/0, ::/0"
+
+Type = "HTTPS", Protocol = "TCP", Port Range = "443", Source = "Custom", "0.0.0.0/0, ::/0"
 '''
 
 ##Key Pair
@@ -50,9 +60,15 @@ We now need to set up a EC2 key on our computer.
 
 2) If you do not have a key pair choose "Create new key pair" and download key pair. 
 
+3) Save key and note the location, ei: MyEC2Key.pem
+
 For windows users you will need to convert key pair to PuTTY key. See PuTTY key guide for instructions on this.
 
-Save key and note the location, ei: MyEC2Key.pem
+For Mac users in the terminal you will need to change the permissions on the key pair.
+'''
+CHMOD 400 MyEC2Key.perm
+'''
+
 
 ##SSH into EC2
 Congrats your first EC2 is Launched. Now to access (for Linux and Mac), in the command line type in "ssh ec2-user@" and the public ip address of your EC2 instance, ei:

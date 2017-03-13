@@ -1,0 +1,39 @@
+#Apache Guide
+
+This is a guide on setting up Apache on an instance of you Amazon Web Service's EC2 Virtual environment.
+
+
+##Prerequisites
+You must be in root and be sure to update machine then install Apache
+'''
+sudo su
+yum update
+yum install httpd
+'''
+
+##Starting Apache
+Start Apache and make sure it starts everytime we boot up the EC2 instance.
+'''
+service httpd start
+chkconfig httpd on
+'''
+
+##Create a website
+Go to "/var/www/html" anything in this directory is publically accessable.
+'''
+cd /var/www/html
+'''
+
+Then create an "index.html". Note on nano: use [ctrl]+x to exit, they Y to save.
+'''
+nano index.html
+
+<html><h1>Hello D'Cipher</h1></html>
+'''
+
+
+
+
+
+
+
