@@ -1,0 +1,19 @@
+Aws CLI Useful Commands
+docs.aws.amazon.com/cli/latest/reference/ec2/index.html
+
+General Commands:
+sudo su - root privileges
+yum update - update machine
+yum install httpd - installs apache
+
+Navigating S3:
+aws s3 ls - lists directories in the S3 service
+pwd - print working directory
+aws s3 mb s3://dcy-bucket - creates a bucket named dcy-bucket
+
+Provisioning Instances:
+aws ec2 describe-instances - describes all instances we have
+aws ec2 describe-images --owners amazon --filters "Name=platform,Values=linux" "Name=root-device-type,Values=ebs" - describes instances available to us
+aws ec2 run-instances --image-id ami-0b33d91d --count 1 --instance-type t2.micro --key-name NSI_EC2_AccessKey --security-group-ids sg-342cea4b --subnet-id subnet-df1835f2
+aws ec2 terminate-instances --instance-ids i-08d7d0264926c57aa
+

@@ -8,20 +8,26 @@ Pricing models:
 -Spot = bid for a price you want for instant capacity, supply and demand. If a spot instance is terminated you will not be charged for partial hour of usage, but if you terminate you will be charged.
 -Dedicated Hosts = Physical EC2 dedicated for your use paid by the hour.
 
-
-Instance types:
-T2 - Low cost general purpose Web servers
-M3, M4 - General Purpose for App servers
-C3, C4 - Compute Optimized, DBs and CPU intensive apps
-R3 - RAM intensive, memory intensive apps
-G2 - Graphics/GPU
-I2 - IOPS intensive, High speed storage, NoSQL data warehousing
+Instance types (DrMcGiftPx):
 D2 - Dense Storage, Fileservers, Hadoop
+R3, R4 - RAM intensive, memory intensive apps
+M3, M4 - General Purpose web servers
+C3, C4 - Compute Optimized, DBs and CPU intensive apps
+G2 - Graphics/GPU for video and gaming
+I2 - IOPS intensive, High speed storage, NoSQL data warehousing
+F1 - Field Programmable Gateway, hardware acceleration
+T2 - Low cost general purpose Web servers
+P2 - General purpose GPU for machine learning, Bit Coin mining
+X1 - Extreme Memory optimized, SAP Apache Spark
 
-Note: one subnet goes to one availability zone.
 
-EBS - Allows you to reate storage volumes and attach them to EC2 instances. A disk in the cloud.
+*Note: one subnet goes to one availability zone.
+
+
+Volumes:
+EBS - Elastic Block Storage, allows you to reate storage volumes and attach them to EC2 instances. A disk in the cloud.
 -IOPS = input output per second
+Volumes - virtual hard disk that exist on EBS
 
 Volume types:
 -General Purpose SSD (GP2) - Balance price and performance 3 IOPS per GB
@@ -30,9 +36,32 @@ Volume types:
 -Magnatic Cold HDD (SC1) - Low cost infrequent services for file servers. Cannot be boot volumes
 -Magnetic (Standard) - Lowest cost infrequent data storage. Bootable.
 
+*Note you cannot mount 1 EBS to multiple EC2 instances.
+*Termination protection is turned off by default.
+*By default root EBS deleted when instance terminated.
+*Root volumes can't be encrypted.
+*Note When taking a snapshot of root volume stop the instance first.
+
+Snapshots - are incremental point in time copies of volumes, exist on S3.
 
 Security Groups - Virtual firewall. One instance can have multiple security groups, and add rules to each security group to allow traffic from and to your website.
 -Any rule change you make to your security group applies immediately.
 -Security group rules are stateful, meaning for any inbound rules outbound rules are added automatically.
 
+SDKs:
+-Android, IOS, JavaScript
+-Java
+-.Net
+-Node.js
+-PHP
+-Python
+-Ruby
+-Go
+-C++
 
+Default Region = US-East-1
+
+Cloud Watch - for performance monitoring
+Standard Monitoring = 5 Mins
+Detailed Monitoring = 1 Mins
+Cloud Trail - for auditing

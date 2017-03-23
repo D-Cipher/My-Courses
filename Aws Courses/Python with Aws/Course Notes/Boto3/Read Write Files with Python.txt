@@ -1,0 +1,47 @@
+#Reading files with Python
+
+#Reading a SMALL file, puts the file into memory
+with open("readthisfile.txt", "r") as f:
+    fContents = f.read()
+    print(fContents)
+
+#Reading a SMALL file, put all lines into a list
+with open("readthisfile.txt", "r") as f:
+    fContents = f.readlines()
+    print(fContents)
+
+#Read a line in the file
+with open("readthisfile.txt", "r") as f:
+    fContents = f.readline()
+    print(fContents, end="")
+
+print("=====")
+
+#Reads one line at a time
+with open("readthisfile.txt", "r") as f:
+    for line in f:
+        print(line, end="")
+
+print("=====")
+
+#Reads 99 characters at a time
+with open("readthisfile.txt", "r") as f:
+    size_to_read = 99
+    fContents = f.read(size_to_read)
+
+    while len(fContents) > 0:
+        print(fContents, end="")
+        fContents = f.read(size_to_read)
+
+#Writing to a file if exist or creating new file
+with open("writethisfile.txt", "w") as f:
+    f.write("hello world")
+
+
+#Reading a file and Writing a copy to new file
+with open("readthisfile.txt", "r") as rf:
+    with open("readthisfile_edited.txt", "w") as wf:
+        for line in rf:
+            wf.write(line)
+
+
