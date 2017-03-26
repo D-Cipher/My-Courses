@@ -1,0 +1,21 @@
+VPC Overview
+
+Virtual Private Cloud (VPC) - lets you provision an isolated section of AWS where you can launch your AWS resources in a virtual network that you define. You chave full control over the virtual network, including:
+-Assign IP address range
+-private facing subnets with no internet access
+-Configure routing tables
+-Create internet network gateway attached to VPC (one gateway per VPC)
+-Subnet network access control list, these are stateless meaning inbound and outbound traffic must be specified.
+
+Note: one subnet per availability zone.
+
+IP Address Ranges:
+10.0.0.0 - corporate internal address
+172.16.0.0 - 12 prefix
+192.168.0.0 - home addresses
+
+Default VPCs:
+All subnets in default VPC have a route out to the internet. Each EC2 instance has both a public and private IP address. If you delete the default VPC the only way to get it back is to contact AWS, so don't delete it!!
+
+VPC Peering - Allows you to connect one VPC with another via direct network route using a private IP address.
+Note: Peering is in a star configuration, NO TRANSITIVE peering.

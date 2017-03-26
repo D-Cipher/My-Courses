@@ -16,7 +16,7 @@ ssh ec2-user@54.209.96.172 -i MyEC2Key.pem
 
 
 ###Configure instance details
-* Network - Create a new virtual private cloud (VPC). Virtual data center to provision your resources.
+* Network - By default our EC2 instance will be set up in the default virtual private cloud (VPC). However, it is highly recommended that you provision your own virtual private cloud (VPC) and provision your resources the the virtual data center. To learn how to create your own VPC see the "Setup VPC Guide". For this example, we can just use the default VPC.
 * IAM role - Select an IAM role. If you do not have a role create a new IAM role. This will allow you to CLI using roles instead using credentials. This way no credentials are stored on the instance. For more details see "Setup IAM Guide". For example, we created an "S3-Admin-Access" role that allows EC2 instances to access S3. We attach that role here:
 ```
 IAM role = "S3-Admin-Access"
@@ -46,7 +46,7 @@ Key = "StaffID", Value = "23554"
 Very importantly, we need to setup security group.
 1. Select create new security group.
 2. Give the security group a name, ei: "WebDMZ".
-3. Add rules, standard are SSH and HTTP.
+3. Add inbound rules, standard are SSH, HTTP, HTTPS.
 ```
 Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "My IP", "86.158.67.104/32"
 
