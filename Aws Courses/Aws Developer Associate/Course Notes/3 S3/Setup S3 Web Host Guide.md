@@ -50,7 +50,7 @@ Once the files are uploaded, we need to allow everyone view permissions and add 
 Grantee = "Everyone"; View Permissions = "Selected"
 ```
 2. Click on the bucket, under "Properties", expand "Premissions", and click on "Edit bucket policy". In the pop up window paste in this GetObject policy:
-```
+```json
 {
   "Id": "Policy1489935006196",
   "Version": "2012-10-17",

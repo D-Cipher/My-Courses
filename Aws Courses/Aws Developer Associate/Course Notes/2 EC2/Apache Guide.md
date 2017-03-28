@@ -28,7 +28,7 @@ cd /var/www/html
 ```
 
 Then create an "index.html". Note on nano: use [ctrl]+x to exit, they Y to save.
-```
+```html
 nano index.html
 
 <html><h1>Hello World</h1></html>

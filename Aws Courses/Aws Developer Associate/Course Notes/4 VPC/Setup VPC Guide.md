@@ -99,10 +99,8 @@ VPC = "vpc-7de1c61b | theMatrix-VPC"
 ```
 3. Add inbound rules, standard are SSH, HTTP, HTTPS. Then click "Save".
 ```
-Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "0.0.0.0/0"
-
+Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "72.21.196.0/24"
 Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "Custom", "0.0.0.0/0, ::/0"
-
 Type = "HTTPS", Protocol = "TCP", Port Range = "443", Source = "Custom", "0.0.0.0/0, ::/0"
 ```
 

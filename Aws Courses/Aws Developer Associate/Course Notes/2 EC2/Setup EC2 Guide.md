@@ -48,10 +48,8 @@ Very importantly, we need to setup security group.
 2. Give the security group a name, ei: "WebDMZ".
 3. Add inbound rules, standard are SSH, HTTP, HTTPS.
 ```
-Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "My IP", "86.158.67.104/32"
-
+Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "Custom", "72.21.196.0/24"
 Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "Custom", "0.0.0.0/0, ::/0"
-
 Type = "HTTPS", Protocol = "TCP", Port Range = "443", Source = "Custom", "0.0.0.0/0, ::/0"
 ```
 
