@@ -14,6 +14,7 @@ ssh ec2-user@10.0.1.111 -i ~/.ssh/authorized_keys
 You must first alreay created a VPC with both a public and private subnet. See "Setup VPC Guide" for details.   
 
 ###Allocate Elastic IP
+We will first need a new elastic ip address for a NAT gateway.
 1. In the VPC dashboard click on "Elastic IPs"
 2. Click "Allocate new address" and note the allocation ID of your new elastic IP.
 
@@ -48,7 +49,7 @@ Group Name = "theMatrix-sg-RDSSG"
 Desciption = "SSH, MYSQL, Redshift, All ICMP"
 VPC = "vpc-7de1c61b | theMatrix-VPC"
 ```
-2. Once created, select the security group, click the "Inbound Rules" tab. Then click "Edit". Then configure the following rules. Again, for source, use our public subnet's ip:
+2. Once created, select the security group, click the "Inbound Rules" tab. Then click "Edit". Then configure the following rules. Again, your private subnet should only allow traffic from your public subnet. For source, use our public subnet's ip:
 ```
 Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "10.0.2.0/24"
 Type = "MYSQL/Aurora", Protocol = "TCP", Port Range = "3306", Source = "10.0.2.0/24"
@@ -63,7 +64,7 @@ Network = "theMatrix-VPC"
 Subnet = "subnet-1b464b36 | 10.0.1.0-us-east-1d"
 Auto-assign Public IP = "Use subnet setting (Disable)"
 ```
-Then, be sure to select the security group we created earlier, and click launch instance. Important, make a note of the EC2 key pair that you are using and its location. Also, don't include a bootstrap script for this instance.
+Then, be sure to select the security group we created earlier. Be sure the security group has SSH with the souce being the ip address of your public subnet. Don't include a bootstrap script for this instance. Then click launch instance. Important, make a note of the EC2 key pair that you are using and its location. 
 
 Once the instance is launched, click on the private instance and notice that it has no IPv4 Public IP address. Whereas, if you click on the public instance it does have one. 
 
@@ -87,10 +88,11 @@ cd /Documents/Aws Files/Aws KEYS/EC2 Key Pairs/
 vi EC2TestKey.pem
 ```
 2. SSH into your public instance. See "Setup EC2 Guide" on how to SSH into an instance.
-4. Elevate your privileges to su and create a user account. Use -m to create a home directory inside your instance, which you will store our key pair.
+4. Elevate your privileges to su and create a user account. Use -m to create a home directory inside your instance, which you will store our key pair. Use -p to create a password.
 ```
 sudo su
-sudo useradd neo -m -s /bin/false
+sudo useradd neo -m -s /bin/false -p *****
+```
 3. Log in as the user you created and install your key pair. Use cat and paste in your public key, then press [enter], and [ctrl] + "d" to exit. 
 ```
 sudo su -s /bin/bash neo

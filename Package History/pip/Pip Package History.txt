@@ -17,6 +17,12 @@ Data science
 pip3 install jupyter
 pip3 install numpy
 pip3 install pandas
+pip3 install sqlalchemy
+pip3 install lxml
+pip3 install xlrd
+pip3 install html5lib
+pip3 install BeautifulSoup4
+
 
 Aws
 pip3 install awscli

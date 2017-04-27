@@ -1,67 +1,80 @@
-##Configure VPC Private Subnet
-This is a guide on configuring your VPCs' private subnets allowing your private subnets to communicate out to the internet via a network address translation (NAT).
+##Setup Redshift Guide
+This is a guide on how to properly setup SQL Workbench/J as your client for connecting to your Redshift clusters. SQL Workbench/J is the recommended free client by Amazon. For more information on other partner tools, visit: https://aws.amazon.com/redshift/partners/. This guide will focus on setting up your client and connecting to a public Redshift cluster. It is highly recommended that you make your clusters private, but for setting up SQL Workbench/J purposes, we will build a public cluster. For more inforation on setting up a private cluster, see "Setup Redshift Guide".
 
 ###Objective
-Once set up, we should have a good understanding of the process of configuring your VPC's private subnet with the ability to communicate with your public subnet via a network address translation (NAT).
+Once set up, we should have a good understanding of the process of connecting your SQL Workbench client to Redshift. We should then be able to connect directly from our SQL client into our public Redshift cluster. 
 
-From our public instance, we will be able to SSH into our private instance, using its EC2 key pair and its private ip address.
+Simply configure your SQL client with the following and connect:
 ```
-chmod 0600 EC2TestKey.pem
-ssh ec2-user@10.0.1.111 -i EC2TestKey.pem
-```
-If VPC has been configured correctly, we should be inside our private subnet instance, which should have access the internet via our NAT gateway. To test this, perform a yum update and it should update all security patches. Also, yum install mysql, it should be able to download mySQL.  
-```
-sudo su
-yum update -y
-yum install mysql -y
+Driver = "Redshift (com.amazon.redshift.jdbc42.Driver)"
+URL = "jdbc:redshift://localhost:5439/dcydatabase"
+Username = "admin"
+Password = "*****"
 ```
 
 ###Prerequisites
-You first already have a VPC with a public subnet and a private subnet created. See "Setup VPC Guide" for details.   
+For this guide, please have SQL workbench and Java Runtime Environment already installed. Also, it is recommended that you have experience working with VPCs.
 
-###Allocate Elastic IP
-1. In the VPC dashboard click on "Elastic IPs"
-2. Click "Allocate new address" and note the allocation ID of your new elastic IP.
+1. SQL Workbench/J can be installed at: http://www.sql-workbench.net/.
+2. Java Runtime Environment can be installed at: http://www.oracle.com/technetwork/java/javase/downloads/.
 
-###Create NAT
-A NAT can be created in one of two ways: 1) Configure an instance to perform NAT called a NAT instance, 2) deploy a NAT gateway. NAT instances are very involved and require manager scripts and updating to prevent bottlenecks. NAT gateways will be managed by Amazon so once setup Amazon will handle all of the updates and sizing. For this reason, NAT gateways are prefered and will be the method we use in this guide.
+###Create a Cluster
+Now we will provision a Redshift cluster into the public subnet in the default VPC.
 
-1. In the VPC dashboard click on "NAT Gateways".
-2. Click create NAT Gateway and deploy it into your PUBLIC subnet. Then select your elastic IP.
+1. Go to your Redshift dashboard and click "Create Cluster" and configure the details. Make a note of the "Master user name" and "Master user password" you configure. Then click "Continue".
 ```
-Subnet = "subnet-43fb937f | 10.0.2.0-us-east-1e"
-Elastic IP Allocation ID = "eipalloc-2ce4761d"
+Cluster Identifier = "dcy-cluster"
+Database Name = "dcydatabase"
+Database Port = "5439"
+Master User Name = "admin"
+Master User Password = "*****"
+Confirm Password = "*****"
 ```
-3. Then click "Create a NAT Gateway".
+2. In the node specifications, for testing purposes we will use "dc1.large". See http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html for the specifications of the different cluster types. For node, we will use multi-node with 2 nodes, this is pretty standard. Then click "Coninue".
+```
+Node Type = "dc1.large"
+Cluster Type = "Multi Node"
+Number of compute nodes = "2"
+```
+3. For this example, default parameter group is fine and do not encrypt the database.
+4. Under "Configure network options", choose the "Default VPC". Also, keep it as publically accessible. It is highly recommended that you build your own VPC and put it in a private subnet, but for purposes of testing, we will use the default and public. 
 
-###Edit Route Table
-Now we want to add a route in our private subnet to the NAT gateway.
+```
+Choose a VPC = "Default VPC (vpc-02491a64)"
+Cluster Subnet Group = "default"
+Publicly Accessible = "Yes"
+Choose a public IP address = "No"
+Enhanced VPC Routing = "No"
+Availability Zone = "No Preference"
+```
+5. VPC security groups should be left as default.
+6. Leave CloudWatch Alarm as default. Then attach a role to allow Redshift to access S3. See "Setup IAM Guide" for details on creating roles. Then click "Continue".
+```
+Available Roles = "Redshift_S3-Admin"
+```
+7. Review and click "Create". The cluster should take a few mins to create.
 
-1. Go to "Route Tables" then select your private subnet, ei: "theMatrix-route-main".
-2. Click on the "Routes" tab, then click "Edit".
-3. Click "Add another route" and add the NAT gateway as the target, and destination as "0.0.0.0/0". Then click "Save".
-```
-Destination = "0.0.0.0/0", Target = "nat-04d4fb40a0ba620a8"
-```
+###Configure SQL Workbench
+In order to connect SQL Workbench to our cluster, we need to download the jdbc driver and configure it with SQL. Then we will connect to our database using our cluster's JDBC url.
 
-###Create New Security Group
-In order to test our NAT gateway, we need to create a new security group for the EC2 instance we will set up in our private subnet. This is important because we need to specify the type of traffic we are going to allow in. A private SQL server, for example, we will allow SSH, ICMP, and mySQL. Important note, the source will always be coming from our public subnet's ip address.
-
-1. Go to "Security Groups", click "Create Security Group".
+1. Go to the Redshift dashboard and click on "Connect client". Then next to JDBC Driver select "JDBC 4.2 (.jar)" and note the file path that it downloads to. Note, you can also use ODBC driver if that is your preference.
+2. Open up SQL Workbench and click on "File" > "Connect Window" to open up the connection profile window.
+3. Click "Manage Drivers" at the bottom left. Then create a new driver profile named "Redshift" with the file path to the JDBC we downloaded earlier. Then click "OK".
 ```
-Name Tag = "theMatrix-sg-RDSSG"
-Group Name = "theMatrix-sg-RDSSG"
-Desciption = "SSH, MYSQL, All ICMP"
-VPC = "vpc-7de1c61b | theMatrix-VPC"
+Name = "Redshift"
+Library = "C:\Users\cawen\Documents\Aws Files\Aws KEYS\Redshift Drivers\RedshiftJDBC42-1.1.17.1017.jar"
+Classname = "com.amazon.redshift.jdbc42.Driver"
 ```
-2. Once created, select the security group, click the "Inbound Rules" tab. Then click "Edit". Then configure the following rules. Again, for source, use our public subnet's ip:
+4. Create a new connection profile (top-left first button) and give it a name. Then select your Redshift driver.
+5. In Redshift, click on your cluster, and under the "Cluster Database Properties" section copy your "JDBC URL". Then SQL workbench, paste the "JDBC URL" in the URL field. 
+6. For username and password, use the username and password you configured when creating the cluster.
 ```
-Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "10.0.2.0/24"
-
-Type = "MYSQL/Aurora", Protocol = "TCP", Port Range = "3306", Source = "10.0.2.0/24"
-
-Type = "All ICMP - IPv4", Protocol = "ICMP", Port Range = "ALL", Source = "10.0.2.0/24"
+Driver = "Redshift (com.amazon.redshift.jdbc42.Driver)"
+URL = "jdbc:redshift://dcy-cluster.c4wtwtuews1y.us-east-1.redshift.amazonaws.com:5439/dcydatabase"
+Username = "admin"
+Password = "*****"
 ```
+7. Finally, make sure to check "Autocommit".
 
 ###Result
 To test the VPC private subnet, we need to provision a new EC2 instance into it. See "Setup EC2 Guide". When configuring the instance details make sure to put it in the VPC, ei:

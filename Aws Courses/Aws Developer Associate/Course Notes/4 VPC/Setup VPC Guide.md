@@ -26,8 +26,8 @@ IPv6 CIDR block = "No"
 Tenancy = "Default"
 ```
 
-###Create a Subnet
-Next we need a subnet. We can create multiple subnets, for example, one public subnet and one private subnet. However, remember, that only one subnet can be created per availability zone.
+###Create Subnets
+Next we need two subnets, one main subnet which will be private and one public. We can create multiple subnets, however, only one subnet can be created per availability zone.
 
 1. Go to Subnets and click on "Create Subnet".
 2. Give the subnet a name. Naming convention is the address range and availability zone.
@@ -40,9 +40,16 @@ VPC = "theMatrix-VPC"
 Availability Zone = "us-east-1d"
 IPv4 CIDR block = "10.0.1.0/24"
 ```
- 
+Repeat these steps for your public subnet.
+```
+Name Tag = "10.0.2.0-us-east-1e"
+VPC = "theMatrix-VPC"
+Availability Zone = "us-east-1e"
+IPv4 CIDR block = "10.0.2.0/24"
+```
+
 ###Attach Internet Gateway
-To make a subnet public we can attach internet access through Internet Gateway. Note that only one Internet Gateway per VPC.
+To allow a subnet access to the internet we can attach an Internet Gateway to our VPC. Note that only one Internet Gateway per VPC.
 
 1. Go to Internet Gateway and click "Create Internet Gateway".
 2. Name it your VPC name plus "IGW".
@@ -62,7 +69,7 @@ Route tables allow us to create route-in and route-outs into our subnets. Note t
 Name Tag = "theMatrix-route-public"
 VPC = "theMatrix-VPC"
 ```
-5. Go to the "Routes" tab and click "Edit" then click "Add another route", allowing all traffic with the target as your IGW. Note that the target should automatically pop up as long as you have the IGW attached.
+5. For your public route, go to the "Routes" tab and click "Edit" then click "Add another route", allowing all traffic with the target as your IGW. Note that the target should automatically pop up as long as you have the IGW attached.
 ```
 Destination = "0.0.0.0/0"; Target = "igw-fe243c99"
 ```
@@ -83,7 +90,7 @@ subnet-43fb937f | 10.0.2.0-us-east-1e
 ###Auto-Assign IP Address
 In order for instances inside the public subnet to access the internet we need to have the instance assign ip addresses to them.
 
-1. Select your public subnet and go to "Subnet Actions" > "Modify auto-assign IP settings".
+1. Go to "Subnets" and select your public subnet. Then click on "Subnet Actions" > "Modify auto-assign IP settings".
 2. Check "Enable auto-assign public IPv4 address", then click save.
 
 ###Create Security Group
@@ -102,6 +109,25 @@ VPC = "vpc-7de1c61b | theMatrix-VPC"
 Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "72.21.196.0/24"
 Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "Custom", "0.0.0.0/0, ::/0"
 Type = "HTTPS", Protocol = "TCP", Port Range = "443", Source = "Custom", "0.0.0.0/0, ::/0"
+```
+
+###Create Flow Log
+It is important to track the traffic in your VPC. Flow logs will log all activity in your VPC and send it to cloud watch.
+
+1. Go to your main dashboard and click on "Cloud Watch" under "Management Tools".
+2. In Cloud Watch click on "Logs" and click "Create Log Group", give it a name, and click "Create".
+```
+Log Group Name = "theMatrix-logs"
+```
+3. Go back to your VPC dashboard and select your custom VPC.
+4. Then click "Actions" > "Create Flow Log".
+5. You need to create a role tat allows cloud watch access. To quickly do this, click "Set Up Permissions", and in the popup click "Allow". Then select your newly created role.
+```
+Role = "flowlogsRole"
+```  
+6. Then set the destination log group to the log group that you created earlier. 
+```
+Destination Log Group = "theMatrix-logs"
 ```
 
 ###Result
