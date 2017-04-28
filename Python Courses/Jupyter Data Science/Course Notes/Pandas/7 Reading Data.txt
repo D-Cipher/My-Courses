@@ -1,0 +1,21 @@
+#=====Reading Data
+
+import numpy as np
+import pandas as pd
+
+#=====Reading from CSV and Excel
+df = pd.read_csv("examplecsv.csv") #reading from a csv
+df.head()
+
+df.to_csv("examplecsv.csv", index=False) #write to a csv
+
+pd.read_excel("Excel_Sample.xlsx", sheetname="Sheet1") #read from excel
+
+df.to_excel("Excel_Sample2.xlsx", sheet_name="NewSheet") #write to Excel
+
+
+#=====Reading from HTML
+
+data = pd.read_html("https://www.fdic.gov/bank/individual/failed/banklist.html")
+
+data[0].head()

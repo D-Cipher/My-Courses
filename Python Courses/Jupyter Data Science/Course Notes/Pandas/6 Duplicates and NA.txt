@@ -1,0 +1,40 @@
+#====Handling Missing Data
+
+import numpy as np
+import pandas as pd
+
+data_dict = {"A":[100,23,np.nan,58],
+             "B":[15,np.nan,np.nan,373],
+             "C":[12,264,578,12],
+             "Name":["John","Lee","Mike","John"]}
+
+df = pd.DataFrame(data_dict)
+
+df
+
+#====Drop and Fill NA
+
+df.isnull() #returns a df of null booleans
+
+df.dropna(thresh=2) #Drops row wth atleast 2 non-null values
+    #Note: dfrm.dropna(axis=1) #Drops col with null values
+
+df.fillna(value=0) #Fills NA with zeros
+
+df["A"].fillna(value=df["A"].mean()) #Fills NA in col A with mean col A
+
+#=====Duplicates
+
+df.set_index("Name").index.get_duplicates() #Get duplicates
+
+df["Name"].unique() #array of unique values
+df["Name"].nunique() #number of unique values
+
+#Counting Duplicates
+df["Name"].value_counts() ##Get counts for each unique
+df["Name"].value_counts().nlargest(3) #Get counts but display top 3 results
+
+#Droping duplicate rows
+df.drop_duplicates(subset=["Name"])
+
+df.drop_duplicates(subset=["Name"], keep=False) #Drops duplicates and original rows

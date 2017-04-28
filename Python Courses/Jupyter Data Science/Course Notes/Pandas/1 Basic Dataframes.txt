@@ -1,0 +1,50 @@
+#====Basic Dataframes
+
+import pandas as pd
+import numpy as np
+from numpy.random import randn
+
+#====Creating a Data Frame
+np.random.seed(101)
+
+#pd.DataFrame(data,row,column)
+df = pd.DataFrame(
+    randn(5,4),
+    ["Mark","John","Mike","Lee","Stan"],
+    ["A","B","C","D"]) 
+df
+
+
+#====Indexing Data Frames
+
+#Selecting cols
+df["A"]
+df[["A","C"]]
+
+#Selecting rows
+df.loc["Mark"]
+df.iloc[2]
+
+#Get subsets
+df.loc["John","B"] #get cell (row, col)
+df.loc[["John","Lee"],["A","B"]]
+
+
+#=====Changing Cols and Rows
+
+#Creating a sum row
+df["sumAB"] = df["A"] + df["B"]
+
+#Dropping cols and rows
+df.drop("D", axis=1, inplace=True) #axis=1 is columns, inplace commits changes
+
+df.drop("Lee", axis=0) #drops row
+
+
+#=====Creating a new Index
+
+stateIdx = "CA NY WY OR CO".split()
+
+df["States"] = stateIdx #Creates column called States
+
+df.set_index("States") #Creates new index

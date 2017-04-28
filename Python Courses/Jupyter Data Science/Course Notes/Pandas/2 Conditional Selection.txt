@@ -1,0 +1,28 @@
+#=====Conditional Selection
+
+import pandas as pd
+import numpy as np
+from numpy.random import randn
+
+np.random.seed(101)
+
+df = pd.DataFrame(
+    randn(5,4),
+    ["Mark","John","Mike","Lee","Stan"],
+    ["A","B","C","D"]) 
+df
+
+
+#=====Single Conditional Selection
+
+df[df>0] #Filter out data < 0
+
+df[df["A"]>0] #Filter out data A < 0
+
+df[df["A"]>0]["B"] #Grabs B where condition is met
+
+df[df["A"]>0][["A","B"]] #Grabs A and B
+
+#=====Multiple Conditions
+
+df[(df["A"]>0) & (df["C"]>0)] #& for "and"; | for "or"

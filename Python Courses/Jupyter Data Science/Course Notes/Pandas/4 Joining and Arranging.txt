@@ -1,0 +1,54 @@
+#=====Joining
+
+import numpy as np
+import pandas as pd
+from numpy.random import randn
+
+df1 = pd.DataFrame({"A":["A0","A1","A2","A3"],
+                   "B":["B0","B1","B2","B3"],
+                   "C":["C0","C1","C2","C3"],
+                   "D":["D0","D1","D2","D3"]},
+                  index=[0,1,2,3])
+print(df1)
+
+df2 = pd.DataFrame({"A":["A4","A5","A6","A7"],
+                   "B":["B4","B5","B6","B7"],
+                   "C":["C4","C5","C6","C7"],
+                   "D":["D4","D5","D6","D7"]},
+                  index=[4,5,6,7])
+print(df2)
+
+#=====Concatenation on rows and cols
+
+pd.concat([df1,df2], axis = 1) #col
+
+pd.concat([df1,df2], axis = 0) #row
+
+#=====Joining Data Frames
+leftTable = pd.DataFrame({"A" : ["A0","A1","A2","A3"],
+                    "B" : ["B0","B1","B2","B3"]},
+                   index=["0","1","2","3"])
+rightTable = pd.DataFrame({"C" : ["C0","C1","C2","C3"],
+                    "D" : ["D0","D1","D2","D3"]},
+                    index=["0","1","2","3"])
+
+leftTable.join(rightTable)
+
+#=====Merging Data Frames
+leftTable = pd.DataFrame({"key" : ["K0","K1","K2","K3"],
+                    "A" : ["A0","A1","A2","A3"],
+                    "B" : ["B0","B1","B2","B3"]})
+rightTable = pd.DataFrame({"key" : ["K0","K1","K2","K3"],
+                    "C" : ["C0","C1","C2","C3"],
+                    "D" : ["D0","D1","D2","D3"]})
+
+df = pd.merge(leftTable,rightTable,how="inner",on="key")
+
+df
+
+#===Rearrange columns
+df.columns.tolist()
+
+df = df[["key", "A", "B", "C", "D"]]
+
+df

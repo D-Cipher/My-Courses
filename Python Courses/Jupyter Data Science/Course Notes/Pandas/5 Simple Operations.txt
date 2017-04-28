@@ -1,0 +1,70 @@
+#=====Simple Operations
+
+import numpy as np
+import pandas as pd
+
+df = pd.DataFrame({"col1":[1,2,3,4],
+                  "col2":[444,555,666,444],
+                  "col3":["abc","def","ghi","xyz"]})
+
+df
+
+df.columns.tolist() #Get column names
+
+df["col2"].mean()
+
+df["col2"].sum()
+
+#=====Counting 
+ 
+df["col2"].value_counts() #Get counts for each unique
+df["col2"].value_counts().nlargest(3) #Get counts but display top 3 results
+
+sum(df.groupby("col2").count()["col3"])
+
+#======Correlation
+df["len_col3"] = df["col3"].str.len() #get the length of col3
+
+df[["len_col3","col1"]].corr()
+
+
+#====Apply Function
+
+def times2(x):
+    return x*2
+
+df["col4"] = df["col1"].apply(times2)
+
+#Times 2 with one line
+df["col4"] = df["col1"].apply(lambda x: x*2)
+
+df
+
+#Get length of each string
+df["col3"].apply(len)
+
+#Get number of strings that contain
+def getAces(strInput):
+    result = False
+    if "a" in strInput.lower():
+        result = True
+    return result
+
+sum(df["col3"].apply(lambda x: getAces(x)))
+
+
+#=====Sorting and Dropping
+
+df.drop("col1", axis=1) #use inplace=True to commit changes
+
+df.sort_values("col2") #sort by col2
+
+#=====Pivot Table 
+
+df = pd.DataFrame({"A":["foo","foo","foo","bar","bar","bar"],
+                  "B":["one","one","two","two","three","three"],
+                  "C":["x","y","x","y","x","y"],
+                  "D":[1,3,2,5,4,1]})
+df
+
+print(df.pivot_table(values="D", index=["A","B"], columns=["C"]))

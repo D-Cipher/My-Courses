@@ -1,0 +1,24 @@
+#=====Group By Method
+
+import numpy as np
+import pandas as pd
+
+salesData = {"Company":["Goog","Goog","Msft","Msft","FB","FB"],
+       "Person":["Sam","Charlie","Amy","Vanessa","Carl","Sarah"],
+       "Sales":[200,120,340,124,243,350]}
+
+df = pd.DataFrame(salesData)
+df
+
+byCompany = df.groupby("Company")
+
+byCompany.mean() #byCompany.std()
+
+byCompany.sum() 
+
+byCompany.count()
+
+byCompany.sum().loc["FB"] #Grabs the sum of FB
+
+byCompany.describe()#Grabs useful information
+    #Note: can also transpose byCompany.describe().transpose()
