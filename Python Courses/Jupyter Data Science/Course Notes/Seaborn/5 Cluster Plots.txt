@@ -1,0 +1,27 @@
+#=====Cluster Plots
+import numpy as np
+import seaborn as sns
+
+%matplotlib inline
+tipsData = sns.load_dataset("tips")
+flightsData = sns.load_dataset("flights")
+tipsData.head()
+
+flightsData.head()
+
+#=====Correlation Data
+tipsCorr = tipsData.corr()
+
+tipsCorr
+
+sns.heatmap(tipsCorr, annot=True, cmap="cool")
+
+#=====Clustering visualization
+
+#Heatmap
+flights_mon_yr = flightsData.pivot_table(index="month",columns="year",values="passengers")
+sns.heatmap(flights_mon_yr, cmap="magma", linecolor="white", linewidths=1)
+
+#Hierch Clustering
+sns.clustermap(flights_mon_yr, cmap="coolwarm", standard_scale=1)
+    #essentially puts similar things close to each other

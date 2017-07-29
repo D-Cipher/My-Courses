@@ -1,0 +1,103 @@
+﻿"""
+Write a Python function that takes a parameter miles and returns the number of feet in miles. 
+
+"""
+
+"""
+Write a Python function that takes three parameters hours min sec and returns the total number of seconds for hours, minutes and seconds. 
+
+"""
+
+"""
+Write a Python function that takes two parameters width and height corresponding to the lengths of the sides of a rectangle and returns the perimeter of the rectangle in inches. 
+"""
+
+"""
+Write a Python function that takes two parameters width and height corresponding to the lengths of the sides of a rectangle and returns the area of the rectangle.
+
+"""
+
+"""
+Write a Python function that takes a single parameter radius corresponding to the radius of a circle in inches and returns the the circumference of a circle with radius radius in inches. DO NOT use π=3.14, instead use the math module to supply a higher-precision approximation to π. 
+
+"""
+
+"""
+Write a Python function that takes a single parameter radius corresponding to the radius of a circle in inches and returns the the area of a circle with radius in square inches. Do not use π=3.14, instead use the math module to supply a higher-precision approximation to π. 
+
+"""
+
+"""
+Write a Python function that takes three parameters present value, interest rate and years and returns the future value of prsent value dollars invested at percent interest, compounded annually for a number of years years.
+
+"""
+
+"""
+Write a Python function called name_tag that takes as input the parameters first_name and last_name (strings) and returns a string of the form "My name is % %" where the percents are the strings first name and last name . Reference the test cases in the provided template for an exact description of the format of the returned string.
+
+"""
+
+"""
+Write a Python function name_and_age that takes as input the parameters name (a string) and age (a number) and returns a string of the form "% is % years old" where the percents are the string forms of name and age. Reference the test cases in the provided template for an exact description of the format of the returned string. 
+
+"""
+
+"""
+Write a Python function that takes as the parameters x0, y0, x1 and y1, and returns the distance between the points (x0,y0) and (x1,y1).
+
+"""
+
+"""
+Challenge: Write a Python function triangle_area that takes the parameters x0, y0, x1, y1, x2, and y2, and returns the area of the triangle with vertices (x0,y0), (x1,y1) and (x2,y2). (Hint: use the function as a helper function and apply Heron's formula.) 
+
+"""
+
+"""
+Challenge: Write a Python function that takes an integer number in the range [0,100), i.e., at least 0, but less than 100. It prints the message "The tens digit is % and the ones digit is %", where the percent signs should be replaced with the appropriate values. (Hint: Try using the arithmetic operators for integer division // and remainder % to find the two digits.)
+
+Test these three numbers: 42, 99, 5
+
+
+"""
+
+"""
+Challenge: Powerball is lottery game in which 6 numbers are drawn at random. Players can purchase a lottery ticket with a specific number combination and, if the number on the ticket matches the numbers generated in a random drawing, the player wins a massive jackpot. Write a Python function powerball that takes no arguments and prints the message "Today's numbers are %, %, %, %, and %.". The first five numbers should be random integers in the range [1,60), i.e., at least 1, but less than 60. In reality, these five numbers must all be distinct, but for this problem, I WILL ALLOW duplicates. The Powerball number is a random integer in the range [1,36), i.e., at least 1 but less than 36. Use the random module and the function random.randrange to generate the appropriate random numbers. Note that this function should print the desired message, rather than returning it as a string. 
+
+"""
+
+
+"""
+Write a Python function that takes as input the parameter number (an integer) and returns True if number is even and False if number is odd. Hint: Apply the remainder operator to n (i.e., number % 2) and compare to zero. 
+
+"""
+"""
+Write a Python function that takes as input the parameters hour (an integer in the range [1,12]) and is_am (a Boolean “flag” that represents whether the hour is before noon). The function should return True when the input corresponds to 11am or 12pm (noon) and False otherwise. 
+
+"""
+"""
+Write a Python function is_leap_year that take as input the parameter year and returns True if year (an integer) is a leap year according to the Gregorian calendar and False otherwise. The Wikipedia entry for leap yearscontains a simple algorithmic rule for determining whether a year is a leap year. Your main task will be to translate this rule into Python.
+Tests:
+#2000 is a leap year.
+#1996 is a leap year.
+#1800 is not a leap year.
+#2013 is not a leap year.
+
+"""
+
+"""
+Write a Python function name_and_age that take as input the parameters name (a string) and age (a number) and returns a string of the form "% is % years old" where the percents are the string forms of name and age. The function should include an error check for the case when 𝚊𝚐𝚎 is less than zero. In this case, the function should return the string "Error: Invalid Age".
+  Also, test whether name is a string.
+
+"""
+"""
+Write a Python function name_lookup that takes a string first_name that corresponds to one of ("Robert", Wil", "Alex" or "Emanuel") and then returns their corresponding last name ("Fischer", "Steinitz", "Alekhine" or "Lasker"). If first_name doesn't match any of those strings, return the string "No name in list"
+
+"""
+
+"""
+Given numbers a, b, and c, the quadratic equation ax^2+bx+c=0 can have zero, one or two real solutions (i.e; values for x that satisfy the equation). The quadratic formula x=(−b ± sqrt(b^2−4ac) / 2a can be used to compute these solutions. The expression b^2−4ac is the discriminant associated with the equation. If the discriminant is positive, the equation has two solutions. If the discriminant is zero, the equation has one solution. Finally, if the discriminant is negative, the equation has no solutions. 
+
+Write a Python function that takes numbers a, b and c and returns the solution to the quadratic formula. If the equation has no real solution, print the message "Error: No Real Solutions", if it has one, return the solution, if two, return both solutions.
+
+
+"""

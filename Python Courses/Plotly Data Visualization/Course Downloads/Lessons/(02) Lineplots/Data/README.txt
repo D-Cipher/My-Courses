@@ -1,0 +1,3 @@
+TotalCo2EmissionsByCountry.csv is licensed under the World Bank License (https://creativecommons.org/publicdomain/zero/1.0/), and the source data is available at http://data.worldbank.org/indicator/EN.ATM.CO2E.PC?page=1
+NumberOfMPsExpenseClaims_2010-2015.csv is adapted from data published by the Independent Parliamentary Standards Authority. No license is claimed for this data. If you are the license holder, please contact the instructor at me@richad-muir.com
+BoEBaseRate.csv is adapted from data licensed under the UK Open Government License (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and the source data is available at http://www.bankofengland.co.uk/boeapps/iadb/Repo.asp

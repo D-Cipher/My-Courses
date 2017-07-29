@@ -1,0 +1,48 @@
+#=====Quick Data Visualizations
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+%matplotlib inline
+
+df1 = pd.read_csv("df1", index_col=0)
+df2 = pd.read_csv("df2")
+
+df1.head()
+df2.head()
+
+#=====Simple Plots
+
+df1["A"].plot.hist(bins=30) #Histogram
+
+df1.plot.scatter(x="A", y="B") #Scatter plot
+
+df2.plot.bar(stacked=True) #Bar Chart
+
+df1[["A","B"]].plot.box() #Box plots
+
+#=====Simple Styling
+plt.style.use("ggplot")
+df1["A"].plot.hist(bins=20, alpha=0.5)
+
+
+#=====More Advanced Plots
+
+df2.plot.area(alpha = 0.4) #Area Chart
+
+df1.plot.line(x=df1.index, y="B", figsize=(12,3), lw=1) #Line Chart
+
+df1.plot.scatter(x="A", y="B", c="C") #Multi Dim Scatter plot
+
+df1.plot.scatter(x="A", y="B", s=df1["C"]*100) #Bubble plot with sizing 
+
+#Hexbins
+df = pd.DataFrame(np.random.randn(1000,2), columns=["a","b"]) 
+df.head()
+
+df.plot.hexbin(x="a",y="b", gridsize=25)
+
+#Kde plots
+df2["a"].plot.kde()
+
+df2.plot.kde() #compare all columns

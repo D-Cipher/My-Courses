@@ -1,0 +1,54 @@
+#=====Chart Attributes
+import matplotlib.pyplot as plt
+import numpy as np
+
+%matplotlib inline 
+
+x = np.linspace(0,5,11)
+y = x ** 2
+
+#=====Sizing and DPI
+fig = plt.figure(figsize=(8,2))
+
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y)
+
+
+#Sizing Subplots
+fig,axes = plt.subplots(nrows=2,ncols=1, figsize=(8,4))
+
+axes[0].plot(x,y)
+
+axes[1].plot(y,x)
+
+plt.tight_layout()
+
+#======Chart Type and Color
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y, color="Purple", lw=3, alpha=0.5) #Also takes RBG Hex Codes
+
+#Line Style
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y, color="Purple", linestyle="--") #Also takes: ":", "-.", "step"
+
+#Markers
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y, color="Purple", linestyle="", marker="o", markersize=5) #Also takes: "*" and number codes.
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y, linestyle="", marker="o", 
+        markersize=20, markerfacecolor="yellow",markeredgewidth=3,markeredgecolor="purple")
+
+
+#=======Axis Controls
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y, color="Purple", linestyle="-")
+
+ax.set_xlim([0,2])
+ax.set_ylim([0,6])

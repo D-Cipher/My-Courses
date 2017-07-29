@@ -1,0 +1,1479 @@
+
+# Intro to Pandas (1) - Reading data into DataFrames
+
+In the coming lessons we're going to take a brief look at the most common data analysis library in Python - Pandas. 
+
+Pandas is a free and open-source library which let's us manipulate data structures in an easy and intuitive way. Pandas stores data in a way which means that we can pass the data straight from Pandas to Plotly with no problems - the two libraries work really well together.
+
+Pandas is a huge module with loads of different features; some of which we'll use in this course and many of which we won't. The function which we'll use most of all is <code>DataFrame()</code>. A Pandas DataFrame stores tabular data, like an Excel spreadsheet, however in Pandas you can't access and edit the cells directly - you instead need to manipulate the data programmatically.
+
+In this lesson I'll introduce you to the basic functionality which we'll need to create charts in Plotly:
+- How to read data in to a Pandas DataFrame
+
+In future lessons we'll see:
+- How to access data from a Pandas DataFrame
+- How to manipulate data inside a Pandas DataFrame
+
+
+
+You can see in the cell above that we imported the <code>pandas</code> module as <code>'pd'</code>. We can a list of the different functions available to us by typing <code>pd.</code> and pressing <code>tab</code>:
+
+
+
+pd.
+
+
+
+      File "<ipython-input-2-7d84547abd19>", line 1
+        pd.
+           ^
+    SyntaxError: invalid syntax
+    
+
+
+### Reading data in to a Pandas DataFrame
+
+Before we can pass data to Plotly, we must first obtain it! 
+
+As part of this course, I've provided loads of different datasets which you can download from my website. All of these datasets are available in the .csv format. We can use pandas to download the .csv data directly from the website and put it straight into a DataFrame.
+
+Pandas can also read in data in many different formats (.xls or .json for example), but as the aim of this course is to teach you how to create charts with Plotly, obtaining the data is a secondary concern - as such we'll just use data in a .csv format.
+
+To read a .csv file into a Pandas DataFrame, we need to use the <code>pd.read_csv()</code> function. When you've opened the brackets, press <code>shift + tab</code> to see the different arguments which you can pass to the <code>read_csv()</code> function, and then run the cell.
+
+
+```python
+pd.read_csv()
+```
+
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-3-16550b21db65> in <module>()
+    ----> 1 pd.read_csv()
+    
+
+    TypeError: parser_f() missing 1 required positional argument: 'filepath_or_buffer'
+
+
+So, despite that the <code>read_csv()</code> function has loads of different options, the error message above tells us that we only need 1 argument to make it run, the <code>filepath_or_buffer</code> - this is the location of the .csv file, either on your local machine or on the internet.
+
+Let's read in a .csv file. This file contains observations of the Bank of England base rate from 2/1/1975 to 23/6/16.
+
+To access the file from where it is hosted on my website, we need to pass the URL as the argument to <code>pd.read_csv()</code>.
+
+
+```python
+pd.read_csv("http://www.richard-muir.com/data/public/csv/BoEBaseRate.csv")
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VALUE</th>
+      <th>DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11.50</td>
+      <td>02/01/1975</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11.50</td>
+      <td>03/01/1975</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11.50</td>
+      <td>06/01/1975</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.50</td>
+      <td>07/01/1975</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11.50</td>
+      <td>08/01/1975</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11.50</td>
+      <td>09/01/1975</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>11.50</td>
+      <td>10/01/1975</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>11.50</td>
+      <td>13/01/1975</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>11.50</td>
+      <td>14/01/1975</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.50</td>
+      <td>15/01/1975</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11.50</td>
+      <td>16/01/1975</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11.50</td>
+      <td>17/01/1975</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>11.25</td>
+      <td>20/01/1975</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11.25</td>
+      <td>21/01/1975</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>11.25</td>
+      <td>22/01/1975</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>11.25</td>
+      <td>23/01/1975</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>11.25</td>
+      <td>24/01/1975</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>11.00</td>
+      <td>27/01/1975</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>11.00</td>
+      <td>28/01/1975</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>11.00</td>
+      <td>29/01/1975</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>11.00</td>
+      <td>30/01/1975</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>11.00</td>
+      <td>31/01/1975</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>11.00</td>
+      <td>03/02/1975</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>11.00</td>
+      <td>04/02/1975</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>11.00</td>
+      <td>05/02/1975</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>11.00</td>
+      <td>06/02/1975</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>11.00</td>
+      <td>07/02/1975</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>10.75</td>
+      <td>10/02/1975</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>10.75</td>
+      <td>11/02/1975</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>10.75</td>
+      <td>12/02/1975</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10456</th>
+      <td>0.50</td>
+      <td>12/05/2016</td>
+    </tr>
+    <tr>
+      <th>10457</th>
+      <td>0.50</td>
+      <td>13/05/2016</td>
+    </tr>
+    <tr>
+      <th>10458</th>
+      <td>0.50</td>
+      <td>16/05/2016</td>
+    </tr>
+    <tr>
+      <th>10459</th>
+      <td>0.50</td>
+      <td>17/05/2016</td>
+    </tr>
+    <tr>
+      <th>10460</th>
+      <td>0.50</td>
+      <td>18/05/2016</td>
+    </tr>
+    <tr>
+      <th>10461</th>
+      <td>0.50</td>
+      <td>19/05/2016</td>
+    </tr>
+    <tr>
+      <th>10462</th>
+      <td>0.50</td>
+      <td>20/05/2016</td>
+    </tr>
+    <tr>
+      <th>10463</th>
+      <td>0.50</td>
+      <td>23/05/2016</td>
+    </tr>
+    <tr>
+      <th>10464</th>
+      <td>0.50</td>
+      <td>24/05/2016</td>
+    </tr>
+    <tr>
+      <th>10465</th>
+      <td>0.50</td>
+      <td>25/05/2016</td>
+    </tr>
+    <tr>
+      <th>10466</th>
+      <td>0.50</td>
+      <td>26/05/2016</td>
+    </tr>
+    <tr>
+      <th>10467</th>
+      <td>0.50</td>
+      <td>27/05/2016</td>
+    </tr>
+    <tr>
+      <th>10468</th>
+      <td>0.50</td>
+      <td>31/05/2016</td>
+    </tr>
+    <tr>
+      <th>10469</th>
+      <td>0.50</td>
+      <td>01/06/2016</td>
+    </tr>
+    <tr>
+      <th>10470</th>
+      <td>0.50</td>
+      <td>02/06/2016</td>
+    </tr>
+    <tr>
+      <th>10471</th>
+      <td>0.50</td>
+      <td>03/06/2016</td>
+    </tr>
+    <tr>
+      <th>10472</th>
+      <td>0.50</td>
+      <td>06/06/2016</td>
+    </tr>
+    <tr>
+      <th>10473</th>
+      <td>0.50</td>
+      <td>07/06/2016</td>
+    </tr>
+    <tr>
+      <th>10474</th>
+      <td>0.50</td>
+      <td>08/06/2016</td>
+    </tr>
+    <tr>
+      <th>10475</th>
+      <td>0.50</td>
+      <td>09/06/2016</td>
+    </tr>
+    <tr>
+      <th>10476</th>
+      <td>0.50</td>
+      <td>10/06/2016</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>0.50</td>
+      <td>13/06/2016</td>
+    </tr>
+    <tr>
+      <th>10478</th>
+      <td>0.50</td>
+      <td>14/06/2016</td>
+    </tr>
+    <tr>
+      <th>10479</th>
+      <td>0.50</td>
+      <td>15/06/2016</td>
+    </tr>
+    <tr>
+      <th>10480</th>
+      <td>0.50</td>
+      <td>16/06/2016</td>
+    </tr>
+    <tr>
+      <th>10481</th>
+      <td>0.50</td>
+      <td>17/06/2016</td>
+    </tr>
+    <tr>
+      <th>10482</th>
+      <td>0.50</td>
+      <td>20/06/2016</td>
+    </tr>
+    <tr>
+      <th>10483</th>
+      <td>0.50</td>
+      <td>21/06/2016</td>
+    </tr>
+    <tr>
+      <th>10484</th>
+      <td>0.50</td>
+      <td>22/06/2016</td>
+    </tr>
+    <tr>
+      <th>10485</th>
+      <td>0.50</td>
+      <td>23/06/2016</td>
+    </tr>
+  </tbody>
+</table>
+<p>10486 rows × 2 columns</p>
+</div>
+
+
+
+We can also read a .csv file from your local machine.
+
+If the .csv is in the same folder as the Jupyter Notebook, this is really easy!
+
+
+```python
+pd.read_csv("BoEBaseRate.csv")
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>VALUE</th>
+      <th>DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>11.50</td>
+      <td>1975-01-02</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>11.50</td>
+      <td>1975-01-03</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>11.50</td>
+      <td>1975-01-06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>11.50</td>
+      <td>1975-01-07</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>11.50</td>
+      <td>1975-01-08</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>11.50</td>
+      <td>1975-01-09</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>11.50</td>
+      <td>1975-01-10</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>11.50</td>
+      <td>1975-01-13</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>11.50</td>
+      <td>1975-01-14</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>11.50</td>
+      <td>1975-01-15</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>11.50</td>
+      <td>1975-01-16</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>11.50</td>
+      <td>1975-01-17</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>11.25</td>
+      <td>1975-01-20</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>11.25</td>
+      <td>1975-01-21</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>11.25</td>
+      <td>1975-01-22</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>11.25</td>
+      <td>1975-01-23</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>11.25</td>
+      <td>1975-01-24</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>11.00</td>
+      <td>1975-01-27</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>11.00</td>
+      <td>1975-01-28</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>11.00</td>
+      <td>1975-01-29</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>11.00</td>
+      <td>1975-01-30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>11.00</td>
+      <td>1975-01-31</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>11.00</td>
+      <td>1975-02-03</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>23</td>
+      <td>11.00</td>
+      <td>1975-02-04</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>11.00</td>
+      <td>1975-02-05</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>11.00</td>
+      <td>1975-02-06</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>26</td>
+      <td>11.00</td>
+      <td>1975-02-07</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>27</td>
+      <td>10.75</td>
+      <td>1975-02-10</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>10.75</td>
+      <td>1975-02-11</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>10.75</td>
+      <td>1975-02-12</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10456</th>
+      <td>10456</td>
+      <td>0.50</td>
+      <td>2016-05-12</td>
+    </tr>
+    <tr>
+      <th>10457</th>
+      <td>10457</td>
+      <td>0.50</td>
+      <td>2016-05-13</td>
+    </tr>
+    <tr>
+      <th>10458</th>
+      <td>10458</td>
+      <td>0.50</td>
+      <td>2016-05-16</td>
+    </tr>
+    <tr>
+      <th>10459</th>
+      <td>10459</td>
+      <td>0.50</td>
+      <td>2016-05-17</td>
+    </tr>
+    <tr>
+      <th>10460</th>
+      <td>10460</td>
+      <td>0.50</td>
+      <td>2016-05-18</td>
+    </tr>
+    <tr>
+      <th>10461</th>
+      <td>10461</td>
+      <td>0.50</td>
+      <td>2016-05-19</td>
+    </tr>
+    <tr>
+      <th>10462</th>
+      <td>10462</td>
+      <td>0.50</td>
+      <td>2016-05-20</td>
+    </tr>
+    <tr>
+      <th>10463</th>
+      <td>10463</td>
+      <td>0.50</td>
+      <td>2016-05-23</td>
+    </tr>
+    <tr>
+      <th>10464</th>
+      <td>10464</td>
+      <td>0.50</td>
+      <td>2016-05-24</td>
+    </tr>
+    <tr>
+      <th>10465</th>
+      <td>10465</td>
+      <td>0.50</td>
+      <td>2016-05-25</td>
+    </tr>
+    <tr>
+      <th>10466</th>
+      <td>10466</td>
+      <td>0.50</td>
+      <td>2016-05-26</td>
+    </tr>
+    <tr>
+      <th>10467</th>
+      <td>10467</td>
+      <td>0.50</td>
+      <td>2016-05-27</td>
+    </tr>
+    <tr>
+      <th>10468</th>
+      <td>10468</td>
+      <td>0.50</td>
+      <td>2016-05-31</td>
+    </tr>
+    <tr>
+      <th>10469</th>
+      <td>10469</td>
+      <td>0.50</td>
+      <td>2016-06-01</td>
+    </tr>
+    <tr>
+      <th>10470</th>
+      <td>10470</td>
+      <td>0.50</td>
+      <td>2016-06-02</td>
+    </tr>
+    <tr>
+      <th>10471</th>
+      <td>10471</td>
+      <td>0.50</td>
+      <td>2016-06-03</td>
+    </tr>
+    <tr>
+      <th>10472</th>
+      <td>10472</td>
+      <td>0.50</td>
+      <td>2016-06-06</td>
+    </tr>
+    <tr>
+      <th>10473</th>
+      <td>10473</td>
+      <td>0.50</td>
+      <td>2016-06-07</td>
+    </tr>
+    <tr>
+      <th>10474</th>
+      <td>10474</td>
+      <td>0.50</td>
+      <td>2016-06-08</td>
+    </tr>
+    <tr>
+      <th>10475</th>
+      <td>10475</td>
+      <td>0.50</td>
+      <td>2016-06-09</td>
+    </tr>
+    <tr>
+      <th>10476</th>
+      <td>10476</td>
+      <td>0.50</td>
+      <td>2016-06-10</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>10477</td>
+      <td>0.50</td>
+      <td>2016-06-13</td>
+    </tr>
+    <tr>
+      <th>10478</th>
+      <td>10478</td>
+      <td>0.50</td>
+      <td>2016-06-14</td>
+    </tr>
+    <tr>
+      <th>10479</th>
+      <td>10479</td>
+      <td>0.50</td>
+      <td>2016-06-15</td>
+    </tr>
+    <tr>
+      <th>10480</th>
+      <td>10480</td>
+      <td>0.50</td>
+      <td>2016-06-16</td>
+    </tr>
+    <tr>
+      <th>10481</th>
+      <td>10481</td>
+      <td>0.50</td>
+      <td>2016-06-17</td>
+    </tr>
+    <tr>
+      <th>10482</th>
+      <td>10482</td>
+      <td>0.50</td>
+      <td>2016-06-20</td>
+    </tr>
+    <tr>
+      <th>10483</th>
+      <td>10483</td>
+      <td>0.50</td>
+      <td>2016-06-21</td>
+    </tr>
+    <tr>
+      <th>10484</th>
+      <td>10484</td>
+      <td>0.50</td>
+      <td>2016-06-22</td>
+    </tr>
+    <tr>
+      <th>10485</th>
+      <td>10485</td>
+      <td>0.50</td>
+      <td>2016-06-23</td>
+    </tr>
+  </tbody>
+</table>
+<p>10486 rows × 3 columns</p>
+</div>
+
+
+
+If the .csv file is in a different location on your machine this is slightly more difficult...
+
+
+```python
+pd.read_csv("C:\Users\Rytch\Desktop\BoEBaseRate.csv")
+```
+
+
+      File "<ipython-input-6-30f318f7a5db>", line 1
+        pd.read_csv("C:\Users\Rytch\Desktop\BoEBaseRate.csv")
+                   ^
+    SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+    
+
+
+Passing the filepath directly to <code>pd.read_csv()</code> triggers a Unicode error. 
+
+What is happening here is that the Python interpreter sees the single backslash (<code> \ </code>) as an escape character (which we learnt about in Strings (1)), and knows to pass over the escape character and instead treat the following character as text. 
+
+We can solve this in different ways:
+
+- Escape the escape character - replace every single backslash with a double backslash:
+
+
+```python
+pd.read_csv("C:\\Users\\Rytch\\Desktop\\BoEBaseRate.csv")
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VALUE</th>
+      <th>DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11.50</td>
+      <td>02/01/1975</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11.50</td>
+      <td>03/01/1975</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11.50</td>
+      <td>06/01/1975</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.50</td>
+      <td>07/01/1975</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11.50</td>
+      <td>08/01/1975</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11.50</td>
+      <td>09/01/1975</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>11.50</td>
+      <td>10/01/1975</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>11.50</td>
+      <td>13/01/1975</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>11.50</td>
+      <td>14/01/1975</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.50</td>
+      <td>15/01/1975</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11.50</td>
+      <td>16/01/1975</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11.50</td>
+      <td>17/01/1975</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>11.25</td>
+      <td>20/01/1975</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11.25</td>
+      <td>21/01/1975</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>11.25</td>
+      <td>22/01/1975</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>11.25</td>
+      <td>23/01/1975</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>11.25</td>
+      <td>24/01/1975</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>11.00</td>
+      <td>27/01/1975</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>11.00</td>
+      <td>28/01/1975</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>11.00</td>
+      <td>29/01/1975</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>11.00</td>
+      <td>30/01/1975</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>11.00</td>
+      <td>31/01/1975</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>11.00</td>
+      <td>03/02/1975</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>11.00</td>
+      <td>04/02/1975</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>11.00</td>
+      <td>05/02/1975</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>11.00</td>
+      <td>06/02/1975</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>11.00</td>
+      <td>07/02/1975</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>10.75</td>
+      <td>10/02/1975</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>10.75</td>
+      <td>11/02/1975</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>10.75</td>
+      <td>12/02/1975</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10456</th>
+      <td>0.50</td>
+      <td>12/05/2016</td>
+    </tr>
+    <tr>
+      <th>10457</th>
+      <td>0.50</td>
+      <td>13/05/2016</td>
+    </tr>
+    <tr>
+      <th>10458</th>
+      <td>0.50</td>
+      <td>16/05/2016</td>
+    </tr>
+    <tr>
+      <th>10459</th>
+      <td>0.50</td>
+      <td>17/05/2016</td>
+    </tr>
+    <tr>
+      <th>10460</th>
+      <td>0.50</td>
+      <td>18/05/2016</td>
+    </tr>
+    <tr>
+      <th>10461</th>
+      <td>0.50</td>
+      <td>19/05/2016</td>
+    </tr>
+    <tr>
+      <th>10462</th>
+      <td>0.50</td>
+      <td>20/05/2016</td>
+    </tr>
+    <tr>
+      <th>10463</th>
+      <td>0.50</td>
+      <td>23/05/2016</td>
+    </tr>
+    <tr>
+      <th>10464</th>
+      <td>0.50</td>
+      <td>24/05/2016</td>
+    </tr>
+    <tr>
+      <th>10465</th>
+      <td>0.50</td>
+      <td>25/05/2016</td>
+    </tr>
+    <tr>
+      <th>10466</th>
+      <td>0.50</td>
+      <td>26/05/2016</td>
+    </tr>
+    <tr>
+      <th>10467</th>
+      <td>0.50</td>
+      <td>27/05/2016</td>
+    </tr>
+    <tr>
+      <th>10468</th>
+      <td>0.50</td>
+      <td>31/05/2016</td>
+    </tr>
+    <tr>
+      <th>10469</th>
+      <td>0.50</td>
+      <td>01/06/2016</td>
+    </tr>
+    <tr>
+      <th>10470</th>
+      <td>0.50</td>
+      <td>02/06/2016</td>
+    </tr>
+    <tr>
+      <th>10471</th>
+      <td>0.50</td>
+      <td>03/06/2016</td>
+    </tr>
+    <tr>
+      <th>10472</th>
+      <td>0.50</td>
+      <td>06/06/2016</td>
+    </tr>
+    <tr>
+      <th>10473</th>
+      <td>0.50</td>
+      <td>07/06/2016</td>
+    </tr>
+    <tr>
+      <th>10474</th>
+      <td>0.50</td>
+      <td>08/06/2016</td>
+    </tr>
+    <tr>
+      <th>10475</th>
+      <td>0.50</td>
+      <td>09/06/2016</td>
+    </tr>
+    <tr>
+      <th>10476</th>
+      <td>0.50</td>
+      <td>10/06/2016</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>0.50</td>
+      <td>13/06/2016</td>
+    </tr>
+    <tr>
+      <th>10478</th>
+      <td>0.50</td>
+      <td>14/06/2016</td>
+    </tr>
+    <tr>
+      <th>10479</th>
+      <td>0.50</td>
+      <td>15/06/2016</td>
+    </tr>
+    <tr>
+      <th>10480</th>
+      <td>0.50</td>
+      <td>16/06/2016</td>
+    </tr>
+    <tr>
+      <th>10481</th>
+      <td>0.50</td>
+      <td>17/06/2016</td>
+    </tr>
+    <tr>
+      <th>10482</th>
+      <td>0.50</td>
+      <td>20/06/2016</td>
+    </tr>
+    <tr>
+      <th>10483</th>
+      <td>0.50</td>
+      <td>21/06/2016</td>
+    </tr>
+    <tr>
+      <th>10484</th>
+      <td>0.50</td>
+      <td>22/06/2016</td>
+    </tr>
+    <tr>
+      <th>10485</th>
+      <td>0.50</td>
+      <td>23/06/2016</td>
+    </tr>
+  </tbody>
+</table>
+<p>10486 rows × 2 columns</p>
+</div>
+
+
+
+- Tell Python to expect a raw string - prefix the string with an <code> r </code>
+
+
+```python
+pd.read_csv(r"C:\Users\Rytch\Desktop\BoEBaseRate.csv")
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VALUE</th>
+      <th>DATE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11.50</td>
+      <td>02/01/1975</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11.50</td>
+      <td>03/01/1975</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>11.50</td>
+      <td>06/01/1975</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.50</td>
+      <td>07/01/1975</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>11.50</td>
+      <td>08/01/1975</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11.50</td>
+      <td>09/01/1975</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>11.50</td>
+      <td>10/01/1975</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>11.50</td>
+      <td>13/01/1975</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>11.50</td>
+      <td>14/01/1975</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>11.50</td>
+      <td>15/01/1975</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11.50</td>
+      <td>16/01/1975</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11.50</td>
+      <td>17/01/1975</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>11.25</td>
+      <td>20/01/1975</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>11.25</td>
+      <td>21/01/1975</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>11.25</td>
+      <td>22/01/1975</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>11.25</td>
+      <td>23/01/1975</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>11.25</td>
+      <td>24/01/1975</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>11.00</td>
+      <td>27/01/1975</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>11.00</td>
+      <td>28/01/1975</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>11.00</td>
+      <td>29/01/1975</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>11.00</td>
+      <td>30/01/1975</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>11.00</td>
+      <td>31/01/1975</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>11.00</td>
+      <td>03/02/1975</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>11.00</td>
+      <td>04/02/1975</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>11.00</td>
+      <td>05/02/1975</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>11.00</td>
+      <td>06/02/1975</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>11.00</td>
+      <td>07/02/1975</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>10.75</td>
+      <td>10/02/1975</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>10.75</td>
+      <td>11/02/1975</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>10.75</td>
+      <td>12/02/1975</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10456</th>
+      <td>0.50</td>
+      <td>12/05/2016</td>
+    </tr>
+    <tr>
+      <th>10457</th>
+      <td>0.50</td>
+      <td>13/05/2016</td>
+    </tr>
+    <tr>
+      <th>10458</th>
+      <td>0.50</td>
+      <td>16/05/2016</td>
+    </tr>
+    <tr>
+      <th>10459</th>
+      <td>0.50</td>
+      <td>17/05/2016</td>
+    </tr>
+    <tr>
+      <th>10460</th>
+      <td>0.50</td>
+      <td>18/05/2016</td>
+    </tr>
+    <tr>
+      <th>10461</th>
+      <td>0.50</td>
+      <td>19/05/2016</td>
+    </tr>
+    <tr>
+      <th>10462</th>
+      <td>0.50</td>
+      <td>20/05/2016</td>
+    </tr>
+    <tr>
+      <th>10463</th>
+      <td>0.50</td>
+      <td>23/05/2016</td>
+    </tr>
+    <tr>
+      <th>10464</th>
+      <td>0.50</td>
+      <td>24/05/2016</td>
+    </tr>
+    <tr>
+      <th>10465</th>
+      <td>0.50</td>
+      <td>25/05/2016</td>
+    </tr>
+    <tr>
+      <th>10466</th>
+      <td>0.50</td>
+      <td>26/05/2016</td>
+    </tr>
+    <tr>
+      <th>10467</th>
+      <td>0.50</td>
+      <td>27/05/2016</td>
+    </tr>
+    <tr>
+      <th>10468</th>
+      <td>0.50</td>
+      <td>31/05/2016</td>
+    </tr>
+    <tr>
+      <th>10469</th>
+      <td>0.50</td>
+      <td>01/06/2016</td>
+    </tr>
+    <tr>
+      <th>10470</th>
+      <td>0.50</td>
+      <td>02/06/2016</td>
+    </tr>
+    <tr>
+      <th>10471</th>
+      <td>0.50</td>
+      <td>03/06/2016</td>
+    </tr>
+    <tr>
+      <th>10472</th>
+      <td>0.50</td>
+      <td>06/06/2016</td>
+    </tr>
+    <tr>
+      <th>10473</th>
+      <td>0.50</td>
+      <td>07/06/2016</td>
+    </tr>
+    <tr>
+      <th>10474</th>
+      <td>0.50</td>
+      <td>08/06/2016</td>
+    </tr>
+    <tr>
+      <th>10475</th>
+      <td>0.50</td>
+      <td>09/06/2016</td>
+    </tr>
+    <tr>
+      <th>10476</th>
+      <td>0.50</td>
+      <td>10/06/2016</td>
+    </tr>
+    <tr>
+      <th>10477</th>
+      <td>0.50</td>
+      <td>13/06/2016</td>
+    </tr>
+    <tr>
+      <th>10478</th>
+      <td>0.50</td>
+      <td>14/06/2016</td>
+    </tr>
+    <tr>
+      <th>10479</th>
+      <td>0.50</td>
+      <td>15/06/2016</td>
+    </tr>
+    <tr>
+      <th>10480</th>
+      <td>0.50</td>
+      <td>16/06/2016</td>
+    </tr>
+    <tr>
+      <th>10481</th>
+      <td>0.50</td>
+      <td>17/06/2016</td>
+    </tr>
+    <tr>
+      <th>10482</th>
+      <td>0.50</td>
+      <td>20/06/2016</td>
+    </tr>
+    <tr>
+      <th>10483</th>
+      <td>0.50</td>
+      <td>21/06/2016</td>
+    </tr>
+    <tr>
+      <th>10484</th>
+      <td>0.50</td>
+      <td>22/06/2016</td>
+    </tr>
+    <tr>
+      <th>10485</th>
+      <td>0.50</td>
+      <td>23/06/2016</td>
+    </tr>
+  </tbody>
+</table>
+<p>10486 rows × 2 columns</p>
+</div>
+
+
+
+It doesn't matter which you use, but I tend to use the second option to allow me to copy and paste the filepath without having to change anything.
+

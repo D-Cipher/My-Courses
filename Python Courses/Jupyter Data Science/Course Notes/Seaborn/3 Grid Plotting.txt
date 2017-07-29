@@ -1,0 +1,28 @@
+#=====Grid Plotting
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+irisData = sns.load_dataset("iris")
+tipsData = sns.load_dataset("tips")
+irisData.head()
+
+#=====Pair plots
+
+sns.pairplot(tipsData, hue="sex", palette = "cool") #plot all possible combinations quickly visualize data
+    #hue - plug in a categorical variable
+    #palette - color palette choices
+
+sns.pairplot(irisData)
+
+#=====Customize Grid Mapping
+irisGrid = sns.PairGrid(irisData)
+
+irisGrid.map_diag(sns.distplot)
+irisGrid.map_upper(plt.scatter)
+irisGrid.map_lower(sns.kdeplot)
+
+#=====Facet grid
+
+irisGrid = sns.FacetGrid(data=tipsData, col="time",row="smoker")
+irisGrid.map(sns.distplot,"total_bill")

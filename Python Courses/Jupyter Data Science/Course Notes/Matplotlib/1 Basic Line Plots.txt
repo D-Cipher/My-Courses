@@ -1,0 +1,65 @@
+#=====Basic Line Plots
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+%matplotlib inline 
+
+    #plt.show() is printing the plot
+
+x = np.linspace(0,5,11)
+y = x ** 2
+
+fig = plt.figure() #create a figure object which is like a canvaas
+axes = fig.add_axes([0.1,0.1,0.8,0.8]) #fig.add_axes([%left,%bottom,%width,%height])
+
+axes.plot(x,y)
+axes.set_xlabel("xLabel")
+axes.set_ylabel("yLabel")
+axes.set_title("Title")
+
+
+#Multi-Chartting
+fig = plt.figure()
+axes1 = fig.add_axes([0.1,0.1,0.8,0.8])
+axes2 = fig.add_axes([0.2,0.5,0.4,.3])
+
+axes1.plot(x,y)
+axes2.plot(y,x)
+
+axes1.set_title("Title")
+
+
+#Subplots with Object-Oriented
+fig,axes = plt.subplots(nrows=1, ncols=2) #subplots allow for specifying rows and cols
+
+for current_ax in axes: #note that axes is a list object
+    current_ax.plot(x,y)
+    
+plt.tight_layout() #prevents overlap
+
+
+#Indexing Subplots
+fig,axes = plt.subplots(nrows=1, ncols=2) #subplots allow for specifying rows and cols
+
+axes[0].plot(x,y)
+axes[0].set_title("First Plot")
+
+axes[1].plot(y,x)
+axes[1].set_title("Second Plot")
+    
+plt.tight_layout() #prevents overlap
+
+
+#Multiplotting
+fig = plt.figure()
+
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,x**2, label="Xsqr")
+ax.plot(x,x**3, label="Xcube")
+
+ax.legend(loc=0) #add legend
+
+
+#=====Saving Figures to file
+fig.savefig("myplots.svg", dpi=200)

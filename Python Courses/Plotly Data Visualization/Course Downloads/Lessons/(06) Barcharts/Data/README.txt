@@ -1,0 +1,5 @@
+MeteoriteLandingsByWeightAndType.csv is licensed under the Nasa Earth Science Data Policy (https://earthdata.nasa.gov/nasa-data-policy), and the source data is available at https://data.nasa.gov/view/ak9y-cwf9
+MeteoriteLandingsByWeightPerYear.csv is licensed under the Nasa Earth Science Data Policy (https://earthdata.nasa.gov/nasa-data-policy), and the source data is available at https://data.nasa.gov/view/ak9y-cwf9
+FallenAndFoundMeteorites.csv is licensed under the Nasa Earth Science Data Policy (https://earthdata.nasa.gov/nasa-data-policy), and the source data is available at https://data.nasa.gov/view/ak9y-cwf9
+MeteoritesByContinent.csv is licensed under the Nasa Earth Science Data Policy (https://earthdata.nasa.gov/nasa-data-policy), and the source data is available at https://data.nasa.gov/view/ak9y-cwf9
+MeteoriteLandingsPerYear.csv is licensed under the Nasa Earth Science Data Policy (https://earthdata.nasa.gov/nasa-data-policy), and the source data is available at https://data.nasa.gov/view/ak9y-cwf9

@@ -1,0 +1,442 @@
+,Region,AvgPrice
+0,Aberdeenshire,195463.4807
+1,Adur,283854.5976
+2,Allerdale,138649.577
+3,Amber Valley,152474.63199999998
+4,Angus,139058.5788
+5,Antrim and Newtownabbey,119479.4556
+6,Argyll and Bute,128390.3467
+7,Armagh Banbridge and Craigavon,105087.469
+8,Arun,252579.9545
+9,Ashfield,121060.6451
+10,Ashford,243935.5353
+11,Aylesbury Vale,291564.3496
+12,Babergh,252474.0032
+13,Barking and Dagenham,258848.75
+14,Barnet,512416.1444
+15,Barnsley,108282.8209
+16,Barrow-in-Furness,108078.6123
+17,Basildon,264921.3084
+18,Basingstoke and Deane,276522.5929
+19,Bassetlaw,137867.7278
+20,Bath and North East Somerset,295661.2053
+21,Bedford,243227.0231
+22,Belfast,110042.0001
+23,Bexley,307115.1643
+24,Birmingham,155272.1519
+25,Blaby,193767.9504
+26,Blackburn with Darwen,101408.70800000001
+27,Blackpool,99685.39433
+28,Blaenau Gwent,77353.59297
+29,Bolsover,110855.729
+30,Bolton,118123.2977
+31,Boston,139186.7655
+32,Bournemouth,219686.8392
+33,Bracknell Forest,322535.7751
+34,Bradford,126855.3507
+35,Braintree,241695.9061
+36,Breckland,194197.299
+37,Brent,470144.1787
+38,Brentwood,376513.321
+39,Bridgend,128748.2421
+40,Brighton and Hove,325979.1084
+41,Broadland,229081.3207
+42,Bromley,414098.1651
+43,Bromsgrove,244537.8866
+44,Broxbourne,313305.288
+45,Broxtowe,155598.6986
+46,Buckinghamshire,364432.5732
+47,Burnley,72227.69597
+48,Bury,146140.8244
+49,Caerphilly,116638.62
+50,Calderdale,131587.9272
+51,Cambridge,429362.5052
+52,Cambridgeshire,261715.6763
+53,Camden,807841.3653
+54,Cannock Chase,144926.8575
+55,Canterbury,253749.5253
+56,Cardiff,184552.4649
+57,Carlisle,129361.8686
+58,Carmarthenshire,127455.2346
+59,Castle Point,261693.0209
+60,Causeway Coast and Glens,120428.8264
+61,Central Bedfordshire,269267.7101
+62,Ceredigion,175159.4877
+63,Charnwood,194306.9232
+64,Chelmsford,291877.7445
+65,Cheltenham,235040.5988
+66,Cherwell,278175.2041
+67,Cheshire East,199142.0254
+68,Cheshire West and Chester,184899.6883
+69,Chesterfield,139275.2761
+70,Chichester,341955.0436
+71,Chiltern,502669.365
+72,Chorley,163537.2132
+73,Christchurch,303379.0668
+74,City of Aberdeen,181252.4581
+75,City of Bristol,238316.7363
+76,City of Derby,140873.6067
+77,City of Dundee,116175.2305
+78,City of Edinburgh,227358.4046
+79,City of Glasgow,113821.6686
+80,City of Kingston upon Hull,97176.32473
+81,City of London,735694.0901
+82,City of Nottingham,118016.6519
+83,City of Peterborough,161983.9844
+84,City of Plymouth,162016.922
+85,City of Westminster,1021264.416
+86,Clackmannanshire,109416.7369
+87,Colchester,229486.3793
+88,Conwy,147188.0578
+89,Copeland,121498.4898
+90,Corby,147050.5117
+91,Cornwall,210610.3836
+92,Cotswold,359991.4968
+93,County Durham,98202.8325
+94,Coventry,151520.7893
+95,Craven,184423.6862
+96,Crawley,255022.9609
+97,Croydon,332461.7238
+98,Cumbria,146599.1408
+99,Dacorum,371745.0271
+100,Darlington,124669.4863
+101,Dartford,266816.2122
+102,Daventry,243471.3228
+103,Denbighshire,140164.9796
+104,Derbyshire,156325.1552
+105,Derbyshire Dales,237811.0421
+106,Derry and Strabane,99527.3261
+107,Devon,233490.4141
+108,Doncaster,116535.5807
+109,Dorset,265758.3595
+110,Dover,208481.3645
+111,Dudley,149329.0025
+112,Dumfries and Galloway,116402.2441
+113,Ealing,470451.3657
+114,East Ayrshire,92337.1082
+115,East Cambridgeshire,248620.7506
+116,East Devon,251941.2121
+117,East Dorset,316357.5882
+118,East Dunbartonshire,179339.4626
+119,East Hampshire,339108.5076
+120,East Hertfordshire,347527.4282
+121,East Lindsey,153557.1041
+122,East Lothian,191902.6021
+123,East Midlands,165087.1503
+124,East Northamptonshire,192633.7539
+125,East Renfrewshire,190260.7911
+126,East Riding of Yorkshire,157941.5464
+127,East Staffordshire,156112.954
+128,East Sussex,246762.9791
+129,East of England,255487.3665
+130,Eastbourne,208571.9737
+131,Eastleigh,252878.2536
+132,Eden,191313.6973
+133,Elmbridge,591532.8814
+134,Enfield,364089.7808
+135,England,220581.3739
+136,England and Wales,215846.7538
+137,Epping Forest,414171.9807
+138,Epsom and Ewell,446499.3798
+139,Erewash,140929.9497
+140,Essex,268709.8208
+141,Exeter,228853.9491
+142,Falkirk,108213.0185
+143,Fareham,257008.0131
+144,Fenland,161731.2722
+145,Fermanagh and Omagh,109345.5817
+146,Fife,122972.0351
+147,Flintshire,153068.1476
+148,Forest Heath,188771.3363
+149,Forest of Dean,203278.3785
+150,Fylde,177090.8181
+151,Gateshead,124516.1638
+152,Gedling,159656.9345
+153,Gloucester,174134.8051
+154,Gloucestershire,233106.6574
+155,Gosport,179294.7963
+156,Gravesham,245958.5165
+157,Great Britain,208040.3061
+158,Great Yarmouth,145965.5079
+159,Greater Manchester,143135.0262
+160,Greenwich,365405.5345
+161,Guildford,421379.1554
+162,Gwynedd,143015.0556
+163,Hackney,546756.1824
+164,Halton,125762.8615
+165,Hambleton,224170.5645
+166,Hammersmith and Fulham,770455.6227
+167,Hampshire,282536.9597
+168,Harborough,246674.0453
+169,Haringey,519300.3484
+170,Harlow,235766.1747
+171,Harrogate,264904.9175
+172,Harrow,435869.4494
+173,Hart,385477.5505
+174,Hartlepool,104259.3808
+175,Hastings,178062.46399999998
+176,Havant,231073.8208
+177,Havering,317714.9545
+178,Herefordshire,214952.1573
+179,Hertfordshire,362643.3977
+180,Hertsmere,432306.349
+181,High Peak,171250.0271
+182,Highland,148191.7605
+183,Hillingdon,384426.2545
+184,Hinckley and Bosworth,180076.9232
+185,Horsham,344752.2709
+186,Hounslow,375938.0313
+187,Huntingdonshire,225956.1715
+188,Hyndburn,91938.27662
+189,Inner London,563023.4541
+190,Inverclyde,102953.4858
+191,Ipswich,166926.0218
+192,Isle of Anglesey,159085.5333
+193,Isle of Wight,196187.3638
+194,Islington,638394.0722
+195,Kensington And Chelsea,1334068.243
+196,Kent,252314.9278
+197,Kettering,167661.5568
+198,King's Lynn and West Norfolk ,183679.1109
+199,Kingston upon Thames,464592.76200000005
+200,Kirklees,137613.9322
+201,Knowsley,115313.2385
+202,Lambeth,490784.8518
+203,Lancashire,133191.4743
+204,Lancaster,143854.7849
+205,Leeds,160864.6801
+206,Leicester,142348.4081
+207,Leicestershire,193699.4344
+208,Lewes,295412.0715
+209,Lewisham,385129.0235
+210,Lichfield,213429.6964
+211,Lincoln,137992.2925
+212,Lincolnshire,161594.5303
+213,Lisburn and Castlereagh,140685.6689
+214,Liverpool,117088.1982
+215,London,457332.1083
+216,Luton,205215.9807
+217,Maidstone,259517.7719
+218,Maldon,275562.8414
+219,Malvern Hills,238319.9802
+220,Manchester,146855.7184
+221,Mansfield,116649.127
+222,Medway,203896.0262
+223,Melton,189767.9038
+224,Mendip,217960.3012
+225,Merseyside,129217.1348
+226,Merthyr Tydfil,91102.33316000001
+227,Merton,487762.80799999996
+228,Mid Devon,205795.5178
+229,Mid Suffolk,235329.9293
+230,Mid Sussex,340883.2662
+231,Mid Ulster,121208.5735
+232,Mid and East Antrim,109917.9605
+233,Middlesbrough,112635.0155
+234,Midlothian,161995.831
+235,Milton Keynes,236480.3125
+236,Mole Valley,466790.6742
+237,Monmouthshire,220027.6688
+238,Moray,136922.0297
+239,Na h-Eileanan Siar,91396.56203
+240,Neath Port Talbot,101656.9294
+241,New Forest,299722.1801
+242,Newark and Sherwood,159986.5729
+243,Newcastle upon Tyne,152441.0229
+244,Newcastle-under-Lyme,136302.9211
+245,Newham,326132.6259
+246,Newport,141960.6848
+247,Newry Mourne and Down,120017.9037
+248,Norfolk,195818.7518
+249,North Ayrshire,99547.49444
+250,North Devon,220269.5748
+251,North Dorset,233037.4176
+252,North Down and Ards,138932.6821
+253,North East,121361.8386
+254,North East Derbyshire,163117.7516
+255,North East Lincolnshire,108400.2325
+256,North Hertfordshire,310648.9409
+257,North Kesteven,177640.8683
+258,North Lanarkshire,94844.0314
+259,North Lincolnshire,129259.474
+260,North Norfolk,215421.9649
+261,North Somerset,228498.6599
+262,North Tyneside,147763.7027
+263,North Warwickshire,172107.7223
+264,North West,143297.3222
+265,North West Leicestershire,176339.4771
+266,North Yorkshire,201166.8068
+267,Northampton,178185.4255
+268,Northamptonshire,191240.9885
+269,Northern Ireland,117523.6626
+270,Northumberland,146143.0206
+271,Norwich,178996.3615
+272,Nottinghamshire,153471.0373
+273,Nuneaton and Bedworth,146078.0393
+274,Oadby and Wigston,176057.93600000002
+275,Oldham,116671.8667
+276,Orkney Islands,112107.0143
+277,Outer London,395640.4763
+278,Oxford,395104.4384
+279,Oxfordshire,331966.8473
+280,Pembrokeshire,157377.6249
+281,Pendle,89497.91131
+282,Perth and Kinross,170435.5334
+283,Poole,278379.5043
+284,Portsmouth,183305.9013
+285,Powys,161140.2044
+286,Preston,123426.1948
+287,Purbeck,291270.547
+288,Reading,284868.3135
+289,Redbridge,371345.2875
+290,Redcar and Cleveland,118270.8065
+291,Redditch,178114.3423
+292,Reigate and Banstead,383533.8644
+293,Renfrewshire,112780.4354
+294,Rhondda Cynon Taf,97984.68211000001
+295,Ribble Valley,207257.6904
+296,Richmond upon Thames,644158.5309
+297,Richmondshire,206501.5033
+298,Rochdale,116787.5291
+299,Rochford,292237.774
+300,Rossendale,116987.1599
+301,Rother,258917.8788
+302,Rotherham,123595.7718
+303,Rugby,206932.967
+304,Runnymede,386151.5309
+305,Rushcliffe,245049.1815
+306,Rushmoor,265407.0985
+307,Rutland,263991.5365
+308,Ryedale,207785.6644
+309,Salford,128429.3644
+310,Sandwell,123582.2468
+311,Scarborough,148457.9919
+312,Scotland,135561.8921
+313,Scottish Borders,145590.6406
+314,Sedgemoor,192157.3617
+315,Sefton,147860.7073
+316,Selby,173746.0478
+317,Sevenoaks,403043.956
+318,Sheffield,145083.733
+319,Shepway,212577.3286
+320,Shetland Islands,147705.8351
+321,Shropshire,195331.83800000002
+322,Slough,275193.2548
+323,Solihull,246164.9914
+324,Somerset,205190.651
+325,South Ayrshire,124441.30300000001
+326,South Bucks,560844.7698
+327,South Cambridgeshire,338969.9441
+328,South Derbyshire,174102.2497
+329,South East,294135.033
+330,South Gloucestershire,235741.6074
+331,South Hams,290722.5071
+332,South Holland,161476.3002
+333,South Kesteven,189688.2667
+334,South Lakeland,213539.8962
+335,South Lanarkshire,111529.9559
+336,South Norfolk,225960.5448
+337,South Northamptonshire,279793.1188
+338,South Oxfordshire,376086.994
+339,South Ribble,153184.4848
+340,South Somerset,203915.4858
+341,South Staffordshire,203918.6043
+342,South Tyneside,118852.5137
+343,South West,227022.7712
+344,South Yorkshire,127111.2663
+345,Southampton,189018.37300000002
+346,Southend-on-Sea,232993.2322
+347,Southwark,495789.2579
+348,Spelthorne,344556.6607
+349,St Albans,474089.6483
+350,St Edmundsbury,246187.1979
+351,St Helens,111795.5129
+352,Stafford,181656.0502
+353,Staffordshire,166922.5912
+354,Staffordshire Moorlands,156800.2638
+355,Stevenage,247582.7733
+356,Stirling,164853.0263
+357,Stockport,189153.1334
+358,Stockton-on-Tees,130093.8346
+359,Stoke-on-Trent,98860.0367
+360,Stratford-on-Avon,293446.3178
+361,Stroud,244008.199
+362,Suffolk,211542.6155
+363,Suffolk Coastal,253240.2711
+364,Sunderland,109858.0357
+365,Surrey,421211.4128
+366,Surrey Heath,375722.739
+367,Sutton,343979.2701
+368,Swale,205245.0548
+369,Swansea,135058.5765
+370,Swindon,191642.3485
+371,Tameside,122444.6503
+372,Tamworth,156251.7523
+373,Tandridge,415325.5527
+374,Taunton Deane,208605.285
+375,Teignbridge,223965.28
+376,Telford and Wrekin,146917.6809
+377,Tendring,181223.1113
+378,Test Valley,291303.3691
+379,Tewkesbury,242549.6709
+380,Thanet,190128.0806
+381,Three Rivers,487472.7983
+382,Thurrock,232223.1133
+383,Tonbridge and Malling,325282.9703
+384,Torbay,179539.9911
+385,Torfaen,120859.7594
+386,Torridge,210556.9704
+387,Tower Hamlets,458799.2576
+388,Trafford,235447.1932
+389,Tunbridge Wells,351718.4252
+390,Tyne and Wear,131871.3058
+391,United Kingdom,205447.0775
+392,Uttlesford,362475.1283
+393,Vale of Glamorgan,194634.7456
+394,Vale of White Horse,327604.3517
+395,Wakefield,132104.6698
+396,Wales,140056.8471
+397,Walsall,138304.545
+398,Waltham Forest,391904.4293
+399,Wandsworth,596249.7006
+400,Warrington,168266.4685
+401,Warwick,277068.0019
+402,Warwickshire,220881.0895
+403,Watford,322716.1157
+404,Waveney,166195.4511
+405,Waverley,427679.5315
+406,Wealden,304415.6669
+407,Wellingborough,175182.0168
+408,Welwyn Hatfield,346079.1631
+409,West Berkshire,329725.3095
+410,West Devon,227512.413
+411,West Dorset,260979.8953
+412,West Dunbartonshire,101160.4259
+413,West Lancashire,172212.7262
+414,West Lindsey,151750.6357
+415,West Lothian,137842.5869
+416,West Midlands,153396.0238
+417,West Midlands Region,169808.6992
+418,West Oxfordshire,306917.0163
+419,West Somerset,207982.3341
+420,West Sussex,292791.4188
+421,West Yorkshire,141716.3178
+422,Weymouth and Portland,204050.9689
+423,Wigan,117870.9995
+424,Wiltshire,245196.3579
+425,Winchester,384036.2534
+426,Windsor and Maidenhead,455534.3782
+427,Wirral,143597.4
+428,Woking,388896.5912
+429,Wokingham,393897.9167
+430,Wolverhampton,126627.0085
+431,Worcester,186770.3033
+432,Worcestershire,207168.7716
+433,Worthing,251431.552
+434,Wrexham,143129.391
+435,Wychavon,242309.7405
+436,Wycombe,355388.7164
+437,Wyre,142385.5354
+438,Wyre Forest,162064.0984
+439,York,226819.9277
+440,Yorkshire and The Humber,144648.8546

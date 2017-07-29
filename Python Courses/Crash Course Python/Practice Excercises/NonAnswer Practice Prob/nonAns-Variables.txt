@@ -1,0 +1,58 @@
+﻿Python Practice Problems: Simple Variables
+
+"""
+There are 5280 feet in a mile. Write a Python statement that calculates and prints the number of feet in 13 miles. 
+"""
+
+"""
+Write a Python statement that calculates and prints the number of seconds in 7 hours, 21 minutes and 37 seconds.
+"""
+
+"""
+The perimeter of a rectangle is 2w+2h, where w and h are the lengths of its sides. Write a Python statement that calculates and prints the length in inches of the perimeter of a rectangle with sides of length 4 and 7 inches.
+"""
+
+"""
+The area of a rectangle is wh, where w and h are the lengths of its sides. Note that the multiplication operation is not shown explicitly in this formula. This is standard practice in mathematics, but not in programming. Write a Python statement that calculates and prints the area in square inches of a rectangle with sides of length 4 and 7 inches.
+"""
+
+"""
+The circumference of a circle is 2πr where r is the radius of the circle. Write a Python statement that calculates and prints the circumference in inches of a circle whose radius is 8 inches. Assume that the constant π=3.14.
+"""
+
+"""
+The area of a circle is πr^2 where r is the radius of the circle. (The raised 2 in the formula is an exponent.) Write a Python statement that calculates and prints the area in square inches of a circle whose radius is 8 inches. Assume that the constant pi=3.14.
+"""
+
+"""
+Given p dollars, the future value of this money when compounded yearly at r percent interest for y years is p(1+r)^y. Write a Python statement that calculates and prints the value of 1000 dollars compounded at 7 percent interest for 10 years. 
+"""
+"""
+Write a single Python statement that combines the three strings:
+1) My name is
+2) Alex
+3) Smith
+to a string: 
+My name is Alex Smith
+"""
+
+"""
+Write a single Python statement that combines the two strings and a float:
+1) I am
+2) 23
+3) years old
+
+"""
+
+"""
+The distance between two points (x0,y0) and (x1,y1) is sqrt((x0−x1)^2+(y0−y1)^2)). Write a Python statement that calculates and prints the distance between the points (2,2) and (5,6).
+"""
+
+
+"""
+Challenge: Herons formula states that the area of a triangle is sqrt(s(s-a)(s-b)(s-c)) where a, b and c are the lengths of the sides of the triangle and s=(1/2)(a+b+c) is the semi-perimeter of the triangle. Given the variables x0, y0, x1, y1, x2, and y2, write a Python program that computes a variable area whose value is the area of the triangle with vertices (x0,y0), (x1,y1) and (x2,y2). (Hint: our solution uses five assignment statements.)
+
+x0, y0 = 0, 0
+x1, y1 = 3, 4
+x2, y2 = 1, 1
+"""

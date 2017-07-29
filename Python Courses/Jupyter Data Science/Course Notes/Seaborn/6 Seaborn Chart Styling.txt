@@ -1,0 +1,37 @@
+#=====Seaborn Chart Styling
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+tipsData = sns.load_dataset("tips")
+tipsData.head()
+
+#=====Chart Background
+
+sns.set_style("white")
+    #Styles include: "white", "darkgrid", "whitegrid"
+sns.countplot(x="sex", data=tipsData)
+sns.despine(top=True,right=True) #remove spines
+
+#=====Chart Title
+tipsCorr = tipsData.corr()
+sns.plt.title("tipsData.corr()")
+sns.heatmap(tipsCorr, annot=False, cmap="cool")
+
+#=====Sizing
+
+plt.figure(figsize=(12,3))
+sns.countplot(x="sex",data=tips)
+
+#setting printing context
+sns.set_context("notebook", font_scale=2)
+    #"paper", "notebook", "talk", "poster"
+sns.countplot(x="sex",data=tips)
+
+#=====Color Palettes
+
+sns.set_context("notebook", font_scale=1)
+sns.lmplot(x="total_bill",y="tip",data=tipsData,hue="sex",
+           palette="cool")
+    #palette -> "viridis", "Blues", "cool", "coolwarm", "summer"
+    #matplotlib.org/examples/color/colormaps_reference

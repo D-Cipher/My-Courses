@@ -1,0 +1,28 @@
+﻿"""
+Create a list that contains first 6 prime numbers in ascending order. (This list should be created manually.) Print out the 2nd, 4th, and 6th numbers as a list.
+
+"""
+
+"""
+Given the list a = [5, 3, 1, -1, -3, 5], make a new reference b to a. Update the first entry in b to be zero. What happened to the first entry in a? Explain your answer (in a comment).
+
+"""
+
+"""
+Given the list a = [5, 3, 1, -1, -3, 5], make a new copy b of the list a using the function list. Update the first entry in b to be zero. What happened to the first entry in a? Explain your answer (in a comment).
+
+"""
+
+"""
+Write a function add_vector(vList,wList), that takes two lists of equal length and adds each item in the list to the item in the corresponding list, and then creates a new list of the sums. For instance, the first item of vList should be added to the first item of wList.Remember that each item's addition should be performed independently on each corresponding element of the lists. Hint: returning v + w does not work
+
+"""
+"""
+Write a function day_to_number(day) that uses the day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] and returns the position of the given day in that list. Write a for loop to implement this function, then look up and use the Python list method that can perform this.
+"""
+"""
+Write a function string_list_join(string_list) that takes a list of strings as input and returns a single string that is the concatenation of the strings in the list. Use a for loop to implement this function then look up and then look up and use the Python list method that can perform this.
+"""
+"""
+Create a function that takes takes day_list = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] and converts it into a dictionary with the keys being the days and the value being the number corresponding to where it is at in the list.
+"""

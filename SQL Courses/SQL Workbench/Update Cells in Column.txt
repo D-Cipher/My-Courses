@@ -1,0 +1,17 @@
+--Updates Cells in column
+
+select 
+uniqueCode,
+cln_cabletype
+from nsi_bizops.cln_bizops
+where cln_cabletype = 'LC-LC Trunk';
+
+update nsi_bizops.cln_bizops
+set cln_cabletype = 'LC-Trunk'
+where uniquecode = 'W_PO100572479_1';
+
+select 
+uniqueCode,
+cln_cabletype
+from nsi_bizops.cln_bizops
+where uniquecode = 'W_PO100572479_1';

@@ -1,0 +1,28 @@
+#=====Distribution Plots
+
+import seaborn as sns
+
+%matplotlib inline
+
+tipsData = sns.load_dataset("tips")
+tipsData.head()
+
+#=====Basic Dist Plot
+
+#Histogram
+sns.distplot(tipsData["total_bill"], kde=False, bins=20) 
+    #kde - Kernal Density Est line
+    #bins - definition of the plots
+
+#KDE plot
+sns.kdeplot(tipsData["total_bill"]) 
+
+
+#=====More Adv Dis Plots
+
+#Joint plots
+sns.jointplot(x="total_bill",y="tip", data=tipsData, kind="reg")
+    #kind -> "scatter", "hex", "reg", "kde"
+
+#Rug plots
+sns.rugplot(tipsData["total_bill"])

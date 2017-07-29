@@ -1,4 +1,4 @@
-"""
+﻿"""
 Create a list that contains first 6 prime numbers in ascending order. (This list should be created manually.) Print out the 2nd, 4th, and 6th numbers as a list.
 Answer:
 primeSix = [1,2,3,5,7,11]
@@ -72,7 +72,7 @@ def day_to_number2(day):
 print(day_to_number2("Friday"))
 """
 """
-Write a function string_list_join(string_list) that takes a list of strings as input and returns a single string that is the concatenation of the strings in the list. Use a 𝚏𝚘𝚛 loop to implement this function then look up and then look up and use the Python list method that can perform this.
+Write a function string_list_join(string_list) that takes a list of strings as input and returns a single string that is the concatenation of the strings in the list. Use a for loop to implement this function then look up and then look up and use the Python list method that can perform this.
 Answer:
 def string_list_join(wordList):
   output = ""

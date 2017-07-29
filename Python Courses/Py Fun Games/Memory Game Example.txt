@@ -1,0 +1,225 @@
+# Implementation of classic game memory
+import simplegui
+import random
+
+init = False
+play = 0
+high_score = 0
+# canvas size
+BG_SIZE = [410, 410]
+# initialize sprite sheet layout
+SPRITE_SHEET = (9, 5)
+# Initial 4x4 grid layout
+grid = (4, 4)
+# default size of the tiles
+CARD_SIZE = [100, 100]
+# image mappings
+CENTERS = range(52, 900, 102)
+IMG_LOC = dict()
+IMG_CENTERS = list()
+# import the sounds used in the game and set their volume
+sound_match = simplegui.load_sound("https://dl.dropboxusercontent.com/s/nk6i56069v9mtmh/match.wav")
+sound_no_match = simplegui.load_sound("https://dl.dropboxusercontent.com/s/d63bd5xsbjhqlb6/no_match.wav")
+sound_select = simplegui.load_sound("https://dl.dropboxusercontent.com/s/s5j4fneswhex96q/select.wav")
+# set the volume of the sounds down low so that they won't get annoying.
+sound_match.set_volume(0.4)
+sound_no_match.set_volume(0.3)
+sound_select.set_volume(0.5)
+
+
+def new_game():
+    """This method initializes a new game."""
+    global turns, state, cards, exposed, selected_cards, game_over, init
+    reset.set_text("Reset")
+    game_over, state, turns = (False, 0, 0)
+    if not init:
+        generate_centers()
+        init = True
+    generate_deck()
+    cards = list(range((grid[0] * grid[1]) / 2)) * 2
+    exposed = [False] * (grid[0] * grid[1])
+    selected_cards = [None, None]
+    random.shuffle(cards)
+    random.shuffle(IMG_CENTERS)
+
+
+def mouseclick(pos):
+    """Method that controls all of the mouse events."""
+    global turns, state, selected_cards, game_over, high_score, play
+    # track which cards are selected so that we can revert their exposed state if they do not match
+    if state == 0:
+        selected = check_selected(pos)
+        if selected != "IGNORE":
+            sound_select.play()
+            selected_cards[0] = selected
+            state = 1
+        else:
+            sound_no_match.play()
+    elif state == 1:
+        selected = check_selected(pos)
+        if selected != "IGNORE":
+            selected_cards[1] = selected
+            if not check_choices():
+                sound_select.play()
+            else:
+                sound_match.play()
+            # keep track of how many turns are being taken
+            turns += 1
+            state = 2
+        else:
+            sound_no_match.play()
+    else:
+        selected = check_selected(pos)
+        if selected != "IGNORE":
+            # clear our choices if the cards did not match
+            clear_choices()
+            sound_select.play()
+            selected_cards[0] = selected
+            selected_cards[1] = None
+            state = 1
+        else:
+            sound_no_match.play()
+    # Ignore all clicks if the game is over
+    if False not in exposed:
+        # if game is over and user is still clicking around clear selections and set game to over
+        selected_cards[0] = None
+        selected_cards[1] = None
+        game_over = True
+        if play == 0:
+            high_score = turns
+        if turns < high_score:
+            high_score = turns
+        play += 1
+
+
+def draw(canvas):
+    """Method that draws all of the game elements."""
+    global cards
+    # render the cards
+    render_cards(canvas)
+
+    # draw highlights around the selected cards
+    if selected_cards[0] is not None:
+        canvas.draw_polygon(draw_highlight(IMG_LOC[selected_cards[0]]), 2, "Orange")
+    if selected_cards[1] is not None:
+        canvas.draw_polygon(draw_highlight(IMG_LOC[selected_cards[1]]), 2, "Orange")
+
+    # update the display for the number of turns taken
+    label.set_text("  Turns Taken: " + str(turns))
+    score.set_text("Highest Score: " + str(high_score))
+
+    # display game over message
+    if game_over:
+        reset.set_text("Play again")
+        canvas.draw_polygon([(52, 102), (52, 302), (352, 302), (352, 102)], 2, "#ff9900", "#2b2f3a")
+        canvas.draw_text("GAME", (86, 180), 80, "#ff9900")
+        canvas.draw_text("OVER", (92, 270), 80, "#ff9900")
+
+
+def generate_deck():
+    """Method to dynamically generate different size board games."""
+    global IMG_LOC
+    count = 0
+    for y in range(grid[0]):
+        for x in range(grid[1]):
+            IMG_LOC[count] = (CENTERS[x], CENTERS[y])
+            count += 1
+
+
+def generate_centers():
+    """Method that generates the centers of the tiles for the sprite sheet."""
+    global IMG_CENTERS, CARD_BACK
+    centers = range(52, 900, 102)
+    count = 0
+    for x in range(SPRITE_SHEET[0]):
+        for y in range(SPRITE_SHEET[1]):
+            IMG_CENTERS.append((centers[x], centers[y]))
+            count += 1
+    # last tile is the back of the tiles
+    CARD_BACK = IMG_CENTERS.pop()
+
+
+def render_cards(canvas):
+    """Method that renders the cards."""
+    loc = 0
+    for card in cards:
+        if not exposed[loc]:
+            canvas.draw_image(image, CARD_BACK, CARD_SIZE, (IMG_LOC[loc]), CARD_SIZE)
+        else:
+            canvas.draw_image(image, (IMG_CENTERS[card]), CARD_SIZE, (IMG_LOC[loc]), CARD_SIZE)
+        loc += 1
+
+
+def check_selected(pos):
+    """Method is used to determine which region was clicked on."""
+    x = (pos[0] - pos[0] % CARD_SIZE[0]) / 100
+    y = (pos[1] - pos[1] % CARD_SIZE[1]) / 100
+    return get_selected((x, y))
+
+
+def get_selected(target):
+    """Method will convert the region into an actual selection.
+    It will also set our exposed states."""
+    global exposed
+    sectors = dict()
+    sector = 0
+    # generate our sectors for simplified region detection
+    for y in range(grid[1]):
+        for x in range(grid[0]):
+            sectors[(x, y)] = sector
+            sector += 1
+    if target in sectors:
+        picked = sectors[target]
+    else:
+        return "IGNORE"
+    # if the card is already exposed, ignore the click
+    if exposed[picked]:
+        return "IGNORE"
+    else:
+        exposed[picked] = True
+        return picked
+
+
+def check_choices():
+    """Method that checks to see if the cards selected match."""
+    if cards[selected_cards[0]] == cards[selected_cards[1]]:
+        return True
+    else:
+        return False
+
+
+def clear_choices():
+    """Method is used to clear global variables."""
+    global selected_cards, exposed
+    if not check_choices():
+        exposed[selected_cards[0]] = False
+        exposed[selected_cards[1]] = False
+        selected_cards = [None, None]
+
+
+def draw_highlight(coords):
+    """Method is used to figure out the parameters needed to draw a
+    highlight around the selected tile."""
+    a, b = (coords[0] - 50, coords[1] - 50)
+    width, height = (100, 100)
+    # thanks to CodeSkulptor sample for this one!
+    return [(a, b), (a, b + height), (a + width, b + height), (a + width, b)]
+
+
+# create frame and add a button and labels
+frame = simplegui.create_frame("Memory", BG_SIZE[0], BG_SIZE[1])
+frame.set_canvas_background("#2b2f3a")
+reset = frame.add_button("Reset", new_game)
+spacer = frame.add_label("")
+label = frame.add_label("  Turns Taken: 0")
+score = frame.add_label("Highest Score: 0")
+# Icon set used: http://www.deviantart.com/art/FREE-Icon-SET-Softy-425330304
+image = simplegui.load_image("https://dl.dropboxusercontent.com/s/8bsrg3g07rotqle/softy_icons.png")
+
+# register event handlers
+frame.set_mouseclick_handler(mouseclick)
+frame.set_draw_handler(draw)
+
+# get things rolling
+new_game()
+frame.start()

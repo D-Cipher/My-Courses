@@ -1,0 +1,2 @@
+TotalCo2EmissionsByCountry.csv is licensed under the World Bank License (https://creativecommons.org/publicdomain/zero/1.0/), and the source data is available at http://data.worldbank.org/indicator/EN.ATM.CO2E.PC?page=1
+RegionalHousePricesAndRanksJan16.csv is licensed under the UK Open Government License (http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and the source data is available at https://www.gov.uk/government/statistical-data-sets/uk-house-price-index-data-downloads-february-2017

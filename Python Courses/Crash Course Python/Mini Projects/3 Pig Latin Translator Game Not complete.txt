@@ -1,0 +1,64 @@
+"""
+Pig Latin is a language that involves altering words via a simple set of rules. 
+
+Write a Python program that translates a sentence string the user inputs and translates that sentense string into pig latin. 
+
+function pig_latain that takes a string word and applies the following rules to generate a new word in Pig Latin. If the first letter in word is a consonant, append the consonant plus "ay" to the end of the remainder of the word. For example, pig_latin("pig") would return "igpay". If the first letter in word is a vowel, append "way" to the end of the word. For example, pig_latin("owl") returns "owlway". You can assume that word is in lower case. The provided template includes code to extract the first letter and the rest of word in Python. Note that, in full Pig Latin, the leading consonant cluster is moved to the end of the word. 
+
+
+
+
+However, we don't know enough Python to implement full Pig Latin just yet.
+#Answer (with Regex):
+import re
+
+def pig_latin(word):
+  firstLetter = re.findall("^[aeiouAEIOU]", word)
+  #print(firstLetter)
+  result = None
+  if len(firstLetter) == 0:
+    extract = re.findall(r"\S(.+)", word)
+    result = extract[0] + "ay"
+  elif len(firstLetter) > 0:
+    result = word + "way"
+  else:
+    result = "Error"
+  return result
+  
+print(pig_latin("test"))
+
+#Answer (without Regex):
+
+def pig_latin2(word):
+  wordLetters = list(word)
+  vowels = ["a","e","i","o","u","A","E","I","O","U"]
+  vCount = vowels.count(wordLetters[0])
+  result = None
+  if vCount >= 1:
+    result = word + "way"
+  elif vCount == 0:
+    wordLetters.pop(0)
+    result = ''.join(wordLetters) + "ay"
+  else: 
+    result = "Error"
+  return result
+
+
+def pigCoder(sentence):
+  senLs = sentence.split(" ")
+  
+  pigSenLs = []
+  
+  for word in senLs:
+    pigSenLs.append(pig_latin2(word))
+  
+  ans = " ".join(pigSenLs)
+  
+  return ans
+
+userSen = input("Your sentence: ")
+print(pigCoder(userSen))
+
+"""
+
+

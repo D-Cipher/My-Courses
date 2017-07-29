@@ -1,0 +1,31 @@
+--Testing connection bw Sqlwb and Redshift
+
+--Create Table to test Sqlwb to Redshift connection 
+create table my_table 
+(
+  bid_descrip   varchar(200),
+  bid_model     varchar(40,
+  bid_quant     integer,
+  bid_price     decimal,
+  bid_categ     varchar(40)
+)
+diststyle even;
+
+--Copy data from S3 to Redshift test the endpoint connection
+copy my_table
+from 's3://nsi-bizops/Analytics/2016 Cost Per Port Raw/csv_bidFakeData.csv'
+credentials 'aws_iam_role=arn:aws:iam::115179637380:role/Redshift_admin-S3'
+ignoreheader 1
+acceptinvchars '~'
+roundec
+delimiter ','
+csv quote ''''
+
+--Error Checking the Copy Command
+select query, substring(filename,22,25) as filename,line_number as line, 
+substring(colname,0,12) as column, type, position as pos, substring(raw_line,0,30) as line_text,
+substring(raw_field_value,0,15) as field_text, 
+substring(err_reason,0,45) as reason
+from stl_load_errors 
+order by query desc
+limit 10;

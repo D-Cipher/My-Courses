@@ -13,6 +13,15 @@ command+Q  - quits all instances
 
 Package History:
 conda pandas 
+conda install matplotlib
+conda install seaborn
+conda install 
+
+conda install pandas-datareader
+
+pip install plotly
+pip install cufflinks
 pip3 pandas
+
 
 

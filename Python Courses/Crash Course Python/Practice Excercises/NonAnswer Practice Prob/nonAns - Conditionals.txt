@@ -1,0 +1,35 @@
+﻿"""
+Write a Python script that tests whether a number (an integer) is odd or even. Hint: Apply the remainder operator to n (i.e., number % 2) and compare to zero. 
+Answer:
+
+"""
+
+"""
+Write a Python script that tests whether a hour, that is an integer in the range [0,23] is am or pm. For instance, 1 represents 01:00hr military time which is 1am so it is am. Whereas 13 represents 13:00hr which is 1pm and it is pm.
+Answer:
+"""
+
+"""
+Write a Python Script taht tests whether a year is a leap year. Print True if the year (an integer) is a leap year according to the Gregorian calendar and False otherwise. The Wikipedia entry for leap years contains a simple algorithmic rule for determining whether a year is a leap year. Your main task will be to translate this rule into Python.
+Tests:
+#2000 is a leap year.
+#1996 is a leap year.
+#1800 is not a leap year.
+#2013 is not a leap year.
+Answer:
+"""
+
+"""
+Write a Python script that takes a string first_name that corresponds to one of ("Robert", Wil", "Alex" or "Emanuel") and then returns their corresponding last name ("Fischer", "Steinitz", "Alekhine" or "Lasker"). If first_name doesn't match any of those strings, it should print the string "No name in list"
+Answer:
+
+"""
+
+"""
+Given numbers a, b, and c, the quadratic equation ax^2+bx+c=0 can have zero, one or two real solutions (i.e; values for x that satisfy the equation). The quadratic formula x=(−b ± sqrt(b^2−4ac) / 2a can be used to compute these solutions. The expression b^2−4ac is the discriminant associated with the equation. If the discriminant is positive, the equation has two solutions. If the discriminant is zero, the equation has one solution. Finally, if the discriminant is negative, the equation has no solutions. 
+
+Write a Python script that takes numbers a, b and c and returns the solution to the quadratic formula. If the equation has no real solution, print the message "Error: No Real Solutions", if it has one, print the solution, if two, print both solutions.
+
+Answer:
+
+"""

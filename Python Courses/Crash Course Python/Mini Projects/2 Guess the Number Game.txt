@@ -1,7 +1,12 @@
-"""
+﻿"""
 Create a program in which the computer picks a random number between 1 and 10.
-The user then guesses a number and the computer tells the user whether he was right or wrong and gives the correct answer. The user only has a total of 4 guesses. If the user’s guess was wrong then the computer will tell user, too high or too low, and he’s remaining guesses. If he guesses right or runs out of guesses, the game ends.
+The user then guesses a number and the computer tells the user whether he was right or wrong and gives the correct answer. 
+ 
+Extra Challenge:
+ 
+Modify, your game so that the user only has a total of 4 guesses. If the user’s guess was wrong then the computer will tell user, too high or too low, and he’s remaining guesses. If he guesses right or runs out of guesses, the game ends after the user either correctly guesses the number OR runs out of guesses.
 """
+
 
 import random
 

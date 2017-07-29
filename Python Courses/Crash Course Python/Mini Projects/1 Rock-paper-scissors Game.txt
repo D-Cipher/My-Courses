@@ -1,21 +1,14 @@
 """
-Create a simulation of the Rock-paper-scissors-lizard-Spock game. See the video below:
-https://www.youtube.com/watch?v=cSLeBKT7-sM
+Create a simulation of the classic Rock-paper-scissors game. Rock paper scissors is a game involving two players in a zero-sum hand game, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a simple fist), "paper" (a flat hand), and "scissors" (a fist with the index and middle fingers together, forming a V). The game has only two possible outcomes other than a tie: a player who decides to play rock will beat another player who has chosen scissors ("rock crushes scissors") but will lose to one who has played paper ("paper covers rock"); a play of paper will lose to a play of scissors ("scissors cut paper"). If both players choose the same shape, the game is tied and is usually immediately replayed to break the tie. 
 
-Rules of the game in detail:
-Rock-paper-scissors-lizard-Spock
-#sissors > paper
-#Paper > rock
-#Rock > lizard
-#Lizard > Spock
-#Spock > Sissors
-#Sissors > lizard
-#Lizard > paper
-#Paper > Spock
-#Spock > rock
-#rock > sissors
 
-Create a "player" variable and let that represent the players choice, picking one of the 5 choices and the computer randomly picks one of the 5, and have python compare the choices. Then have python print to the logs the results, telling whether the player won lost or tied.
+Rules of the game in summary:
+Scissors beats Paper.
+Paper beats Rock.
+Rock beats Scissors.
+If the same (ei Rock vs Rock), its a tie.
+
+Create Python simulation that replicates this game. Create a "player" variable and let that represent the players choice, picking one of the 5 choices and the computer randomly picks one of the 5, and have python compare the choices. Then have python print to the logs the results, telling whether the player won lost or tied.
 
 """
 import random

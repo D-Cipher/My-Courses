@@ -1,0 +1,177 @@
+,Year,Var,Country,N,Sex
+0,2002,age 65,N Ireland,15.73,Male
+1,2003,age 65,N Ireland,15.92,Male
+2,2004,age 65,N Ireland,16.17,Male
+3,2005,age 65,N Ireland,16.4,Male
+4,2006,age 65,N Ireland,16.7,Male
+5,2007,age 65,N Ireland,16.88,Male
+6,2008,age 65,N Ireland,16.93,Male
+7,2009,age 65,N Ireland,17.18,Male
+8,2010,age 65,N Ireland,17.43,Male
+9,2011,age 65,N Ireland,17.82,Male
+10,2012,age 65,N Ireland,17.94,Male
+11,2002,age 65,N Ireland,18.79,Female
+12,2003,age 65,N Ireland,18.97,Female
+13,2004,age 65,N Ireland,19.14,Female
+14,2005,age 65,N Ireland,19.42,Female
+15,2006,age 65,N Ireland,19.65,Female
+16,2007,age 65,N Ireland,19.83,Female
+17,2008,age 65,N Ireland,19.89,Female
+18,2009,age 65,N Ireland,20.04,Female
+19,2010,age 65,N Ireland,20.26,Female
+20,2011,age 65,N Ireland,20.56,Female
+21,2012,age 65,N Ireland,20.64,Female
+31,2002,birth,England,76.0,Male
+32,2003,birth,England,76.22,Male
+33,2004,birth,England,76.52,Male
+34,2005,birth,England,76.87,Male
+35,2006,birth,England,77.28,Male
+36,2007,birth,England,77.6,Male
+37,2008,birth,England,77.87,Male
+38,2009,birth,England,78.18,Male
+39,2010,birth,England,78.5,Male
+40,2011,birth,England,78.91,Male
+41,2012,birth,England,79.21,Male
+51,2002,birth,England,80.66,Female
+52,2003,birth,England,80.72,Female
+53,2004,birth,England,80.9,Female
+54,2005,birth,England,81.13,Female
+55,2006,birth,England,81.53,Female
+56,2007,birth,England,81.78,Female
+57,2008,birth,England,81.98,Female
+58,2009,birth,England,82.26,Female
+59,2010,birth,England,82.51,Female
+60,2011,birth,England,82.89,Female
+61,2012,birth,England,83.01,Female
+71,2002,birth,N Ireland,75.25,Male
+72,2003,birth,N Ireland,75.59,Male
+73,2004,birth,N Ireland,75.86,Male
+74,2005,birth,N Ireland,76.05,Male
+75,2006,birth,N Ireland,76.16,Male
+76,2007,birth,N Ireland,76.23,Male
+77,2008,birth,N Ireland,76.41,Male
+78,2009,birth,N Ireland,76.77,Male
+79,2010,birth,N Ireland,77.09,Male
+80,2011,birth,N Ireland,77.56,Male
+81,2012,birth,N Ireland,77.82,Male
+91,2002,birth,N Ireland,80.17,Female
+92,2003,birth,N Ireland,80.46,Female
+93,2004,birth,N Ireland,80.59,Female
+94,2005,birth,N Ireland,80.89,Female
+95,2006,birth,N Ireland,81.06,Female
+96,2007,birth,N Ireland,81.3,Female
+97,2008,birth,N Ireland,81.3,Female
+98,2009,birth,N Ireland,81.45,Female
+99,2010,birth,N Ireland,81.58,Female
+100,2011,birth,N Ireland,82.03,Female
+101,2012,birth,N Ireland,82.28,Female
+111,2002,birth,Scotland,73.34,Male
+112,2003,birth,Scotland,73.5,Male
+113,2004,birth,Scotland,73.77,Male
+114,2005,birth,Scotland,74.23,Male
+115,2006,birth,Scotland,74.63,Male
+116,2007,birth,Scotland,74.85,Male
+117,2008,birth,Scotland,75.07,Male
+118,2009,birth,Scotland,75.43,Male
+119,2010,birth,Scotland,75.9,Male
+120,2011,birth,Scotland,76.32,Male
+121,2012,birth,Scotland,76.61,Male
+131,2002,birth,Scotland,78.8,Female
+132,2003,birth,Scotland,78.84,Female
+133,2004,birth,Scotland,78.99,Female
+134,2005,birth,Scotland,79.19,Female
+135,2006,birth,Scotland,79.54,Female
+136,2007,birth,Scotland,79.72,Female
+137,2008,birth,Scotland,79.89,Female
+138,2009,birth,Scotland,80.13,Female
+139,2010,birth,Scotland,80.41,Female
+140,2011,birth,Scotland,80.73,Female
+141,2012,birth,Scotland,80.83,Female
+142,2002,age 65,Scotland,14.98,Male
+143,2003,age 65,Scotland,15.07,Male
+144,2004,age 65,Scotland,15.22,Male
+145,2005,age 65,Scotland,15.45,Male
+146,2006,age 65,Scotland,15.84,Male
+147,2007,age 65,Scotland,16.04,Male
+148,2008,age 65,Scotland,16.27,Male
+149,2009,age 65,Scotland,16.47,Male
+150,2010,age 65,Scotland,16.76,Male
+151,2011,age 65,Scotland,16.99,Male
+152,2012,age 65,Scotland,17.16,Male
+153,2002,age 65,Scotland,18.04,Female
+154,2003,age 65,Scotland,18.07,Female
+155,2004,age 65,Scotland,18.12,Female
+156,2005,age 65,Scotland,18.28,Female
+157,2006,age 65,Scotland,18.57,Female
+158,2007,age 65,Scotland,18.73,Female
+159,2008,age 65,Scotland,18.86,Female
+160,2009,age 65,Scotland,19.05,Female
+161,2010,age 65,Scotland,19.27,Female
+162,2011,age 65,Scotland,19.55,Female
+163,2012,age 65,Scotland,19.55,Female
+164,2002,age 65,Wales,15.74,Male
+165,2003,age 65,Wales,15.89,Male
+166,2004,age 65,Wales,16.11,Male
+167,2005,age 65,Wales,16.35,Male
+168,2006,age 65,Wales,16.78,Male
+169,2007,age 65,Wales,16.98,Male
+170,2008,age 65,Wales,17.16,Male
+171,2009,age 65,Wales,17.31,Male
+172,2010,age 65,Wales,17.57,Male
+173,2011,age 65,Wales,17.87,Male
+174,2012,age 65,Wales,18.02,Male
+175,2002,age 65,Wales,18.73,Female
+176,2003,age 65,Wales,18.78,Female
+177,2004,age 65,Wales,18.92,Female
+178,2005,age 65,Wales,19.12,Female
+179,2006,age 65,Wales,19.51,Female
+180,2007,age 65,Wales,19.71,Female
+181,2008,age 65,Wales,19.92,Female
+182,2009,age 65,Wales,20.06,Female
+183,2010,age 65,Wales,20.23,Female
+184,2011,age 65,Wales,20.54,Female
+185,2012,age 65,Wales,20.57,Female
+186,2002,age 65,England,16.13,Male
+187,2003,age 65,England,16.31,Male
+188,2004,age 65,England,16.52,Male
+189,2005,age 65,England,16.79,Male
+190,2006,age 65,England,17.13,Male
+191,2007,age 65,England,17.41,Male
+192,2008,age 65,England,17.63,Male
+193,2009,age 65,England,17.87,Male
+194,2010,age 65,England,18.1,Male
+195,2011,age 65,England,18.4,Male
+196,2012,age 65,England,18.56,Male
+197,2002,age 65,England,19.23,Female
+198,2003,age 65,England,19.25,Female
+199,2004,age 65,England,19.37,Female
+200,2005,age 65,England,19.55,Female
+201,2006,age 65,England,19.9,Female
+202,2007,age 65,England,20.11,Female
+203,2008,age 65,England,20.29,Female
+204,2009,age 65,England,20.52,Female
+205,2010,age 65,England,20.73,Female
+206,2011,age 65,England,21.05,Female
+207,2012,age 65,England,21.1,Female
+217,2002,birth,Wales,75.31,Male
+218,2003,birth,Wales,75.5,Male
+219,2004,birth,Wales,75.8,Male
+220,2005,birth,Wales,76.13,Male
+221,2006,birth,Wales,76.63,Male
+222,2007,birth,Wales,76.77,Male
+223,2008,birth,Wales,76.97,Male
+224,2009,birth,Wales,77.18,Male
+225,2010,birth,Wales,77.62,Male
+226,2011,birth,Wales,77.95,Male
+227,2012,birth,Wales,78.2,Male
+237,2002,birth,Wales,80.04,Female
+238,2003,birth,Wales,80.11,Female
+239,2004,birth,Wales,80.29,Female
+240,2005,birth,Wales,80.54,Female
+241,2006,birth,Wales,80.96,Female
+242,2007,birth,Wales,81.17,Female
+243,2008,birth,Wales,81.34,Female
+244,2009,birth,Wales,81.53,Female
+245,2010,birth,Wales,81.78,Female
+246,2011,birth,Wales,82.16,Female
+247,2012,birth,Wales,82.22,Female

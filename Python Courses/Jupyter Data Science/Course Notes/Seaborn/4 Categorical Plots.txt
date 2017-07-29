@@ -1,0 +1,38 @@
+#=====Categorical Plots
+import numpy as np
+import seaborn as sns
+
+%matplotlib inline
+
+tipsData = sns.load_dataset("tips")
+tipsData.head()
+
+#=====Bar Plots
+
+#Basic bar plot
+sns.barplot(x="sex", y="total_bill",data=tipsData, estimator=np.mean, ci=None)
+    #estimator -> default is mean or your own function
+    #ci -> error estimator
+
+#Count Bar Plots
+sns.countplot(x="sex", data=tipsData)
+
+#=====Box Plots
+
+sns.stripplot(x="day",y="total_bill",data=tipsData,jitter=True, color="black")
+sns.boxplot(x="day",y="total_bill",data=tipsData)
+
+#Multi-Dim Box plot
+sns.boxplot(x="day",y="total_bill",data=tipsData,hue="smoker")
+    #hue -> add a split that lets you compare between categorical variables 
+
+#=====More Advanced Categorical Plots
+
+#Strip Jitter Plot
+sns.stripplot(x="day",y="total_bill",data=tipsData,jitter=True, hue="sex", split=True)
+
+#Swarm Plot
+sns.swarmplot(x="day",y="total_bill",data=tipsData)
+
+#Violine Plot
+sns.violinplot(x="day",y="total_bill",data=tipsData, hue="smoker", split="true")

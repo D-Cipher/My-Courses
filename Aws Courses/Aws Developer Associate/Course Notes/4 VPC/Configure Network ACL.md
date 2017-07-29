@@ -29,7 +29,16 @@ Rule = "300", Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "72.2
 Rule = "400", Type = "RDP", Protocol = "TCP", Port Range = "3389", Source = "72.21.196.0/24", Allow/Deny = "ALLOW"
 Rule = "500", Type = "Custom TCP Rule", Protocol = "TCP", Port Range = "1024-65535", Source = "72.21.196.0/24", Allow/Deny = "ALLOW"
 ```
-3. Important, now we need to also set the outbound rules. Remember network ACLs are stateless. Click the "Outbound Rules" tab and add the same rules as above. 
+3. Important, now we need to also set the outbound rules. Remember network ACLs are stateless. Click the "Outbound Rules" tab and add the following. 
+```
+Rule = "100", Type = "SSH", Protocol = "TCP", Port Range = "22", Source = "0.0.0.0/0", Allow/Deny = "ALLOW"
+Rule = "200", Type = "HTTPS", Protocol = "TCP", Port Range = "443", Source = "0.0.0.0/0", Allow/Deny = "ALLOW"
+Rule = "300", Type = "HTTP", Protocol = "TCP", Port Range = "80", Source = "0.0.0.0/0", Allow/Deny = "ALLOW"
+Rule = "400", Type = "RDP", Protocol = "TCP", Port Range = "3389", Source = "0.0.0.0/0", Allow/Deny = "ALLOW"
+Rule = "500", Type = "Custom TCP Rule", Protocol = "TCP", Port Range = "1024-65535", Source = "0.0.0.0/0", Allow/Deny = "ALLOW"
+```
+
+Important note: In order to establish endpoint connections to S3 or allow instances inside your subnet to access yum updates etc., your network ACL must allow http and https traffic. 
 
 ###Associate Subnet
 Now associate your ACL with your subnet. Note that only one subnet can be assocated wit one network ACL.

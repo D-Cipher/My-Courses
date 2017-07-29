@@ -10,8 +10,6 @@ songList[0]
 
 len(songList)
 
-songList.count("Hello")
-
 songList.index("Hello")
 
 songList.append("Lights")

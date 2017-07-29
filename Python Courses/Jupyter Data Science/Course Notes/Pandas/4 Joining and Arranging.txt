@@ -20,9 +20,9 @@ print(df2)
 
 #=====Concatenation on rows and cols
 
-pd.concat([df1,df2], axis = 1) #col
+pd.concat([df1,df2], axis = 1, ignore_index=True) #col
 
-pd.concat([df1,df2], axis = 0) #row
+pd.concat([df1,df2], axis = 0, ignore_index=True) #row
 
 #=====Joining Data Frames
 leftTable = pd.DataFrame({"A" : ["A0","A1","A2","A3"],

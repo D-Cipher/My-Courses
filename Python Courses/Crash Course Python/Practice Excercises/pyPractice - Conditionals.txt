@@ -1,97 +1,26 @@
-"""
-Write a Python function that takes as input the parameter number (an integer) and returns True if number is even and False if number is odd. Hint: Apply the remainder operator to n (i.e., number % 2) and compare to zero. 
+﻿"""
+Write a Python script that tests whether a number (an integer) is odd or even. Hint: Apply the remainder operator to n (i.e., number % 2) and compare to zero. 
 Answer:
-def is_even(num):
-  evenTest = num % 2
-  result = None
-  if evenTest == 0:
-    result = True
-  elif evenTest == 1:
-    result = False
-  else:
-    result = "Error"
-  
-  return result 
 
-print(is_even(22))
 """
+
 """
-Write a Python function that takes as input the parameters hour (an integer in the range [1,12]) and is_am (a Boolean “flag” that represents whether the hour is before noon). The function should return True when the input corresponds to 11am or 12pm (noon) and False otherwise. 
+Write a Python script that tests whether a hour, that is an integer in the range [0,23] is am or pm. For instance, 1 represents 01:00hr military time which is 1am so it is am. Whereas 13 represents 13:00hr which is 1pm and it is pm.
 Answer:
-def is_lunchtime(hour,is_am):
-  numList = range(1,13)
-  testHour = numList.count(hour)
-  result = None
-  
-  if testHour != 1:
-    return "Error: Not valid number"
-  else: pass
-
-  if hour == 11 and is_am == True:
-    result = True
-  elif hour == 12 and is_am == False:
-    result = True
-  else:
-    result = False
-    
-  return result
-
-print(is_lunchtime(12, False))
 """
+
 """
-Write a Python function is_leap_year that take as input the parameter year and returns True if year (an integer) is a leap year according to the Gregorian calendar and False otherwise. The Wikipedia entry for leap yearscontains a simple algorithmic rule for determining whether a year is a leap year. Your main task will be to translate this rule into Python.
+Write a Python Script taht tests whether a year is a leap year. Print True if the year (an integer) is a leap year according to the Gregorian calendar and False otherwise. The Wikipedia entry for leap years contains a simple algorithmic rule for determining whether a year is a leap year. Your main task will be to translate this rule into Python.
 Tests:
 #2000 is a leap year.
 #1996 is a leap year.
 #1800 is not a leap year.
 #2013 is not a leap year.
 Answer:
-def leapYr(year):
-  fourRemainder = year % 4
-  oneH_remain = year % 100
-  fourH_remain = year % 400
-  result = None
-  
-  if year < 0:
-    return "Invalid Year"
-  elif type(is_am) != bool
-    return "Invalid is_am"
-  else: pass
-  
-  if fourRemainder != 0:
-    result = False
-  elif oneH_remain != 0:
-    result = True
-  elif fourH_remain != 0:
-    result = False
-  else:
-    result = True
-  
-  return result
-
-print(leapYr(2000))
 """
 
 """
-Write a Python function name_and_age that take as input the parameters name (a string) and age (a number) and returns a string of the form "% is % years old" where the percents are the string forms of name and age. The function should include an error check for the case when 𝚊𝚐𝚎 is less than zero. In this case, the function should return the string "Error: Invalid Age".
-  Also, test whether name is a string.
-
-Answer:
-def name_and_age(name, age):
-  if type(name) != str:
-    return "Invalid name"
-  elif type(age) != int or age < 0:
-    return "Invalid age"
-  else: pass
-  
-  result = name + " is " + str(age)
-  
-  return result
-
-print(name_and_age("test", 23))
-"""
-"""
-Write a Python function name_lookup that takes a string first_name that corresponds to one of ("Robert", Wil", "Alex" or "Emanuel") and then returns their corresponding last name ("Fischer", "Steinitz", "Alekhine" or "Lasker"). If first_name doesn't match any of those strings, return the string "No name in list"
+Write a Python script that takes a string first_name that corresponds to one of ("Robert", Wil", "Alex" or "Emanuel") and then returns their corresponding last name ("Fischer", "Steinitz", "Alekhine" or "Lasker"). If first_name doesn't match any of those strings, it should print the string "No name in list"
 Answer:
 
 def name_lookup(first_name):
@@ -110,7 +39,9 @@ print(name_lookup("Robert"))
 """
 
 """
-Given numbers a, b, and c, the quadratic equation ax^2+bx+c=0 can have zero, one or two real solutions (i.e; values for x that satisfy the equation). The quadratic formula x=(−b ± sqrt(b^2−4ac) / 2a can be used to compute these solutions. The expression b^2−4ac is the discriminant associated with the equation. If the discriminant is positive, the equation has two solutions. If the discriminant is zero, the equation has one solution. Finally, if the discriminant is negative, the equation has no solutions. Write a Python function that takes numbers a, b and c and returns the solution to the quadratic formula. If the equation has no real solution, print the message "Error: No Real Solutions", if it has one, return the solution, if two, return both solutions.
+Given numbers a, b, and c, the quadratic equation ax^2+bx+c=0 can have zero, one or two real solutions (i.e; values for x that satisfy the equation). The quadratic formula x=(−b ± sqrt(b^2−4ac) / 2a can be used to compute these solutions. The expression b^2−4ac is the discriminant associated with the equation. If the discriminant is positive, the equation has two solutions. If the discriminant is zero, the equation has one solution. Finally, if the discriminant is negative, the equation has no solutions. 
+
+Write a Python script that takes numbers a, b and c and returns the solution to the quadratic formula. If the equation has no real solution, print the message "Error: No Real Solutions", if it has one, print the solution, if two, print both solutions.
 
 Answer:
 import math
@@ -137,42 +68,3 @@ def quadratic_calc(a,b,c):
 
 print(quadratic_calc(2,0,-10))
 """
-
-"""
-Challenge: Pig Latin is a language game that involves altering words via a simple set of rules. Write a Python function pig_latain that takes a string word and applies the following rules to generate a new word in Pig Latin. If the first letter in word is a consonant, append the consonant plus "ay" to the end of the remainder of the word. For example, pig_latin("pig") would return "igpay". If the first letter in word is a vowel, append "way" to the end of the word. For example, pig_latin("owl") returns "owlway". You can assume that word is in lower case. The provided template includes code to extract the first letter and the rest of word in Python. Note that, in full Pig Latin, the leading consonant cluster is moved to the end of the word. However, we don't know enough Python to implement full Pig Latin just yet.
-Answer (with Regex):
-import re
-
-def pig_latin(word):
-  firstLetter = re.findall("^[aeiouAEIOU]", word)
-  #print(firstLetter)
-  result = None
-  if len(firstLetter) == 0:
-    extract = re.findall(r"\S(.+)", word)
-    result = extract[0] + "ay"
-  elif len(firstLetter) > 0:
-    result = word + "way"
-  else:
-    result = "Error"
-  return result
-  
-print(pig_latin("test"))
-
-Answer (without Regex):
-def pig_latin2(word):
-  wordLetters = list(word)
-  vowels = ["a","e","i","o","u","A","E","I","O","U"]
-  vCount = vowels.count(wordLetters[0])
-  result = None
-  if vCount >= 1:
-    result = word + "way"
-  elif vCount == 0:
-    wordLetters.pop(0)
-    result = ''.join(wordLetters) + "ay"
-  else: 
-    result = "Error"
-  return result
-
-print(pig_latin2("test"))
-"""
-

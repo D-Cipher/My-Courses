@@ -1,0 +1,24 @@
+#=====Basic Linear Model
+
+import seaborn as sns
+
+%matplotlib inline
+
+tipsData = sns.load_dataset("tips")
+
+tipsData.head()
+
+sns.lmplot(x="total_bill", y="tip", data=tipsData, hue="sex")
+
+#=====Splitting by Panels
+
+#1x2 Panels
+sns.lmplot(x="total_bill", y="tip", data=tipsData, col="sex")
+
+#2x2 Panels
+sns.lmplot(x="total_bill", y="tip", data=tipsData, col="sex", row="time")
+
+#1x4 Panels
+sns.set_context("notebook", font_scale=2)
+sns.lmplot(x="total_bill", y="tip", data=tipsData, col="day", hue="sex", 
+          aspect=0.6, size=8)

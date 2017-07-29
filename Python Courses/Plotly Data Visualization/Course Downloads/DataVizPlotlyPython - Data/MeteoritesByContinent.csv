@@ -1,0 +1,88 @@
+,continent,year,count
+0,Africa,2000,239
+1,Africa,2001,87
+2,Africa,2002,109
+3,Africa,2003,30
+4,Africa,2004,17
+5,Africa,2005,16
+6,Africa,2006,15
+7,Africa,2007,14
+8,Africa,2008,19
+9,Africa,2009,10
+10,Africa,2010,20
+11,Africa,2011,9
+12,Africa,2012,2
+13,Antarctica,2000,806
+14,Antarctica,2001,499
+15,Antarctica,2002,586
+16,Antarctica,2003,1422
+17,Antarctica,2004,30
+18,Antarctica,2005,3
+19,Antarctica,2006,1061
+20,Antarctica,2007,15
+21,Antarctica,2008,7
+22,Antarctica,2009,30
+23,Antarctica,2010,57
+24,Antarctica,2011,36
+25,Asia,2000,389
+26,Asia,2001,636
+27,Asia,2002,281
+28,Asia,2003,207
+29,Asia,2004,155
+30,Asia,2005,206
+31,Asia,2006,114
+32,Asia,2007,164
+33,Asia,2008,176
+34,Asia,2009,221
+35,Asia,2010,204
+36,Asia,2011,146
+37,Asia,2012,1
+38,Australia,2002,2
+39,Australia,2003,1
+40,Australia,2004,1
+41,Australia,2005,3
+42,Australia,2006,3
+43,Australia,2007,1
+44,Australia,2008,6
+45,Australia,2009,10
+46,Australia,2010,7
+47,Australia,2011,22
+48,Europe,2000,15
+49,Europe,2001,1
+50,Europe,2002,10
+51,Europe,2003,7
+52,Europe,2004,5
+53,Europe,2005,2
+54,Europe,2006,6
+55,Europe,2007,3
+56,Europe,2008,3
+57,Europe,2009,9
+58,Europe,2010,3
+59,Europe,2011,5
+60,Europe,2012,1
+61,North America,2000,46
+62,North America,2001,50
+63,North America,2002,37
+64,North America,2003,32
+65,North America,2004,53
+66,North America,2005,12
+67,North America,2006,18
+68,North America,2007,25
+69,North America,2008,26
+70,North America,2009,15
+71,North America,2010,14
+72,North America,2011,14
+73,North America,2012,8
+74,South America,2000,4
+75,South America,2001,5
+76,South America,2002,5
+77,South America,2003,14
+78,South America,2004,3
+79,South America,2005,2
+80,South America,2006,4
+81,South America,2007,13
+82,South America,2008,24
+83,South America,2009,27
+84,South America,2010,110
+85,South America,2011,157
+86,South America,2012,2
