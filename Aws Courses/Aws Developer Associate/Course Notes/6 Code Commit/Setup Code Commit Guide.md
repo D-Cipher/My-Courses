@@ -11,7 +11,7 @@ You will be able to use the following commands to add commit and push contents o
 ```
 $ git add .
 $ git commit -m "test push"
-$ git push ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Aws-Files-Repo
+$ git push ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Dcy-Files-Repo
 ```
 
 ### Prerequisites
@@ -75,12 +75,12 @@ Once the output reads "You have successfully authenticated over SSH", your conne
 ### Creating a repository
 In the console navigate to Code Commit and click on "Create Repository". Then give the repository a unique name and add a description and note the ssh link.
 ```
-Repository Name = "Aws-Files-Repo"
+Repository Name = "Dcy-Files-Repo"
 Description = "Repository for Aws files"
 ```
 The SSH link can be found by "clicking on connect to reposititory":
 ```
-ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Aws-Files-Repo
+ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Dcy-Files-Repo
 ```
 
 ### Result
@@ -89,13 +89,13 @@ Once the repo has been created, you can link your local files to the repository.
 1. Innitializes an empty local git repo the directory and add the orgin as the code commit repo link.
 ```
 $ git init
-$ git remote add orgin ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Aws-Files-Repo
+$ git remote add orgin ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Dcy-Files-Repo
 ```
 2. Use the following commands to add commit and push contents of the local directory up to the code commit repo. 
 ```
 $ git add .
 $ git commit -m "test push"
-$ git push --set-upstream ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Aws-Files-Repo master
+$ git push --set-upstream ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/Dcy-Files-Repo master
 ```
 Once the push is successful, your repos are now linked. Note that the first push may require "--set-upstream ... master", but successive pushes can be initiated with just "git push".
 ~
