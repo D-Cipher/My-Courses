@@ -1,0 +1,41 @@
+Distribution Style
+
+There are different styles for which big data can be computed across compute nods and node slices in redshift.
+
+1. Even distribution - Rows distributed across slices regardless of values in a particular column, in a round robin fashion. This is the default style.
+
+CREATE TABLE bid_csv
+(
+  bid_descrip   VARCHAR(200) NOT NULL,
+  bid_model     VARCHAR(40) NOT NULL,
+  bid_quant     INTEGER NOT NULL,
+  bid_price     DECIMAL NOT NULL,
+  bid_categ     VARCHAR(40) NOT NULL
+)
+DISTSTYLE EVEN;
+
+
+2.  Key distribution - Values distributed based on matching values on the same. Good for joining tables or large fact table with a star schema.
+
+CREATE TABLE bid_csv
+(
+  bid_key 	BIGINT NOT NULL ENCODE mostly32 DISTKEY,
+  bid_descrip   VARCHAR(200) NOT NULL,
+  bid_model     VARCHAR(40) NOT NULL,
+  bid_quant     INTEGER NOT NULL,
+  bid_price     DECIMAL NOT NULL,
+  bid_categ     VARCHAR(40) NOT NULL
+);
+
+
+3. All distribution - copy of the entire table is on every node. Good for data that is not changed often.
+
+CREATE TABLE bid_csv
+(
+  bid_descrip   VARCHAR(200) NOT NULL,
+  bid_model     VARCHAR(40) NOT NULL,
+  bid_quant     INTEGER NOT NULL,
+  bid_price     DECIMAL NOT NULL,
+  bid_categ     VARCHAR(40) NOT NULL
+)
+DISTSTYLE ALL;

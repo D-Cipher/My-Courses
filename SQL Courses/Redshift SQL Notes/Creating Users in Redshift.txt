@@ -1,0 +1,7 @@
+create user xavpas password 'ozgeIAD28';
+
+grant select on table nsi_bizops.cln_bizops to xavpas;
+
+grant select on table nsi_bizops.raw_bizops to xavpas;
+
+grant usage on schema nsi_bizops to xavpas;

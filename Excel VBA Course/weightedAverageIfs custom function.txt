@@ -1,0 +1,37 @@
+Function WeightedAverageIfs(Rng As Range, Find1 As String, Find1Column As Integer, Find2 As String, FindColumn2 As Integer, WeightColumn As Integer, AVGColumn As Integer)
+    lr = Rng.Cells(Rows.Count, 1).End(xlUp).Row
+    Dim num1 As Double, per1 As Double, num2 As Double, per2 As Double, counter As Integer
+    coutner = 0
+
+    For x = 1 To lr
+
+        If counter > 0 Then
+            If Rng.Cells(x, WeightColumn) = 0 Or Rng.Cells(x, WeightColumn) = "" Or IsNumeric(Rng.Cells(x, AVGColumn)) = False Or IsNumeric(Rng.Cells(x, WeightColumn)) = False Then GoTo skipif
+            If Rng.Cells(x, Find1Column) = Find1 And Rng.Cells(x, FindColumn2) = Find2 Then
+                num2 = Rng.Cells(x, WeightColumn)
+                per2 = Rng.Cells(x, AVGColumn)
+                counter = counter + 1
+            End If
+
+            per1 = (((per1 * num1) + (per2 * num2)) / (num1 + num2))
+            num1 = (num1 + num2)
+        End If
+
+        If counter = 0 Then
+            If Rng.Cells(x, WeightColumn) = 0 Or Rng.Cells(x, WeightColumn) = "" Or IsNumeric(Rng.Cells(x, AVGColumn)) = False Or IsNumeric(Rng.Cells(x, WeightColumn)) = False Then GoTo skipif
+            If Rng.Cells(x, Find1Column) = Find1 And Rng.Cells(x, FindColumn2) = Find2 Then
+                num1 = Rng.Cells(x, WeightColumn)
+                per1 = Rng.Cells(x, AVGColumn)
+                counter = counter + 1
+            End If
+        End If
+skipif:
+    Next x
+    If counter = 1 Then
+    WeightedAverageIfs = per1
+    ElseIf counter = 0 Then
+    WeightedAverageIfs = 0
+    Else
+    WeightedAverageIfs = per1
+    End If
+End Function

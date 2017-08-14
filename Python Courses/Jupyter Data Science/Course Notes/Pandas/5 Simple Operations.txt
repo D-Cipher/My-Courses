@@ -52,6 +52,9 @@ def getAces(strInput):
 
 sum(df["col3"].apply(lambda x: getAces(x)))
 
+#Get sum of col1 if col2 is 444
+df.apply(lambda x: x["col1"] if x["col2"] == 444 else 0, axis = 1)
+
 
 #=====Sorting and Dropping
 
