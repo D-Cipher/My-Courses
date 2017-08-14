@@ -1,12 +1,12 @@
-##Apache Guide
+## Apache Guide
 This is a guide on setting up Apache on an instance of you Amazon Web Service's EC2 Virtual environment.
 
-###Objective
+### Objective
 Once set up, you will be able to view publicly the index.html webpage of your EC2 from your browser by pasting in the IPv4 Public IP address. This is found in your instance dashboard (bottom left). 
 
 Note: Your EC2 must be given security group permissions for HTTP and HTTPS input and output. See Setup EC2 Guide for more details. 
 
-###Prerequisites
+### Prerequisites
 You must be in root and be sure to update machine then install Apache.
 ```
 sudo su
@@ -14,14 +14,14 @@ yum update
 yum install httpd
 ```
 
-###Starting Apache
+### Starting Apache
 Start Apache and make sure it starts every time we boot up the EC2 instance.
 ```
 service httpd start
 chkconfig httpd on
 ```
 
-###Create a website
+### Create a website
 Go to "/var/www/html" anything in this directory is publicly accessible.
 ```
 cd /var/www/html
@@ -34,7 +34,7 @@ nano index.html
 <html><h1>Hello World</h1></html>
 ```
 
-###Result
+### Result
 Now test the result, from your browser by pasting in the IPv4 Public IP address and you should be able to view your index.html file from your browser.
 
 ~

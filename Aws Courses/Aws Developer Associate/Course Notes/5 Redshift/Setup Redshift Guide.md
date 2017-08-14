@@ -1,7 +1,7 @@
-##Setup Redshift Guide
+## Setup Redshift Guide
 This is a guide on how to properly setup a Redshift cluster, focusing primarily on setting it up inside your custom VPC's private subnet for enhanced security.
 
-###Objective
+### Objective
 Once set up, we should have a good understanding of the process of configuring your Redshift cluster inside a private subnet. We should then be able to connect directly from our SQL client into our Redshift cluster via tunneling through our bastion host. 
 
 1. Simply, open a connection to your bastion host with tunneling configured.
@@ -13,7 +13,7 @@ Username = "admin"
 Password = "*****"
 ```
 
-###Prerequisites
+### Prerequisites
 This guide is fairly involved and requires quite a bit of prerequsite knowledge before attempting this guide.
 
 1. You must have a good understanding of VPCs and you must alreay have created a VPC with both a public and private subnet. See "Setup VPC Guide" and "Configure VPC Private Subnet" for details. 
@@ -22,7 +22,7 @@ This guide is fairly involved and requires quite a bit of prerequsite knowledge 
 4. You will also need to have a good understanding of S3 and EC2. You must know how to create EC2 instances. See guides: "Setup S3 Web Host Guide" and "Setup EC2 Guide" for details.
 5. If you are using Linux or Mac you must have a good understanding of SSH and how to SSH into your EC2 instances. If you are using Windows you must have PuTTy installed and know how to use PuTTy to access your EC2 instances. See guides: "Setup EC2 Guide" and "PuTTy Key Guide" for details.
 
-###Create a Redshift S3 Role
+### Create a Redshift S3 Role
 We will be using a Redshift role to access our data stored on S3 rather than user credentials. Roles are far more secure because they do not require exposing user credentials and user secret access keys.
 
 1. Go to the IAM dashboard, select "Roles" on the side panel, and then click "Create New Role". 
@@ -33,7 +33,7 @@ Role Name = "Redshift_S3-Admin"
 3. Under "AWS Service Roles", select "Amazon Redshift".
 4. Then attach the "AmazonS3FullAccess" policy. Then click "Next Step" and "Create Role".
 
-###Create Subnet Group
+### Create Subnet Group
 In the prerequsite section your should already have a custom VPC with a public and a private subnet created. Before we can create our cluster we need to create a cluster subnet group in order to put our cluster into our custom VPC's private subnet.
 
 1. Go to your Redshift dashboard and click "Security". Then go to the "Subnet Groups" tab and click "Create Cluster Subnet Group". 
@@ -47,7 +47,7 @@ Subnet ID = "subnet-1b464b36"
 ```
 3. Click "Add" then click "Create".
 
-###Create Cluster In Your VPC
+### Create Cluster In Your VPC
 Now we will provision a Redshift cluster into the private subnet. 
 
 1. Go to your Redshift dashboard and click "Create Cluster" and configure the details. Make a note of the "Master user name" and "Master user password" you configure. Then click "Continue".
@@ -84,7 +84,7 @@ Available Roles = "Redshift_S3-Admin"
 ```
 7. Review and click "Create". The cluster should take a few mins to create.
 
-###Create an Endpoint
+### Create an Endpoint
 Now that our Redshift cluster is sitting inside our VPC, we need to create an endpoint that will allow our VPC to communicate with S3. 
 
 1. Go to your VPC dashboard, and open up the "Endpoints" section. Then click "Create Endpoint".
@@ -96,7 +96,7 @@ Policy = "Full Access"
 ```
 3. In "Configure Route Tables" select your private route. In our example it is our main route: "theMatrix-route-main", which we configured in the "Setup VPC Guide". 
 
-###Provision a Bastion Host
+### Provision a Bastion Host
 Since our cluster sits inside our private subnet we can only access it through our bastion host. As a prerequsite, you should already have a bastion host and an instance inside your private subnet. If not, see "Configure VPC Private Subnet" to set up a bastion host.
 
 Once set up, test to make sure you can access the instance inside your private subnet:
@@ -107,7 +107,7 @@ chmod go-w ~/ ~/.ssh
 ssh ec2-user@10.0.1.111 -i ~/.ssh/authorized_keys
 ```
 
-###Start Tunneling
+### Start Tunneling
 With our bastion host created, we need build a tunnel from our localhost to our Redshift cluster. This process is different for Linux/Mac and Windows.
 
 For Windows users, you need to have PuTTy. See "PuTTy Key Guide" for more details. 
@@ -131,7 +131,7 @@ ssh bastion.us-east1.amazonaws.com \
   -L5439:dcy-cluster.cmgjkrnrf8l7.us-east-1.redshift.amazonaws.com:5439 -nNT
 ```
 
-###Connect to SQL Client
+### Connect to SQL Client
 Now we can connect directly from our SQL client into our Redshift cluster via the tunnel. For our example, we will use SQL Workbench/J, which is Aws' recommended client. For instructions on setting up SQL Workbench/J, see "Setup SQL Workbench Guide".
 
 1. Important: keep the connection to our bastion host open. 
@@ -166,7 +166,7 @@ Type = "Redshift", Protocol = "TCP", Port Range = "5439", Source = "10.0.2.0/24"
 Type = "All ICMP - IPv4", Protocol = "ICMP", Port Range = "ALL", Source = "10.0.2.0/24"
 ```
 
-###Result
+### Result
 Once connected, we can now preform import data from S3 and run SQL queries on our cluster from our SQL client. We can run some tests to make sure Redshift is communicating with S3 and our SQL client properly.
 
 Create a table in your cluster and check the "Database Explorer" in SQL workbench to make sure the create was successful. This tests shows that SQL workbench is properly connected to our Redshift cluster.

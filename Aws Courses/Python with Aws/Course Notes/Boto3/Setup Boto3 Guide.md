@@ -1,8 +1,8 @@
-##Setup Boto3 Guide
+## Setup Boto3 Guide
 
 This is a guide on setting up Boto3 with your Amazon Web Service allowing you to access Aws via Python.
 
-###Objective
+### Objective
 Once set up, we should be able to access Aws through a Python shell. 
 
 Use the following to print out all buckets in Aws S3:
@@ -25,10 +25,10 @@ with open("readme.txt", "rb") as f:
 	s3.Bucket("my-bucket").put_object(Key="readme.txt", Body=f)
 ```
 
-###Prerequisites
+### Prerequisites
 Create a user in Aws IAM with atleast S3 permissions. It is highly recommended that you create a group with S3 permissions and assign your user to that group. DO NOT use your root account. See "Setting up IAM Guide" for more details. 
 
-###Installing and Configuring
+### Installing and Configuring
 1. Install boto3.
 ```python
 pip install boto3
@@ -52,7 +52,7 @@ $ vi config
 region=us-east-1
 ```
 
-###Result
+### Result
 Now open up Python shell and make a connection to S3 to check that your credentials are working properly. If everything is workign properly it should print out all buckets you have on S3.
 
 ```python

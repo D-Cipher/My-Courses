@@ -1,7 +1,7 @@
-##Setup Redshift Guide
+## Setup Redshift Guide
 This is a guide on how to properly setup SQL Workbench/J as your client for connecting to your Redshift clusters. SQL Workbench/J is the recommended free client by Amazon. For more information on other partner tools, visit: https://aws.amazon.com/redshift/partners/. This guide will focus on setting up your client and connecting to a public Redshift cluster. It is highly recommended that you make your clusters private, but for setting up SQL Workbench/J purposes, we will build a public cluster. For more inforation on setting up a private cluster, see "Setup Redshift Guide".
 
-###Objective
+### Objective
 Once set up, we should have a good understanding of the process of connecting your SQL Workbench client to Redshift. We should then be able to connect directly from our SQL client into our public Redshift cluster. 
 
 Simply configure your SQL client with the following and connect:
@@ -12,13 +12,13 @@ Username = "admin"
 Password = "*****"
 ```
 
-###Prerequisites
+### Prerequisites
 For this guide, please have SQL workbench and Java Runtime Environment already installed. Also, it is recommended that you have experience working with VPCs.
 
 1. SQL Workbench/J can be installed at: http://www.sql-workbench.net/.
 2. Java Runtime Environment can be installed at: http://www.oracle.com/technetwork/java/javase/downloads/.
 
-###Create a Cluster
+### Create a Cluster
 Now we will provision a Redshift cluster into the public subnet in the default VPC.
 
 1. Go to your Redshift dashboard and click "Create Cluster" and configure the details. Make a note of the "Master user name" and "Master user password" you configure. Then click "Continue".
@@ -54,7 +54,7 @@ Available Roles = "Redshift_S3-Admin"
 ```
 7. Review and click "Create". The cluster should take a few mins to create.
 
-###Configure SQL Workbench
+### Configure SQL Workbench
 In order to connect SQL Workbench to our cluster, we need to download the jdbc driver and configure it with SQL. Then we will connect to our database using our cluster's JDBC url.
 
 1. Go to the Redshift dashboard and click on "Connect client". Then next to JDBC Driver select "JDBC 4.2 (.jar)" and note the file path that it downloads to. Note, you can also use ODBC driver if that is your preference.
@@ -76,7 +76,7 @@ Password = "*****"
 ```
 7. Finally, make sure to check "Autocommit".
 
-###Result
+### Result
 To test the VPC private subnet, we need to provision a new EC2 instance into it. See "Setup EC2 Guide". When configuring the instance details make sure to put it in the VPC, ei:
 ```
 Network = "theMatrix-VPC"

@@ -1,4 +1,4 @@
-##Access with Credentials Guide
+## Access with Credentials Guide
 
 Note: connecting with user credentials is generally NOT recommended because user credentials can be accessed within the EC2 instance. Better is to connect through roles.
 
