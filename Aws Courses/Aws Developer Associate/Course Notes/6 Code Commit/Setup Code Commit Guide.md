@@ -1,4 +1,4 @@
-## Setup S3 Web Host Guide
+## Setup Code Commit Guide
 This is a guide on setting up a Code Commit repository for using the aws cloud as version control.
 
 ### Objective
