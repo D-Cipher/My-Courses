@@ -1,7 +1,5 @@
 ## Setup Code Commit for Multiple AWS Accounts
-This is a guide on setting up a Code Commit SSH on computer for multiple AWS accounts.
-
-There are a few options from which to choose to set up multiple AWS accounts with CodeCommit on the same computer.
+This is a guide on setting up a Code Commit SSH on computer for multiple AWS accounts. If you have two AWS accounts and have git repositories on both on CodeCommit, there are a few options that allow you to and you want to have ssh access to both repositories from the same computer.
 
 ### Unique SSH Public Keys
 For this method, substitute Host Name in config file. If you have a unique SSH Public key for each AWS Account, you can upload them separately to IAM and get two unique SSH Key Ids back. Your ~/.ssh/config file will need to look something like this:
