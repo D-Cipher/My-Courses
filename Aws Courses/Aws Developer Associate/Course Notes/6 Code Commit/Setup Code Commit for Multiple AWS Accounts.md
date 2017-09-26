@@ -40,8 +40,8 @@ For example, for a clone, you could say:
 GIT_SSH_COMMAND='ssh -i ~/.ssh/codecommit-2_rsa -l APKA...' git clone ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/<repository_name>
 ```
 
-### Same public key for both accounts.
-This method works but is NOT recommend re-using public/private key pairs across accounts. This allows you to have only one ssh config entry for codecommit, which would look like this:
+### Same public key for both accounts
+This method works but is NOT recommend because it is re-using public/private key pairs across accounts. This allows you to have only one ssh config entry for codecommit, which would look like this:
 ```
 Host git-codecommit.*.amazonaws.com
       IdentityFile ~/.ssh/codecommit_rsa (path to public key)
