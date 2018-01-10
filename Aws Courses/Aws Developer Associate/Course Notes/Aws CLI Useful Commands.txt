@@ -12,7 +12,7 @@ pwd - print working directory
 aws s3 mb s3://dcy-bucket - creates a bucket named dcy-bucket
 
 S3 Copy Command
-aws s3 cp s3://mybucket/"Database Storage"/"nsi2017"/"Bid Files"/"Bids Ozge"/"CSV Uploads"/csv07_Jul . --recursive
+aws s3 cp s3://mybucket/"Database Storage"/"nsi2017"/"Bid Files"/"CSV Uploads"/csv_10_Oct . --recursive
 
 
 EC2 Commands:

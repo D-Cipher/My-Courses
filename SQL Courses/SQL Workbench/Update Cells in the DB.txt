@@ -6,8 +6,7 @@
 -- select *
 -- from nsi_bizops.cln_bizops
 -- where uniquecode in (
--- 'W_000V05D1_1')
--- ;
+-- 'W_000V05D1_1');
 -- end;
 
 ---=====Updating Code (Becareful when using)
@@ -16,18 +15,10 @@
 
 -- begin;
 -- update nsi_bizops.cln_bizops
--- set cln_cleaneddate = sysdate
--- , cln_datanotes = CONCAT(cln_datanotes, 
+-- set cln_cabletype = 'LC-LC Jumper', 
+-- cln_cleaneddate = sysdate,
+-- cln_datanotes = CONCAT(cln_datanotes, 
 --   'Allison: cable type changed from LC-Bundle to LC-LC Jumper, per description; ')
--- , cln_cabletype = 'LC-LC Jumper'
 -- where uniquecode in (
--- 'W_000V05D1_1')
--- ;
--- select *
--- from nsi_bizops.cln_bizops
--- where uniquecode in (
--- 'W_000V05D1_1')
--- ;
+-- 'W_000V05D1_1');
 -- end;
-
-
