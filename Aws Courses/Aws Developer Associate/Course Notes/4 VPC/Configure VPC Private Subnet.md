@@ -2,7 +2,14 @@
 This is a guide on configuring your VPCs' private subnets allowing your private subnets to communicate out to the internet via a network address translation (NAT) and allow you to adminster your private subnet through a bastion host.
 
 ### Objective
-Once set up, we should have a good understanding of the process of configuring your VPC's private subnet. We should be able to SSH into our private instance using a bastion host with our EC2 key pair and the instance's private ip address.
+Once set up, we should have a good understanding of the process of configuring your VPC's private subnet. 
+
+Make sure you have created a user account. -m creates a home directory, which you need to store your public key for connecting.
+```
+sudo useradd neo -m -s /bin/false -p *****
+```
+
+Once set up, we should be able to SSH into our private instance using a bastion host with our EC2 key pair and the instance's private ip address:
 ```
 sudo su -s /bin/bash neo
 chmod 600 ~/.ssh/authorized_keys

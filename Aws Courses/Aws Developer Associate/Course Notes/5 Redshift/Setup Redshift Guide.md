@@ -99,6 +99,11 @@ Policy = "Full Access"
 ### Provision a Bastion Host
 Since our cluster sits inside our private subnet we can only access it through our bastion host. As a prerequsite, you should already have a bastion host and an instance inside your private subnet. If not, see "Configure VPC Private Subnet" to set up a bastion host.
 
+Make sure you have created a user account. -m creates a home directory, which you need to store your public key for connecting.
+```
+sudo useradd neo -m -s /bin/false -p *****
+```
+
 Once set up, test to make sure you can access the instance inside your private subnet:
 ```
 sudo su -s /bin/bash neo
@@ -125,9 +130,14 @@ Destination = "dcy-cluster.cmgjkrnrf8l7.us-east-1.redshift.amazonaws.com:5439"
 4. Click "Add" to add to your forwarded ports.
 5. Now go back to your session and open a connection to your bastion host.
 
-For Linux/Mac users, we can invoke a local port forwarding directly to our bastion host with: 
+For Linux/Mac users, first make sure you can connect to the bastion host. See "Setup EC2 Guide" for more details.
 ```
-ssh bastion.us-east1.amazonaws.com \
+ssh ec2-user@54.209.96.172 -i MyEC2Key.pem
+```
+
+Once you check that you can successfully connect, restart a new session and use the following command to invoke a local port forwarding directly to our bastion host with: 
+```
+ssh ec2-user@54.209.96.172.us-east1.amazonaws.com -i MyEC2Key.pem \
   -L5439:dcy-cluster.cmgjkrnrf8l7.us-east-1.redshift.amazonaws.com:5439 -nNT
 ```
 

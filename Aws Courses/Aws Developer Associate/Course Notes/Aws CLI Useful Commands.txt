@@ -14,6 +14,9 @@ aws s3 mb s3://dcy-bucket - creates a bucket named dcy-bucket
 S3 Copy Command
 aws s3 cp s3://mybucket/"Database Storage"/"nsi2017"/"Bid Files"/"CSV Uploads"/csv_10_Oct . --recursive
 
+S3 Upload
+aws s3 cp ~/desktop/"to do today.txt" s3://nsi-bizops/"Database Storage"/
+upload: .\to do today.txt to s3://nsi-bizops/Database Storage/to do today.txt
 
 EC2 Commands:
 aws ec2 describe-instances - describes all instances we have

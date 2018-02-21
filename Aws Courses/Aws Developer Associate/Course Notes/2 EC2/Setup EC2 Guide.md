@@ -64,7 +64,7 @@ For windows users you will need to convert key pair to PuTTY key. See PuTTY key 
 
 For Mac users in the terminal you will need to change the permissions on the key pair.
 ```
-CHMOD 400 MyEC2Key.perm
+chmod 400 MyEC2Key.perm
 ```
 
 
