@@ -5,9 +5,9 @@ Help for schtasks.
 schtasks -? 
 ```
 
-List out scheduled tasks.
+List out scheduled tasks. Use -tn to find a specific task.
 ```
-schtasks -query -fo list -v
+schtasks -query -fo list -v -tn "test_automate_extract"
 ```
 
 Create a task. Notes: tn = task name, tr = task location, sc = how often, st = start time. 
@@ -17,11 +17,15 @@ schtasks -create -tn "test_automate_extract" -tr /c/Users/cawen/Documents/AwsPro
 
 Note: if directories have spaces use the short hand of the file name. For example "Aws Projects" would be "AwsPro~1". The following command will give you a list of all the short hand file names in the "Documents" directory:
 ```
-dir /X ~1 /c/Users/cawen/Documents/
+dir /X ~1 C:\Users\cawen\Desktop\
+```
+
+Change a task with:
+```
+schtasks -change -tn "test_automate_extract" -st 22:11
 ```
 
 Delete a task. Use f to bypass warning.
 ```
 schtasks -delete -tn "test_automate_extract" -f
 ```
-
