@@ -1,7 +1,9 @@
-create user mdreaux password 'ozgeIAD28';
+create user slearmon password 'slearmonIAD28';
 
-grant usage on schema nsi_bizops to mdreaux;
+grant usage on schema nsi_bizops to slearmon;
 
-grant select on table nsi_bizops.cln_bizops to mdreaux;
+grant select on table nsi_bizops.cln_bizops to slearmon;
 
-grant select on table nsi_bizops.raw_bizops to mdreaux;
+grant select on table nsi_bizops.raw_bizops to slearmon;
+
+grant select on table nsi_bizops.cln_bizops_full_vw to slearmon;
