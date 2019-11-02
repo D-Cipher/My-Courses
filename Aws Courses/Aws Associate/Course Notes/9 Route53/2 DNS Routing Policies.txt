@@ -1,0 +1,25 @@
+DNS Routing Policies
+
+Simple Routing -> you can only have one record for multiple IP addresses. If you specify multiple values in a record then Route53 will return one of the addresses to the user in a random order.
+1) User makes a request to Route53.
+2) With two IP addresses, Route53 will pick one of them in a random order.
+
+Multivalue Answer Policy -> same as simple routing except it also allows you to check the health of each record set and only route to the healthy ones.
+
+Weighted Routing -> you can split traffic base on different weights assigned.
+1) User makes a request to Route53.
+2) With two IP addresses, Route53 will pick one of them based on a set weight.
+
+Failover Routing -> you can create an active passive setup for disaster recovery. Route53 will monitor the health of your primary site using a health check and send user to the passive if it's down.
+
+Latency-Based Routing -> you can route traffic based on the lowest network latency for your user based on fastest response time irrespective of location and proximity.
+1) User makes a request to Route53.
+2) With two IP addresses, Route53 will look at the different response times for the two addresses then it will send the traffic the fastest one.
+
+Geolocation Routing -> you can choose where the traffic will be sent based on the location of the users. For example, you can send all traffic from Europe to your Frankfort server.
+
+Geoproximity Routing -> you can configure traffic to optimally route to minimize the distance between the user and the server. For example, if your user is in Spain you might want his traffic to Route to your North Africa Server rather than to Frankfort as it is closer.
+- Only configurable for Traffic Flow at this time.
+
+
+

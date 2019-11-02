@@ -1,0 +1,15 @@
+S3 Version and Lifecycle
+
+Versioning
+- Stores all versions of an objects for backup
+- Once enabled Versioning cannot be disabled only suspended
+- Bucket size grows exponentially
+- Integrates with Lifecycle rules
+- MFA Delete capability
+
+Lifecycle Rules
+- Automate transition objects into different bucket tiers.
+- Automate deleting objects
+- Applied to current and previous versions
+
+

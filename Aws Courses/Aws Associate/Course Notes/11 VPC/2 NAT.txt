@@ -1,0 +1,24 @@
+NAT Overview
+
+Network Address Translation (NAT) -> Allows EC2 instances in private subnet to securely communicate out to the internet for software updates. 
+
+NAT Instance -> Single EC2 instance used for NAT.
+- When creating a NAT instance be sure to disable source and destination check on the instance
+- NAT instances must be in a public subnet
+- There must be a route out of the private subnet to the NAT instance
+- Amount of traffic NAT instance can support depends on instance size.
+- Bottlenecking could be a problem, need to increase instance size.
+- Create high availability using Autoscaling groups and multiple subnets in different AZs, and script to automate failover.
+
+NAT Gateway -> Highly available, secure, AWS provided EC2 instances spread across multiple AZs for you to use for NAT.
+- Redundant inside the AZ
+- Only have one NAT Gateway per one AZ.
+- Start with 5G throughput scales to 45G.
+- AWS will handle patching
+- No need to disable source and destination check.
+- NAT gateway in one AZ can be a single point of failure 
+
+Bastion Host -> Special purpose computer specially designed to withstand attacks. Sits in the public subnet and only point of accesses into your private subnets.
+- You can get bastion host AMIs from the aws community AMI market place
+- Used to securely administer EC2 instances
+- Cannot use a NAT Gateway as a Bastion host.

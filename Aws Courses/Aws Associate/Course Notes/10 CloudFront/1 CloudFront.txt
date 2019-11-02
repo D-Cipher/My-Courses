@@ -1,0 +1,28 @@
+CloudFront
+
+CloudFront -> Web level caching. CloudFront is a content delivery network (CDN) distributed servers that that deliver webpages to user based on geographic location of the user, orgin of the webpage, and content delivery server.
+- Speeds up delivery of content
+- Can be used for static and dynamic content
+- Orgins: S3, EC2, ELB, HTTP servers
+- Protect private content (SSL)
+- Integrates with: Shield Standar/Advanced, WAF
+
+Edge location -> location where content is cached. Caching is triggered by the first user to request access.
+- Time To Live (TTL) -> Duration objects are cached, after the time is up then object in cache will be deleted.
+- Invalidation -> you can invalidate cached objects, important when adding new data, but there is a charge.
+
+Orgin -> orgin of the files that will be distributed 
+
+Distribution -> collection of edge locations
+- Web Distribution -> type of distribution used for websites
+- RTMP -> type of distribution used for media streaming
+
+Cost Benefits:
+- No data transfer between S3 and CloudFront
+- Reduces compute workload for EC2 instances
+
+Cost Considerations:
+1) Traffic distribution (how wide)
+2) Number of requests
+3) Data transfer out
+4) Clearing Caches

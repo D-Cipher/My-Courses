@@ -1,0 +1,24 @@
+Stateless vs Stateful
+
+1) Stateful Web Servers -> stores the client state into the server.
+- Stores the state, don't need to make multiple calls to the DB
+- Problem is does not scale horizontally because it stores in one particular server, but with new server it will not have the stored state.
+- Works well with one server.
+
+2) Stateless Web Servers -> does not store client state into the server, rather shares a TOKEN with the client and client uses the token to login.
+- Persisted store -> server takes the token and queries the database for varification.
+- Need to call the database each time.
+- Allows for scaling horizontally, works well with multiple servers.
+
+X-Forwarded-For Header -> Holds the ip address for the user. When user go to your website their ip will hit the load balancer and load balancer will access your application with the load balancer's IP address. We can use the X-Forwarded-For to forward user's IP address so we can see who is accessing our web servers.
+
+Sticky Sessions -> Bind a user's session to a particular EC2 instance. This allows each request from that user to be sent to the same instance.
+- For Application load balancers sticky sessions can be enabled but are sent at the target group level.
+- For Calssic load balancers each request is independently registered to EC2 instance with the smallest load. 
+- If you find that all traffic from a user is being routed to one instance from your ELB then you should disable sticky sessions.
+
+Cross Zone Load Balancings -> Allows loadbalancer to send traffic to EC2 instances in other AZs.
+
+Path Paterns -> Sends traffic based on the pattern of the URL contained in the request.
+- You can create a listener to create rules to forward requests based on the URL path. 
+- Example: you can route general requests to one target group and requests to render images to another target group.

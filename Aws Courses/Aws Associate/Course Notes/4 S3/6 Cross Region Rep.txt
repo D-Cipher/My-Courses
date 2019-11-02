@@ -1,0 +1,8 @@
+Cross Region Replication
+
+Cross Region Replication -> Replicate objects across different regions
+- Cannot replicate into the same region
+- Requires selecting different version
+- Does not replicate existing files in the bucket only new files and new versions
+- Deleting marker does not replicate
+- Deleting versioning does not replicate

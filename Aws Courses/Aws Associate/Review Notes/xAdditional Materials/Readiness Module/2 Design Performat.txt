@@ -1,0 +1,26 @@
+Design Performat
+
+1. Choose performant storage and databases
+Choosing Disk/Block Storage:
+- SSD -> more expensive and perform better for IOPS
+- HDD -> less expensve and perform better for sequential read/write
+
+Off-loading static content:
+- Store static files to S3, frees up webserver to deliver dynamic content.
+
+Databases:
+- RDS
+- DynamoDB
+- Redshift
+
+2. Apply caching to improve performance
+Web Level Caching:
+- CloudFront -> Content delivery network (CDN) that provides web level caching
+
+App and DB Level Caching:
+- ElastiCache -> memcached and redis
+
+3. Design for elasticity and scalability
+- Auto Scaling Groups
+- ELB
+- CloudWatch

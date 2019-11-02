@@ -1,0 +1,38 @@
+SQS SWF SNS Elastic Transcoder
+
+SQS -> A queue used for storing messages while waiting for a computer to process them. A queue is a temporary repositiory for messages that are awaiting processing.
+- Allows you to decouple the components of an application so they can run independently, easing message management between components. 
+- Queue acts as a buffer between component producing and saving the data.
+- Standard Queues (default) -> allows nearly unlimited number of transactions, there maybe messages that are sent multiple times
+- FIFO Queues -> orders the queues to that only one message sent at a time. 
+- Pull based and not push based.
+- Messages are 256KB in size.
+- Messages can be kept in the queue for 1 minute to 14 days
+- Visibility Time Out -> amount of time that the message is invisible in the SQS queue after a reader picks up the message. 12 hour time out.
+- SQS guarantees that message is process at lease once.
+- SQS long polling is a way to retrieve message.
+
+SNS -> web service that lets you setup, operate, and send notifications through the cloud.
+- delivers messages to subscribers and other services
+- push cloud notifications directly to mobile devices (SMS)
+- Topic -> access point for users to subscribe to notifications.
+- Messages are stored redundantly.
+- Instant push based delivery
+- Simple integration and API
+- Flexible message delivery
+- No upfront cost
+
+SWF -> way of coordinating work across distributed application components. Designed to as a coordination of tasks. Combining digital environment with human actions. 
+- Executions last up to 1 year
+- Task-oriented API
+- ensure tasks assigned only once never duplicated
+- keeps track of all tasks and events in an application
+- Workflow starters -> application that initiates the workflow
+- Deciders -> control flow of activities
+- Activity Workers -> Carry out activity tasks
+- Domain -> a collection of related workflows
+
+Elastic Transcoder -> Media transcode in the cloud, convert media files into different formats. 
+- Provides transcoding that works best for a particular device. 
+- Pay based on the minutes and resolution you transcode.
+

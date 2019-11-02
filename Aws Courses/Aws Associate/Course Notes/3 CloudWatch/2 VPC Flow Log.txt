@@ -1,0 +1,14 @@
+VPC Flow Log
+
+VPC Flow Log -> allows you to capture information about the IP traffic going into and from your VPC. Flow log data is stored in CloudWatch.
+- You cannot enable flow logs for VPCs that are peered with your VPC unless the peer VPC is in your account.
+- Once created you cannot change a flow log's configuration.
+- Traffic generated from contact with Amazon DNS server is not logged.
+- Amazon Windows licensing activation traffic is not logged.
+- Traffic for instance metadata (169.254.169.254) is not logged.
+- DHCP and traffic to reserved IP address is not logged.
+
+Flow logs can be created at three levels:
+- VPC level
+- Subnet level
+- Network interface level

@@ -1,0 +1,29 @@
+API Gateway
+
+API Gateway -> Fully managed service that allows developers to manage api to backend services. Front door for applications to access data, business logic, or functionality from your backend services.
+- Expose HTTPs endpoints to Restful API
+- Serverlessly connect to other services in AWS
+- Sends each API endpoint to different targets
+- Run efficiently with low cost
+- Scale automatically
+- Track and control usage by API Key
+- Throttle requests to prevent attacks
+- Connect to cloudwatch for logging results
+- Maintain multiple versions of your API, ei: test, dev, and prod apis
+
+Configuration
+- Define API container
+- Define resources 
+- Set responses
+
+API caching -> allows for caching, reduce the number of calls made to your endpoint. 
+
+Same-Orgin policy -> web application security model that says one webpage can talk to another web page provided that they have the same domain name, prevents webpages from different domains from talking to another, prevents cross site scripting (XSS).
+- Enforced by browser
+
+Cross Orgin Resource sharing (CORS) -> Allows one server to relax the same-orgin policy. Allows one webpage from one domain to talk to another webpage from the other domain. Needed if you are using Javascript / AJAX that use multiple domains with API Gateway.
+1) Browser makes an HTTP OPTIONS (Get, put, or post) call for a URL.
+2) Server returns response: These Domains are approved to GET this URL.
+3) If you see an error like "orgin policy cannot be read at the remote resource" then you need to enable CORS on your API Gateway.
+
+ 

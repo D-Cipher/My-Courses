@@ -1,0 +1,22 @@
+Aurora
+
+Aurora -> Relational DB for speed, availability, and cost effectiveness.
+- Compatible with MySQL and PostGresSQL
+- Storage Autoscaling -> Starts with 10GB, scales in 10GB increments to 64TB. 
+- Compute resources scale up to 32vCPUs and 244GB of memory 
+- 2 copies of data in each AZ, with minimum of 3 AZs, stores 6 copies of your data by default.
+
+Availability
+- Designed to handle loss of up to 2 copies of data without affecting database write availability and up to 3 copies without affecting read availability.
+- Data blocks and disks continuously scan for errors and repair automatically.
+
+Read Replicas
+- Can handle Aurora Replicas up to 15 replicas
+- Can handle MySQL replicas up to 5 replicas
+
+Backups
+- Automated backups are enabled by default
+- Backups do not impact performance
+- Snapshots do not impact performance
+- Can share snapshots with other AWS accounts
+

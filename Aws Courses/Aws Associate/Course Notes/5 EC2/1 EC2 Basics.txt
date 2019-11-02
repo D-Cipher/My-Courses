@@ -1,0 +1,64 @@
+EC2 Basics
+
+Elastic Compute Cloud (EC2) - web service provides resizable compute capacity in the cloud. A computer in the cloud.
+
+Pricing models
+1) On Demand -> pay fixed rate by the hour with no commitment
+2) Reserved Pricing -> capacity reservation for 1 to 3 year terms. Reserved instances cannot be moved between regions.
+3) Spot Pricing -> bid for a price you want for instant capacity, supply and demand. If a spot instance is terminated you will not be charged for partial hour of usage, but if you terminate you will be charged.
+4) Dedicated Hosts -> Physical EC2 dedicated for your use, paid by the hour.
+
+On Demand
+- good for users that want low cost no up-front payment or commitment
+- short term, spiky, unpredictable workloads that cannot be interupted
+- application testing
+
+Reserved Pricing
+1) Standard Reserved -> long term contracts thats 75% off on demand instances, longer the contract longer the discount.
+- Less flexibility in reconfiguring and you cannot move between regions
+
+2) Convertible Reserved -> Allows you to change between different instance types, 54% off on demand instances.
+- Allows more flexibility in moving and reconfiguring the instance
+
+3) Scheduled Reserved Instances -> Reserve capacity for specific windows of time that is predictable and reoccurring, think a school with scheduled hours.
+
+Spot Pricing
+- Applications with flexible start and end times
+- Available for low compute prices
+- Feasible for urgent computing needs for large amounts of capacity
+
+Dedicated Hosts
+- Good for regulatory requirements where not allowed for multi-tenant virtualization.
+- Good for licensing requirements 
+- Can be purchased On-Demand
+- Can be purchased as reserved
+
+EC2 Compute Cost Considerations:
+1) Clock hours of server time
+2) Machine configurations
+3) Machine purchase type
+4) Number of instances
+5) Load balancing
+6) Detailed monitoring
+7) Auto Scaling
+8) Elastic IP addresses
+9) Operating systems and software packages
+
+EC2 Instance types
+F1 -> Field Prorammable Gate Array, hardware acceleration
+I3 -> IOPS intensive, High speed storage, NoSQL data warehousing
+G3 -> Graphics/GPU for videos and gaming
+H1 -> High Disk Throughput, for MapReduce workloads
+T3 -> Low cost general purpose Web servers, small dbs
+D2 -> Dense Storage, Fileservers, Data Warehousing, Hadoop
+R5 -> RAM intensive, memory intensive apps and dbs
+M5 -> General Purpose, application servers
+C5 -> Compute Optimized, DBs and CPU intensive apps and dbs
+P3 -> General purpose GPU for machine learning, Bit Coin mining
+X1 -> Extreme Memory optimized, SAP Apache Spark
+Z1D -> High Compute capacity and high memory, electronics design automation
+A1 -> Arm based workloads, scale-out workloads to web servers
+U-6tb1 -> Bare Metal capabilities for eliminating virtualized overhead
+
+*Note: one subnet goes to one availability zone.
+

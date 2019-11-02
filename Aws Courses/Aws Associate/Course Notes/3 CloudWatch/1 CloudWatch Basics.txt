@@ -1,0 +1,30 @@
+Cloudwatch
+
+CloudWatch -> Monitors your AWS services on their performance. All about performance monitoring.
+
+For EC2, Cloudwatch Monitors following Metrics:
+- CPU
+- Network
+- Disk
+- Status Check
+
+For EC2, Cloudwatch:
+- Standard Monitoring (default) = 5 Mins
+- Detailed Monitoring = 1 Mins
+- Create alarms for notifications
+
+CloudWatch vs CloudTrail
+- Cloud Trail -> for auditing
+- CloudWatch monitors performance vs CloudTrail for auditing
+- CloudTrail monitors API Calls, identifies users, source of IP addresses.
+- CloudTrail = Who is provision what resource in AWS?
+- CloudWatch = What is network through put or disk IO?
+
+Cloudwatch Features
+- Create dashboards to see the data
+- Create alarms -> Allows you to set notifications
+- Events -> helps you respond to state changes
+- Logs -> aggregate and monitor and store your cloudwatch data
+
+
+

@@ -1,0 +1,12 @@
+IAM Federation
+
+Federation -> Allows users with Active Directory identities and corporate credentials to have role assigned in IAM
+- IAM integrates with Microsoft Active Directory and AWS Directory Service using SAML identity federation.
+- ADFS allows user to authenticate against active directory to gain temp credential.
+- AssumeRoleWithSAML = Uses secure assertion markup language to authenticate through active directory, API requests temporary security credentials.
+
+Web Identity Federation -> Allows users with web identities from identity provider to have role assigned using Security Token Service (STS)
+- Allow users to authenticate with Mobile Apps
+- Authenticate against identity provider first then obtain temp security credentials
+- Then with identity provider API call AssumedRoleWithWebIdentity
+- Then access AWS resources

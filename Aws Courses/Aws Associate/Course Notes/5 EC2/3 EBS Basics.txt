@@ -1,0 +1,31 @@
+Elastic Block Store (EBS)
+
+EBS -> Elastic Block Store, allows you to create storage volumes and attach them to EC2 instances. A virtual hard disk in the cloud. 
+- Supports Encryption and Snapshots
+- Can provision capacity
+- Can persist beyond the lifecycle of the EC2 instance
+- Can stripe multiple volumes together to create larger volumes
+- Data stored on EBS is automatically replicated within an AZ
+
+Volumes -> virtual hard disk that exist on EBS
+
+IOPS -> input output per second
+
+EBS Types
+1) General Purpose SSD (GP2) -> Balance price and performance 3 IOPS per GB, use case for most workloads.
+2) Provisioned IOPS SSD (IO1) -> Highest Performance SSD volume. Designed for IO intensive apps like large relational or NoSQL databases. Mission critical apps.
+3) Throughput Optimized HHD (ST1) -> Data written in sequence for Data warehouses and Big data. It's magnetic. Cannot be boot volumes.
+4) Cold HDD (SC1) -> Low cost infrequent services for file servers. It's megnetic. Cannot be boot volumes.
+5) Magnetic (Standard) -> Lowest cost infrequent data storage. Bootable.
+
+*Note you cannot mount 1 EBS to multiple EC2 instances.
+*Termination protection is turned off by default.
+*By default root EBS deleted when instance terminated.
+*Root volumes can't be encrypted once created
+*Note When taking a snapshot of root volume stop the instance first.
+
+EBS Storage Cost Considerations:
+1) Volumes Type
+2) IOPs Type
+3) Snapshot frequency and storage
+4) Data transfer across regions

@@ -1,0 +1,9 @@
+Transfer Acceleration
+
+Transfer Acceleration -> Utilizes the CloudFront Edge Network to accelerate uploads to S3.
+- Use a distinct URL to upload directly to an edge location which will transfer file to S3.
+- Users upload file into the local edge location and then the edge location transfers the file to the orgin bucket.
+- Testing Transfer Acceleration Tool link: http://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html
+
+
+

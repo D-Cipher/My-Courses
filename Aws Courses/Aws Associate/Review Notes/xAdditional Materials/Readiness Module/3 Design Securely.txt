@@ -1,0 +1,25 @@
+Design Secure Architectures
+
+Shared responsibility model -> security principle of responsibility of security between AWS and customer
+- AWS responsible for security OF the cloud: AWS infrastructure and AWS services
+- Customer responsible for security IN the cloud: Client / Server / Network Traffic Encryption, OS / Network / Firewall configurations, Platform / Apps / IAM, Customer Content
+
+Principle of least privilege -> you want to grant users the minimal amount of privileges for the activities they need to perform.
+
+1. Determine how to Secure Application Tiers
+- Identity Access Management (IAM)
+
+2. Determine how to Secure Data
+Data in Transit:
+- SSL over the web
+- VPN for IPsec
+- IPsec over AWS Direct Connect
+- Import/Export with Snowball
+- AWS API calls use HTTPS/SSL by default
+
+Data at Rest:
+- S3 -> private by default, HTTP or HTTPS, audit log, Bucket Policy, ACL integration. Supports Encryption.
+- EBS -> Encryption
+
+3. Define the networking infrastructure
+- VPC

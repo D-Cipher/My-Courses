@@ -1,0 +1,341 @@
+Practice Exam 1
+
+IAM
+1. When editing permissions (policies and ACLs), to whom does the concept of the "Owner" refer?
+a) There is no special concept of "Owner" in AWS.
+b) The Owner is IAM Role used to create the object via the GUI, CLI, or API.
+c) The "Owner" refers to the identity and email address used to create the AWS account.
+d) The Owner is the IAM user who created the object via the GUI, CLI, or API.
+
+2. With SAML-enabled single sign-on, ________. (Choose 2)
+a) The portal acknowledges a SAML authentication response, then verifies the user's identity in your organization.
+b) After the client browser posts the SAML assertion, AWS sends the sign-in URL as a redirect, and the client browser is redirected to the Console.
+c) The client browser is immediately directed to the AWS Console.
+d) The portal first verifies the user's identity in your organization, then generates a SAML authentication response.
+
+3. Your company has asked you to investigate the use of KMS for storing and managing keys in AWS. From the options listed below, what key management features are available in KMS?
+a) Import your own keys, disable and re-enable keys and migrate keys between the default KMS key store and a custom key store
+b) Generate keys, disable and re-enable keys and import keys into a custom key store
+c) Import your own keys, disable and re-enable keys and define key management roles in IAM
+d) Generate keys, disable and delete keys, operate as a private, native Hardware Security Module (HSM)
+
+4. Your server logs are full of what appear to be application-layer attacks, so you deploy AWS Web Application Firewall. Which of the following conditions may you set when configuring AWS WAF? (Choose 3)
+a) SQL Rejection Match Conditions
+b) URL Match Conditions
+c) String Match Conditions
+d) Size Constraint Conditions
+e) Termination Conditions
+f) IP Match Conditions
+
+5. AWS provides a number of security-related managed services. From the options below, select which AWS service is related to protecting your infrastructure from which security issue. (Choose 4)
+a) AWS WAF blocks IP addresses based on rules
+b) AWS WAF protects from Cross-site Scripting attacks
+c) AWS Shield protects from SQL Injection attacks
+d) Amazon Macie uses Machine Learning to protect sensitive data
+e) AWS Shield protects from Distributed Denial-of-Service attacks
+
+CloudWatch
+1. To monitor CPU utilization on your RDS instance you set up a CloudWatch alarm with a threshold of 70% over 3 periods of 5 minutes. If CPU utilization goes up to 80% for 10 minutes how many alarms will you recieve?
+a) Zero
+b) One
+c) Two
+d) Three
+
+2. A client is concerned that someone other than approved administrators is trying to gain access to the Linux web app instances in their VPC. She asks what sort of network access logging can be added. Which of the following might you recommend?? (Choose 2)
+a) Use Event Log filters to trigger alerts that are forwarded to CloudWatch.
+b) Set up a Flow Log for the group of instances and forward them to S3.
+c) Set up a Flow Log for the group of instances and forward them to CloudWatch.
+d) Set up a traffic logging rule on the network firewall and direct the log to CloudWatch or S3.
+e) Make use of an OS-level logging tools such as iptables and log events to CloudWatch or S3.
+
+3. You are a systems administrator and you need to monitor the health of your production environment. You decide to do this using CloudWatch. However, you notice that you cannot see the health of every important metric in the default dashboard. When monitoring the health of your EC2 instances, for which of the following metrics do you need to design a custom CloudWatch metric?
+a) CPU Usage
+b) Network in
+c) Disk read operations
+d) Memory usage
+
+S3
+1. One of your users is trying to upload a 7.5GB file to S3. However, they keep getting the following error message: "Your proposed upload exceeds the maximum allowed object size.". What solution to this problem does AWS recommend?
+a) Design your application to use large object upload API for this object.
+b) Log in to the S3 console, click on the bucket and then click properties. You can then increase your maximum object size to 1TB.
+c) Raise a ticket with AWS to increase your maximum object size.
+d) Design your application to use the Multipart Upload API for all objects.
+*Note: https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html
+
+2. You have been asked to advise on a scaling concern. The client has an elegant solution that works well. As the information base grows they use CloudFormation to spin up another stack made up of an S3 bucket and supporting compute instances. The trigger for creating a new stack is when the PUT rate approaches 100 PUTs per second. The problem is that as the business grows that number of buckets is growing into the hundreds and will soon be in the thousands. You have been asked what can be done to reduce the number of buckets without changing the basic architecture.
+a) Change the trigger level to around 3000 as S3 can now accommodate much higher PUT and GET levels.
+b) Upgrade all buckets to S3 provisioned IOPS to achieve better performance.
+c) Set up multiple accounts so that the per account hard limit on S3 buckets is avoided.
+d) Refine the key hashing to randomise the name Key to achieve the potential of 300 PUTs per second.
+*Note: https://docs.aws.amazon.com/AmazonS3/latest/dev/optimizing-performance.html
+
+3. What is the minimum file size that I can store on S3?
+a) 0 bytes
+b) 1 byte
+c) 1MB
+d) 1KB
+
+4. You run a popular photo-sharing website that depends on S3 to store content. Paid advertising is your primary source of revenue. However, you have discovered that other websites are linking directly to the images in your buckets, not to the HTML pages that serve the content. This means that people are not seeing the paid advertising, and you are paying AWS unnecessarily to serve content directly from S3. How might you resolve this issue?
+a) Remove the ability for images to be served publicly to the site and then use signed URLs with expiry dates.
+b) Use CloudFront to serve the static content.
+c) Use security groups to blacklist the IP addresses of the sites that link directly to your S3 bucket.
+d) Use EBS rather than S3 to store the content.
+
+5. What is AWS Storage Gateway?
+a) It allows a direct MPLS connection into AWS.
+b) It allows large scale import/exports into the AWS cloud without the use of an internet connection.
+c) It is a physical or virtual appliance that can be used to cache S3 locally at a customer's site.
+d) None of the above.
+
+6. You are asked to make a PDF file publicly available on the web. This file will be downloaded by customers using their browsers millions of times. Which option will be the most cost effective?
+a) S3 Standard
+b) S3 IA
+c) S3 One Zone IA
+d) Glacier
+
+7. You are consulting a mid-sized company with a predominantly Mac & Linux desktop environment. In passing they comment that they have over 30TB of unstructured Word and spreadsheet documents of which 85% of these documents don't get accessed again after about 35 days. They wish that they could find a quick and easy solution to have tiered storage to store these documents in a more cost-effective manner without impacting staff access. What options can you offer them? (Choose 2)
+a) Migrate documents to File Gateway presented as NFS and make use of life-cycle using Infrequent Access storage.
+b) Migrate documents to File Gateway presented as iSCSI and make use of life-cycle using Infrequent Access storage.
+c) Migrate the document store to S3 storage and make use of life-cycle using Infrequent Access storage.
+d) Migrate documents to EFS storage and make use of life-cycle using Infrequent Access storage.
+
+8. Your company likes the idea of storing files on AWS. However, low-latency service of the majority of files is important to customer service. Which Storage Gateway configuration would you use to achieve both of these ends? (Choose 2)
+a) Gateway-Snapshot
+b) File Gateways
+c) Gateway-Stored
+d) Gateway-VTL
+e) Gateway-Cached
+
+EC2
+1. Which of the following features only relate to Spread Placement Groups?
+a) The placement group can only have 7 running instances per Availability Zone
+b) Instances must be deployed in a single Availability Zone
+c) There is no charge for creating a placement group
+d) The name of your placement group must be unique within your AWS Account
+
+2. Can I delete a snapshot of an EBS Volume that is used as the root device of a registered AMI?
+a) Yes.
+b) Only using the AWS API.
+c) No.
+d) Only via the Command-Line.
+
+3. Standard Reserved Instances can be moved between regions
+a) True
+b) False
+
+4. When using EC2 instances with Dedicated Hosting, which of the following modes are you able to transition between by stopping the instance and starting it again?
+a) Host & Default
+b) Non-Dedicated & Dedicated
+c) Dedicated & Default
+d) Dedicated & Host
+
+CloudFormation
+1. You are planning to use CloudFormation to deploy a Linux EC2 instance in two different regions using the same base AMI. How can you do this using CloudFormation
+a) Use two different CloudFormation templates since CloudFormation templates are region specific
+b) Use mappings to specify the base AMI since the AMI IDs are different in each region
+c) Use parameters to specify the base AMI since the AMI IDs are different in each region
+d) AMI IDs are identical across regions
+
+2. You're building out a single-region application in us-west-2. However, disaster recovery is a strong consideration, and you need to build the application so that if us-west-2 becomes unavailable, you can fail-over to us-west-1. Your application relies exclusively on pre-built AMI's. In order to share those AMI's with the region you're using as a backup, which process would you follow?
+a) Copy the AMI from us-west-2 to us-west-1 and launch as-is.
+b) Nothing: AMIs are specific to an account, and they can be used anywhere.
+c) Create a new instance in us-west-1, making certain the instance in the failover region shares a security group with the instance in the default region.
+d) Copy the AMI from us-west-2, manually apply launch permissions, user-defined tags, and Amazon S3 bucket permissions of the default AMI to the new instance, and launch the instance.
+
+Auto Scaling
+1. Which services work together to enable the auto scaling of EC2 instances?
+a) Auto Scaling and Elastic Load Balancers
+b) Auto Scaling and CloudWatch
+c) Auto Scaling, Elastic Load Balancers, and CloudWatch
+d) Elastic Load Balancers and CloudWatch
+
+2. A radio station runs a contest where every day at noon they make an announcement that generates an immediate spike in traffic that requires 8 EC2 instances to process. All other times the web site requires 2 EC2 instances. What is the most effective way to meet these requirements?
+a) Create an Auto Scaling group with a minimum of capacity 2 and scale up based upon CPU utilization
+b) Create an Auto Scaling group with a minimum capacity of 8 at all times
+c) Create an Auto Scaling group with a minimum capacity of 2 and set a schedule to scale up at 11:40 am
+d) Create an Auto Scaling group with a minimum capacity of 2 and scale up based on memory utilization
+
+3. Which of the following are characteristics of Auto Scaling service on AWS? (Select THREE)
+a) Sends traffic to healthy instances
+b) Responds to changing conditions by adding or terminating EC2 instances
+c) Collects and tracks metrics and sets alarms
+d) Delivers push notifications
+e) Launches instances from a specified AMI
+f) Enforces a minimum number of running EC2 instances
+
+4. You have provisioned a custom VPC with a subnet that has a CIDR block of 10.0.3.0/28 address range. Inside this subnet, you have 2 webservers, 2 application servers, 2 database servers, and a NAT. You have configured an Autoscaling group on the two web servers to automatically scale when the CPU utilization goes above 90%. Several days later you notice that autoscaling is no longer deploying new instances into the subnet, despite the CPU utilization of all web servers being at 100%. Which of the following answers may offer an explanation? (Choose 2)
+a) AWS reserves both the first three and the last two IP addresses in each subnet's CIDR block.
+b) AWS reserves both the first two and the last two IP addresses in each subnet's CIDR block.
+c) Your internet gateway (IGW) on your VPC has provisioned too many EC2 instances.
+d) AWS reserves both the first four and the last IP address in each subnet's CIDR block.
+e) Your Autoscaling Group (ASG) has provisioned too many EC2 instances and has exhausted the number of internal IP addresses available in the subnet.
+
+5. You have been monitoring a sensitive autoscaling group, and you expect it to scale-in as you enter a period of holiday downtime. The auto scaling group is distributed over three AZs ( AZ - A & -B have two instances each, and AZ -C has three instances). All instances have different CPU and Memory utilization, and all instances have been running for a different number of days. All instances come from different versions of a root AMI, and all instances have different numbers of sessions connected. Which instance will be the 1st to shut down?
+a) The instance in AZ -C that has the oldest launch configuration will terminate first.
+b) The instance with the fewest current sessions will terminate first.
+c) The instance that has been running longest will terminate first.
+d) The instance in AZ -C that has the least number of sessions will terminate first.
+e) The instance in AZ -C that has been running the longest will terminate first.
+
+Databases
+1. Which of the following data formats does Amazon Athena support? (Choose 3)
+a) Apache ORC
+b) JSON
+c) XML
+d) Apache Parquet
+
+2. In RDS, what is the maximum value I can set for my backup retention period?
+a) 45 Days
+b) 35 Days
+c) 30 Days
+d) 15 Days
+
+3. How many copies of my data does RDS - Aurora store by default?
+a) 6
+b) 1
+c) 3
+d) 2
+
+4. If you are using Amazon RDS Provisioned IOPS storage with a Microsoft SQL Server database engine, what is the maximum size RDS volume you can have by default?
+a) 500GB
+b) 1TB
+c) 6TB
+d) 16TB
+e) 32TB
+
+5. You are leading a design team to implement an urgently needed collection and analysis project. You will be collecting data for an array of 50,000 anonymous data collectors which will be summarized each day and then rarely used again. The data will be pulled from collectors approximately once an hour. The Dev responsible for the DynamoDB design is concerned about how to design the Partition and Local keys to ensure efficient use of the DynamoDB tables. What advice would you provide. (Choose 2)
+a) Create a new table each day, and reconfigure the old table for infrequent use after the summation is complete.
+b) Use a Date-based partition key to avoid having to hop from partition to partition.
+c) Use a time-based partition key so that it is easy to query and analyze.
+d) Don't worry about it: AWS will optimize the table and partitions to meet our needs.
+e) Insert a calculated hash in front of the Date/Time value in the partition key to force DynamoDB to use partitions in parallel.
+
+6. At the monthly product meeting, one of the Product Owners proposes an idea to address an immediate shortcoming of the product system: storing a copy of the customer price schedule in the customer record in the database. You know that you can store large text or binary objects in DynamoDB. You give a tentative OK to do a Minimal Viable Product test, but stipulate that it must comply with the size limitation on the Attribute Name & Value. Which is the correct limitation?
+a) The combined Value and Name combined must not exceed 500 KB.
+b) The combined Value and Name combined must not exceed 255 KB.
+c) The combined Value and Name combined must not exceed 400 KB.
+d) The Name must not exceed 64 KB and the Value must not exceed 400 KB.
+e) The Name must not exceed 64 KB and the Value must not exceed 255 KB.
+f) The Name must not exceed 64 KB and the Value must not exceed 500 KB.
+
+7. Which of the following RDS database engines have a limit to the number of databases that can run per instance? (Choose 2)
+a) Oracle
+b) SQL Server
+c) PostgreSQL
+d) Amazon Aurora
+
+Route53
+1. In AWS Route 53, which of the following are true? (Choose 2)
+a) Alias Records can point at any resource with a Canonical Name.
+b) Route 53 allows you to create a CNAME record at the top node of a DNS namespace (zone apex)
+c) Alias Records provide a Route 53–specific extension to DNS functionality
+d) A CNAME record assigns an Alias name to an IP address.
+e) Route 53 allows you to create an Alias record at the top node of a DNS namespace (zone apex)
+f) Alias Records can point at any resources in AWS, but only within the same account
+
+2. You have created a new subdomain for your popular website, and you need this subdomain to point to an Elastic Load Balancer using Route53. Which DNS record set should you create?
+a) CNAME
+b) AAAA
+c) MX
+d) A
+
+VPC
+1. An organization is building an Amazon Redshift cluster on their shared services VPC. The cluster will host sensitive data. How can the organization control which networks can access the cluster?
+a) Run the cluster in a different VPC and connect through VPC peering
+b) Create database users inside the Amazon Redshift cluster only for users on the network.
+c) Define a cluster security group for the cluster that allows access from the allowed networks.
+d) Only allow access to networks that connect with the shared services network via VPN.
+
+2. By default, how many VPCs am I allowed in each AWS Region?
+a) 6
+b) 1
+c) 5
+d) 2
+
+3. When I create a new security group, all outbound traffic is allowed by default.
+a) True
+b) False
+
+4. A VPN connection consists of which of the following components? (Choose 2)
+a) Direct Connect Gateway
+b) Cross Connect
+c) Virtual Private Gateway
+d) Customer Gateway
+
+5. When you create a custom VPC, which of the following are created automatically? (Choose 3)
+a) Route Table
+b) Access Control List
+c) NAT Gateway
+d) Internet Gateway
+e) Subnets
+f) Security Group
+
+6. What is the purpose of an Egress-Only Internet Gateway? (Choose 2)
+a) Prevents IPv6 traffic accessing the Internet by utilising Security Groups
+b) Allows instances communicating over IPv4 or IPv6 to access the Internet
+c) Allows VPC based IPv6 traffic to communicate to the Internet
+d) Prevents IPv6 based Internet resources initiating a connection into a VPC
+
+7. By default, instances in new subnets in a custom VPC can communicate with each other across Availability Zones.
+a) True
+b) False
+
+8. You have created a Direct Connect Private VIF from your data center to the AWS network. The link is now active and routes are being advertised from the on-premise data center. However, your resources in your data center cannot access your EC2 Instances, nor vice versa. All connectivity between the EC2 instances is alright, and appropriate security groups and NACLs are correctly configured. Which of the following solutions would remedy this issue? (Choose 2)
+a) Enable route propagation on your Customer Gateway (CGW).
+b) Use an IPSEC VPN and add this route to the route table with the VPN being the target.
+c) Enable route propagation on your route table
+d) Configure a new route from the NAT to the on-premise data center.
+e) Edit the VPC subnet route table, adding a route back to the on-premise data center.
+
+High Availability
+1. In discussions about Cloud services the words 'Availability', 'Durability', 'Reliability' and 'Resiliency' are often used. Which term is used to refer to the likelihood that a resource will continue to exist until you decide to remove it?
+a) Reliability
+b) Durability
+c) Availability
+d) Resiliency
+
+2. Following an unplanned outage, you have been called into a planning meeting. You are asked what can be done to reduce the risk of a single bad deployment taking the whole site down. (The selected options do not necessarily need to work together) (Choose 4)
+a) Use Route 53 to direct traffic to the multi-region compute services on a round-robin basis.
+b) Use multiple autoscaling groups and boundaries for a staged or 'canary' deployment process.
+c) Use an Application Load Balancer to spread the load over several regions.
+d) Use a Classic Load Balancer to spread the load over several availability zones.
+e) Use Route 53 with health checks to distribute load across multiple ELBs.
+f) Use automation to ensure that all updates are always deployed to all autoscaling groups at the same time.
+g) Use several Target groups or auto scaling groups under each Load Balancers.
+
+3. In discussions about Cloud services the words 'Availability', 'Durability', 'Reliability' and 'Resiliency' are often used. Which term is used to refer to the likelihood that a resource ability to recover from damage or disruption?
+a) Availability
+b) Durability
+c) Resiliency
+d) Reliability
+
+4. When you have deployed an RDS database into multiple availability zones, can you use the secondary database as an independent read node?
+a) It depends on how you set it up.
+b) Yes.
+c) No.
+d) Only in US-West-1.
+
+5. Can I "force" a failover for any RDS instance that has Multi-AZ configured?
+a) Yes.
+b) No.
+c) Only for Oracle RDS instances.
+
+6. A company is developing a highly available web application using stateless web servers. Which services are suitable for storing session state data? (Select TWO)
+a) CloudWatch
+b) DynamoDB
+c) Elastic Load Balancer
+d) ElastiCache
+e) Storage Gateway
+
+Applications
+1. Your company provides an online image recognition service and uses SQS to decouple system components. Your EC2 instances poll the image queue as often as possible to keep end-to-end throughput as high as possible, but you realize that all this polling is resulting in both a large number of CPU cycles and skyrocketing costs. How can you reduce cost without compromising service?
+a) Enable long polling by setting the ReceiveMessageWaitTimeSeconds to a number > 0.
+b) Enable short polling by setting the ReceiveMessageWaitTimeSeconds to a number > 0.
+c) Enable short polling by setting the ReceiveMessageWaitTimeMinutes to a number > 0.
+d) Enable long polling by setting the ReceiveMessageWaitTimeMinutes to a number > 0.
+
+2. What is the maximum VisibilityTimeout of an SQS message in a FIFO queue?
+a) 1 day
+b) 14 days
+c) 12 hours
+d) 1 hour

@@ -1,0 +1,7 @@
+AWS Core Services
+
+Compute - EC2 and Lambda
+Storage - S3
+Databases - RDS, S3, Redshift
+Network and Content Delivery - cloud front, vpc, Route53 DNS
+Security Identity & Compliance - IAM

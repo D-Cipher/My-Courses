@@ -1,0 +1,23 @@
+Design Operational Excellence
+
+Operational Excellence - have a system that is automated and adapts to changing circumstances
+- prepare
+- operate
+- evolve
+
+Best practices
+- perform operations with code
+- annotate and document
+- make frequent, small, reversible changes
+- refine operations and procedures frequently
+- anticipate failure
+- learn from failure
+
+Key services
+- CloudWatch -> tracks metrics and alarms when metrics are exceeded. Need to look at what the 3 periods of 5 mins configuration means.
+- AWS Config -> tracks resources like EBS and EC2 instances varifying new resources comply with configuration rules
+- CloudFormation -> converts JSON and YAML into infrastructure
+- CloudTrail -> Logs API calls
+- VPC Flow Logs -> Logs Network Traffic
+- AWS Inspector -> Checks EC2 instances for security vulnerabilities
+- Trusted Advisor -> Checks accounts for best practices on security reliability, performance, and cost

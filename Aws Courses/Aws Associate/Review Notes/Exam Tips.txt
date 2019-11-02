@@ -1,0 +1,18 @@
+Exam Tips
+1) Circle "Choose two" or "Choose three" and make sure you are picking the right number of choices with these question types.
+
+2) "1 Availability Zone" is always wrong (except for sometimes S3-IA one zone). 
+Example: 
+An application runs on EC2 instances in an Auto Scaling group. The application runs optimally on 9 instances and must have at least 6 running instances to maintain minimally acceptable performance for a short period of time. Which is the most cost-effective Auto Scaling group configuration that meets this requirement?
+a) 9 instances across 2 AZs
+b) 9 instances across 3 AZs [Correct]
+c) 12 instances across 2 AZs 
+d) 9 instances across 1 AZ [WRONG BECAUSE 1 AZ]
+
+3) Look out for fake AWS services that don't exist. Eliminate them.
+Example: 
+You need an easily accessible solution, but still keep your storage costs to a minimum, and it does not matter if some objects are lost. With these factors in mind, which storage media should you use to keep costs as low as possible?
+a) Glacier
+b) S3 - Provisioned IOPS [NOT A SERVICE] 
+c) S3 - Reduced Redundancy Storage (RRS) [NOT A SERVICE]
+d) S3 - One Zone-Infrequent Access [Correct] 

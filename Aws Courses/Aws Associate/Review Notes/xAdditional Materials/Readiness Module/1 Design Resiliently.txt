@@ -1,0 +1,30 @@
+Design Resiliant Architectures
+
+1. Choose reliable/resilient storage.
+Disk/Block Storage:
+- Instance Store
+- Elastic Block Storage
+- Elastic File Storage
+
+Object storage:
+- S3 Standard
+- S3-IA
+- S3-IA One Zone
+- S3 Intelligent Tiering
+- Glacier
+- Glacier Deep Archive
+
+2. Design decoupling mechanisms using AWS
+- SQS
+- Elastic Load Balancer
+- Elastic IP
+
+3. Design multi-tier architecture - naturally decoupled
+- CloudFormation
+- Serverless Applications: Lambda
+
+4. Design high availability and/or fault tolerant solutions
+- instead of treating failure as an unusual exceptional event, treat it as a normal operational event.
+- high availability -> ability of a system or system component to be always operational.  
+- fault tolerant -> user does not experience any inpact or reduction in performance from a fault
+

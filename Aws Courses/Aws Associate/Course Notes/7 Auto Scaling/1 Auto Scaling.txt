@@ -1,0 +1,50 @@
+Auto Scaling
+
+Auto Scaling -> service allows for scalable resources, used for applications that experience variable load.
+- AWS Auto Scaling allows you to select your applications based on resource tags or AWS CloudFormation stacks. 
+- Create scaling plan for your application, defines how each of the resources in your application should be scaled. 
+- Create target track scaling policy, AG keeps scale at target value based scaling strategy. 
+- Choose from three predefined strategies: optimize availability, optimize costs, or balance the two. 
+- Set your own strategy: define your target values, set the min/max values for the resources.
+- Auto Scaling is free to use
+
+
+Types of Scaling:
+1) Vertical Scaling (scaling up) -> Changing the size of the instance for more compute or memory.
+
+2) Horizontal Scaling (scaling out) -> Changing the number of instances for more compute or memory
+
+Auto Scaling Groups -> Easy way to scale a service horizontally.
+- Launch or terminate instances
+- Automatically register new instances with load balancers
+- Can launch across AZs
+
+How it works:
+- ELB balances the load across our instances
+- CloudWatch monitors the instances' health
+- CloudWatch sends an alarm if CPU utilization level is exceeded
+- Auto Scaling Policy intercepts the alarm and determines how many instances to launch and what kind of instance it should be.
+
+Launching ASGs
+1) Launch Configurations -> allows you to set up the configurations that your ASGs will use to scale.
+- Can specify EC2 instance size and AMI name
+- Can specify time you want the scaling to happen.
+
+2) Auto Scaling Group 
+- References the launch configurations
+- Specifies min, max, and desired number of instances
+- May reference an ELB
+- Specifies healh check type
+
+3) Auto Scaling Policy
+- Specifies how much to scale (in or out)
+- Multiple policies may be attached to ASG
+
+Monitoring -> CloudWatch lets the ASG know when to scale in and when to scale out.
+- CloudWatch monitors: CPU utilization, Network metrics, Queue Size
+- CloudWatch Logs -> stores the data
+- Provides default and custom metrics
+
+Load Balancing -> Elastic Load Balancer distributes traffic across the instances.
+- Each time ASG creates an instance it will register it with the ELB.
+

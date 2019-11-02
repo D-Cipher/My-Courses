@@ -1,0 +1,20 @@
+Design Cost Optimization
+
+Principles:
+- Pay as you go
+- Pay less when you reserve
+- Pay less per unit when using more
+
+Main things you pay for:
+- Compute
+- Storage
+- Data Transfer
+
+1. Optimize Storage Cost
+- S3
+- EBS
+
+2. Optimize Compute Cost
+- EC2
+- Lambda
+- Cloudfront

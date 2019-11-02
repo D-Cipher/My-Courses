@@ -1,0 +1,11 @@
+EC2 Placement Groups
+
+EC2 Placement Groups are a way of placing your EC2 Instances. The placement group must be unique within your AWS account. There is no charge for creating a placement group. There are three types:
+
+1) Clustered Placement Groups -> Grouping of instances within a single AZ. Used for apps for low latency and high throughput. Put Instances very close to each other.
+- Deploying instances in a single Availability Zone is unique to Cluster Placement Groups.
+
+2) Spread Placement Group -> Grouping of instances on distinct underlying hardware, each instance is on its own rack and power source. Used for apps that have small number of critical instances that should be kept seperate from each other. Prevent hardware failure.
+- Spread placement groups can only have 7 running instances per AZ.
+
+3) Partitioned Placement Groups -> Divides each group into logical segmants called partitioned. Each partition is on it's own racks and power source. 

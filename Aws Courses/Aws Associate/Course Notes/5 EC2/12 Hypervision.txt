@@ -1,0 +1,7 @@
+Hypervision for EC2
+- Hypervisor is a hardware virtualization technique that allows multiple guest operating systems (OS) to run on a single host system at the same time.
+- Underlying Hypervision for EC2 is Xen but AWS recently added Nitro.
+- Xen is a hypervisor that enables the simultaneous creation, execution and management of multiple virtual machines on one physical computer.
+- Every AWS AMI uses the Xen hypervisor on bare metal. Xen offers two kinds of virtualization: HVM (Hardware Virtual Machine) and PV (Paravirtualization).
+- A bare metal environment is a computer system or network in which a virtual machine is installed directly on hardware rather than within the host operating system (OS). The term "bare metal" refers to a hard disk, the usual medium on which a computer's OS is installed
+- The latest AWS hypervisor, Nitro, uses everything to provide a new hardware-assisted hypervisor that is easy to use and has near bare-metal performance. It's an exciting development in cloud computing: hardware virtualization is now fast.

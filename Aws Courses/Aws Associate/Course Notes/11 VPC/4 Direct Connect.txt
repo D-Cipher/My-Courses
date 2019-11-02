@@ -1,0 +1,24 @@
+Direct Connect
+
+AWS Direct Connect -> cloud service solution that establish a direct ethernet fiber-optic cable connection from your premises to AWS network. 
+- One end of the cable is connected to your router, the other to an AWS Direct Connect router. 
+- directly connects into AWS data center
+- useful for high throughput workloads
+- reduce network cost
+- increase bandwidth throughput
+- more secure and consistent network experience
+- Cross connect -> cross-network connection requires Letter of Authorization and Connecting Facility Assignment (LOA-CFA)
+
+Direct Connect Gateway -> connects to your VPC using the following ways:
+- Virtual private gateway
+- Transit gateway 
+
+1) Virtual Private Gateway -> connects your direct connect connection over a private virtual interface to VPCs in your account in the same or different Regions.
+- Anchors the VPN connection on the server side (AWS)
+
+2) Transit Gateway -> Connect your AWS Direct Connect connection over a transit virtual interface to the VPCs or VPNs. Used for multiple VPCs in the same Region.
+- Manage a single connection for multiple VPCs or VPNs that are in the same Region.
+- Advertise prefixes from on-premises to AWS and from AWS to on-premises.
+
+Customer Gateway -> physical or virtual appliance that anchors the VPN connection on the client side.
+

@@ -1,0 +1,13 @@
+Encryption
+
+Encrypting on Creation
+-When creating an EC2 instance, select the volume and enable encryption
+
+Encrypting on Existing Instance or Volume
+1) Create a snapshot of the volume
+2) Create a copy of the snapshot and select the option to encrypt
+3) Create an AMI from the encrypted Snapshot
+4) Use the AMI to launch a new encypted instance.
+
+ 
+
