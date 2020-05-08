@@ -1,0 +1,7 @@
+Cached vs Stored Configurations
+
+Gateway-cached -> Data is cached locally, and data stored on S3.
+- Most frequently access data is cached on site. 
+- Retain low-latency access to your frequently accessed data on site.
+
+Gateway-stored -> Data is stored locally, then synced to S3 as backup. 

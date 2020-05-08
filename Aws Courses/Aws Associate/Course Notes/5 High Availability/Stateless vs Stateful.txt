@@ -1,0 +1,11 @@
+Stateless vs Stateful
+
+1) Stateful Web Servers -> stores the client state into the server.
+- Stores the state, don't need to make multiple calls to the DB
+- Problem is does not scale horizontally because it stores in one particular server, but with new server it will not have the stored state.
+- Works well with one server.
+
+2) Stateless Web Servers -> does not store client state into the server, rather shares a TOKEN with the client and client uses the token to login.
+- Persisted store -> server takes the token and queries the database for varification.
+- Need to call the database each time.
+- Allows for scaling horizontally, works well with multiple servers.

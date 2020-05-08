@@ -1,0 +1,41 @@
+'''
+Implementing a Grid:
+'''
+from pprint import pprint
+
+height = 4
+width = 3
+
+grid = [[(x,y) for x in range(width)] 
+          for y in range(height)]
+
+pprint(grid,width=80)
+
+# Cell
+y=0; x=1
+print(grid[y][x])
+
+# Row
+print(grid[0])
+
+# Col
+print([col[0] for col in grid])
+
+allcolumns = [[col[i] for col in grid] 
+            for i in range(len(grid[0]))]
+
+# Grid Traversal
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    print(grid[y][x])
+
+# Creating a grid of Boolean
+visited = [[False for _ in grid[i]] 
+          for i in range(len(grid))]
+
+pprint(visited,width=80)
+
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    visited[y][x] = True
+    #pprint(visited,width=80)

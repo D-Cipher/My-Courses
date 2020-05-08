@@ -1,0 +1,45 @@
+#Programming Fundementals: Importing modules
+
+#========Importing Modules=========
+
+import math
+import random
+
+# python3 -c 'import sys; print(sys.executable);'
+
+pi = math.pi
+
+print(math.ceil(12.33))
+
+print(math.floor(34.55))
+
+print(math.pow(3,3))
+
+print(math.sqrt(3))
+
+print(pi)
+
+print(random.randrange(0,10)) #not including 10
+
+"""
+Practice Problem: Write a script that simulates a "Magic 8 ball". The idea is the will give you a random fortune every time it's called. (A random fortune like: "You will be very rich" or "Yes it will happen")
+ 
+ Answer:
+ 
+import random
+
+fortune = random.randrange(0,5)
+  
+if fortune == 0:
+  print("It certainly will happen")
+elif fortune == 1:
+  print("You can count on it")
+elif fortune == 2:
+  print("Busy now ask me later")
+elif fortune == 3:
+  print("Doubtful")
+elif fortune == 4:
+  print("Sorry not a chance")
+else: pass
+
+"""

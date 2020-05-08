@@ -1,0 +1,162 @@
+IAM
+
+S3
+1. An online stocks trading application that stores financial data in an S3 bucket has a lifecycle policy that moves older data to Glacier every month. There is a strict compliance requirement where a surprise audit can happen at anytime and you should be able to retrieve the required data in under 15 minutes under all circumstances. Your manager instructed you to ensure that retrieval capacity is available when you need it and should handle up to 150 MB/s of retrieval throughput. Which of the following should you do to meet the above requirement? (Choose 2)
+a) Retrieve the ata using Glacier Select.
+b) Use the Expedited Retrieval to access the financial data.
+c) Use Bulk Retrieval to access the financial data.
+d) Specify a range, or portion, of the financial data archived to retrieve.
+e) Purchase provisioned retrieval capacity.
+
+2. You are working as an IT Consultant for a large media company where you are tasked to design a web application that stores static assets in an Amazon Simple Storage Service (S3) bucket. You expect this S3 bucket to immediately receive over 2000 PUT requests and 3500 GET requests per second at peak hour. What should you do to ensure optimal performance?
+a) Use Amazon Glacier instead.
+b) Add a random prefix to the key names.
+c) Do nothing, S3 automatically manages performance at this scale.
+d) Use predictable naming schemes in the key names such as sequential numbers or data time sequences.
+
+3. You are working as a Cloud Engineer for a top aerospace engineering firm. One of your tasks is to set up a document storage system using S3 for all of the engineering files. In Amazon S3, which of the following statements are true? (Choose 2)
+a) Total volume of data and number of objects you can store are unlimited.
+b) The largest object that can be uploaded in a singe PUT is 5TB.
+c) S3 is an object storage service that provices file system access semantics (such as strong consistency and file locking), and concurrently-accessible storage.
+d) You can only store ZIP or TAR files in S3.
+e) The largest object that can be uploaded in a single PUT is 5GB.
+
+EC2
+4. You are working as a Solutions Architect for an aerospace manufacturer which heavily uses AWS. They are running a cluster of multi-tier applications that spans multiple servers for your wind simulation model and how it affects your state-of-the-art wing design. Currently, you are experiencing a slowdown in your applications and upon further investigation, it was discovered that it is due to latency issues. Which of the following EC2 features should you use to optimize performance for a compute cluster that requires low network latency? 
+a) Multiple AZ
+b) AWS Direct connect
+c) EC2 Dedicated Instances
+d) Placement Groups
+
+5. You are working for a FinTech startup as their AWS Solutions Architect. You deployed an application on different EC2 instances with Elastic IP addresses attached for easy DNS resolution and configuration. These servers are only accessed from 8 AM to 6 PM and can be stopped from 6 PM to 8 AM for cost efficiency using Lambda with the script that automates this based on tags. Which of the following will occur when an EC2-VPC instance with an associated Elastic IP is stopped and started? (Choose 2) 
+a) Underlying host for the instance is possibly changed.
+b) Elastic Network Interface (ENI) is detached.
+c) All data on the attached instance-store device will be lost.
+d) Elastic IP address is disassociated with the instance.
+e) No changes.
+
+6. In Amazon EC2, you can manage your instances from the moment you launch them up to their termination. You can flexibly control your computing costs by changing the EC2 instance state. Which of the following statements is true regarding EC2 billing? (Choose 2)
+a) You will be billed when your On-Demand instance is in pending state.
+b) You will be billed when your Spot instance is preparing to stop with a stopping state.
+c) You will be billed when your On-Demand instance is preparing to hibernate with a stopping state.
+d) You will be billed when your Reserved instance is in terminated state.
+e) You will not be billed for any instance usage while an instance is not in the running state.
+
+VPC
+7. You are a Solutions Architect for a global news company. You are configuring a fleet of EC2 instances in a subnet which currently is in a VPC with an Internet gateway attached. All of these EC2 instances can be accessed from the Internet. You then launch another subnet and launch an EC2 instance in it, however you are not able to access the EC2 instance from the Internet. What could be the possible reasons for this issue? (Choose 2)
+a) EC2 instance does not have a public IP address or an Elastic IP address associated with it.
+b) EC2 instance is not a member of the same Auto Scaling group.
+c) EC2 instance is running in an AZ that does not support internet access.
+d) Route table is not configured properly to send traffic from the EC2 instance to the internet through an internet gateway.
+e) Route table is not configured properly to send traffic from the EC2 instance to the internet through the customer gateway.
+
+8. You were recently promoted to a technical lead role in your DevOps team. Your company has an existing VPC which is quite unutilized for the past few months. The business manager instructed you to integrate your on-premises data center and your VPC. You explained the list of tasks that you'll be doing and mentioned about a Virtual Private Network (VPN) connection. The business manager is not tech-savvy but he is interested to know what a VPN is and its benefits. What is one of the major advantages of having a VPN in AWS?
+a) It provides a cost-effective, hybrid connection from your VPC to your on-premises data centers which bypasses the public internet.
+b) It allows you to connect your AWS cloud resources to your on-premises data center using secure and private sessions with IP Security (IPSec) and Transport Layer Security (TLS) tunnels.
+c) It provides a network connection between two VPCs which enables you to route traffic between them using private IPv4 addresses or IPv6 addresses.
+d) It enables you to establish a private dedicated network connection between your network and your VPC
+
+9. An online job site is using NGINX for its application servers hosted in EC2 instances and MongoDB Atlas for its database-tier. MongoDB Atlas is a fully automated third-party cloud service which is not provided by AWS, but supports VPC peering to connect to your VPC. Which of the following items are invalid VPC peering configurations? (Choose 2)
+a) Two VPCs peered to specific CIDR block in one VPC
+b) Transitive Peering
+c) Edge to Edge routing via a gateway
+d) One to one relationship between two VPC networks
+e) One VPC peered with two VPCs using longest prefix match
+
+10. You have a VPC that has a CIDR block of 10.31.0.0/27 which is connected to your on-premises data center. There was a requirement to create a Lambda function that will process massive amounts of cryptocurrency transactions every minute and then store the results to EFS. After you set up the serverless architecture and connected Lambda function to your VPC, you noticed that there is an increase in invocation errors with EC2 error types such as EC2ThrottledException on certain times of the day. Which of the following are the possible causes of this issue? (Choose 2)
+a) You only specified one subnet in your Lambda function. This single subnet runs out of available IP addresses and there is no other subnet or AZ which can handle the peak load.
+b) Your VPC does not have a NAT gateway.
+c) Your VPC does not have sufficient subnet ENIs or subnet IPs.
+d) The associated security group of your function does not allow outbound connections.
+e) Attached IAM execution role of your function does not have the necessary permissions to access the resources of your VPC.
+
+11. You are a Solutions Architect working for an aerospace engineering company which recently adopted a hybrid cloud infrastructure with AWS. One of your tasks is to launch a VPC with both public and private subnets for their EC2 instances as well as their database instances respectively. Which of the following statements are true regarding Amazon VPC subnets? (Choose 2)
+a) EC2 instances in a private subnet can communicate with the Internet only if they have an Elastic IP.
+b) Each subnet maps to a single AZ.
+c) The allowed block size of VPC is between a /16 net mask (65,536 IP addresses) and /27 net mask (16 IP addresses).
+d) Every subnet that you create is automatically associated with the main route table of the VPC.
+e) Each subnet spands 2 AZs.
+
+Lambda
+
+Monitoring
+12. Your company has recently deployed a new web application which uses a serverless-based architecture in AWS. Your manager instructed you to implement CloudWatch metrics to monitor your systems more effectively. You know that Lambda automatically monitors functions on your behalf and reports metrics through Amazon CloudWatch. In this scenario, what types of data do these metrics monitor? (Choose 2)
+a) ReservedConcurrentExecutions
+b) Invocations
+c) DeadLetterErrors
+d) IteratorSize
+e) ApproximateAgeOfOldestMessage
+
+13. You are working for a large telecommunications company where you need to run analytics against all combined log files from your Application Load Balancer as part of the regulatory requirements. Which AWS services can be used together to collect logs and then easily perform log analysis?
+a) DynamoDB for storing and EC2 for analyzing logs.
+b) EC2 with EBS volumes for storing and analyzing log files.
+c) S3 for storing ELB log files and EC2 for analyzing the log files using a cusome-built application.
+d) S3 for storing ELB log files and EMR for analyzing the log files.
+
+Databases
+14. You currently have an Augment Reality (AR) mobile game which has a serverless backend. It is using a DynamoDB table which was launched using the AWS CLI to store all the user data and information gathered from the players and a Lambda function to pull the data from DynamoDB. The game is being used by millions of users each day to read and store data. How would you design the application to improve its overall performance and make it more scalable while keeping the costs low? (Choose 2)
+a) Enable DAX and ensure Auto Scaling is enabled and increase the maximum provisioned read and write capacity.
+b) Configure CloudFront with DynamoDB as the origin; cache the frequently accessed data on client device using ElastiCache.
+c) Use SSO and Cognito to authenticate the users and have them directly access DynamoDB using single-sign on. Manually set the provisioned read and write capacity to higher RCU and WCU.
+d) Use API Gateway in conjunction with Lambda and turn on the caching on frequently accessed data and enable DynamoDB global replication.
+e) Since Auto Scaling is enabled by default, the provisioned read and write capacity will adjust automatically. Also enable DAX to improve performance from milliseconds to microseconds.
+
+15. You are trying to convince a team to use Amazon RDS Read Replica for your multi-tier web application. What are two benefits of using read replicas? (Choose 2)
+a) Provides elasticity to your RDS database.
+b) Allows both read and write operations on the read replica to complement the primary database.
+c) Improves performance of the primary database by taking workload from it.
+d) Provides automatic failover in case the AZ is down.
+e) Enhances the read performance of your primary database.
+
+16. Your web application is relying entirely on slower disk-based databases, causing it to perform slowly. To improve its performance, you integrated an in-memory data store to your web application using ElastiCache. How does Amazon ElastiCache improve database performance?
+a) It securely delivers data to customers globally with low latency and high transfer speeds.
+b) It provides an in-memory cache that delivers up to 10x performance improvement from milliseconds to microseconds or even at millions of requests per second.
+c) By caching database query results.
+d) It reduces the load on your db by routing read queries form your applications to read replicas.
+
+High Availability
+17. A tech company is currently using Auto Scaling for their web application. A new AMI now needs to be used for launching a fleet of EC2 instances. Which of the following changes needs to be done?
+a) Do nothing. You can start directly launching EC2 instances in the Auto Scaling group with the same launch configurations.
+b) Create a new launch configuration.
+c) Create a new target group.
+d) Create a new target group and launch configuration.
+
+18. You are a Solutions Architect for a major TV network. They have a web application running on eight Amazon EC2 instances, consuming about 55% of resources on each instance. You are using Auto Scaling to make sure that eight instances are running at all times. The number of requests that this application processes are consistent and do not experience spikes. Your manager instructed you to ensure high availability of this web application at all times to avoid any loss of revenue. You want the load to be distributed evenly between all instances. You also want to use the same Amazon Machine Image (AMI) for all EC2 instances. How will you be able to achieve this?
+a) Deploy eight EC2s with Auto Scaling in one AZ behind an ELB.
+b) Deploy four EC2s with Auto Scaling in one retion and four in another region behind an ELB.
+c) Deploy four EC2s with Auto Scaling in one AZ and four in another AZ in the same region behind an ELB.
+d) Deploy two EC2s with Auto Scaling in four retion behind ELB.
+
+19. Content Delivery
+You are setting up the cloud architecture for an international money transfer service to be deployed in AWS which will have thousands of users around the globe. The service should be available 24/7 to avoid any business disruption and should be resilient enough to handle the outage of an entire AWS region. To meet this requirement, you have deployed your AWS resources to multiple AWS Regions. You need to use Route 53 and configure it to set all of your resources to be available all the time as much as possible. When a resource becomes unavailable, your Route 53 should detect that it's unhealthy and stop including it when responding to queries. Which of the following is the most fault tolerant routing configuration that you should use in this scenario? 
+a) Configure an Active-Active Failover with Weighted routing policy.
+b) Configure an Active-Passive Failover with Weighted Records.
+c) Configure an Active-Active Failover with One Primary and One Secondary Resource.
+d) Configure an Active-Passive Failover with Multiple Primary and Secondary Resources.
+
+20. Your customer has clients all across the globe that access product files stored in several S3 buckets, which are behind each of their own CloudFront web distributions. They currently want to deliver their content to a specific client, and they need to make sure that only that client can access the data. Currently, all of their clients can access their S3 buckets directly using an S3 URL or through their CloudFront distribution. Which of the following are possible solutions that you could implement to meet the above requirements?
+a) Use CloudFront Signed Cookies to ensure that only their clients can access the files.
+b) USe CloudFront Signed URLs to ensure that only their cliences can access the files.
+c) Use S3 pre-signed URLs to ensure that only their clients can access the files. Remove permissions to use S3 URLs to read the files for anyone else.
+d) Create Origin Access Identity (OAI) and give it permission to read the files in the bucket.
+
+21. A travel company has a suite of web applications hosted in an Auto Scaling group of On-Demand EC2 instances behind an Application Load Balancer that handles traffic from various web domains such as i-love-manila.com, i-love-boracay.com, i-love-cebu.com and many others. To improve security and lessen the overall cost, you are instructed to secure the system by allowing multiple domains to serve SSL traffic without the need to reauthenticate and reprovision your certificate everytime you add a new domain. This migration from HTTP to HTTPS will help improve their SEO and Google search ranking. Which of the following is the most cost-effective solution to meet the above requirement?
+a) Use a wildcard certificate to handle multiple sub-domains and different domains.
+b) Add a subject alternative name (SAN) for each additional domain to your certificate.
+c) Create a new CloufFront web distribution and configure it to serve HTTPS requests using dedicated IP addresses in order to associate your alternate domain names with a dedicated IP address in each CloudFront edge location.
+d) Upload all SSL certificates of the domains in the ALB using the console and bind multiple certificates to the same secure listener on yoru load balancer. ALB will automatically choose the optimal TLS certificate for each client using Server Name Indication (SNI).
+
+Deployments
+
+Analytics
+
+Applications
+22. You are working for a startup as its AWS Chief Architect. You are currently assigned on a project that develops an online registration platform for events, which uses Simple Workflow for complete control of your orchestration logic. A decider ingests the customer name, address, contact number, and email address while the activity workers update the customer with the status of their online application status via email. Recently, you were having problems with your online registration platform which was solved by checking the decision task of your workflow. In SWF, what is the purpose of a decision task?
+a) It defines all the activities in the workflow.
+b) It tells the decider the state of the workflow execution.
+c) It tells the worker to perform a function.
+d) It represents a single task in the workflow.
+
+Security
+
+Developer Tools

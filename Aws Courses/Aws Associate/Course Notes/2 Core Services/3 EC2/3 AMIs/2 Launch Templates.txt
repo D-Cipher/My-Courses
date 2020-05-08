@@ -1,0 +1,9 @@
+Launch Templates
+
+Launch Templates -> Enables you to store launch parameters so that you do not have to specify them every time you launch an instance. Not to be confused with Launch Configurations which is for ASG.
+
+Stored Settings:
+- AMI ID
+- Instance Type
+- Key pairs
+- Security Groups

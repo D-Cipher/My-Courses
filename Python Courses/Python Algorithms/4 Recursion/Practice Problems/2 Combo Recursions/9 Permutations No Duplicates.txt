@@ -1,0 +1,29 @@
+'''LeetCode #46 Permutations
+Given a collection of distinct integers, return all possible permutations.
+
+Input: [1,2,3]
+Output:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+'''
+
+arr = [1,2,3]
+
+def dfs(arr,ans=[],cur=[]):
+  for i in range(len(arr)):
+    if arr[i] not in cur:
+      ncur = cur.copy()
+      ncur.append(arr[i])
+      if ncur not in ans and len(ncur) == len(arr):
+        ans.append(ncur)
+      dfs(arr,ans,ncur)
+
+  return ans
+
+print(dfs(arr))

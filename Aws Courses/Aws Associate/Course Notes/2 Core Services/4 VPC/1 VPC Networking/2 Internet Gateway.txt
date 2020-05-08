@@ -1,0 +1,9 @@
+Internet Gatway
+
+Internet Gateway -> Horizontally scaled, redundant, and highly available instance attached to VPC that allows communication between instances in your VPC and the internet.
+- Attach an internet gateway to your VPC.
+- Ensure that your subnet route table points to the internet gateway.
+- Ensure that instances has public IP address (public IPv4 address, Elastic IP address, or IPv6 address).
+- Ensure that your network access control and security group rules allow the internet traffic.
+
+Egress-Only Internet Gateway -> Allows IPv6 based traffic within a VPC to access the Internet, while denying any Internet based resources the possibility of initiating a connection back into the VPC. 

@@ -1,0 +1,39 @@
+'''
+Imagine an array of numbers corresponds to the possible heights of a water tank from end to end. Your job is to find two elements in the array where the amount of water contained between the them is maximized. Height is represented by the element value and width is represented by the distance between the elements in the array. You may not slant the container and n is at least 2. For example, [1,8,6,2,5,4,8,3,7]. In this case, the max area of water the container can contain is 49. Because 8 and 7 provide the maximum area and between heights 8 and 7, the max you can fill the container is 7 since at 8 the water will overflow.
+
+The n is given as non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+
+Example:
+
+Input: [1,8,6,2,5,4,8,3,7]
+Output: 49
+'''
+
+arr = [1,8,6,2,5,4,8,3,7]
+
+def areaFind(i,j):
+  dist = (max(i,j) - min(i,j))
+  area = dist*min(arr[i],arr[j])
+  return area
+
+biggest = 0
+pt1 = None
+pt2 = None
+
+strt = 0
+end = len(arr) - 1
+
+while strt <= end:
+  if areaFind(strt,end) > biggest:
+    biggest = areaFind(strt,end)
+    pt1 = strt
+    pt2 = end
+
+  if arr[strt] > arr[end]:
+    end-=1
+  else:
+    strt+=1
+
+print(pt1)
+print(pt2)
+print(biggest)

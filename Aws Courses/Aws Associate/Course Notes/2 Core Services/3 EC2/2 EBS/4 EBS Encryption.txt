@@ -1,0 +1,22 @@
+Encryption
+
+Encrypting on Creation -> When creating an EC2 instance, select the volume and enable encryption
+- Root volumes cannot be encrypted once created, must take a snapshot.
+
+Scope of Encryption:
+- Data at rest inside the volume are encrypted
+- Data moving between volume and instance are encrypted
+- Snapshots created from the volume are encrypted
+- Volumes created from snapshot are encrypted
+
+Encrypting on Existing Instance or Volume
+1) Create a snapshot of the volume
+2) Create a copy of the snapshot and select the option to encrypt
+3) Create an AMI from the encrypted Snapshot
+4) Use the AMI to launch a new encypted instance
+
+Encrypting Root Volume -> You cannot restore snapshot of root volume without downtime, it is better to copy over the data
+1) Create a new EBS volume
+2) Mount the volume
+3) Copy over the data to the new volume
+4) Delete the old volume

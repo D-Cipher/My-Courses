@@ -1,0 +1,21 @@
+'''
+Given a string, find all substring permutations both contiguous and non-contiguous of the string length, then return them in a list.
+
+Example
+Input: S = 'abc'
+Output: ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+'''
+
+chars = 'abc'
+
+def dfs(chars,ans=[],cur=''):
+  for i in range(len(chars)):
+    ncur = cur + chars[i]
+    if chars.count(chars[i]) >= ncur.count(chars[i]):
+      if len(ncur) == len(chars):
+        ans.append(ncur)
+      dfs(chars,ans,ncur)
+
+  return ans
+
+print(dfs(chars))

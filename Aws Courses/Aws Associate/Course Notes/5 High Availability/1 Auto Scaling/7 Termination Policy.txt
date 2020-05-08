@@ -1,0 +1,19 @@
+Termination Policy
+
+Auto Scaling Group decides how to terminate instances based on the following:
+1) Are there instances in multiple AZs
+ a) Select the AZ with the most instnaces
+ b) Select the instance with the oldest launch configurations
+2) Are there multiple instances with the oldest launch configurations?
+ a) Select the instance with the closest to the next billing hour
+3) Are there multiple instances with the closes billing hour?
+ a) Randomly select between these instances
+4) Terminate instance.
+
+Misconception: ASG does not terminate the instance that has been running the longest
+
+ASG sending SNS -> can be configured to send SNS when:
+- Instance is launched
+- Instance is terminated
+- Instance fails to launch
+- Instance fails to terminate

@@ -1,0 +1,72 @@
+'''LeetCode #1219 Path with Maximum Gold
+In a gold mine grid of size m * n, each cell in this mine has an integer representing the amount of gold in that cell, 0 if it is empty.
+
+Return the maximum amount of gold you can collect under the conditions:
+
+Every time you are located in a cell you will collect all the gold in that cell.
+From your position you can walk one step to the left, right, up or down.
+You can't visit the same cell more than once.
+Never visit a cell with 0 gold.
+You can start and stop collecting gold from any position in the grid that has some gold.
+
+Input: grid = [[0,6,0],[5,8,7],[0,9,0]]
+Output: 24
+Explanation:
+[[0,6,0],
+ [5,8,7],
+ [0,9,0]]
+Path to get the maximum gold, 9 -> 8 -> 7.
+
+Input: grid = [[1,0,7],[2,0,6],[3,4,5],[0,3,0],[9,0,20]]
+Output: 28
+Explanation:
+[[1,0,7],
+ [2,0,6],
+ [3,4,5],
+ [0,3,0],
+ [9,0,20]]
+Path to get the maximum gold, 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7.
+'''
+grid = [
+  [1,0,7],
+  [2,0,6],
+  [3,4,5],
+  [0,3,0],
+  [9,0,20]]
+
+def dfs(grid,x,y,ans=[],vis=None,path=None):
+  if vis==None:
+    vis = [[False for _ in grid[i]] for i in range(len(grid))]
+  
+  if path==None: path=[]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  if invalidate or vis[y][x]==True or grid[y][x]==0:
+    return None
+  
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+  if tuple(npath) not in ans: 
+    ans.append(tuple(npath))
+  dfs(grid,x+1,y,ans,vis,npath)
+  dfs(grid,x-1,y,ans,vis,npath)
+  dfs(grid,x,y+1,ans,vis,npath)
+  dfs(grid,x,y-1,ans,vis,npath)
+  vis[y][x] = False
+
+  return ans
+
+
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    search = dfs(grid,x,y)
+
+result = []
+
+for s in search:
+  if sum(s) not in result:
+    result.append(sum(s))
+
+print(max(result))
+

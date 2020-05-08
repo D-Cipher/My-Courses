@@ -1,0 +1,24 @@
+Recursion
+
+Recursion -> Self-referencing function that refers to itself.
+
+Base Case -> Stop point for the recursive function.
+
+Steps:
+1. Identify base case
+2. Identify recursive case
+3. Get closer to base case till return when needed. Usually 2 returns.
+
+```
+def inception(number):
+
+  if number <= 0:
+    return None
+  number -= 1
+
+  print(number)
+
+  return inception(number)
+
+print(inception(5))
+```

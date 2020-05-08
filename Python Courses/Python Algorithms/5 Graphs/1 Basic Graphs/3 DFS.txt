@@ -1,0 +1,59 @@
+Depth First Search
+
+DFS -> Searches one branch until the end then continues at the nearest ancestor.
+
+  2
+ / \
+1   5
+   / \
+  6 - 7
+Possible visit path: 2,1,5,7,6
+Another possible visit path: 2,5,7,6,1
+
+Visiting All Nodes:
+```
+from collections import defaultdict
+
+graph = defaultdict(list,{2:[1,5],5:[6,7],6:[7]})
+
+def dfs(graph,node,ans=[],vis=None):
+  if vis==None:
+    vis = set([])
+    ans.append(node)
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      ans.append(b)
+      dfs(graph,b,ans,vis)
+
+  return ans
+
+print(dfs(graph,2))
+```
+
+Getting All Paths:
+```
+from collections import defaultdict
+
+graph = defaultdict(list,{2:[1,5],5:[6,7],6:[7]})
+
+def dfs(graph,node,ans=[],vis=None,path=None):
+  if vis==None: vis = set([])
+  if path==None: path = [node]
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      npath = path + [b]
+      ans.append(tuple(npath))
+      dfs(graph,b,ans,vis,npath)
+
+  return ans
+
+print(dfs(graph,2))
+```

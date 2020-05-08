@@ -1,7 +1,0 @@
-Snowball
-
-Snowball
-- petabyte-scale data transport appliance to transfer large amount of data.
-- Portable version of aws.
-- Snowball Edge -> 100TB data transfer device for compute and storage. 
-- Snowmobile -> 100PB shipping container for moving massive amounts of data.

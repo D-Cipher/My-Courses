@@ -1,0 +1,8 @@
+S3 for Static Web Hosting
+
+Prerequisites for routing traffic to a website that is hosted in S3:
+1) S3 bucket must have the same name as the domain or sub-domain.
+2) Must have a registered domain name.
+3) Route 53 as the DNS service for the domain.
+
+Cross-Origin Resource Sharing (CORS) should be enabled IF your client web application on one domain needs to interacts with the resources in a different domain, ei API Gateway.

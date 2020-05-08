@@ -1,0 +1,18 @@
+STS
+
+Security Token Service (STS) -> Enables temporary, limited-privilege credentials for IAM users, for users that you authenticate through web identity federation, or for AWS services. 
+- Great for using with Identity Federation where users are authenticated through company network.
+- Supports Security Assertion Markup Language (SAML), Microsoft Active Directory, and Other Identity Federation solution.
+- By default, STS is a global service, and all AWS STS requests go to a single endpoint at https://sts.amazonaws.com.
+- AWS recommends using Regional STS endpoints instead of the global endpoint to reduce latency, build in redundancy, and increase session token validity.
+
+assume-role-with-web-identity -> API provided by STS to return temporary security credentials for user authenticated by mobile or web apps using a web identity provider like FB, google, amazon.
+- Assumed Role User -> Response from STS that is an ARN identifier used to refer to the temporary credentials.
+- Session Token -> The actual token. Expires in 1 hour.
+- Secret Access Key -> The secret key. Expires in 1 hour.
+
+Workflow Example:
+1) User Authenticates with FB/Google/Amazon, recieves JWT token.
+2) User uses assume-role-with-web-identity api exchanges JWT for temporary credentials from STS.
+3) User uses temporary credentials to access AWS resources. 
+

@@ -1,0 +1,23 @@
+Multi-AZ
+
+Multi-AZ -> Disaster recovery focused, if DNS loses connection to primary db then amazon will point CNAME to secondary db.
+- Synchronous replication in a different AZ.
+- You cannot use the standby instance for read/write operations, it is for disaster recovery only.
+
+Automatic Fail-over -> In DR, RDS simply points the CNAME of the database to the secondary database promoting it to become the new primary.
+- Protect against service disruptions in cases of system upgrades on OS patching or DB instance scaling.
+
+Simulated Fail-over -> You can simulate a failover by rebooting your DB instances and clicking on reboot with failover.
+- You can move DB to a new region using Multi-AZ by forcing a failover by rebooting the RDS instance.
+
+Feature Available
+- Available for: MySQL, PostgreSQL, Oracle, Maria.
+- Microsoft SQL Server has Database Mirroring (DBM) for DR.
+- Aurora is automatically fault tolerant.
+
+Single-AZ to Multi-AZ -> RDS takes a snapshot of the primary DB instance then restores snapshot to AZ.
+
+Determining Fail-over
+- DB event subscriptions via email or SMS.
+- View DB events via RDS console or API operations.
+- View the current state of Multi-AZ deployment in console or API operations.

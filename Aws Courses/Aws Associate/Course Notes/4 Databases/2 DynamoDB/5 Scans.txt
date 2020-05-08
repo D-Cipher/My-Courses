@@ -1,0 +1,17 @@
+Scans
+
+Scan -> operation that examines every item in the table.
+- By default, returns all data attributes.
+- Can filter the results of the scan once it has pulled the entire table.
+- ProjectionExpression -> parameter that allows scan to return specific attribute
+- By default, scans process data sequentually in returning 1MB increments before retrieving the next 1MB.
+
+Improving Scan Performance
+- Set smaller page size to use fewer read operaions
+- Use larger number of smaller operations
+- Configure scan to use Parallel scans which logically divides table or index into segments and scans each segment in parallel.
+
+
+ 
+
+

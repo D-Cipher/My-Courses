@@ -1,0 +1,20 @@
+Aurora Basics
+
+Aurora -> Relational DB for speed, availability, and cost effectiveness.
+- Compatible with MySQL and PostGresSQL
+- Storage -> starts with 10GB storage minimum. Scales up automatically in 10GB increments up to 64TB.
+- Compute resources scale up to 32vCPUs and 244GB of memory 
+- Aurora keeps 6 copies of your data, 2 copies of data in each AZ accross 3 AZs.
+
+Database Clusters -> Consists of one or more DB instances and a cluster volume that manages data for those instances. Volume spans multiple AZs with each having a copy of cluster data.
+- Instances classes: Burstable Performance or Memory Optimized
+- Deletion protection is enabled by default
+
+Cluster Types:
+1) Primary DB instance -> supports read write operations and performs data modifications on the volume. 
+2) Aurora Replica -> connects to same storage volume as the primary and supports only read operations.
+- Maintained synchronously.
+- Handles up to 15 replicas compared to 5 replicas for other RDS types.
+- Automatic failover to Aurora Replica and set failover priority. Other RDS replicas cannot.
+
+Aurora Global Database (MySQL based) -> multi-region aurora database

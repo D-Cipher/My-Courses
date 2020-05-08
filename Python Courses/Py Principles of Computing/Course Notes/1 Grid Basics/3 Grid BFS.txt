@@ -1,0 +1,47 @@
+from pprint import pprint
+
+height = 4
+width = 3
+
+grid = [[x + y for x in range(width)] 
+          for y in range(height)]
+
+pprint(grid,width=20)
+
+def bfs(grid,col,row,ans=[],vis=None,q=None):
+  if vis==None: vis=set([(col,row)]); ans=[grid[row][col]]
+  if q==None: q=[(col,row)]
+
+  while q:
+    cell = q.pop(0)
+    x = cell[0]
+    y = cell[1]
+
+    #Left
+    if x-1 >= 0:
+      if (x-1,y) not in vis and (x-1,y) not in q:
+        vis.add((x-1,y)); q.append((x-1,y))
+        ans.append(grid[y][x-1])
+    
+    #Right
+    if x+1 < len(grid[y]):
+      if (x+1,y) not in vis and (x+1,y) not in q:
+        vis.add((x+1,y)); q.append((x+1,y))
+        ans.append(grid[y][x+1])
+    
+    #Up
+    if y-1 >= 0:
+      if (x,y-1) not in vis and (x,y-1)not in q:
+        vis.add((x,y-1)); q.append((x,y-1))
+        ans.append(grid[y-1][x])
+    
+    #Down
+    if y+1 < len(grid):
+      if (x,y+1) not in vis and (x,y+1)not in q:
+        vis.add((x,y+1)); q.append((x,y+1))
+        ans.append(grid[y+1][x])
+
+  #print(vis)
+  return ans
+
+print(bfs(grid,0,0))

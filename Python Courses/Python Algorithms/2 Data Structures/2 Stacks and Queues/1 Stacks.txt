@@ -1,0 +1,27 @@
+Stacks
+
+Stacks -> Linear data structure which has the order of last in first out (LIFO).
+- Push -> add to stack
+- Top -> check which is on top
+- Pop -> remove top element in the stack
+
+'''
+class Stack:
+  def __init__(self):
+    self.st = []
+  
+  def push(self, x):
+    self.st.append(x)
+  
+  def pop(self):
+    if(len(self.st)>0):
+      self.st.pop()
+  
+  def top(self):
+    if(len(self.st) == 0):
+      return None
+    return self.st[-1]
+  
+  def getLen(self):
+    return len(self.st)
+'''

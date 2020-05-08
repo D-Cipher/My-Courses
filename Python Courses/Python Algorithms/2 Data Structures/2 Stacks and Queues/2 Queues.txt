@@ -1,0 +1,27 @@
+Queues
+
+Queue -> Linear data structure which has the order of first in first out (FIFO).
+- Enqueue -> Puts item in the queue in the back
+- Front -> Gets item in the front of the queue
+- Dequeue -> Removes the item in the front of the queue
+
+'''
+class Queue:
+  def __init__(self):
+    self.q = []
+  
+  def enqueue(self, x):
+    self.q.append(x)
+  
+  def dequeue(self):
+    if(len(self.q)>0):
+      self.q.pop(0)
+  
+  def front(self):
+    if(len(self.q) == 0):
+      return None
+    return self.q[0]
+  
+  def getLen(self):
+    return len(self.q)
+'''

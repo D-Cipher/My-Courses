@@ -1,0 +1,23 @@
+VPC Peering
+
+VPC Peering -> Allows you to connect one VPC with another via direct network route using a private IP address.
+- Instances behave as if they were on the same private network
+- You can peer VPC with other AWS account VPCs
+- You can peer across regions
+- Peering is in a star configuration, meaning 1 central VPC peered with 4 others.
+- Triangle peering is allowed -> peering in a triangle configuration.
+
+Unicast IP routing -> VPC only allows one-to-one distribution of data, does not support multicast network capabilities.
+- You can overlay a multicast network by building IP level multicast across a network of unicast instances at the OS level
+
+VPC Peering DO NOT support:
+1) TRANSITIVE peering -> Cannot have one VPC talk to another VPC through a third VPC that they are both peered to.
+2) Overlapping CIDR Blocks -> Cannot peer two VPCs with the same CIDR blocks or blocks that have overlapping addresses.
+3) Edge-to-Edge Routing through a gateway or VPN -> A VPC cannot access any gateways of the VPC that it is peered to.
+
+VPC Peering Across Regions:
+1) Data sent between regions are encrypted
+2) Update the route tables to enable IP connectivity
+3) Update the security group to allow resource sharing
+4) Use mesh topology to allow all VPCs to communicate with each other
+

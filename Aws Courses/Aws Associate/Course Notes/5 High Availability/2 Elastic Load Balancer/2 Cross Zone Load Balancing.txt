@@ -1,0 +1,5 @@
+Cross Zone Load Balancing
+
+Cross Zone Load Balancing -> Allows load balance traffic with instances in other AZs.
+- Provides application ability to handle loss of one or more AZs.
+- On Application Load Balancers this is enabled by default.

@@ -1,0 +1,28 @@
+#Serverless task automator
+#CW -> Lambda -> DB -> S3
+
+import json
+import boto3
+from datetime import datetime
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb', 'us-east-1')
+    s3 = boto3.resource('s3')
+
+    # Get Time Stamp
+    nowdt = datetime.now()
+    now = nowdt.strftime('%Y-%m-%d %H:%M:%S') + 'Z'
+
+    # Scan DynamoDB and get the data
+    table = dynamodb.Table('simple_user_logs')
+    response = table.scan()
+    data = response['Items']
+
+    # Convert to Json and drop into S3 bucket.
+    objectpath = 'usermetrics/simple_user_logs' + now + '.json'
+    jsonfile = json.dumps({'user_metrics':data}).encode('UTF-8')
+    result = s3.Object('simple-metrics-bucket', objectpath).put(Body=(bytes(jsonfile)))
+    output = 'Uploaded to s3.' if result else 'S3 upload error.'
+
+    return {'statusCode': 200,'body': json.dumps(output)}
+

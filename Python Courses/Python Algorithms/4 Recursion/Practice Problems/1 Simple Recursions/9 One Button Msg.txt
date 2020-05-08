@@ -1,0 +1,29 @@
+'''
+One Button Message Machine
+Imagine a messaging device with only one button. For the letter A, you press the button one time, for E, you press it five times, for G, it's pressed seven times, etc, etc.
+
+Write a function that takes a string (the message) and returns the total number of times the button is pressed.
+
+Examples
+msgmachine("abde") = 12
+
+msgmachine("azy") = 52
+
+msgmachine("qudusayo") = 123
+'''
+
+
+word = "abde"
+
+def msgmachine(word, total=0, pt=0):
+
+  if pt == len(word):
+    return total
+
+  total += ord(word[pt]) - 96
+  pt += 1
+
+  return msgmachine(word, total, pt)
+
+print(msgmachine(word))
+

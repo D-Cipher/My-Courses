@@ -1,0 +1,17 @@
+'''LeetCode #47 Permutations II
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
+Input: [1,1,2]
+Output:[[1,1,2],[1,2,1],[2,1,1]]
+'''
+arr = [1,1,2]
+
+def dfs(arr,ans=[],cur=[]):
+  for i in range(len(arr)):
+    if (cur+[arr[i]]).count(arr[i]) <= arr.count(arr[i]):
+      ncur = cur + [arr[i]]
+      if ncur not in ans and len(ncur) == len(arr):
+        ans.append(ncur)
+      dfs(arr,ans,ncur)
+
+print(dfs(arr))

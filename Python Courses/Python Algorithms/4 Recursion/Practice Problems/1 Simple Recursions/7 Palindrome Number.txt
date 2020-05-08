@@ -1,0 +1,19 @@
+'''
+Given an integer, write a function that returns true if the given number is palindrome, else false. For example, 12321 is palindrome, but 1451 is not palindrome. Use recursion.
+'''
+
+def palindrome(num,i=None,j=None):
+  numstr = str(num)
+  if i == None: i = 0
+  if j == None: j = len(numstr) - 1
+
+  if i <= j:
+    if numstr[i] == numstr[j]:
+      i += 1
+      j -= 1
+      palindrome(num,i,j)
+      return True
+
+  return False
+
+print(palindrome(110))

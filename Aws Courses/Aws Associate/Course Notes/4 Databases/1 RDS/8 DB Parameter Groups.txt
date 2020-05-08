@@ -1,0 +1,4 @@
+Parameter Groups
+
+Parameter Groups -> Act as a container for engine configuration that are applied to one or more DB instances.
+- Allow you to work with multiple DB instances within the parameter group.

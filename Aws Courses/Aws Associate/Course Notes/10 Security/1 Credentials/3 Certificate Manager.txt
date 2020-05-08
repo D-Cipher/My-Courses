@@ -1,0 +1,11 @@
+Certificate Manager
+
+AWS Certificate Manager (ACM) -> Allows users to easily manage SSL/TLS certificates on the cloud. 
+- Allows you to secure multiple domain names and multiple names within a domain. 
+- Wildcard SSL cert can protect unlimited number of subdomains.
+- Use certificates provided by ACM
+- Import certificates to manage in ACM
+
+Provisioned Certificates -> Provide the name of your site, establish your identity, and ACM manages renewal of SSL/TLS certificates issued by Amazon or by your own private Certificate Authority.
+
+Private certificate authority -> Establish securely managed infrastructure for issuing certificates

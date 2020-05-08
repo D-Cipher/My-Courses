@@ -1,0 +1,12 @@
+IAM Policies 
+
+Managed Policies -> Policies administered by AWS. Provide policies based on common use cases based on job function.
+- Easily assign permissions without having to write the policy your self.
+- Cannot change policy
+
+Customer Managed Policies -> Customer administered policies can be customized to fit the requirements for your use case.
+
+Inline Policies -> Policies that are embedded within the user, group, or role. Strict 1:1 relationship between the entity and the policy.
+- Deleting the user, group, role will delete the inline policy.
+- Useful for when you want a policy should only be attached to a single user, group, role.
+

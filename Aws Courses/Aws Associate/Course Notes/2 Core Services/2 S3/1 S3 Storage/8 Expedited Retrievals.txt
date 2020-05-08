@@ -1,0 +1,8 @@
+Expedited Retrievals
+
+Expedited Retrievals -> Allow you to quickly access your data when the occasion is urgent. 
+- Archives less than 250mb, expedited retrieval can access within 1-5 mins.
+
+Provisioned Capacity -> Ensures retrieval capacity for expedited retrievals is available when you need it.
+- Each unit of capacity provides 3 expedited retrievals
+- can be performed ever 5 mins with 150mb throughput

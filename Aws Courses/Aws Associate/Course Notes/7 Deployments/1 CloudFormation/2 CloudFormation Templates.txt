@@ -1,0 +1,18 @@
+CloudFormation Templates
+
+Templates are made of:
+
+Resources (Required) -> Contains all the aws resources you want to provision with the template.
+- Logical IDs -> used to reference resources
+- EC2
+
+Parameters -> Defined characteristics of that stack and of its resources.
+- InstanceType
+- KeyName
+- AmiId
+
+Mappings -> Conditional values that are evaluated as switch statements.
+- RegionMap
+
+Outputs -> Results ouf your configuration.
+- DNS host name of the ELB

@@ -1,0 +1,11 @@
+WAF
+
+Web Application Firewall (WAF) -> Controls how traffic reaches your applications by enabling security rules to block common attack pattern.
+- Blocks SQL injection script
+- Blocks Cross-Site Scripting attacks
+- Monitors the HTTP(s) requests forwarded to CloudFront, API Gateway, and ALB.
+
+Web ACL -> ACLs allow you to define rules for inspecting web requests and specify how to handle requests that match a criteria whether to block or to allow.
+
+Rules -> Each rule contains a statement that defines inspection criteria and action to take.
+- WAF blocks IP addresses based on rules

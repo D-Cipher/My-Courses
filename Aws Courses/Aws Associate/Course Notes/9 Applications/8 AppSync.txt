@@ -1,0 +1,5 @@
+AppSync
+
+AppSync -> Real-time data synchronization and flexible API to securely access, manipulate, and combine data from one or more data sources. 
+- Uses GraphQL to make it easy for applications to get exactly the data they need.
+- You can also use AppSync with DynamoDB to make it easy for you to build collaborative apps that keep shared data updated in real time. 

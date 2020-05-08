@@ -1,0 +1,24 @@
+Trees
+
+Trees -> A connected acyclic undirected graph.
+
+Binary Tree -> A tree where every node has at most 2 children
+
+Types of Binary Trees:
+
+1) Balanced Tree -> Binary tree where depth of two subtrees of every node does NOT differ by more than 1.
+
+       10    
+      /  \
+     20   12
+    /
+   5
+- Depth of left is 2 and right is 1, difference is 1. So balanced tree.
+
+2) Unbalanced Tree -> Binary tree where depth of two subtrees of every node DOES differ by more than 1.
+       10    
+      /
+     20
+    /
+   5
+

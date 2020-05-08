@@ -1,0 +1,26 @@
+Redis
+
+Redis -> Open-sourced in-memory key-value store, if you need advance functions use redis.
+- Stores data persistently
+- Multi-AZ and can do backups re-store to redis.
+- Support complext data structures
+- Supports Leader/Worker replication
+- Atomic operations
+- Pub/sub messaging
+- Read replicas and failovers
+- Cluster mode and sharded clusters
+- ElastiCache manages redis like a relational database. 
+- Clusters are stateful and include failover
+
+Use Redis if:
+- Advanced data types such as: lists, sets, hashes
+- Data sorting and ranking: leaderboards
+- Need PERSISTENT data stores
+- Multi-AZ with failover
+- Not multi-threaded
+- Scales by adding shards, not nodes
+
+Redis Auth -> can improve data security by requiring users to enter password before granting permissions to execute redis commands on a redis server. 
+- Use --transit-encryption-enabled to encrypt
+- Use --auth-token in the parameter to enable password
+ 

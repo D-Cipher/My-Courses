@@ -1,0 +1,47 @@
+"""
+Create a simulation of the classic Rock-paper-scissors game. Rock paper scissors is a game involving two players in a zero-sum hand game, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a simple fist), "paper" (a flat hand), and "scissors" (a fist with the index and middle fingers together, forming a V). The game has only two possible outcomes other than a tie: a player who decides to play rock will beat another player who has chosen scissors ("rock crushes scissors") but will lose to one who has played paper ("paper covers rock"); a play of paper will lose to a play of scissors ("scissors cut paper"). If both players choose the same shape, the game is tied and is usually immediately replayed to break the tie. 
+
+Rules of the game in summary:
+Scissors beats Paper.
+Paper beats Rock.
+Rock beats Scissors.
+If the same (ei Rock vs Rock), its a tie.
+
+Create Python simulation that replicates this game. Create a "player" variable and let that represent the players choice, picking one of the 3 choices and the computer randomly picks one of the 3, and have python compare the choices. Then have python print to the logs the results, telling whether the player won lost or tied.
+"""
+import random
+
+playerchoice = 'rock'
+computerchoice = ''
+computer = random.randrange(0,3)
+
+if computer == 0:
+  computerchoice = 'rock'
+elif computer == 1:
+  computerchoice = 'paper'
+elif computer == 2:
+  computerchoice = 'scissors'
+else:
+  print('Error')
+
+if playerchoice == 'rock':
+  player = 0
+elif playerchoice == 'paper':
+  player = 1
+elif playerchoice == 'scissors':
+  player = 2
+else:
+  print('Error')
+
+winner = (player - computer)%3
+#print(winner)
+
+print('Computer picked: ' + computerchoice)
+print('You picked: ' + playerchoice)
+
+if winner == 0:
+  print("----Result: Tie Game.")
+if winner == 1:
+  print("----Result: You Win.")
+if winner == 2:
+  print("----Result: Computer Wins.")

@@ -1,0 +1,53 @@
+'''LeetCode #230 Kth Smallest Element in a BST
+Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+
+Note:
+You may assume k is always valid, 1 <= k <= BST's total elements.
+
+Input: root = [3,1,4,null,2], k = 1
+   3
+  / \
+ 1   4
+  \
+   2
+Output: 1
+
+Input: root = [5,3,6,2,4,null,null,1], k = 3
+       5
+      / \
+     3   6
+    / \
+   2   4
+  /
+ 1
+Output: 3
+Follow up:
+What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
+'''
+from Implementations import Graph # Import graph class created in graph implementations
+
+graph = Graph()
+tree = [5,3,6,2,4,None,None,1]
+graph.binaryTree(tree)
+print(graph) #{5:[3,6],3:[2,4],2:[1]}
+
+def dfs(graph,node,k,ans=[],vis=None):
+  if vis==None: vis=set([]); ans=[node]
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      if b <= min(ans):
+        ans.append(b)
+      if len(ans) > k:
+        largest = max(ans)
+        ans.remove(largest)
+      dfs(graph,b,k,ans,vis)
+  return ans
+
+print(max(dfs(graph,5,3)))
+
+
+

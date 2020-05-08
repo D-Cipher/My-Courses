@@ -1,0 +1,26 @@
+Network ACL
+
+Network Access Control List -> Numbered list of rules controlling access to subnets
+- Evaluated in CRONOLOGICAL order from lowest to highest.
+- Always evaluated before security groups
+- VPCs come with a network ACL and by default allows all outbound and inbound traffic.
+- All VPCs must be associated with a network ACL. If none then it will associate with the default
+- Block IP addresses using network ACLs
+- Subnet can only be associated with one network ACL but network ACL can have multiple subnets.
+- Network ACLs are stateless -> seperate inbound and outbound rules, responses to inbound traffic are subject to rules of outbound (vice versa)
+
+Stateless -> Network ACLs are stateless responses to allow inbound traffic are subject to the rules for outbound traffic (and vice versa)
+- You have explicitly add both an Inbound and Outbound rule
+
+Network ACL Evaluation:
+1) Lowest numbered rule will be evaluated first, ex: rule 100
+2) If there is no match then it will go to the next rule, ex: rule: 200.
+3) If there is a match then it will stop and not evaluate any other rules.
+
+Example Evaluation:
+```
+Rule: 99; Port: 80; Source: 172.30.19.12/32; Deny
+Rule: 100; Port: 80; Source: 0.0.0.0/0; Allow
+Rule: 199; Port: 20; Source: 172.30.19.12/32; Deny
+Rule: 200; Port 22; Source: 0.0.0.0/0; Allow
+```

@@ -1,0 +1,24 @@
+Cloudwatch
+
+CloudWatch -> Monitors your AWS resources and applications based on performance metrics.
+- Displays metrics and creates alarms based on threshold breaches
+- Cloudwatch is regional, does not aggregate across regions
+
+Metrics -> Time ordered set of data points published to CloudWatch
+- Cannot be deleted, but can expire after 15 months if no new data.
+- Data older than 15 months are dropped
+- Can enable detailed monitoring. 
+
+CloudWatch Alarms -> Watches a single metric and performs different actions based value of the metric.
+- OK state -> metric is within threshold
+- Insufficient data -> not enough data
+- Alarm state -> metric is above threshold
+- CloudWatch alarm can invoke an action to restart EC2 instances.
+
+CloudWatch Dashboard -> Customizable console that lets you analyze your resources in a single view even if spread across different regions.
+- Dashboards are global
+- No limit to number of dashboards
+
+CloudWath Events -> Create system events that describe resources or trigger actions.
+
+CloudWatch Agent -> Installable program that monitors system level metrics for your EC2 instances and on-premise servers.

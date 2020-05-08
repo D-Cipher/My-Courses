@@ -1,0 +1,3 @@
+Elastic Transcoder -> Media transcode in the cloud, convert media files into different formats. 
+- Provides transcoding that works best for a particular device. 
+- Pay based on the minutes and resolution you transcode.

@@ -1,0 +1,33 @@
+import json
+import boto3
+from botocore.vendored import requests
+#import logging
+#logger = logging.getLogger()
+#logger.setLevel(logging.DEBUG)
+
+def lambda_handler(event, context):
+
+    sns = boto3.client('sns')
+    
+    longitude = 39
+    latitude = 77
+    
+    base_url = 'https://api.weather.gov/gridpoints/TOP/'
+    url = base_url + str(longitude) + ',' + str(latitude) + '/forecast'
+    
+    base_response = requests.get(url)
+    response = json.loads(base_response.text) #load data into a dict of objects
+    
+    t1 = response['properties']['periods'][0]['name']
+    forecast1 = response['properties']['periods'][0]['detailedForecast']
+    
+    t2 = response['properties']['periods'][1]['name']
+    forecast2 = response['properties']['periods'][1]['detailedForecast']
+    
+    result = t1 + ': ' + forecast1 + ' ' + t2 + ': ' + forecast2
+    
+    snsresponse = sns.publish(
+        TopicArn='arn:aws:sns:us-east-1:117730920402:weather-notification',
+        Message=result)
+
+    return {'statusCode': 200,'body': json.dumps(result)}

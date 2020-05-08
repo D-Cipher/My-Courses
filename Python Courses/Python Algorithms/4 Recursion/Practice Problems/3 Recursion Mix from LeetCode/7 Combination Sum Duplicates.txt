@@ -1,0 +1,22 @@
+'''LeetCode #90 Subsets II
+Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
+
+Note: The solution set must not contain duplicate subsets.
+
+Input: [1,2,2]
+Output:[[2],[1],[1,2,2],[2,2],[1,2],[]]
+'''
+
+arr = [1,2,2]
+
+def dfs(arr,ans=[],cur=[],index=0):
+  for i in range(index,len(arr)):
+    if (cur+[arr[i]]).count(arr[i]) <= arr.count(arr[i]):
+      ncur = cur + [arr[i]]
+      if ncur not in ans:
+        ans.append(ncur)
+      dfs(arr,ans,ncur,i)
+  
+  return ans
+
+print(dfs(arr))

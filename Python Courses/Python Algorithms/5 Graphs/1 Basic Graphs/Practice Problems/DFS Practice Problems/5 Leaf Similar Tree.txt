@@ -1,0 +1,48 @@
+'''LeetCode #872 Leaf-Similar Trees
+Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence.
+
+         3
+       /   \
+      5     1
+     / \   / \
+    6   2  9  8
+       / \
+      7   4
+
+For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9, 8).
+
+Two binary trees are considered leaf-similar if their leaf value sequence is the same.
+
+Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.
+'''
+
+from collections import defaultdict
+
+graph = defaultdict(list,{3:[5,1],5:[6,2],2:[7,4],1:[9,8]})
+
+print(graph)
+
+def dfs(graph,node,leafs=[],vis=None):
+  if vis==None: vis=set([]); leafs=[]
+  
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      if len(graph[b]) == 0:
+        leafs.append(b)
+      dfs(graph,b,leafs,vis)
+  
+  return leafs
+
+def sameleafs(g1,n1,g2,n2):
+  leafs1 = dfs(g1,n1)
+  leafs2 = dfs(g2,n2)
+  
+  leafs1.sort()
+  leafs2.sort()
+
+  return leafs1 == leafs2
+
+print(dfs(graph,3))

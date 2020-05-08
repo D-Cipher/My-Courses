@@ -1,0 +1,17 @@
+Cognito
+
+Cognito -> Allows users to authenticate with an identity provider which they trade for temporary AWS security credentials which map to an IAM role that gives access to AWS resources.
+- Allows users to sign-up and sign-in to your applications.
+- Access for guest users
+- Acts as an Identity Broker between your application and web id providers so you don't need additional code.
+- Syncs user data across multiple devices.
+- No need to store AWS credentials locally.
+- Recommended federation for mobile.
+- MFA compatible
+- Behind cognito is actually making the call to STS API on your behalf. Hence, you do not need to explicitly call the API.
+
+Cognito brokers -> Identity providers such as Amazon, Facebook, Google
+
+Synchronization -> Cognito synchronizes user data for multiple devices. Tracks association between user identity and various different devices they sign in from.
+- Push Synchronization to push updates and sync data across multiple devices.
+- Uses SNS to send notification to all devices associated with a given user identity.

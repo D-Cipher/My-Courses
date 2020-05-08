@@ -1,0 +1,6 @@
+Marcie
+
+Macie -> Security service that uses machine learning to discover, classify, protect sensitive data.
+- Continuously monitor data and uses ai to understand access patterns.
+- Automatically access user activity, applications, and service accounts
+- Use natural language processing (NLP) methods to understand data

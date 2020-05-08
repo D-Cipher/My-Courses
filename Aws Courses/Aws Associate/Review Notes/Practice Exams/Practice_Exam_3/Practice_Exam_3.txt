@@ -1,0 +1,160 @@
+Practice Exam 2
+
+S3
+1. You are working as a Solutions Architect for a start-up company that has a not-for-profit crowdfunding platform hosted in AWS. Their platform allows people around the globe to raise money for social enterprise projects including challenging circumstances like accidents and illnesses. Since the system handles financial transactions, you have to ensure that your cloud architecture is secure. Which of the following AWS services encrypts data at rest by default? (Choose 2)
+a) Storage Gateway
+b) RDS
+c) ECS
+d) Glacier
+e) Lambda
+
+2. You have started your new role as a Solutions Architect for a media company. They host large volumes of data for their operations which are about 250 TB in size on their internal servers. They have decided to store this data on S3 because of its durability and redundancy. The company currently has a 100 Mbps dedicated line connecting their head office to the Internet. What is the fastest way to import all this data to Amazon S3?
+a) Upload directly to S3
+b) Use Direct Connect to transfer data over to S3
+c) Upload the files using Data pipeline
+d) Use Snowball to upload the files
+
+3. You have a static corporate website hosted in a standard S3 bucket and a new web domain name which was registered using Route 53. You are instructed by your manager to integrate these two services in order to successfully launch their corporate website. What are the prerequisites when routing traffic using Amazon Route 53 to a website that is hosted in an Amazon S3 Bucket? (Choose 2)
+a) S3 bucket name must be the same as the domain name
+b) Registered domain name.
+c) Record set must be "MX".
+d) S3 bucket must be in the same region as the hosted zone.
+e) CORS must be enabled on the S3 bucket.
+
+4. You are working for a large telecommunications company. They have a requirement to move 83 TB data warehouse to the cloud. It would take 2 months to transfer the data given their current bandwidth allocation. Which is the most cost-effective service that would allow you to quickly upload their data into AWS?
+a) Snowball
+b) Snowball Edge
+c) Direct connect
+d) S3 multipart upload
+
+EC2
+5. You need to back up your mySQL database hosted on a Reserved EC2 instance. It is using EBS volumes that are configured in a RAID array. What steps will you take to minimize the time during which the database cannot be written to and to ensure a consistent backup?
+a) Detach EBS, Start EBS snapshot of volumes, Re-attach EBS volumes.
+b) Stop all applications from writing to RAID array, Flush all caches in the disk, Confirm the associated EC2 instance is no longer writing to the RAID array by freezing the file system, unmounting the array, or even shutting down the EC2 instnace, Take steps to halt all disk-related activities to the RAID array, take a snapshot of each EBS volume in the array.
+c) Stopp all I/O activities in the volumes, create an image of the EC2 instance, Resume all I/O activity in the volume.
+d) Stopp all I/O activities in the volumes, Start EBS snapshot of volumes, Whie snapshot is in progress, resume all I/O activities.
+
+6. You are working as a Solutions Architect for an investment bank and your Chief Technical Officer intends to migrate all of your applications to AWS. You are looking for block storage to store all of your data and have decided to go with EBS volumes. Your boss is worried that EBS volumes are not appropriate for your workloads due to compliance requirements, downtime scenarios, and IOPS performance. Which of the following are valid points in proving that EBS is the best service to use for your migration? (Choose 2)
+a) EBS volume created in an AZ automatically replicated in a region to prevent data loss due to failure of a hardward component.
+b) EBS volumes can be attached to any EC2 instances in any AZ.
+c) EBS volume is off-instance storage that can presist.
+d) EBS volumes support live configuration changes while in production meaning you can modify the volume type, volume size, and IOPS capacity without service interruptions.
+e) EBS provides the ability to create snapshots of any EBS volume and write a copy of the data in the volume to RDS where it is stored redundantly in multiple AZs.
+
+7. As part of the Business Continuity Plan of your company, your IT Director instructed you to set up an automated backup of all of the EBS Volumes for your EC2 instances as soon as possible. What is the fastest and most cost-effective solution to automatically back up all of your EBS Volumes?
+a) Create a job that calls the "create-snapshot" command via AWS CLI to take snapshots of the production EBS volumes.
+b) Set up Storage Gateway with EBS as the data source and store backups in your on-premise servers through storage gateway
+c) Use EBS cycle policy in S3 to automatically back up the EBS volumes.
+d) Use Data Lifecycle Manager (DLM) to automate creation of EBS snapshots.
+
+VPC
+8. You are an AWS Network Engineer working for a utilities provider where you are managing a monolithic application with EC2 instance using a Windows AMI. You want to implement a cost-effective and highly available architecture for your application where you have an exact replica of the Windows server that is in a running state. If the primary instance terminates, you can attach the ENI to the standby secondary instance which allows the traffic flow to resume within a few seconds. When it comes to the ENI attachment to an EC2 instance, what does 'warm attach' refer to?
+a) Attacing ENI to an instance when it is stopped.
+b) Attaching ENI to an instance during the launch process.
+c) Attaching ENI to an instance when it is running.
+d) Attaching ENI to an instnace when it is idle.
+
+9. You are instructed by your manager to set up a bastion host in your Amazon VPC and it should only be accessed from the corporate data center via SSH. What is the best way for you to achieve this?
+a) Create a large EC2 instance with security group which only access port 22 with you own pre-configured password.
+b) Create a large EC2 instance with security group which only acceess port 22 via IP address of the corporate data center. Use private key (.pem) file to connect to the bastion host.
+c) Create a small EC2 instance with security group which only access port 22 with you own pre-configured password.
+d) Create a small EC2 instance with security group which only acceess port 22 via IP address of the corporate data center. Use private key (.pem) file to connect to the bastion host.
+
+10. To protect your enterprise applications against unauthorized access, you configured multiple rules for your Network ACLs in your VPC. How are the access rules evaluated?
+a) Network ACL Rules are evaluated by rule number, from highest to lowest and are executed immediately when a matching allow/deny rule is found.
+b) By default, network ACL rules are evaluated before any traffic is allowed or denied.
+c) Network ACL Rules are evaluated by rule number, from lowest to highest, and executed immediately when a matching allow/deny rule is found.
+d) Network ACL Rules are evaluated by number, from lowest to highest, and executed after all rules are checked for conflicting allow/deny rules.
+
+11. Lambda
+A startup company has a serverless architecture that uses AWS Lambda, API Gateway, and DynamoDB. They received an urgent feature request from their client last month and now, it is ready to be pushed to production. The company is using AWS CodeDeploy as their deployment service. Which of the following configuration types will allow you to specify the percentage of traffic shifted to your updated Lambda function version before the remaining traffic is shifted in the second increment?
+a) Canary
+b) Linear
+c) All-at-once
+d) Blue/Green deployment
+
+12. Your customer is building an internal application that serves as a repository for images uploaded by a couple of users. Whenever a user uploads an image, it would be sent to Kinesis for processing before it is stored in an S3 bucket. Afterwards, if the upload was successful, the application will return a prompt telling the user that the upload is successful. The entire processing typically takes about 5 minutes to finish. Which of the following options will allow you to asynchronously process the request to the application in the most cost-effective manner?
+a) Use a combindation of Lambda and Step Functions to orchestrate service components and asynchronously process the requests
+b) Use a combination of SQS and then asynchronously process them using On-Demand EC2 Instances
+c) Create a Lambda function that will asynchronously process the requests
+d) Use a combindation of SNS to buffer the requests then asynchronously process them using On-Demand EC2 Instances
+
+Databases
+13. You have a data analytics application that updates a real-time, foreign exchange dashboard and another separate application that archives data to Amazon Redshift. Both applications are configured to consume data from the same stream concurrently and independently by using Amazon Kinesis Data Streams. However, you noticed that there are a lot of occurrences where a shard iterator expires unexpectedly. Upon checking, you found out that the DynamoDB table used by Kinesis does not have enough capacity to store the lease data. Which of the following is the most suitable solution to rectify this issue?
+a) Increase the write capacity assigned to the shard table.
+b) Upgrade the storage capacity of the DynamoDB table.
+c) Enable In-Memory Cache with DynamoDB Accelerator (DAX).
+d) Use Kinesis Data Analytics to properly support the data analytics application instead of stream.
+
+14. As a Junior Software Engineer, you are developing a hotel reservations application and are given the task of improving the database aspect of the app. You found out that RDS does not satisfy the needs of your application because it does not scale as easily compared with DynamoDB. You need to demonstrate to your Senior Software Engineer the advantages of using DynamoDB over RDS. What are the valid use cases for Amazon DynamoDB? (Choose 2)
+a) Running a database with well-defined schema that enforces referential integrity in relationships between tables.
+b) Managing web sessions.
+c) Storing large amounts of infrequently accessed data.
+d) Storing metadata for S3 objects.
+e) Storing BLOB data.
+
+15. You are working for an online hotel booking firm with terabytes of customer data coming from your websites and applications. There is an annual corporate meeting where you need to present the booking behavior and acquire new insights from your customer data. You are looking for a service to perform super-fast analytics on massive data sets in near real-time. Which of the following services gives you the ability to store huge amounts of data and perform quick and flexible queries on it? 
+a) DynamoDB
+b) ElastiCache
+c) RDS
+d) Redshift
+
+16. You are working for a University as their AWS Consultant. They want to have a disaster recovery strategy in AWS for mission-critical applications after suffering a disastrous outage wherein they lost student and employee records. They don't want this to happen again but at the same time want to minimize the monthly costs. You are instructed to set up a minimal version of the application that is always available in case of any outages. The DR site should only run the most critical core elements of your system in AWS to save cost which can be rapidly upgraded to a full-scale production environment in the event of system outages. Which of the following disaster recovery architectures is the most cost-effective type to use in this scenario?
+a) Backup and Restore
+b) Pilot Light
+c) Warm Standby
+d) Multi Site
+
+17. An accounting application uses an RDS database configured with Multi-AZ deployments to improve availability. What would happen to RDS if the primary database instance fails?
+a) IP address of the primary DB would switch to standby DB
+b) Primary database instance will reboot
+c) New database instance is created in the standby AZ
+d) The canonical name record (CNAME) is switched from primary to standby instance.
+
+18. High Availability
+You are helping out a new DevOps Engineer to design her first architecture in AWS. She is planning to develop a highly available and fault-tolerant architecture which is composed of an Elastic Load Balancer and an Auto Scaling group of EC2 instances deployed across multiple Availability Zones. This will be used by an online accounting application which requires path-based routing, host-based routing, and bi-directional communication channels using WebSockets. Which is the most suitable type of Elastic Load Balancer that you should recommend for her to use?
+a) Application Load Balancer
+b) Network Load Balancer
+c) Classic Load Balancer
+d) Either Classic Load Balancer or Network Load Balancer
+
+19. In Elastic Load Balancing, there are various security features that you can use such as Server Order Preference, Predefined Security Policy, Perfect Forward Secrecy and many others. Perfect Forward Secrecy is a feature that provides additional safeguards against the eavesdropping of encrypted data through the use of a unique random session key. This prevents the decoding of captured data, even if the secret long-term key is compromised. Perfect Forward Secrecy is used to offer SSL/TLS cipher suites for which two AWS services?
+a) EC2 and S3
+b) CloudTrail and CloudWatch
+c) CloudFront and ELB
+d) Trust Advisor and GovCloud
+
+20. You are working for a commercial bank as an AWS Infrastructure Engineer handling the forex trading application of the bank. You have an Auto Scaling group of EC2 instances that allow your company to cope up with the current demand of traffic and achieve cost-efficiency. You want the Auto Scaling group to behave in such a way that it will follow a predefined set of parameters before it scales down the number of EC2 instances, which protects your system from unintended slowdown or unavailability. Which of the following statements are true regarding the cooldown period? (Choose 2)
+a) Ensure that before the Auto Scaling group scales out, EC2 instances have ample time to cooldown.
+b) Ensure that the Auto Scaling group launches or terminates additional EC2 instances without any downtime.
+c) Ensure that Auto Scaling group does not launch or terminate additional EC2 instances before the previous scaling takes effect.
+d) Default value is 300 seconds
+e) Default value is 600 seconds
+
+Applications
+21. Your company has a top priority requirement to monitor a few database metrics and then afterwards, send email notifications to the Operations team in case there is an issue. Which AWS services can accomplish this requirement? (Choose 2)
+a) SES
+b) CloudWatch
+c) SQS
+d) Route53
+e) SNS
+
+22. A software company has resources hosted in AWS and on-premises servers. You have been requested to create a decoupled architecture for applications which make use of both resources. Which of the following options are valid? (Choose 2)
+a) SWF to utilize both on-premise servers and EC2 instances to decouple the application
+b) RDS to utilize both on-premises servers and EC2 instances for your decoupled application
+c) SQS to utilize both on-premises servers and EC2 instances for your decoupled application
+d) SDS to utilize both on-premises servers and EC2 instances for your decoupled application
+e) DynamoDB to utilize both on-premises servers and EC2 instances for your decoupled application
+
+23. You are working for a litigation firm as the Data Engineer for their case history application. You need to keep track of all the cases your firm has handled. The static assets like .jpg, .png, and .pdf files are stored in S3 for cost efficiency and high durability. As these files are critical to your business, you want to keep track of what's happening in your S3 bucket. You found out that S3 has an event notification whenever a delete or write operation happens within the S3 bucket. What are the possible Event Notification destinations available for S3 buckets? (Choose 2)
+a) Kinesis
+b) SES
+c) SQS
+d) Lambda
+e) SWF
+
+24. You are a Solutions Architect working with a company that uses Chef Configuration management in their datacenter. Which service is designed to let the customer leverage existing Chef recipes in AWS?
+a) SWF
+b) Elastic Beanstalk
+c) CloudFormation
+d) OpsWorks

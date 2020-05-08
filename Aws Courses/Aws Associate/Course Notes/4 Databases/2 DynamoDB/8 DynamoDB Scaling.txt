@@ -1,0 +1,3 @@
+DynamoDB Scaling
+
+DynamoDB Scaling -> Enable a DynamoDB table or a global secondary index to increase or decrease its provisioned read and write capacity to handle increases in traffic without throttling.

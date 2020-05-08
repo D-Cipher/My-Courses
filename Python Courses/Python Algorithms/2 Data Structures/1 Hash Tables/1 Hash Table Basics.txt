@@ -1,0 +1,43 @@
+Hash Table
+
+Hashing -> Generating a value from a string using a math formula.
+- IDs are result of hashing.
+
+Hash Table -> Hash Table is a data structure which stores data with key value pair.
+
+Hash Value -> Represents the original string of characters.
+
+Slots -> Each postion of the hash table that can hold an item.
+
+Hash Function -> takes a string of characters (key) and maps it to a value of certain length (hash).
+- Easy to compute
+- Uniform distribution
+- Low collisions
+- Load Factor = number of items / table size
+
+Example:
+'''
+Use a Hash Table to solve this problem. Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+arr = [1,7,8,10,15]
+target = 9
+
+ht = dict()
+ans = None
+
+for i in range(len(arr)):
+  hf = target - arr[i]
+
+  if hf in ht:
+    ans = [ht[hf], i]
+    break
+  else:
+    ht[arr[i]] = i
+
+print(ans)
+'''
+
+
+

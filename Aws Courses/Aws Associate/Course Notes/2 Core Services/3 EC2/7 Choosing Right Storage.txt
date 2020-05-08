@@ -1,0 +1,22 @@
+Choosing The Right Storage
+
+Lowest-latency Single Instance Access to data -> Best for lowest-latency access to data for single EC2 instance, attached to the instance.
+- EBS
+
+Multi-Instance Storage -> Need for multiple EC2 instances accessing volume data at the same time.
+- EFS
+
+Low-latency File Operation -> File management operations or or file system which manages data as a file hierarchy.
+- EFS
+
+Highly Durable and Highly Available -> Low chance of object being lost, minimal chance of service interruption.
+- EFS
+- S3
+
+Object Storage -> Architecture that manages data as objects rather than files.
+- S3
+
+Static or Web Content -> Data that does not change often.
+- S3
+- EFS
+

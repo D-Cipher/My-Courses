@@ -1,0 +1,25 @@
+Elastic Block Store (EBS)
+
+EBS -> Elastic Block Store -> Provide lowest-latency access to data, allows you to create storage volumes and attach to EC2 instances.
+- Can perform live configuration changes while in production without service interruption.
+- Can stripe multiple volumes together to create larger volumes
+- Can provision capacity
+- Can persist beyond the lifecycle of the EC2 instance
+- Data stored on EBS is automatically replicated within an AZ
+- You cannot mount 1 EBS to multiple EC2 instances.
+- By default termination protection is turned off.
+- By default root EBS deleted when instance terminated.
+
+Configurable: volume type, volume size, and IOPS capacity
+
+Volumes -> virtual hard disk that exist on EBS
+- Volumes are replicated across multiple servers within an AZ to protect you from component failure.
+
+IOPS -> input output per second
+- Max ratio of IOPS to volume size is 50:1 that means for 10 GiB volume you can provision up to 500 IOPS.
+
+EBS Storage Cost Considerations:
+1) Volumes Type
+2) IOPs Type
+3) Snapshot frequency and storage
+4) Data transfer across regions

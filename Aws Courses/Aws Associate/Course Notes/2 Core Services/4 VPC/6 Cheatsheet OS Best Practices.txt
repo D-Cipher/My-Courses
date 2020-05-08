@@ -1,0 +1,8 @@
+OS Best Practices
+
+Best practices for securing OS and application:
+- Disable root API access keys and secret keys
+- Restict access to instances for limited IP ranges using Security Groups
+- Rotate credentials for Access Keys and DB
+- Regularly run least privilege checks using Access Advisor
+- Use bastion hosts to enforce control and visibility

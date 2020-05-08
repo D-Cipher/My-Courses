@@ -1,0 +1,11 @@
+ELB Setup Process
+
+ELB Setup Process -> You can set up your load balancer in EC2-Classic to distribute incoming requests across EC2 instances in a single AZ or multiple AZs.
+- By default, the load balancer routes traffic evenly across AZs.
+- Cross-Zone Load Balancing -> Lets you change this so that load balancer routes traffic evenly across all available instances rather AZs by using.
+
+Process:
+1) Launch EC2 instances in all the AZs that you plan to use. 
+2) Register these instances with your load balancer. 
+3) Add each AZ to your load balancer. 
+4) Load balancer will start routing requests to the registered instances in the AZs. Modify the AZs for your load balancer at any time.

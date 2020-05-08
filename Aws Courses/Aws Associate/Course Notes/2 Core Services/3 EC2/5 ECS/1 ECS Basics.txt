@@ -1,0 +1,15 @@
+Elastic Container Service
+
+Elastic Container Service (ECS) -> Fully managed cluster platform which allows you to host Docker containers in the cloud.
+- Allows you to host containers at scale much better than EC2
+- Less management overhead
+- Containers can only be created through image templates
+
+ECS Scaling -> Adjust the ECS service desired count up or down in response to load variations.
+
+Elastic Container Registry (ECR) -> Registry service of private Docker repositories.
+
+Varifying Containers:
+- Check Docker daemon and container is running on container instance.
+- Check container agent is running on the container instance
+- Check IAM instance profile has proper permissions

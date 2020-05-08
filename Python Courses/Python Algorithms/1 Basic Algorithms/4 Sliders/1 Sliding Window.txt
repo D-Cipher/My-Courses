@@ -1,0 +1,38 @@
+#=== Sliding Window ===
+
+Sliding window algorithm is used to perform searches or operations with a window size. Window starts from the 1st element and keeps shifting right by n elements. The objective is to find the minimum k numbers present in each window to meet the search or operation criteria.
+
+'''
+# Given an array of integer of size N, find maximum sum of a continuous subarry of size K
+'''
+arr = [80,-50,90,100] #ans = 190
+n = 4
+k = 2
+
+# Brute Force Approach
+ans = arr[0]
+
+for i in range(len(arr)):
+  currentsum = 0
+  for j in range(k):
+    if (j + i < len(arr)):
+      currentsum = currentsum + arr[j + i]
+      ans = max(currentsum, ans)
+
+#print(ans)
+
+# Sliding Window Approach
+windowSum = 0
+
+for i in range(k):
+  windowSum += arr[i]
+  #print(windowSum)
+
+for i in range(len(arr)-k):
+  windowSum = windowSum + arr[i+k] - arr[i]
+  #print(windowSum)
+  ans = max(currentsum, ans)
+
+print(ans)
+
+

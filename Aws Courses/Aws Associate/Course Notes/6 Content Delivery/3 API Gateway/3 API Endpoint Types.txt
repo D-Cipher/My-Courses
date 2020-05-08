@@ -1,0 +1,8 @@
+Endpoint Types
+
+There are three types of Endpoints:
+1) Edge-optimized API endpoint -> Default host name of API Gateway deployed to specific region while using CloudFront to facilitate client access. API routed to the nearest CloudFront Point of Presence
+
+2) Regional API endpoint -> Host name of API is deployed to specific region intended for server client access. Does not go through cloudfront.
+
+3) Private API endpoint -> Allows a client to securely access private API resources inside a VPC. Isolated from the internet. 

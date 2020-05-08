@@ -1,0 +1,6 @@
+X-Rays
+
+X-Rays -> Trace, analyze, and debug applications built with microservices, identify performance bottlenecks and errors. 
+- Can be used with running applications: EC2, ECS, Lambda, Elastic Beanstalk.
+- Captures metadata for RDS, Aurora, DynamoDB, SQS, SNS
+- Trace and analyze user requests through API Gateway

@@ -1,0 +1,19 @@
+ELB Security Features
+
+Perfect Forward Secrecy -> provides safeguards against the eavesdropping of encrypted data, through the use of a unique random session key. This prevents the decoding of captured data, even if the secret long-term key is compromised. 
+- Available for ELBs and CloudFront
+
+Server Order Preference -> configure the load balancer to enforce cipher ordering, providing more control over the level of security used by clients to connect with your load balancer.
+
+Predefined Security Policy -> simplifies the configuration of your load balancer by providing a recommended cipher suite that adheres to AWS security best practices. 
+- TLS 1.1 and 1.2
+- Offers high security ciphers such as those used for Elliptic Curve signatures and key exchanges
+
+Server Name Indication (SNI) -> Extenstion that allows the client to connect to hostnames, supports multiple secure websites using a single listener
+- Host-based routing allows you to route multiple domains to same ELB
+- Allows binding multiple SSL certificates to the listener
+
+SSL Negotiations between ELB and Client:
+- ELB Predefined security policies
+- Use custom security policies: Ciphers and protocols (only for CLB)
+

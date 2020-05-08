@@ -1,0 +1,16 @@
+System Manager
+
+System Manager -> Allows you centralize operational data for multiple aws services and automate tasks.
+
+SSM Agent -> Installable agent that allows you to use system manager from your instance.
+
+Automation:
+1) Document -> defines the workflow that will be automated
+2) Action -> Each step in the workflow associated with a particular action
+3) Queue -> system manager queues up the actions for execution
+
+Parameter store -> Provides a secure storage for data configurations and secrets management. 
+- Parameters works with system manager to run commands, manage state, and automate tasks.
+
+
+

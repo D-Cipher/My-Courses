@@ -1,0 +1,25 @@
+Cheatsheet for EC2 Types
+
+**General Purpose**
+A -> Arm-based workloads, scale-out workloads to web servers
+T -> Low cost gp
+M -> Main Choice for GP, application servers
+
+**Storage Optimized**
+I -> IOPS intensive, High speed storage, NoSQL
+H -> High Disk Throughput, for MapReduce workloads
+D2 -> Density Storage, Fileservers, Data Warehousing, Hadoop
+
+**Compute Optimized**
+C -> Compute Optimized, DBs and CPU intensive apps and dbs
+F -> Field Prorammable Gate Array, hardware acceleration
+G -> GPU graphics for videos and gaming
+P -> GPU machine learning, Bit Coin mining
+
+**Memory Optimized**
+R -> RAM intensive, memory intensive apps and dbs
+X -> Extreme Memory optimized, SAP Apache Spark
+
+**Other**
+Z1D -> High Compute capacity and high memory, electronics design automation
+U-6tb1 -> Bare Metal capabilities for eliminating virtualized overhead

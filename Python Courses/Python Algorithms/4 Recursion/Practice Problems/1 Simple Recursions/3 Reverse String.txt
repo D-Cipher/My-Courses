@@ -1,0 +1,14 @@
+'''
+Implement a function that reverses a string using iteration and then recursion.
+'''
+
+def reverseStr(word, ans=''):
+
+  if word != '':
+    newans = ans + word[-1]
+    newword = word[:-1]
+    return reverseStr(newword, newans)
+
+  return ans
+
+print(reverseStr('Hello'))

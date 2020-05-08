@@ -1,0 +1,27 @@
+S3 Storage Tiers 
+
+Standar Tier
+- S3 Standard -> durable, stored redundantly across multiple devices in multiple facilities and is designed to sustain losses of 2 facilities concurrently.
+
+Infrequently Accessed Tiers
+- S3 IA -> S3 Infrequently Accessed, Infrequently Accessed but requires rapid access when needed, lower fee but charged fee when access.
+- S3 One Zone IA -> Lower cost option, only stored in one AZ.
+- S3 Intelligent Tiering -> Designed to optimize costs by moving objects to different tiers.
+
+Glacier Tiers
+- Glacier -> Data archiving retrieval times are configurable from minutes to hours. 
+- Glacier Deep Archive -> Lowest cost storage but retrieval is 12 hours.
+
+Comparing Standard, IA, and Glacier tiers:
+- Standard is more expensive to store, but cheaper to retrieve.
+- IA is cheaper to store, but more expensive to retrieve. 
+- IA minimum life cycle transition is 30 days.
+- Glacier minimum life cycle transition is 0 days.
+- Glacier tiers ENCRYPT data by DEFAULT.
+
+S3 Storage Cost Considerations:
+1) Storage class
+2) Storage amount
+3) Requests
+4) Data transfers
+

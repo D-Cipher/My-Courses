@@ -1,0 +1,13 @@
+Queries
+
+Query -> operation that finds items in the table based on Primary Key and the distinct value to search for.
+- Able to use optional Sort Key to refine results if there are multiple results.
+- By default, query returns all attributes for the item.
+- Results are always sorted by Sort Key in asending order.
+- By default, queries are eventually consistent, but you can explicitly set query to strongly consistent.
+
+Parameters
+ProjectionExpression -> parameter that allows query to return specific attribute
+
+ScanIndexForwarded -> setting parameter to false allows sort to be reversed (queries only).
+

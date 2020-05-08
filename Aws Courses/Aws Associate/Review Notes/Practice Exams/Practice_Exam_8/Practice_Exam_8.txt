@@ -1,0 +1,143 @@
+IAM
+A multinational manufacturing company has multiple accounts in AWS to separate their various departments such as finance, human resources, engineering and many others. There is a requirement to ensure that certain access to services and actions are properly controlled to comply with the security policy of the company. As the Solutions Architect, which is the most suitable way to set up the multi-account AWS environment of the company?
+a) Set up a comming IAM policy that can be applied across all AWS accounts
+b) Connect all departments by setting up a cross-account access to each of the AWS accounts in the company. Create and attach IAM policies to your resources based on their respective department to control access
+c) Provide access to externally authenticated users via Identity Federation. Set up an IAM role to specify permissions for users from each department whose identity is federated from your organization or a third party identity provider
+d) Use AWS Organizations and Service Control Policies to control services on each account
+
+You recently created a brand new IAM User with a default setting using AWS CLI. This is intended to be used to send API requests to your S3, DynamoDB, Lambda, and other AWS resources of your cloud infrastructure. Which of the following must be done to allow the user to make API calls to your AWS resources? 
+a) Enable encryption in API Gateway when recieving API calls
+b) Create an IAM role that allows sending API calls
+c) Assign an IAM policy to the user to allow sending API calls
+d) Create a set of Access Keys for the user and attach the necessary permissions
+
+S3
+You are trying to enable Cross-Region Replication to your S3 bucket but this option is disabled. Which of the following options is a valid reason for this?
+a) Cross-Region Replication feature is only available for Glacier
+b) This is a premium feature which is only available for Enterprise accounts
+c) In order to use Cross-Region Replication feature in S3 you need to first enable versioning on the bucket
+d) Cross-Region Replication feature is only available for S3 Infrequent Access
+
+EC2
+You are setting up the required compute resources in your VPC for your application which have workloads that require high, sequential read and write access to very large data sets on local storage. Which of the following instance type is the most suitable one to use in this scenario?
+a) Storage Optimized
+b) Memory Optimized
+c) Compute Optimized
+d) General Purpose
+
+You are working for a weather station in Asia with a weather monitoring system that needs to be migrated to AWS. Since the monitoring system requires a low network latency and high network throughput, you decided to launch your EC2 instances to a new cluster placement group. The system was working fine for a couple of weeks, however, when you try to add new instances to the placement group that already has running EC2 instances, you receive an insufficient capacity error. How will you fix this issue?
+a) Stop and restart the instances in the placement group and try the launch again.
+b) Create another placement group and launch the new instances into the new group.
+c) Verify all running instances are of the same size and type. Then launch again.
+d) Submit a capacity increase request to AWS as you are initially limited to 12 instances per placement group.
+
+You are a Solutions Architect in an intelligence agency that is currently hosting a learning and training portal in AWS. Your manager instructed you to launch a large EC2 instance with an attached EBS Volume and enable Enhanced Networking. What are the valid case scenarios in using Enhanced Networking? (Choose 2)
+a) When you need a higher packet per second (PPS) performance.
+b) When you need a more secure connection between your EBS and your instance.
+c) When you need to monitor detail metrics on your instance.
+d) When you need consistently lower inter-instance latencies.
+
+VPC
+A Solutions Architect is developing a three-tier cryptocurrency web application for a FinTech startup. The Architect has been instructed to restrict access to the database tier to only accept traffic from the application-tier and deny traffic from other sources. The application-tier is composed of application servers hosted in an Auto Scaling group of EC2 instances. Which of the following options is the MOST suitable solution to implement in this scenario?
+a) Set up the security group of the database tier to allow database traffic from a specific list of application server IP addresses
+b) Set up the security group of the database tier to allow database traffic from the security group of the application servers
+c) Set up the Network ACL of the database subnet to deny all inbound non-database traffic from the subnet of the application-tier
+d) Set up the Network ACL of the database subnet to allow inbound database traffic from the subnet of the application-tier
+
+You are instructed by your manager to create a publicly accessible EC2 instance by using an Elastic IP (EIP) address and also to give him a report on how much it will cost to use that EIP. Which of the following statements is correct regarding the pricing of EIP?
+a) There is no cost if the instance is running and has only one associated EIP
+b) There is no cost if the instance is terminated and has only one associated EIP
+c) There is no cost if the instance is stopped and it has only one associated EIP
+d) There is an innitial cost for provisioning an EIP, but no additional cost for associating it with an instance  
+
+You are working as a Solutions Architect for a major accounting firm, and they have a legacy general ledger accounting application that needs to be moved to AWS. However, the legacy application has a dependency on multicast networking. On this scenario, which of the following options should you consider to ensure the legacy application works in AWS?
+a) Provision Elastic Network Interfaces between subnets in the VPC containing the application
+b) Create the network in an isolated VPC and enable VPC peering
+c) Create a virtual overlay network running on the OS level of the instance
+d) All of the above
+
+Lambda
+
+Monitoring
+
+Databases
+Your boss has asked you to launch a new MySQL RDS which ensures that you are available to recover from a database crash. Which of the below is not a recommended practice for RDS?
+a) Ensure that automated backups are enabled for RDS
+b) Use MyISAM as the storage engine for MySQL
+c) Use InnoDB as the storage engine for MySQL
+d) Partition your tables so that it does not exceed 16TB
+
+A web application, which is hosted in your on-premises data center and uses a MySQL database, must be migrated to AWS Cloud. You need to ensure that the network traffic to and from your RDS database instance is encrypted using SSL. For improved security, you have to use the profile credentials specific to your EC2 instance to access your database, instead of a password. Which of the following should you do to meet the above requirement?
+a) Launch a new RDS database instance with the SSO enabled
+b) Create a new RDS database and configure it to enable encryption then configure it to use Cognito for authentication
+c) Set up an RDS database and enable IAM DB Authentication
+d) Launch a new RDS database and use the --ssl-ca parameter to set up authentication
+
+You were hired as an IT Consultant in a startup cryptocurrency company that wants to go global with their international money transfer app. Your project is to make sure that the database of the app is highly available on multiple regions. What are the benefits of adding Multi-AZ deployments in Amazon RDS? (Choose 2)
+a) Makes database fault-tolerant to an AZ failure
+b) Significantly increases the database performance
+c) Creates a primary DB instance and synchronously replicates data to standby instance in a different AZ in a different region
+d) Increased database availability in case of system upgrades like OS patching or DB instance scaling
+e) Provides SQL optimization
+
+An application is hosted in an Auto Scaling group of EC2 instances and a Microsoft SQL Server on Amazon RDS. There is a requirement that all in-flight data between your web servers and RDS should be secured. Which of the following options is the MOST suitable solution that you should implement? (Choose 2)
+a) Force all connections to your DB instance to use SSL by setting the rds.force_ssl parameter to true and reboot your DB instance
+b) Download the RDS Root CA certificate. Import the certificate to your servers and configure your application to use SSL to encrypt the connection to RDS
+c) Enable TDE on your DB instance.
+d) Enable Enhanced Networking on your DB instance
+e) Create a new SSL certificatie and import it into Certificate Manager.
+
+High Availability
+
+Content Delivery
+You are working for a global news network where you have set up a CloudFront distribution for your web application. However, you noticed that your application origin server is being hit for each request instead of the AWS Edge locations, which serve the cached objects. The issue occurs even for the commonly requested objects. What could be a possible cause of this issue?
+a) Object is only cached by CloudFront once a successful request has been made. Hence, the object was not requested before, which is why the request is still directed to the origin server.
+b) The file size of the cached objects have exceeded the CloudFront handle limit.
+c) The Cache-Control max-age directive is set to zero.
+d) You did not add an SSL certificate.
+
+A global medical research company has a molecular imaging system which provides each client with frequently updated images of what is happening inside the human body at the molecular and cellular level. The system is hosted in AWS and the images are hosted in an S3 bucket behind a CloudFront web distribution. There was a new batch of updated images that were uploaded in S3, however, the users were reporting that they were still seeing the old content. You need to control which image will be returned by the system even when the user has another version cached either locally or behind a corporate caching proxy. Which of the following is the most suitable solution to solve this issue?
+a) Use versioned objects
+b) Invalidate the files in your CloudFront distribution
+c) Add a seperate cache path for the content and configure the custom object cache to a TTL of 0
+d) Add Cach-Control no-cache and no-store to the S3 bucket
+
+You are working for a startup which develops an AI-based traffic monitoring service. You need to register a new domain and set up other DNS entries for the other components of your system in AWS. Which of the following is not supported by Amazon Route 53?
+a) DNSSEC (Domain Name System Security Extensions)
+b) PTR (Pointer Record)
+c) SPF (Sender Policy Framework)
+d) SRV (Service Locator)
+
+Deployments
+Your company has developed a financial analytics web application hosted in a Docker container using MEAN (MongoDB, Express.js, AngularJS, and Node.js) stack. You want to easily port that web application to AWS Cloud which can automatically handle all the tasks such as balancing load, auto-scaling, monitoring, and placing your containers across your cluster. Which of the following services can be used to fulfill this requirement?
+a) ECS
+b) OpsWorks
+c) CodeDeploy
+d) Elastic Beanstalk
+
+You are working as an IT Consultant for a top investment firm. Your task is to ensure smooth upgrade of their accounting system in AWS to a new version without any system outages. The Technical Manager gave an advice to implement an in-place upgrade strategy while a DevOps Engineer suggested to use Blue/Green Deployment strategy instead. Which of the following options are not the advantages of using Blue/Green Deployment over in-place upgrade strategy? (Choose 2)
+a) Blue/green deployments provide a level of isolation between your blue and green application environments, which reduce the deployment risk. The blue environment represents the current application version service production traffic while the green one is staged running a different or upgraded version of your application
+b) It has the ability to simply roll the incoming traffic back to the current working environment, in case of system failures, any time during the deployment process.
+c) You can use Blue/Green Deployment with CodeCommit and CodeBuild to automatically deploy the new version of your application
+d) Impaired operations or downtime is minimized because the impact is limited to the window of time between green environment issue detection and shift of traffic back to the blue environment.
+e) Blue/Green deployment is more cost-effective than in-place upgrade. You do not need to launch a new environment with additional AWS resources
+
+
+Analytics
+A Solutions Architect designed a real-time data analytics system based on Kinesis Data Stream and Lambda. A week after the system has been deployed, the users noticed that it performed slowly as the data rate increases. The Architect identified that the performance of the Kinesis Data Streams is causing this problem. Which of the following should the Architect do to improve performance?
+a) Increase the number of shards of Kinesis stream by using the UpdateShardCount command
+b) Replace Kinesis Streams with Kinesis Firehose instead
+c) Improve the performance of the stream by decreasing the number of shards using MergeShard command
+d) Implement Step Scaling to Kinesis Streams.
+
+
+Applications
+
+Security
+
+Developer Tools
+A web application is hosted on a fleet of EC2 instances inside an Auto Scaling Group with a couple of Lambda functions for ad hoc processing. Whenever you release updates to your application every week, there are inconsistencies where some resources are not updated properly. You need a way to group the resources together and deploy the new version of your code consistently among the groups with minimal downtime. Which among these options should you do to satisfy the given requirement with the least effort?
+a) Create CloudFormation Templates that have the latest configurations and code in them
+b) Use CodeCommit to publish your code quickly in a private respository and push them to your resources for fast updates
+c) Use deployment groups in CodeDeploy to automate code deployments in a consistent manner
+d) Create OpsWorks recipes that will automate launching resources containing the latest version of the code

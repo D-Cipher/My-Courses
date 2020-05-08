@@ -1,0 +1,14 @@
+Deployment Configurations
+
+Lambda Deployment Configurations -> specify how traffic is shifted from the original AWS Lambda function version to the new AWS Lambda function version.
+
+Types:
+1) Canary -> Traffic to updated first increment before the REMAINING traffic is shifted in the second increment. 
+- Choose from predefined canary options.
+- Specify percent of traffic and the interval (minutes) before shift
+
+2) Linear -> Traffic is shifted in equal increments with an equal number of minutes between each increment. 
+- Choose from predefined linear options.
+
+3) All-at-once -> All traffic is shifted from the original Lambda function to the updated Lambda function version at once.
+

@@ -1,0 +1,15 @@
+Elastic Network Interface
+
+Elastic Network Interface (ENI) (eth1) -> Attachable virtual network card that allows network traffic to be redirected from one instance to another when attached to the instance.
+- Once attached the ENI will remain attached even if the EC2 instance is stopped and restarted. 
+- Persist even if the instance is terminated
+
+Primary Network Interface (eth0) -> Default ENI that is attached to every instance in a VPC. 
+- You cannot detach or modify.
+- The maximum number of network interfaces that you can use varies by instance type.
+- Terminated if the instance is terminated.
+
+Types of Attach
+1) Hot attach -> Attaching while instance is running.
+2) Warm attach -> Attaching while instance is stopped. 
+3) Cold attach -> Attaching while instance is being launched.

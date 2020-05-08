@@ -1,0 +1,37 @@
+Binary Search
+
+Binary Search -> Used to find elements in a collection. Only works on sorted collection of elements.
+
+Steps:
+1) Initialize 2 pointers at the beginning of the array and at the end of the array
+2) Find the element at the middle of the 2 pointers; middle = start+(end-start)/2
+3) Test if target is bigger or smaller than middle.
+	a) If middle greater than target then set end pointer to middle.
+	b) If middle less than target then set start pointer to middle + 1
+```
+# Binary Search Example
+import math
+
+arr = [1,2,3,7,8,9]
+target = 9
+loc = None
+
+strt = 0
+end = len(arr) - 1
+
+while strt < end:
+  if arr[end]==target: loc=end; break
+  mid = math.floor(strt+(end-strt)/2)
+
+  if arr[mid] > target:
+    end = mid
+  elif arr[mid] < target:
+    strt = mid + 1
+  else:
+    loc = mid
+    break
+
+print(loc)
+
+
+```

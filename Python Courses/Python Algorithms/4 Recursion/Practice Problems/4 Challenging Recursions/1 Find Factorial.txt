@@ -1,0 +1,30 @@
+'''
+Write a functions that finds the factorial of any number using recursion.
+'''
+
+def findFactorialRecursive(number):
+  if number <= 1:
+    return number
+  
+  return number*findFactorialRecursive(number-1)
+
+  
+print(findFactorialRecursive(5))
+
+
+num = 5
+
+def factorial(num,curr=None,result=1):
+  if curr==None: curr=num
+
+  if curr <= 0: return result 
+
+  result = result*curr
+  curr -= 1
+  
+  return factorial(num, curr, result)
+
+print(factorial(num))
+
+
+

@@ -1,0 +1,55 @@
+'''LeetCode #63 Unique Paths II
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+
+Note: m and n will be at most 100.
+
+Input:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+Output: 2
+Explanation:
+There is one obstacle in the middle of the 3x3 grid above.
+There are two ways to reach the bottom-right corner:
+1. Right -> Right -> Down -> Down
+2. Down -> Down -> Right -> Right
+'''
+
+grid = [
+  [0,0,0,1],
+  [0,1,0,0],
+  [0,1,1,0],
+  [0,0,0,0]
+]
+
+def dfs(grid,x,y,ans=[],vis=None,path=None):
+  if vis==None:
+    vis = [[False for _ in grid[i]] for i in range(len(grid))]
+  if path==None: path=[]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  if invalidate or vis[y][x]==True or grid[y][x]==1:
+    return None
+  
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+  if (x,y) == (len(grid[y])-1, len(grid)-1):
+    ans.append(tuple(npath))
+  dfs(grid,x+1,y,ans,vis,npath)
+  dfs(grid,x-1,y,ans,vis,npath)
+  dfs(grid,x,y+1,ans,vis,npath)
+  dfs(grid,x,y-1,ans,vis,npath)
+  vis[y][x] = False
+
+  return ans
+
+print(len(dfs(grid,0,0)))

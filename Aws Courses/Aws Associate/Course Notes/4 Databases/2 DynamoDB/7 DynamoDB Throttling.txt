@@ -1,0 +1,8 @@
+Throttling
+
+Throttling -> prevents your application from consuming more capacity units than provisioned. 
+
+ProvisionedThroughputExceededException -> HTTP 400 error you recieve when throttled.  
+- DynamoDB SDK will automatically retry the request till successful
+
+Exponential Backoff -> Used by all AWS SDKs to make progressively longer waits between consecutive retries of the filed request.

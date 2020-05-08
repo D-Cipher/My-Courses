@@ -1,0 +1,17 @@
+Caching Strategies
+
+Lazy Loading -> Loads data into cache only on a cache miss. 
+- Upon request, if the data is in the cache then it will be returned to the application.
+- If not in the cache then returns a null and the application queries the database and writes the data into the cache.
+- Avoids filling up cache with unused data
+- Node failures are not fatal
+- Cache miss penalty -> overhead of querying the db when data is not there and writing to the cache.
+- Can have issues with stale data because data is only updated when there is a cache miss. Doesnt update when data changes in the db. We can deal with this by setting a Time to Live (TTL)
+
+Write-Through -> Loads data into cache whenever data is written to the database
+- Cached data is never stale
+- Users are generally more tolerante of additional latency to writes compared to reads.
+- Write penalty -> every write involves a write to the database as well as to the cache.
+- Fatal Node failures -> after a new node is spun up data is missing till added or updated in the db.
+- Waste of resources if most of data is never read.
+

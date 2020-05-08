@@ -1,0 +1,10 @@
+ElastiCache
+
+ElastiCache -> Database caching for most commonly used query results.
+- In-memory cache, takes huge load off of your databases. 
+- Used to increase performance.
+- Allows retrieval from fast in-memory cache rather than slower disk based dbs.
+- Sits between your application and your database
+- Good for ready-heavy dbs that do not change frequently
+- Good for storing results of compute intensive calculations
+- Good for distributed session data management

@@ -1,0 +1,9 @@
+API Gateway Security
+
+Same-Orgin policy -> web application security model that says one webpage can talk to another web page provided that they have the same domain name, prevents webpages from different domains from talking to another, prevents cross site scripting (XSS).
+- Enforced by browser
+
+Cross Orgin Resource sharing (CORS) -> Allows one server to relax the same-orgin policy. Allows one webpage from one domain to talk to another webpage from the other domain. Needed if you are using Javascript / AJAX that use multiple domains with API Gateway.
+1) Browser makes an HTTP OPTIONS (Get, put, or post) call for a URL.
+2) Server returns response: These Domains are approved to GET this URL.
+3) If you see an error like "orgin policy cannot be read at the remote resource" then you need to enable CORS on your API Gateway.

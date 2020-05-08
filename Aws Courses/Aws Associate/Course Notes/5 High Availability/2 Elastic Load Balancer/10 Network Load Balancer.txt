@@ -1,0 +1,13 @@
+Network Load Balancer
+
+Network Load balancer (NLB) -> Balance TCP Protocol for Performance. 
+- Operates at the layer 4 connection level.
+- TCP connections.
+- Capible of handling millions of request per second.
+- Integration with Route53 will remove unavailable load balancer ip address.
+
+Benefits:
+- Handles volatile workloads at scale
+- Supports registering target IP address
+- Supports routing requests to different application in single instance
+- Supports containerized applications

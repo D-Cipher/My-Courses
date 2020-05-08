@@ -1,0 +1,14 @@
+'''
+Given a list of packages that we need to build and the order of the dependencies for each package, how can we determine a valid order in which to build the packages?
+
+Example: 
+1) Package 1 has no dependencies
+2) Package 2 has dependencies on 1
+3) Package 3 has dependencies on 1
+4) Package 4 has dependencies on 2,3
+5) Package 5 has dependencies on 3,6
+6) Package 6 has dependencies on 1,2,3
+'''
+
+dependencydict =
+{1: [],

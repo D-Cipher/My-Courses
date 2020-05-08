@@ -1,0 +1,14 @@
+Sticky Sessions
+
+Sticky Sessions -> Bind a user session to a particular EC2 instance. This allows each request from that user to be sent to the same instance.
+- Uses cookies to bound client to backend instance for duration of cookie life.
+- If you find that all traffic from a user is being routed to one instance from your ELB then you should disable sticky sessions.
+
+Application Load Balancers:
+- Sticky sessions can be enabled but are sent at the target group level.
+- Supports load balancer generated cookies only.
+- Does not support application generated cookies.
+- Cookie named AWSALB.
+
+Classic Load Balancers:
+- Each request is independently registered to EC2 instance with the smallest load. 

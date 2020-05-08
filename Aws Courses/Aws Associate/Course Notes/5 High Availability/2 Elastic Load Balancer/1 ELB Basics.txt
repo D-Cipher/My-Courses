@@ -1,0 +1,27 @@
+Elastic Load Balancer 
+
+Elastic Load Balancer -> Distributes the load of traffic across multiple instances.
+- Monitors health of targets and only routes traffic to healthy ones.
+- 60 seconds default idle time.
+- Cannot set up ELB to serve instances across regions, only across AZs.
+- ELBs managed by Security Groups.
+
+Advantages:
+- Cache results to improve performance
+- Can be used to store session state data
+
+ELB Requirements:
+- Require ONE public subnet in EACH AZ you want ELB.
+- Internet facing ELBs require public IP.
+- If your ELB not distributing traffic to instances in an AZ its likely it does not have a public subnet
+- Recommend TWO public subnets in AZ you want ELB.
+
+Load Balancer States -> provisioning, active, failed
+
+Slow Start Mode -> Gives targets time to warm up before sending traffic.
+
+Connection Draining -> Specify how long to keep connection alive before reporting the instance as de-registered. 
+- Enabled by default at 300 seconds, can set up to 3,600 seconds.
+- "InService: Instance deregistration currently in progress" error if connection draining 
+
+504 Error -> Gateway has timed out, application not responding, look at the web server layer or db layer.

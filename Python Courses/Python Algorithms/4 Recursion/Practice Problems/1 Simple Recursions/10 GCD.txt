@@ -1,0 +1,33 @@
+'''
+Recursion: GCD
+Write a function that calculates the GCD (Greatest Common Divisor) of two numbers recursively.
+
+Examples
+gcd(10, 20) = 10
+
+gcd(1, 3) = 1
+
+gcd(5, 7) = 1
+
+gcd(2, 6) = 2
+'''
+
+def gcd(num1,num2, larger=None, smaller=None):
+  if larger==None and smaller==None:
+    if num1 > num2:
+      larger = num1; smaller = num2
+    elif num1 < num2:
+      larger = num2; smaller = num1
+    else:
+      return num1
+  
+  if larger % smaller == 0:
+    return smaller
+  
+  if smaller <= 0:
+    return 1
+
+  smaller -= 1
+  return gcd(num1,num2,larger,smaller)
+
+print(gcd(250,77))

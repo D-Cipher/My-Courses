@@ -1,0 +1,20 @@
+Snowball
+
+Snowball -> data transport appliance to transfer large amount of data. 
+- Comes in 80TB (72TB usable) and 50TB (42TB usable) models.
+- Ideal for transfering >10TB of data to S3
+- Keep the machine for 10 days free
+- Encryption is enforced
+- Import and export data via S3
+
+Snowball Edge -> Data transfer device for compute and storage.
+- 100TB (83TB usable) model.
+- Can transport data at speeds faster than the internet
+- Durable local storage
+- Comes with local Lambda compute
+- Comes with EC2 compute instances 
+- Can be used in a cluster of devices
+- Allows for NSF transfers
+- Uses IoT Greengrass
+
+Snowmobile -> 100PB shipping container for moving massive amounts of data.

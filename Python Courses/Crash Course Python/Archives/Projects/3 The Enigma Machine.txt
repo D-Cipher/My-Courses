@@ -1,0 +1,96 @@
+"""
+The Enigma machine was encryption device developed in the 20th century used to encrypt, decrypt, and protect military communication. It was famously deployed by the Germans during World War II (https://en.wikipedia.org/wiki/Enigma_machine). We will create a simple enigma machine that creates keys, encrypts messanges, and decrypts those messages for us.
+
+The way our simple "enigma" machine will work is it will create a random key by scrambbling the alphabet, numbers, and punctuations (. , ! [space]). Then we it will use simple subsitution to subsitute our cipher with the alphabet and punctuations. This creates a randomized secret-key. Our machine will use this to decrypt or encrypt the user input message.
+"""
+
+import random
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz1234567890.,! '
+test_secret_key = '2dfuio018m4.ex5ch9vy63zwtlsrnpg b,k!qja7'
+
+def mapping(alphabet,secret_key):
+  if len(alphabet) != len(secret_key):
+    return 'Invalid Secret Key'
+  
+  result = dict()
+
+  for i in range(len(alphabet)):
+    result[alphabet[i]] = secret_key[i]
+  
+  return result
+
+def encrypt(message,alphabet,secret_key):
+  keyMap = mapping(alphabet,secret_key)
+  result_ls = []
+  for letter in message:
+    result_ls.append(keyMap[letter.lower()])
+  
+  result = ''.join(result_ls)
+
+  return result
+
+def decrypt(cipher,alphabet,secret_key):
+    reverseKeyMap = mapping(secret_key,alphabet)
+    result_ls = []
+    for letter in cipher:
+      result_ls.append(reverseKeyMap[letter.lower()])
+    
+    result = ''.join(result_ls)
+
+    return result
+
+def makeSecretKey(alphabet):
+  keys = list(alphabet)
+  random.shuffle(keys)
+  secret_key = ''.join(keys)
+  return secret_key
+
+def enigma():
+  print('Would you like to ENCRYPT a message? [y or n]')
+  option = input()
+  if option == 'y':
+    print(' ')
+    print('What is your message?')
+    message = input()
+    secret_key = makeSecretKey(alphabet)
+    cipher = encrypt(message,alphabet,secret_key)
+    print(' ')
+    print('===Output===')
+    print('Your encrypted message is: ' + cipher)
+    print(' ')
+    print('===DO NOT SHARE===')
+    print('Your message is: ' + message)
+    print('Your secret key is: ' + secret_key)
+    print('DO NOT LOSE YOUR SECRET KEY!!!')
+    print(' ')
+  elif option == 'n':
+    print(' ')
+    print('Would you like to DECRYPT a message? [y or n]')
+    option2 = input()
+    if option2 == 'y':
+      print(' ')
+      print('What is your encrypted message?')
+      cipher = input()
+      print(' ')
+      print('What is your secret key?')
+      secret_key = input()
+      message = decrypt(cipher,alphabet,secret_key)
+      print(' ')
+      print('===Output===')
+      print('Your decrypted message is: ' + message)
+      print(' ')
+    elif option2 == 'n':
+      print(' ')
+      print('Program Exited.')
+      print(' ')
+    else:
+      print(' ')
+      print('Invalid Entry.')
+      print(' ')
+  else:
+      print(' ')
+      print('Invalid Entry.')
+      print(' ')
+
+enigma()

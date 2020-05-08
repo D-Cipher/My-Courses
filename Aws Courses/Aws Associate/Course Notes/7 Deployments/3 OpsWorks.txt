@@ -1,0 +1,8 @@
+OpsWorks
+
+OpsWorks -> A configuration management service that provide automation platforms that allow you to use code to automate the configurations of your servers. Allows for Chef and Puppet management.
+
+Compatible with:
+1) Chef Platform -> Automation platform designed to stretch beyond infrastructure management to include compliance, assurance, and microservices management.
+
+2) Puppet Enterprise -> Automation platform used for more traditional infrastructure management, more established platform.

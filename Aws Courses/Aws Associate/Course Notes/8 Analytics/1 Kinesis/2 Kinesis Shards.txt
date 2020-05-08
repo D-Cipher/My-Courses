@@ -1,0 +1,20 @@
+Kinesis Shards
+
+Shards -> Sequence of data records in a stream, each with unique sequence number.
+- Base throughput unit of the stream.
+- Kinesis stream is made up of a set of multiple shards. 
+- Data capacity of stream is sum capacity of the shards.
+- Shards are added and removed as throughput changes.
+
+Shard Capacity
+- 5 reads per second, up to max of 2MB per second
+- 1K writes per second, up to max of 1MB per second
+
+Enhanced Fan-out -> When enabled, shard provides 1MB/sec data input 2MB/sec data output for each consumer. If not using fan-out then data output is shared.
+
+UpdateShardCount -> API call lets you adjust the number of shards in your stream to adapt to changes in the rate of data flow through the stream.
+
+Shard split -> Increases the number of shards in your stream and therefore increases the data capacity of the stream. Because you are charged on a per-shard basis it increases cost of your stream.
+
+Shard merge -> Reduces the number of shards in your stream and therefore decreases the data capacity and decrease cost of the stream.
+

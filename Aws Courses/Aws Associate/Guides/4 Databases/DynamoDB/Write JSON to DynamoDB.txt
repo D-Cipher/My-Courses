@@ -1,0 +1,32 @@
+import json
+import boto3
+s3 = boto3.client('s3')
+dynamodb = boto3.resource('dynamodb', 'us-west-2')
+
+def lambda_handler(event, context):
+
+	bucket = 'general-files-bucket'
+	file_name = 'bid_data_hist_mar2020.json'
+
+	#Get json object, read object, timestamp
+	s3_object = s3.get_object(Bucket=bucket,Key=file_name)
+
+	reader = s3_object['Body'].read()
+	json_data = json.loads(reader)
+
+	for i in range(len(json_data)):
+	    json_data[i]['timestampUnix'] = int(json_data[i]['timestampUnix'])
+
+	#Put json data into dynamodb table
+	table = dynamodb.Table('bid_analysis_table')
+
+	result = None
+
+	try:
+	   for item in json_data:
+	   	table.put_item(Item=item)
+	   result = {'statusCode': 200,'body': json.dumps('Data inserted.')}
+	except:
+	   result = {'statusCode': 400,'body': json.dumps('Error when trying to insert data.')}
+
+	return result

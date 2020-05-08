@@ -1,0 +1,29 @@
+Start of Authority
+
+Start of Authority (SOA) Record -> Base DNS information about the domain. When you buy a domain, SOA stores information about domain including:
+- name of the server that supplied the data for the zone
+- administrator of the zone
+- current version of the data file
+- number of seconds of the time-to-live file.
+
+SOA Example:
+```
+ns-2048.awsdns-64.net. hostmaster.example.com. 1 7200 900 1209600 86400
+```
+
+Name Server (NS) Record -> Used for looking up names off of the different domain name servers that are listed and associated with the SOA.
+- AWS maintains multiple Name Servers for your domain just in case one TLD goes down you have others to go to.
+
+NS Example:
+```
+ns-2048.awsdns-64.com
+ns-2049.awsdns-65.net
+ns-2050.awsdns-66.org
+ns-2051.awsdns-67.co.uk
+```
+
+Using Route53 for existing domain:
+1) Create a Route53 Hosted Zone
+2) Set the NS records of the domain to point to Route53 name servers
+3) Serve website content (ei: use static website via s3 bucket)
+4) Map Route53 Alias record to website endpoint

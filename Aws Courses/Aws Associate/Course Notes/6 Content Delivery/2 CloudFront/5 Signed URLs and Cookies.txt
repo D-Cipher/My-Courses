@@ -1,0 +1,19 @@
+Signed URLs and Cookies
+
+Origin Access Identity -> Virtual user identity that is used to give the CloudFront distribution permission to fetch a private object from an S3 bucket.
+- Only CloudFront can access your S3 bucket and CloudFront distributes the URLs to authorized users.
+- Prevents direct access to S3
+- No Direct URLs
+
+Signed URLs -> Way to ensure that users attempting access to files in an S3 bucket can be authorised, ex only paid users can access.
+- Require the creation of an application and policy to generate and control these items.
+
+Signed URLs used for:
+- You want to use RTMP distributions
+- You want to restrict access to individual files
+- Your users are using clients (ex HTTP client) that don't support cookies
+
+Signed Cookies -> Used to restrict access to multiple files.
+- Great for restricting all files for a video in HLS format
+- Great for restricting all files in the subscriber area of the website
+- Great if you don't want to change your URL

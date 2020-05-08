@@ -1,0 +1,20 @@
+"""
+Implementing cached_property
+"""
+
+from functools import cached_property
+#from cached_property import cached_property
+# Important: cached_property cannot take arguments
+
+class Hello:
+
+  @cached_property
+  def calc(self):
+    print('computing stuff....')
+    return 'hello'
+
+h = Hello()
+
+print(h.calc)
+print(h.calc)
+print(h.calc)

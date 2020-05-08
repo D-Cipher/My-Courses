@@ -1,0 +1,28 @@
+Graphs
+
+Graphs -> set of values that are related in a pair wise function.
+- Node -> item in the graph
+- Edge -> connections between the graphs
+- Root Node -> Node that is the ancestor to all other nodes.
+- Ancestor Node -> Node that has children.
+- Leaf Node -> Nodes with no children.
+- Neighbors -> All connected nodes of a node.
+
+Traversal -> Search every node in a graph or tree.
+
+Graph Types:
+
+Direction
+1) Directed -> Movement between node is one way.
+- {v1:[v2,v3]}, v1 is pointing to v2 and v3, but not the other way around. 
+
+2) Undirected -> Movement between node is bi-directional. 
+- {v1:[v2,v3], v2:[v1], v3:[v1]} v1 is pointing to v2 and v3, and both are pointing to v1.
+
+Weighting
+1) Weighted -> edges have values
+2) Unweighted -> edges have no values
+
+Cycle
+1) Cyclic -> One edge start from one node and end at same node. Forms a cycle.
+2) Acyclic -> No edges start from one node and end at same node. Does not form a cycle.

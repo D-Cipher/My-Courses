@@ -1,0 +1,58 @@
+#Programming Fundementals: Functions
+
+#====Functions====
+
+#Note: Languages fall on this spectrum: Procedual -- Functional -- Object-Oriented
+
+import random
+
+#A function can have no inputs
+def dice():
+    diceRoll = random.randrange(1,7)
+    return diceRoll
+
+print(dice())
+
+#A function with one input
+def payrate(hourPay):
+  result = hourPay*8
+  return result
+  
+print(payrate(50))
+
+#A function can have multiple inputs
+def radioDisplay(songName, artist):
+  output = "Up next: " + songName + ", by " + artist
+  return output
+
+print(radioDisplay("Hello", "Adel"))
+
+#Input allows you to input the value of your variable.
+name = input()
+print(name)
+
+#Function that simulates the matrix scene.
+def matrix():
+  print("Wake up,")
+  print("your name...")
+  name = input()
+  print("The Matrix has you.")
+  print("Follow the white rabbit.")
+  response = input()
+  knock = "Knock, knock... " + name + "."
+  print(knock)
+  
+matrix()
+
+#Difference b/w Global and Local
+
+#--Global Variable
+
+#-- Local Variable
+
+
+
+Lucky numbers
+
+
+

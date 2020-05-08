@@ -1,0 +1,5 @@
+Message Queue
+
+Message Queue (MQ) -> managed message broker service allows applications with different languages to communicate and exchange information
+- Used for integrating with existing applications you want to move to the cloud.
+- Supports industry standard APIs and protocols

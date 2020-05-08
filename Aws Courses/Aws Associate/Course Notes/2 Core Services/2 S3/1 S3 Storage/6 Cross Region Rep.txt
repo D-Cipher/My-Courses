@@ -1,0 +1,12 @@
+Cross Region Replication
+
+Cross Region Replication -> Replicate objects across different regions to protect from outage of one AZ or an entire region.
+- Cannot replicate into the same region
+- Does not replicate existing files in the bucket only new files and new versions
+- Deleting marker does not replicate
+- Deleting versioning does not replicate
+
+Prerequisites for Cross Region Replication:
+1) Versioning must be enabled on the bucket
+2) Destination bucket must be in a different region
+3) S3 must have permission to destination bucket

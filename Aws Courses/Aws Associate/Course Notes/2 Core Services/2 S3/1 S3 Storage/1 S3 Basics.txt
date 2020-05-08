@@ -1,0 +1,47 @@
+S3 Basics
+
+S3 -> object storage that is secure, durable, highly scalable. Stands for Simple Storage Service. Store and retrieve any amount of data from anywhere on the web.
+- Object-based storage
+- Recieve HTTP 200 when upload is complete
+
+S3 Buckets -> Storage resource that is a universal namespace where name is unique globally
+- While names are global buckets are created regionally and must require cross region replication to replicate across regions.
+- Objects replicated across AZs, but are NOT replicated across all regions.
+- Objects immutable, the only way to change a byte of an object is to replace the whole object
+
+Bucket Addresses:
+- http://mybucket.s3.amazonaws.com
+- http://mybucket.s3-aws-region.amazonaws.com
+- http://s3-aws-region.amazonaws.com/mybucket
+
+S3 Guarantees
+- 99.9...(x11)% durability guarantee for all S3 (eleven 9s durability)
+- 99.9% availability guarantee for S3 standard
+- 99% availability guarantee for S3 Intel, S-IA, One Zone IA
+- 99.99% availability design for S3 standard
+- 99.9% availability design for S3 Intel, S-IA
+- 99.5% availability design for One Zone IA
+
+S3 Features
+1) Tiered Storage -> different storage classifications
+2) Lifecycle Management -> move objects around to 3) different tiers if object reaches a certain age.
+4) Versioning -> set different versions
+5) Encryption -> encrypt objects
+6) MFA -> require authentication to access if needed
+Secure data using -> Access Control Lists and Bucket Policies
+
+S3 Charges based on 
+- Amount stored GBs per month
+- Number of Requests: Put, Copy, Post, List, Get
+- Different tiers charge
+- Data Transfer to different region charge
+- Transfer Acceleration charge -> transfer files over long distances
+- Cross region replication -> when replicating data to different regions
+- Free: Transfer into S3, transfer in the same region, and to other services.
+
+S3 Terms
+Key -> Simply the name of the object
+Value -> data made of sequence of bytes
+Version ID -> version of the object, allows multiple versions, and version control
+Metadata -> data on data
+Subresources -> access control lists and torrents

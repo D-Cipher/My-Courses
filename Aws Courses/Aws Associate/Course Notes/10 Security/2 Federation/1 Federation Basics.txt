@@ -1,0 +1,24 @@
+Federation
+
+Web Identity Federation -> Allows users, with web identities from identity provider, to have access to AWS resources.
+- Role assigned using Security Token Service (STS)
+- Allow users to authenticate with Mobile Apps and Web Apps
+- Integrates with OpenID Connect identity providers such as Amazon, Facebook, Google
+
+Identity Providers -> manage identities outside of AWS giving external user identities permissions to use AWS resources.
+- Useful if your organization already has its own identity system, such corporate directory. 
+- Useful if you are creating a mobile app or web application that requires access to AWS resources.
+
+JSON Web Token (JWT) -> Token usead to authenticate user from identity provider. JWT token exchanged for aws temporary credentials (role, identity pools) for access to aws resources.
+
+Federation can come from three sources:
+1) Active Directory
+2) Identity providers such as OpenID
+3) Cross account access though another AWS account
+
+Federation Process:
+1) User authenticates against identity provider 
+2) User obtain temporary authentication token
+3) Identity provider API call AssumedRoleWithWebIdentity
+4) User accesses AWS resources
+

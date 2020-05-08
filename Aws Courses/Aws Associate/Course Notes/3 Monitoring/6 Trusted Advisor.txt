@@ -1,0 +1,11 @@
+Trusted Advisor
+
+Trusted Advisor analyzes your AWS account and provides best practice recommendations on the following:
+- Cost Optimization
+- Performance
+- Security
+- Fault Tolerance
+- Service Limits -> best way to ensure all of your AWS resources do not go beyond their service limits.
+
+
+

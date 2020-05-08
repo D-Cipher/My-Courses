@@ -1,0 +1,5 @@
+AWS PrivateLink
+
+AWS PrivateLink -> uses the AWS network to provide private secure connectivity between VPCs, AWS services, and on-premises applications. 
+- Billing: each hour VPC endpoint remains provisioned and data processing for GB processed through the endpoint.
+- ENI with interface endpoint (and private ip) can serve as entry point for traffic destined for consumption

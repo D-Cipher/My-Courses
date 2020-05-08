@@ -1,0 +1,5 @@
+X-Forwarded-For Header
+
+X-Forwarded-For Header -> Holds the ip address for the user. 
+- When user go to your website their ip will hit the load balancer and load balancer will access your application with the load balancer's IP address. 
+- We can use the X-Forwarded-For to forward user's IP address so we can see who is accessing our web servers.

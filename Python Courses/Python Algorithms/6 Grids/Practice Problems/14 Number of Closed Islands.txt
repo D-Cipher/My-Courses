@@ -1,0 +1,78 @@
+'''LeetCode #1254 Number of Closed Islands
+Given 2D grid consists of 0s (land) and 1s (water).  An island is a maximal 4-directionally connected group of 0s and a closed island is an island totally (all left, top, right, bottom) surrounded by 1s.
+
+Return the number of closed islands.
+
+Input: grid = [[1,1,1,1,1,1,1,0],[1,0,0,0,0,1,1,0],[1,0,1,0,1,1,1,0],[1,0,0,0,0,1,0,1],[1,1,1,1,1,1,1,0]]
+Output: 2
+Explanation: 
+Islands in gray are closed because they are completely surrounded by water (group of 1s).
+
+Input: grid = [[0,0,1,0,0],[0,1,0,1,0],[0,1,1,1,0]]
+Output: 1
+
+Input: grid = [[1,1,1,1,1,1,1],
+               [1,0,0,0,0,0,1],
+               [1,0,1,1,1,0,1],
+               [1,0,1,0,1,0,1],
+               [1,0,1,1,1,0,1],
+               [1,0,0,0,0,0,1],
+               [1,1,1,1,1,1,1]]
+Output: 2
+
+Constraints:
+1 <= grid.length, grid[0].length <= 100
+0 <= grid[i][j] <=1
+'''
+
+grid = [
+[1,1,1,1,1,1,1,0],
+[1,0,0,0,0,1,0,0],
+[1,0,1,0,1,1,1,0],
+[1,0,0,0,0,1,0,1],
+[1,1,1,1,1,1,1,0]]
+
+def dfs(grid,x,y,ans=None,vis=None,pos=None,edge=None):
+  if ans==None: ans=[]
+  if pos==None: pos=[]
+  if edge==None: edge=[]
+  if vis==None:
+    vis = [[False for _ in grid[i]] for i in range(len(grid))]
+  
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  if invalidate or vis[y][x]==True or grid[y][x]==1:
+    return None
+
+  isedge = (y==0 or x==0 or y==(len(grid)-1) or x==(len(grid[y])-1))
+
+  vis[y][x] = True
+  if (x,y) not in pos:
+    pos.append((x,y))
+    if isedge==True:
+      edge.append(True)
+    
+    ans.append(grid[y][x])
+  
+  dfs(grid,x+1,y,ans,vis,pos,edge)
+  dfs(grid,x-1,y,ans,vis,pos,edge)
+  dfs(grid,x,y+1,ans,vis,pos,edge)
+  dfs(grid,x,y-1,ans,vis,pos,edge)
+  vis[y][x] = False
+  grid[y][x] = 1
+
+  if True in edge:
+    ans = None
+
+  return ans
+
+result = []
+
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    if grid[y][x]==0:
+      search = dfs(grid,x,y)
+      if search != None:
+        result.append(tuple(search))
+
+print(result)

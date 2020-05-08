@@ -1,0 +1,17 @@
+Elastic Beanstalk
+
+Elastic Beanstalk -> Quickly deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those application. 
+- Ideal for for orchestrating multiple services
+- Long running worker processes such as managing SQS
+- Multi-tier web apps
+- Considered a PaaS
+
+Simply upload the application and Elastic Beanstalk automatically handles the following: 
+- Capacity provisioning
+- Load balancing
+- Scaling
+- Application health monitoring
+
+Docker Deployments -> Elastic Beanstalk supports the deployment of web applications from Docker containers.
+- Elastic Beanstalk automatically handles details of capacity provisioning, load balancing, scaling, and application health monitoring.
+

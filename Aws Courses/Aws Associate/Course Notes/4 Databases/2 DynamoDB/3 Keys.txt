@@ -1,0 +1,12 @@
+Keys
+
+Primary Keys -> DynamoDB stores and retrieves data based on a this key.
+
+Sort Keys -> Secondary key used in combination with primary key to filter through data.
+
+There are two types of primary keys:
+1) Partition Key -> uniquly attributed values, inputs are put into an internal hash function and the out put of the hash determines the physical location of where the data is stored, ex: userID.
+- High-cardinality -> large number of distinct values for each item, the more distinct the partition key values the more efficient the provisioned throughput.
+
+2) Composite Key (partition + sort key) -> in combination. This is used if data uses partition keys multiple times. ex: userID + timestamp. 
+

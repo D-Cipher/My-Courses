@@ -1,0 +1,17 @@
+Elastic IP Address
+
+Elastic IP Address (EIP) -> A static public IPv4 address designed for cloud computing.
+- You must specify an elastic IP address in order to associate the instance with a NAT Gateway.
+- You can mask the failure of an instance or software by quickly re-mapping the address to another instance in your account.
+- Currently do not support Elastic IP for IPv6
+- Elastic IP remains associated with your AWS account until you explicitly release them.
+- Elastic IP remains associated with your instance even when it is stopped and then started again.
+- Limited to five Elastic IP addresses
+
+Typical reason EC2 cannot access internet:
+1) Instance does not have an EIP or a public IP address.
+2) Route table is not configured properly.
+
+EIP does not incur a charge if:
+1) EIP is associated with a running EC2 instance.
+2) The EC2 instance only has one EIP attached.

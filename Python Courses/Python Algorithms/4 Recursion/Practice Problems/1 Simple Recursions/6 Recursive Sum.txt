@@ -1,0 +1,32 @@
+'''
+Recursion: Array Sum
+Write a function that finds the sum of a list. Make your function recursive.
+
+Examples
+sum_recursively([1, 2, 3, 4]) = 10
+
+sum_recursively([1, 2]) = 3
+
+sum_recursively([1]) = 1
+
+sum_recursively([]) = 0
+Notes
+Return 0 for an empty list.
+Check the Resources tab for info on recursion.
+'''
+
+arr = [1, 2, 3, 4]
+
+def sumls(arr, result=0, i=0):
+
+  if len(arr) == 0:
+    return 0
+  
+  if i > len(arr) - 1:
+    return result
+
+  result += arr[i]
+  i += 1
+  return sumls(arr, result, i)
+  
+print(sumls(arr))

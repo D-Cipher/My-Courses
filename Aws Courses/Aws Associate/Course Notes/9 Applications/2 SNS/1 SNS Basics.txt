@@ -1,0 +1,17 @@
+SNS
+
+Simple Notification Service (SNS) -> channel publisher/subscriber service that sends notifications to subscribed channel.
+- delivers messages to subscribers and other services
+- push cloud notifications directly to mobile devices (SMS)
+- Topic -> access point for users to subscribe to notifications.
+- Messages are stored redundantly.
+- Instant push based delivery
+- Simple integration and API
+- Flexible message delivery
+- No upfront cost
+
+Supported Transport Protocols:
+- HTTP/HTTPs
+- Email/Email-JSON
+- SQS
+- SMS

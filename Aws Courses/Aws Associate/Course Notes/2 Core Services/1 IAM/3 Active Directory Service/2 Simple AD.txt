@@ -1,0 +1,7 @@
+Simple AD
+
+Simple AD -> Less expensive standalone directory in the cloud that supports basic AD features compatible with AWS applications.
+
+Types:
+1) Small Simple AD up to 500 users
+2) Large Simple AD up to 5000 users

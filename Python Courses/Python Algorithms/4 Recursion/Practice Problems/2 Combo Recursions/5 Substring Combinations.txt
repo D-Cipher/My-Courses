@@ -1,0 +1,23 @@
+'''
+Given a string, find all substring combinations both contiguous and non-contiguous, then return them in a list.
+
+Example
+Input: S = 'abc'
+Output: ['a', 'ab', 'abc', 'ac', 'b', 'bc', 'c']
+Input: S = 'abcb'
+Output: ['a', 'ab', 'abb', 'abbc', 'abc', 'abcb', 'ac', 'acb', 'acbb', 'b', 'bb', 'bbc', 'bc', 'bcb', 'c', 'cb', 'cbb']
+'''
+
+chars = 'abc'
+
+def letterCombos(chars,ans=[],curr='',index=0):
+
+  for i in range(index, len(chars)):
+    newcurr = curr+chars[i]
+    if chars.count(chars[i]) >= newcurr.count(chars[i]):
+      if newcurr not in ans:
+        ans.append(newcurr)
+        letterCombos(chars,ans,newcurr,i)
+  return ans
+
+print(letterCombos(chars))

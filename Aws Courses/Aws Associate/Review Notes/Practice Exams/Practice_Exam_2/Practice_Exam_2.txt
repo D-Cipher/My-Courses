@@ -1,0 +1,271 @@
+Practice Exam 2
+
+IAM
+2. You are deploying an Interactive Voice Response (IVR) telephony system in your cloud architecture that interacts with callers, gathers information, and routes calls to the appropriate recipients in your company. The system will be composed of an Auto Scaling group of EC2 instances, an Application Load Balancer, and an RDS instance in a Multi-AZ Deployments configuration. To protect the confidential data of your customers, you have to ensure that your RDS database can only be accessed using the profile credentials specific to your EC2 instances via an authentication token.
+a) Enable the IAM DB Authentication
+b) Configure SSL in your application to encrypt the database connection via 
+c) Create an IAM Role and assign it to your EC2 instances which will grant exclusive access to your RDS instances
+d) Use a combination of IAM and STS to restrict access to your RDS instance via a temporary token.
+
+EC2
+12. You have launched a new enterprise application with a web server and a database. You are using a large EC2 Instance with one 500 GB EBS volume to host a relational database. Upon checking the performance, it shows that write throughput to the database needs to be improved. Which of the following is the most suitable configuration to help you achieve this requirement? (Choose 2)
+a) Set up a RAID 0 configuration with two EBS Volumes
+b) Use a Paravirtual (PV) AMI and enable enhanced networking
+c) Set up a RAID 1 configuration on one of the EBS Volumes and RAID 5 on the other
+d) Set up EC2 instances in a placement group
+e) Increase the size of the EC2 instance
+
+22. A content management system (CMS) is hosted on a fleet of auto-scaled, On-Demand EC2 instances which use Amazon Aurora as its database. Currently, the system stores the file documents that the users uploaded in one of the attached EBS Volumes. Your manager noticed that the system performance is quite slow and he has instructed you to improve the architecture of the system. In this scenario, what will you do to implement a scalable, high throughput, POSIX-compliant solution?
+a) Use a Lambda function to move the file documents into an S3 bucket and enable life-cycle policies to archive files that are infrequently accessed
+b) Use EFS
+c) Use Provisioned IOPS SSD volume for your EBS volume.
+d) Use Memcached so that you only store cached data in memory and configure lazy loading to only cache on a "cache miss"
+
+24. You are building a new data analytics application in AWS which will be deployed in an Auto Scaling group of On-Demand EC2 instances and a MongoDB database. It is expected that the database will have high-throughput workloads performing small, random I/O operations. As the Solutions Architect, you are required to properly set up and launch the required resources in AWS. Which of the following is the most suitable EBS type to use for your database?
+a) General Purpose SSD
+b) Provisioned IOPS SSD
+c) Throughput Optimized HDD
+d) Cold HDD
+
+33. You have a web application deployed in AWS which is currently running in the eu-central-1 region. You have an Auto Scaling group of On-Demand EC2 instances which are using pre-built AMIs. Your manager instructed you to implement disaster recovery for your system so in the event that the application goes down in the eu-central-1 region, a new instance can be started in the us-west-2 region. As part of your disaster recovery plan, which of the following should you take into consideration?
+a) In the AMI dashboard, add the us-west-2 region to the Auto Scaling launch configurations. 
+b) Copy the AMI from the eu-central-1 region to the us-west-2 region. Afterwards, create a new Auto Scaling group in the us-west-2 region to use the new AMI ID.
+c) Create a VPC in the us-west-2 region and deploy the instance with the AMI template into the new VPC, then enable VPC peering.
+d) Create a VPC in the us-west-2 region and use CloudFormation to deploy the instances into the new VPC, then enable VPC peering.
+
+34. You are trying to establish an SSH connection to a newly created Amazon EC2 instance using the PuTTY tool. However, you are getting the following error message: "Error: No supported authentication methods available." What steps should you take to fix this issue? (Choose 2)
+a) Varify if your private key (.pem) file has been correctly converted to the format recongnized by PuTTY (.ppk)
+b) Varify that your IAM user policy has permissions to launch the EC2 instances.
+c) Varify that your are connecting with the appropriate user name for you AMI such as ec2-user for Linux AMI, centos for Centos AMI, or admin for Debian AMI.
+d) Varify that the Amazon EC2 Instance was launched with the proper IAM role
+e) Varify that that you have set up PuTTy with the right SSL certs used to access your EC2 instance.
+
+VPC
+4. In your AWS VPC, you need to add a new subnet that will allow you to host a total of 20 EC2 instances.
+Which of the following IPv4 CIDR block can you use for this scenario?
+a) 172.0.0.0/27
+b) 172.0.0.0/28
+c) a) 172.0.0.0/29
+d) 172.0.0.0/30
+
+SQS
+18. You have a web application hosted in EC2 that consumes messages from an SQS queue and is integrated with SNS to send out an email to you once the process is complete. You received 5 orders but after a few hours, you saw more than 20 email notifications in your inbox. Which of the following could be the possible culprit for this issue?
+a) SQS is set for long polling so messages may be sent twice
+b) SQS is set for short polling so messages may be sent twice
+c) The web application is not deleting the messages in SQS after it has processed them
+d) The web application does not have permissions to comsume the messages in SQS
+
+Monitoring
+40. You founded a tech startup that provides online training and software development courses to various students across the globe. Your team has developed an online portal in AWS where the students can log into and access the courses they are subscribed to. Since you are in the early phases of the startup and the funding is still hard to come by, which service can help you manage the budgets for all your AWS resources?
+a) AWS Cost Explorer
+b) AWS Billing Dashboard
+c) AWS Budget
+d) CloudWatch
+
+CloudWatch
+1. Your cloud architecture is composed of Linux and Windows EC2 instances which process high volumes of financial data 24 hours a day, 7 days a week. To ensure high availability of your systems, you are required to monitor the memory and disk utilization of all of your instances. Which of the following is the most suitable monitoring solution to implement?
+a) Use the default CloudWatch configurations to monitor the memory and disk utilization of your EC2 instances. Install the AWS Systems Manager (SSM) Agent on all of your EC2 instances
+b) Install CloudWatch agent on all of your EC2 instances which gathers the memory and disk utilization data and view the custom metrics in the CloudWatch console
+c) Enable Enhanced Monitoring and install the CloudWatch agent to all of your EC2 instances to view the memory and disk utilization in the CloudWatch dashboard
+d) Enable Enhanced Monitoring and view the memory and disk utilization in the CloudWatch dashboard
+
+3. The company that you are working for has a highly available architecture consisting of an elastic load balancer and several EC2 instances configured with auto-scaling in three Availability Zones. You want to monitor your EC2 instances based on a particular metric, which is not readily available in CloudWatch. Which of the following is a custom metric in CloudWatch which you have to manually set up?
+a) Memory Utilization of an EC2 instance
+b) CPU Utilization of an EC2 instance
+c) Read write Utilization of an EC2 instance
+d) Network Utilization of an EC2 instance
+
+15. An online cryptocurrency exchange platform is hosted in AWS which uses ECS Cluster and RDS in Multi-AZ Deployments configuration. The application is heavily using the RDS instance to process complex read and write database operations. To maintain the reliability, availability, and performance of your systems, you have to closely monitor how the different processes or threads on a DB instance use the CPU, including the percentage of the CPU bandwidth and total memory consumed by each process. Which of the following is the most suitable solution to properly monitor your database?
+a) Use CloudWatch to monitor your database
+b) Create a script that collects and publishes custom metrics to Cloudwatch, then set up a custom dashboard to view metrics.
+c) Enable Enhanced Monitoring in RDS
+d) Check the CPU% and MEM% in the RDS console.
+
+CloudTrail
+20. A Solutions Architect is working for a company which has multiple VPCs in various AWS regions. The Architect is assigned to set up a logging system which will track all of the changes made to their AWS resources in all regions, including the configurations made in IAM, CloudFront, AWS WAF, and Route 53. In order to pass the compliance requirements, the solution must ensure the security, integrity, and durability of the log data. It should also provide an event history of all API calls made in AWS Management Console and AWS CLI. Which of the following solutions is the best fit for this scenario?
+a) Set up CloudTrail using the AWS CLI and also pass both the "--is-multi-region-trail" and "--include-global-service-events" parameters then encrypt log files using KMS. Apply Multi Factor Authentication (MFA) delete on the S3 bucket and ensure that only authorized users can access the logs by configuring the bucket policies.
+b) Set up CloudWatch using the AWS CLI and also pass both the "--is-multi-region-trail" and "--include-global-service-events" parameters then encrypt log files using KMS. Apply Multi Factor Authentication (MFA) delete on the S3 bucket and ensure that only authorized users can access the logs by configuring the bucket policies.
+c) Set up a CloudWatch Flow Log and encrypt the log files using KMS. Apply Multi Factor Authentication (MFA) delete on the S3 bucket and ensure that only authorized users can access the logs by configuring the bucket policies.
+d) Set up a CloudTrail Flow Log and encrypt the log files using KMS. Apply Multi Factor Authentication (MFA) delete on the S3 bucket and ensure that only authorized users can access the logs by configuring the bucket policies.
+
+RDS
+14. An application that records weather data every minute is deployed in a fleet of Spot EC2 instances and uses a MySQL RDS database instance. Currently, there is only one RDS instance running in one Availability Zone. You plan to improve the database to ensure high availability by synchronous data replication to another RDS instance. Which of the following performs synchronous data replication in RDS?
+a) RDS DB instance running as Multi-AZ.
+b) RDS Read Replica
+c) DynamoDB Read Replica
+d) CloudFront
+
+27. An online shopping platform is hosted on an Auto Scaling group of Spot EC2 instances and uses Amazon Aurora PostgreSQL as its database. There is a requirement to optimize your database workloads in your cluster where you have to direct the write operations of the production traffic to your high-capacity instances and point the reporting queries sent by your internal staff to the low-capacity instances. Which is the most suitable configuration for your application as well as your Aurora database cluster to achieve this requirement?
+a) Configure your application to use the reader endpoint for both the production traffic and the reporting queries, which will enable your Aurora database to automatically perform load-balancing among all of the Aurora Replicas
+b) In your application, use the instance endpoint of your Aurora database to handle the incoming production traffic and use the cluster endpoint to handle reporting queries.
+c) Create a custom endpoint in Aurora base on the specified criteria for the production traffic and another custom endpoint to handle the reporting queries
+d) Aurora will automatically direct the production traffic to your high-capacity instances and the reporting queries to your low-capacity instances.
+
+36. You are designing a multi-tier web application architecture that consists of a fleet of EC2 instances and an Oracle relational database server. It is required that the database is highly available and that you have full control over its underlying operating system. Which AWS service will you use for your database tier?
+a) Oracle database in RDS with Read Replica
+b) Oracle database in RDS with Multi-AZ
+c) Aurora with cross-region replication
+d) EC2 instances with data replication between two different AZs.
+
+DynamoDB
+10. A popular social network is hosted in AWS and is using a DynamoDB table as its database. There is a requirement to implement a 'follow' feature where users can subscribe to certain updates made by a particular user and be notified via email. Which of the following is the most suitable solution that you should implement to meet the requirement?
+a) Using the Kinesis Client Library (KCL), write an application that leverages on DynamoDB Streams Kinesis Adapter that will fetch data from DynamoDB Streams endpoint. When there are updates made by a particular user, notify the subscribers via email using SNS.
+b) Create a Lambda function that uses DynamoDB Streams Kinesis Adapter which will fetch data from the DynamoDB Streams endpoint. Set up an SNS Topic that will notify the subscribers via email when there is an update made by a particular user.
+c) Set up a DAX cluster to access the source DynamoDB table. Create a new DynamoDB trigger and a Lambda function. For every update made in the user data, the trigger will send data to the Lambda function which will then notify the subscribers via email using SNS.
+d) Enable DynamoDB Stream and create an AWS Lambda trigger, as well as the IAM role which contains all of the permissions that the Lambda function will need at runtime. The data drom the stream record will be process by the Lambda function which will then publish a message to SNS Topic that will notify the subscribers via email.
+
+30. A Docker application, which is running on an Amazon ECS cluster behind a load balancer, is heavily using DynamoDB. You are instructed to improve the database performance by distributing the workload evenly and using the provisioned throughput efficiently. Which of the following would you consider to implement for your DynamoDB table?
+a) Use non-composite primary keys, which allow for "lazy loading" to increase performance.
+b) Use partition keys with high-cardinality attributes, which have a larger number of distinct values for each item.
+c) Use partition keys with low-cardinality attributes, which have a smaller number of distinct values for each item.
+d) Use composite primary keys.
+
+35. A popular mobile game uses CloudFront, Lambda, and DynamoDB for its backend services. The player data is persisted on a DynamoDB table and the static assets are distributed by CloudFront. However, there are a lot of complaints that saving and retrieving player information is taking a lot of time. To improve the game's performance, which AWS service can you use to reduce DynamoDB response times from milliseconds to microseconds?
+a) ElastiCashe
+b) Device Farm
+c) Auto Scaling
+d) DynamoDB Accelerator (DAX)
+
+38. You are working as a Solutions Architect for a technology company which is in the process of migrating their applications to AWS. One of their systems requires a database that can scale globally and can handle frequent schema changes. It should also provide low-latency response to high-traffic queries. Which is the most suitable database solution to use to achieve this requirement?
+a) Oracle database in RDS with Multi-AZ
+b) DynamoDB
+c) Aurora with Read Replicas
+d) Aurora with cross-region replication
+
+
+Redshift
+19. A company is using Redshift for its online analytical processing (OLAP) application which processes complex queries against large datasets. There is a requirement in which you have to define the number of query queues that are available and how queries are routed to those queues for processing. Which of the following will you use to meet this requirement?
+a) Create a Read Replica and route some queries to the replica to improve performance
+b) Create a Lambda function that can accept the number of query queues and use this value to control Redshift
+c) Use the workload management (WLM) in the parameter group configuration
+d) Use SQS to store commonly used queries to reduce the load on the cluster
+
+21. You are working as a Solutions Architect for a major telecommunications company where you are assigned to improve the security of your database tier by tightly managing the data flow of your Amazon Redshift cluster. One of the requirements is to use VPC flow logs to monitor all the COPY and UNLOAD traffic of your Redshift cluster that moves in and out of your VPC. Which of the following is the most suitable solution to implement in this scenario?
+a) Enable Audit Logging in your Redshift cluster
+b) Enable Enhanced VPC routing on your Redshift cluster
+c) Use Redshift Spectrum
+d) Create a new Flow Log that tracks the traffic of your Redshift cluster 
+
+Elasticache
+28. You are working for a large financial company as an IT consultant. Your role is to help their development team to build a highly available web application using stateless web servers. In this scenario, which AWS services are suitable for storing session state data? (Choose 2)
+a) Redshift Spectrum
+b) DynamoDB
+c) RDS
+d) ElastiCache
+e) S3
+
+32. You are designing a banking portal which uses Amazon ElastiCache for Redis as its distributed session management component. Since the other Cloud Engineers in your department have access to your ElastiCache cluster, you have to secure the session data in the portal by requiring them to enter a password before they are granted permission to execute Redis commands. As the Solutions Architect, which of the following should you do to meet the above requirement?
+a) Set up an IAM Policy and MFA which requires the Cloud Engineers to enter their IAM credentials and MFA token before they can access the ElastiCache cluster.
+b) Set up a Redis authentication group and enable the "AtRestEncryptionEnabled" parameter
+c) Authenticate the users using Redis AUTH by creating a new Redis Cluster with both the "--transit-encryption-enabled" and the "--auth-token" parameters enabled
+d) Add the the In-Transit Authentication Access (ITAA) policy permission for Redis to the Cloud Engineers IAM Group.
+
+Auto Scaling
+8. You are working for a software company that has moved a legacy application from an on-premises data center to the cloud. The legacy application requires a static IP address hard-coded into the backend, which blocks you from using an Application Load Balancer. Which steps would you take to apply high availability and fault tolerance to this application without ELB? (Choose 2)
+a) Write a script that checks the health of the EC2 instance. If the instance stops responding, the script will switch the elastic IP address to a standby EC2 Instance.
+b) Assign an Elastic IP address to the instance.
+c) It is better to postpone the deployment until you have fully converted the application to work with the ELB.
+d) Launch the instance using Auto Scaling which will deploy the instance again if it becomes unhealthy.
+e) Create the AMI to use the static IP address that the application requires and update the launch configuration.
+
+37. A suite of web applications is composed of several different Auto Scaling group of EC2 instances which is configured with default settings and then deployed across three Availability Zones. There is an Application Load Balancer that forwards the request to the respective target group on the URL path. The scale-in policy has been triggered due to the low number of incoming traffic to the application. Which EC2 instance will be the first one to be terminated by your Auto Scaling group?
+a) The EC2 instance which has the least number of user sessions
+b) The EC2 instance which has been running for the longest time
+c) The EC2 instance which has the oldest launch configurations
+d) The EC2 instance which is closest to the next billing hour
+
+Elastic Load Balancer
+16. There are many clients complaining that the online trading application of an investment bank is always down. Your manager instructed you to re-design the architecture of the application to prevent the eiifcckjcunnecessary service interruptions. To ensure high availability, you set up the application to use an ELbfdB to distribute the incoming requests across an auto-scaled group of EC2 instances in two single Availldability Zones. In this scenario, what happens when an EC2 instance behind an ELB fails a health check?
+a) The ELB automatically terminates the EC2 instance and a new instances must be manually provisioned
+b) The ELB automatically terminates the EC2 instance and a new instance is launched based on the AMI in the launch configurations.
+c) The ELB automatically stops the EC2 instance and a new instance is launched based on the AMI in the launch configurations.
+d) The ELB stops sending traffic to the EC2 instance
+
+23. You have a new e-commerce web application written in Angular framework which is deployed to a fleet of EC2 instances behind an Application Load Balancer. You configured the load balancer to perform health checks on these EC2 instances. What will happen if one of these EC2 instances failed the health checks?
+a) The EC2 instance gets terminated automatically by the Application Load Balancer
+b) The EC2 instance gets stopped automatically by the Application Load Balancer
+c) The EC2 instance gets terminated and a new EC2 instance gets automatically created by the Application Load Balancer.
+d) The Application Load Balancer stops sending the EC2 instance traffic
+
+CloudFront
+7. A web application is using CloudFront to distribute their images, videos, and other static contents stored in their S3 bucket to its users around the world. The company has recently introduced a new member-only access to some of its high quality media files. There is a requirement to provide access to multiple private media files only to their paying subscribers without having to change their current URLs. Which of the following is the most suitable solution that you should implement to satisfy this requirement?
+a) Configure your CloudFront distribution to assign Signed URLs. This will allow access to the private content only if the request is coming from a paying member and deny if it is not.
+b) Create a Signed URL custom policy which allows the members to see private files.
+c) Configure your CloudFront distribution to use Field-Level Encryption to protect your private data and only allow access to members.
+d) Use Signed Cookies to control who can access the private files in your CloudFront distribution by modifying your application to determine whether a user should have access to your content. For members, send the required "Set-Cookie" header to the viewer which will unlock the content only to them.
+
+29. A popular social media website uses a CloudFront web distribution to serve their static contents to their millions of users around the globe. They are receiving a number of complaints recently that their users take a lot of time to log into their website. There are also occasions when their users are getting HTTP 504 errors. You are instructed by your manager to significantly reduce the user's login time to further optimize the system. Which of the following options should you use together to set up a cost-effective solution that can improve your application's performance? (Choose 2)
+a) Customize the content that the CloudFront web distribution delivers to your users using Lambda@Edge, which allows your Lambda functions to execute the authenticaion process in AWS locations closer to your users.
+b) Use multiple geographically dispersed VPCs to various AWS regions then create a transit VPC to connect all of your resources. In order to handle the requests faster, set up Lambda functions in each region.
+c) Configure your orgin to add a "Cache-Control max-age" directive to your objects, and specify the longest value for "max-age" to increase the "cache hit" of your CloudFront distribution.
+d) Deploy your application to multiple AWS regions. Set up a Route53 record with latency routing policy to route incoming traffic to the region that provides the best latency to the user.
+e) Set up an orgin failover by creating an orgin group with two orgins. Specify one as the primary orgin and the other as the secondary orgin which CloudFront will automatically switch to when the primary orgin returns specific HTTP status code failure response
+
+API Gateway
+11. A cryptocurrency trading platform is using an API built in AWS Lambda and API Gateway. Due to the recent news and rumors about the upcoming price surge of Bitcoin, Ethereum and other cryptocurrencies, it is expected that the trading platform would have a significant increase in site visitors and new users in the coming days ahead. In this scenario, how can you protect the backend systems of the platform from traffic spikes?
+a) Use ELB
+b) Enable throttling limits and result caching in API Gateway
+c) Use CloudFront in front of you API Gateway
+d) Use Auto Scaling
+
+26. You are using a combination of API Gateway and Lambda for the web services of your online web portal that is being accessed by hundreds of thousands of clients each day. Your company will be announcing a new revolutionary product and it is expected that your web portal will receive a massive number of visitors all around the globe. How can you protect your backend systems and applications from traffic spikes?
+a) Use throttling limits in API Gateway
+b) API Gateway will automatically scale to handle massive traffic spikes.
+c) Deploy an Application Load Balancer in front of API Gateway and configure it to distribute the load.
+d) Deploy API Gateway with Read Replica
+
+Kinesis
+5. A traffic monitoring and reporting application uses Kinesis to accept real-time data. In order to process and store the data, they used Amazon Kinesis Data Firehose to load the streaming data to various AWS resources.
+Which of the following services can you load streaming data into?
+a) S3 Select
+b) Redshift Spectrum
+c) Elasticsearch Service
+d) Athena
+
+Applications
+25. A multi-tiered application hosted in your on-premises data center is scheduled to be migrated to AWS. The application has a message broker service which uses industry standard messaging APIs and protocols that must be migrated as well, without rewriting the messaging code in your application. Which of the following is the most suitable service that you should use to move your messaging service to AWS?
+a) MQ
+b) SQS
+c) SNS
+d) SWF
+
+Security
+6. You are managing a suite of applications in your on-premises network which are using trusted IP addresses that your partners and customers have whitelisted in their firewalls. There is a requirement to migrate these applications to AWS without requiring your partners and customers to change their IP address whitelists.   
+Which of the following is the most suitable solution to properly migrate your applications?
+a) Setup Elastic IP and map the whitelisted IP address range in your on-premise network the the Elastic IP.
+b) Create a script to perform an IP match then whitelist them in your Network Access Control List (ACL) and register them in AWS WAF.
+c) Create a Route Orgin Authorization (ROA) then provision and advertise your whitelisted IP range to your AWS account.
+d) Setup an IP match condition in CloudFront and register them in AWS WAF.
+
+9. A media company has an Amazon ECS Cluster, which uses the Fargate launch type, to host its news website. The database credentials should be supplied using environment variables, to comply with strict security compliance. As the Solutions Architect, you have to ensure that the credentials are secure and that they cannot be viewed in plaintext on the cluster itself. Which of the following is the most suitable solution in this scenario that you can implement with minimal effort?
+a) In the ECS task definition file of the ECS Cluster, store the database credentials using Docker Secrets to centrally manage these sensitive data and securely transmit it to only those containers that need access to it. Secrets are encrypted during transit and at rest. A given secret is only accessible to those services which have been granted explicit access to it via IAM Role, and only when those service tasks are running
+b) Store the database credentials in the ECS task definition file of the ECS Cluster and encrypt it with KMS. Store the task definition JSON file in a private S3 bucket and ensure that HTTPS is enabled on the bucket to encrypt the data in-flight. Create an IAM role to the ECS task definition script that allows access to the specific S3 bucket and then pass the "--cli-input-json" parameter when calling the ECS register-task-definition. Reference the task definition JSON file in the S3 bucket which contains the database credentials
+c) Use the AWS Secrets Manager to store the database credentials and then encrypt them using AWS KMS. Create a resource-based policy for your ECS task execution role and reference it with your task definition which allows access to both KMS and AWS Secrets Manager. Within your container definition, specify secrets with the name of the environment variable to set in the container and the full ARN of the Secrets Manager secret which contains the sensitive data, to preseent to the container
+d) Use the AWS Systems Manager Parameter Store to keep the database credetions and then encrypt them using AWS KMS. Create an IAM Role for your ECS taks execution role and reference it with your task definition, which allows access to both KMS and the Parameter Store. Within your container definition, specify secrets with the container and the full ARN of the Systemss Manager Parameter Store parameter containing the sensitive data to present to the container
+
+13. A telecommunications company is planning to give AWS Console access to developers. Company policy mandates the use of identity federation and role-based access control. Currently, the roles are already assigned using groups in the corporate Active Directory. In this scenario, what combination of the following services can provide developers access to the AWS console? (Choose 2)
+a) AWS Directory Service AD Connector
+b) AWS Directory Service Simple AD
+c) AWS Directory Service Managed SSO
+d) IAM Groups
+e) IAM Roles
+
+17. A tech company that you are working for has undertaken a Total Cost Of Ownership (TCO) analysis evaluating the use of Amazon S3 versus acquiring more storage hardware. The result was that all 1200 employees would be granted access to use Amazon S3 for storage of their personal documents. Which of the following will you need to consider so you can set up a solution that incorporates single sign-on feature from your corporate AD or LDAP directory and also restricts access for each individual user to a designated user folder in an S3 bucket? (Choose 2)
+a) Use AWS Federate to integrate with Single Sign-On solutions such as Atlassian, Crowd, OKTA, and OneLogin
+b) Set up a Federation proxy or an Identity provider, and use AWS Security Token Service to generate temporary tokens
+c) Use a resource tab on each folder in the S3 bucket
+d) Configure an IAM role and an IAM policy to access the bucket
+e) Set up a matching IAM user for the users in the corporate directory that needs access to a folder in the S3 bucket
+
+31. You have identified a series of DDoS attacks while monitoring your VPC. As the Solutions Architect, you are responsible in fortifying your current cloud infrastructure to protect the data of your clients. Which of the following is the most suitable solution to mitigate these kinds of attacks?
+a) Use AWS Shield to detect and mitigate DDoS attacks
+b) Use AWS Firewall Manager to set up a security layer that will prevent SYN floods, UDP reflection attacks, and other DDoS attacks.
+c) Use AWS WAF to filter, monitor, and block DDoS attacks
+d) Use Security Groups and Network Access Control Lists (ACLs) to only allow authorized traffic to access your VPC
+
+39. You are working for a large pharmaceutical company that has resources hosted on both their on-premises network and in AWS cloud. They want all of their Software Architects to access resources on both environments using their on-premises credentials, which is stored in Active Directory. In this scenario, which of the following can be used to fulfill this requirement?
+a) Use Amazon Web Identity Federation
+b) Use SAML Federation
+c) Use IAM users
+d) Use Cognito
+

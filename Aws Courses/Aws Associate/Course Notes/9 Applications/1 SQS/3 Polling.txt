@@ -1,0 +1,8 @@
+Polling
+
+Short Polling -> WaitTimeSeconds for the ReceiveMessage API is set to 0. 
+- This is the default setting.
+
+Long Polling -> WaitTimeSeconds for the ReceiveMessage API is set to greater than 0. 
+- Reduce the cost by eliminating the number of empty responses.
+- Improves efficiency by eliminating the number of empty responses.

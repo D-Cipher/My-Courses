@@ -1,0 +1,19 @@
+EBS Snapshots
+
+Snapshots -> Incremental point in time copies of volumes, saved to S3.
+- A single snapshot is both incremental and complete
+- You do not need to detach your volumes to take snapshots
+- When taking a snapshot of ROOT volume you need to stop the instance first
+
+Un-mounting to take snapshot:
+- Minimizes application downtime if you need consistent snapshot
+- Taking snapshots on running instance may not be consistent
+
+Moving EC2 Instances
+In order to move a volume from one az or region to another you have to create a snapshot on the root volume. Then you turn that snapshot into an Image, lauch that image into an AMI, and then you use that AMI to create a new EC2 Instance in a new subnet and the other thing you can do is copy AMI into different regions.
+
+Snapshots on RAID configurations
+1) Stop all I/O activity writing to RAID array before creating a snapshot.
+2) Flush all caches to the disk.
+3) Confirm that the associated EC2 instance is no longer writing to the RAID array by: freezing the file system, unmounting the RAID array, shutting down the EC2 instance.
+4) Take a snapshot of each EBS volume in the array.

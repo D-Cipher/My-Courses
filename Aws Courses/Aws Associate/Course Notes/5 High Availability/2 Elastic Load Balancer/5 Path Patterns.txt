@@ -1,0 +1,6 @@
+Path Patterns
+
+Path Patterns -> Path conditions to send traffic based on the pattern of the URL contained in the request.
+- You can create a listener to create rules to forward requests based on the URL path. 
+- Example 1: you can route general requests to one target group and requests to render images to another target group.
+- Example 2: "/api/android" are forwarded to an auto scaling group called "Android-Target-Group" while "/api/ios" are forwarded to a different auto scaling group called "iOS-Target-Group". 

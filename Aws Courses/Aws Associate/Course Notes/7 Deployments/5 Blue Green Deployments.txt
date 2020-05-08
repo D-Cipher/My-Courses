@@ -1,0 +1,12 @@
+Blue Green Deployments
+
+Blue Green Deployment -> Having an active (blue) and passive (green) environment for your application, where blue is the environment that is in production and green is a copy where you do your development.
+- When development is finished, simply do a swap and green becomes blue.
+- Easy and safe way to do deployments
+- More expensive than in-place upgrade because you need to launch new environment
+
+Advantages:
+1) Provides level of isolation between application environments
+2) Easy to roll back changes, simply swap production back to original blue
+3) Minimizes application downtime
+

@@ -1,0 +1,19 @@
+Site-to-Site VPN
+
+Site-to-Site VPN -> Allows you to connect to VPC through secure and private sessions with IP Security (IPSec) and Transport Layer Security (TLS) tunnels.
+- Uses software VPN appliance running in your VPC securely connect your VPC to your remote network over a VPN connection.
+
+Compatible VPNs Connections:
+- IPsec VPN
+- VPN CloudHub
+- Thrid party VPN appliance
+
+Establishing VPN connection:
+1) Virtual Private Gateway sits on AWS side of the VPN.
+2) Customer Gateway anchors the remote side of the connection.
+
+VPC with Hardware VPN Access:
+1) Virtual Private Gateway required
+2) One subnet must be connected via IPSec VPN tunnel
+
+

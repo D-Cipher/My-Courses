@@ -1,0 +1,26 @@
+RDS Encryption
+
+Encryption -> RDS support encryption at rest with KMS and by enabling the encryption option.
+- You CANNOT encrypt existing DB, must create a new db via a snapshot.
+
+Enabling encryption also encrypts:
+- Automated backups
+- Snapshots
+- Read Replicas 
+
+Encrypting Read Replicas:
+1) Replicas in same region as DB use the same key
+2) Replicas in different region as DB use different key
+3) Cannot have unencrypted replica of an encrypted DB and vice versa
+
+Secure Sockets Layer (SSL) to encrypt connections between your client applications and RDS Microsoft SQL Server
+- When you create a SQL Server DB instance, RDS creates an SSL certificate for it
+- SSL certificate includes the DB instance endpoint as the Common Name (CN) for the SSL certificate to guard against spoofing attacks
+- IAM database authentication is not compatible with Microsoft SQL Server
+
+Ways of using SSL to connect:
+
+1) Force SSL for all connections —> this happens transparently to the client, and the client does not have to do any work to use SSL
+- Set rds.force_ssl parameter to true
+
+2) Encrypt specific connections —> this sets up an SSL connection from a specific client computer, and you must do work on the client to encrypt connections

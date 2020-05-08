@@ -1,0 +1,34 @@
+Read Replicas
+
+Read Replicas -> Improves performance, allows you to have a read only copy of your production database to off load some of the reads from your master db.
+- Reduce the load on your source DB instance by routing read queries from your applications to the Read Replica.
+- Every time your DNS writes to primary, RDS will asynchronously replicate to the read replicas.
+- Provides elasticity to the database allowing it to scale out beyond the constraints of the DB.
+- Available for all RDS (MySQL, PostreSQL, Oracle, Maria, Aurora) EXCEPT for Microsoft SQL Server.
+- Asynchronous replication
+
+Replica Features
+- Can have up to 5 replicas (Aurora can have 15).
+- Each replica has a DNS endpoint.
+- You can have replicas of replicas but latency issues.
+- Read replicas can be in different AZs or regions.
+- No charge for transfering data when replicating instance.
+
+Replication Method
+1) Logical Replication -> Row-by-row replication of the data. 
+- MySQL and Maria
+- Can be made writable since it's a logical replication
+2) Physical Replication -> Block level replication of the database. 
+- Oracle and PostgreSQL
+- Cannot be made writable except by promoting the replica.
+
+Backup Options
+- Must have automatic backups turned on in order to access Read Replicas.
+- Automated Backups can be enabled for MySQL and Maria, but not for Oracle and PostgreSQL. PostgreSQL allows for manual snapshots.
+- Parallel replication is supported for MySQL, Maria, and Oracle. Not supported for PostgreSQL which can only handle single process replication.
+
+Disaster Recovery
+- No automatic failover. Losing the primary, you would need to manually point DNS to secondary.
+- Replicas can be promoted to the primary database, this breaks the replication.
+- Read replicas can be Multi-AZ and you can create read replica of a multi-az source db.
+

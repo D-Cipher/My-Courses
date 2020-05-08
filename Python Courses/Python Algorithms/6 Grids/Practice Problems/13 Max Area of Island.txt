@@ -1,0 +1,67 @@
+'''LeetCode #695 Max Area of Island
+Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+
+Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)
+
+[[0,0,1,0,0,0,0,1,0,0,0,0,0],
+ [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ [0,1,1,0,1,0,0,0,0,0,0,0,0],
+ [0,1,0,0,1,1,0,0,1,0,1,0,0],
+ [0,1,0,0,1,1,0,0,1,1,1,0,0],
+ [0,0,0,0,0,0,0,0,0,0,1,0,0],
+ [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+Given the above grid, return 6. Note the answer is not 11, because the island must be connected 4-directionally.
+
+[[0,0,0,0,0,0,0,0]]
+Given the above grid, return 0.
+Note: The length of each dimension in the given grid does not exceed 50.
+'''
+
+grid = [
+# 0 1 2 3 4 5 6 7 8 9 10 11 12
+ [0,0,1,0,0,0,0,1,0,0,0,0,0], #0
+ [0,0,0,0,0,0,0,1,1,1,0,0,0], #1
+ [0,1,1,0,1,0,0,0,0,0,0,0,0], #2
+ [0,1,0,0,1,1,0,0,1,0,1,0,0], #3
+ [0,1,0,0,1,1,0,0,1,1,1,0,0], #4
+ [0,0,0,0,0,0,0,0,0,0,1,0,0], #5
+ [0,0,0,0,0,0,0,1,1,1,0,0,0], #6
+ [0,0,0,0,0,0,0,1,1,0,0,0,0]] #7
+
+def dfs(grid,x,y,ans=None,vis=None,pos=None):
+  if ans==None: ans=[]
+  if pos==None: pos=[]
+  if vis==None: 
+    vis=[[False for _ in grid[i]] for i in range(len(grid))]
+  
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+  if invalidate or vis[y][x]==True or grid[y][x]==0:
+    return None
+
+  vis[y][x] = True
+  
+  if (x,y) not in pos:
+    pos.append((x,y))
+    ans.append(grid[y][x])
+  
+  dfs(grid,x+1,y,ans,vis,pos)
+  dfs(grid,x-1,y,ans,vis,pos)
+  dfs(grid,x,y+1,ans,vis,pos)
+  dfs(grid,x,y-1,ans,vis,pos)
+  vis[y][x] = False
+  grid[y][x] = 0
+
+  return ans
+
+result = []
+
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    if grid[y][x] != 0:
+      search = dfs(grid,x,y)
+      result.append(tuple(search))
+
+print(result)
+
+print(sum(max(result,key=len)))

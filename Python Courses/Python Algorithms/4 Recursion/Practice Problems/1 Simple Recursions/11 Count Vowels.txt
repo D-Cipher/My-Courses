@@ -1,0 +1,34 @@
+'''
+Recursion: Count Vowels
+Write a function that recursively returns the number of vowels in a string.
+
+If it wasn't clear enough already, you should use recursion in your solution.
+
+Examples
+countVowels("apple") = 2
+
+countVowels("cheesecake") = 5
+
+countVowels("bbb") = 0
+
+countVowels("") = 0
+Notes
+Recursive functions call themselves.
+All letters will be in lower case.
+For this challenge, the vowels are a, e, i, o, and u.
+'''
+
+def countVowels(word, pt=0, count=0):
+  vowels = ['a','e','i','o','u']
+
+  if pt >= len(word):
+    return count
+
+  if word[pt] in vowels:
+    count +=1
+
+  pt += 1
+
+  return countVowels(word,pt,count)
+
+print(countVowels('apple'))

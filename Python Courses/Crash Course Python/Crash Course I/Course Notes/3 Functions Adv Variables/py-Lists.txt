@@ -1,0 +1,89 @@
+#Programming Fundementals: Advanced Variables
+
+#==========Advanced Variables: Arrays / Lists and Dictionaries===========
+
+#Arrays (Lists)
+
+songList = ["Hello", "Happy", "Work", "Royals", "Team"]
+
+songList[0]
+
+len(songList)
+
+songList.index("Hello")
+
+songList.append("Lights")
+
+songList.pop(0)
+
+songList.pop()
+
+songList.remove("Work")
+
+print(songList)
+
+songList.sort()
+
+songs = " ".join(songList)
+
+longList = range(1,100)
+
+emptyList = []
+
+"""
+Practice Problem: Song Lookup
+
+playList = ["Hello", "Happy", "Work"] 
+songNum = 1
+
+def songLookup(album, num): 
+  song = album[num] 
+  output = "Now Playing: " + song
+  return output
+
+print(songLookup(playList, 0))
+"""
+
+Topics generator
+"""
+
+
+"""
+
+"""
+Practice Problem: Create a function that simulates a "Magic 8 ball". The idea is the function will give you a random fortune every time it's called. (A random fortune like: "You will be very rich" or "Yes it will happen" or "I highly doubt it")
+ 
+ Answer:
+ 
+import random
+
+def eightBall():
+  
+  fortuneList = ["It certainly will happen", "You can count on it", "Busy now ask me later", "Doubtful", "Sorry not a chance"]
+  
+  fortune = fortuneList[random.randrange(0,5)]
+  
+  return fortune
+
+print(eightBall())
+"""
+
+"""
+Practice Problem: Create a list five different numbers. Take the first and last numbers and remove them from the list. Then take their multiple and append it back into the list
+ Answer:
+num_ls = [21,24,11,33,27]
+ 
+last_index = len(num_ls) - 1
+ 
+result = num_ls[0] * num_ls[last_index]
+ 
+num_ls.pop(last_index)
+ 
+num_ls.pop(0)
+ 
+num_ls.append(result)
+
+print(num_ls)
+ 
+"""
+

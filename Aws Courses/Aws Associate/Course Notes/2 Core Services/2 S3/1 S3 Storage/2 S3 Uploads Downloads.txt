@@ -1,0 +1,21 @@
+S3 Uploads Downloads
+
+Consistency Model:
+1) Uploads are Synchronous -> Read after Write consistency for PUTS of new objects. You can immediately read after uploading.
+2) Downloads / Deletes / Overwrites are Asynchronous -> Eventual Consistency for overwrite PUTS and DELETES, if your delete or overwrite it changes may take alittle longer than immediate. Does not always return the most up-to-date data.
+
+File Uploads:
+1) Single-part Upload -> Single PUT operations can upload up to 5 GBs.
+2) Multipart Upload API -> Using the multi-part upload API, you can upload large objects, up to 5 TB.
+- Routine that allows uploading a single object as a set of parts instead of all at once. 
+- After all parts of your object are uploaded, Amazon S3 then presents the data as a single object.
+- Pause and resume object uploads
+- Begin an upload before you know the final object size
+- Delivers improved throughput
+- Quick recovery from network issues
+
+S3 Parallel Requests:
+S3 supports Parallel Requests -> automatically scales to high request rates to increase performance
+- 3,500 PUT / COPY / POST / DELETE and 5,500 GET / HEAD requests per second per prefix in a bucket.
+- S3 automatically manages performance at this scale.
+- No limits to the number of prefixes in a bucket.

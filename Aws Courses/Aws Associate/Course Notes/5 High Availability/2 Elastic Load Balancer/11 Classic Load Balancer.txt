@@ -1,0 +1,9 @@
+Classic Load Balancer
+
+Classic Load Balancer -> Cost effective legacy elastic load balancer.
+- Can load balance HTTP/HTTPS application
+- Can use layer 7 specific features like X-Forwarded and sticky sessions
+- Not Application aware
+- Can use strict layer 4 load balancing
+- Internet-facing load balancer that has publically resolvable DNS name. 
+

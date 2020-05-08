@@ -1,0 +1,46 @@
+IAM
+D
+D
+
+S3
+C
+
+EC2
+A
+A
+
+VPC
+B
+A
+C
+
+Lambda
+
+Monitoring
+
+Databases
+B
+C
+A,D
+A,B
+
+High Availability
+
+Content Delivery
+C
+A
+A
+
+Deployments
+D
+C,E
+
+Analytics
+A
+
+Applications
+
+Security
+
+Developer Tools
+C

@@ -1,0 +1,17 @@
+'''
+Create a function takes a string (which represents an integer) as an argument and returns its value. Use recursion.
+'''
+
+def atoi(numchar, strt=0, result=0):
+  end = len(numchar) - 1
+
+  if strt <= end:
+    try: newresult = int(numchar[strt]) + result*10 
+    except: return 'Not Int String'
+
+    newstrt = strt + 1
+    return atoi(numchar, newstrt, newresult)
+
+  return result
+
+print(atoi('12345'))

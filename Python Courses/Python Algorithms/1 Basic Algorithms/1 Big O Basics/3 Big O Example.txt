@@ -1,0 +1,31 @@
+##Big O Examples
+
+nums = [1,2,3,4]
+n = len(nums)
+
+#===Solution 1===
+ans = 0
+
+for i in range(0,n):
+  ans += nums[i]
+
+print("sum: ", ans)
+'''
+Operations = 5N
++2N additions
++2N assignments
++N comparisons
+Big O = O(N)
+'''
+
+#===Solution 2===
+ans = n*(n+1)/2
+
+print("sum:", ans)
+'''
+Operations = 3
++1 multiplication
++1 addition
++1 division
+Big O = O(1)
+'''

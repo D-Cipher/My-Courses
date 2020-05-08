@@ -1,8 +1,0 @@
-Elastic Beanstalk
-
-Elastic Beanstalk -> Quickly deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those application. Simply upload the application and Elastic Beanstalk automatically handles the following: 
-- Capacity provisioning
-- Load balancing
-- Scaling
-- Application health monitoring
-

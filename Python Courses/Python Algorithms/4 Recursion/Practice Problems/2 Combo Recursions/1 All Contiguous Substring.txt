@@ -1,0 +1,22 @@
+'''
+Given a string, find all contiguous substring combinations and return them in a list.
+
+Example
+Input: S = 'abc'
+Output: ['a','ab','abc','b','bc','c']
+Input: S = 'abcab'
+Output: ['a', 'ab', 'abc', 'abca', 'abcab', 'b', 'bc', 'bca', 'bcab', 'c', 'ca', 'cab']
+'''
+
+chars = 'abcab'
+
+def allsubstring(chars,ans=[],curr='',index=0):
+
+  for i in range(index,len(chars)):
+    newcurr = curr + chars[i]
+    if newcurr in chars and newcurr not in ans:
+      ans.append(newcurr)
+      allsubstring(chars,ans,newcurr,i)
+  return ans
+
+print(allsubstring(chars))

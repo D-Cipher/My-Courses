@@ -1,0 +1,86 @@
+'''LeetCode #840 Magic Squares In Grid
+A 3 x 3 magic square is a 3 x 3 grid filled with distinct numbers from 1 to 9 such that each row, column, and both diagonals all have the same sum.
+
+Given an grid of integers, how many 3 x 3 "magic square" subgrids are there?  (Each subgrid is contiguous).
+
+Input: [[4,3,8,4],
+        [9,5,1,9],
+        [2,7,6,2]]
+Output: 1
+
+Explanation: 
+The following subgrid is a 3 x 3 magic square: [4,3,8],[9,5,1],[2,7,6]
+
+while this one is not: [3,8,4],[5,1,9],[7,6,2]
+
+In total, there is only one magic square inside the given grid.
+Note:
+
+1 <= grid.length <= 10
+1 <= grid[0].length <= 10
+0 <= grid[i][j] <= 15
+'''
+grid = [[4,3,8,4],
+        [9,5,1,9],
+        [2,7,6,2]]
+
+def dfs(grid,initxy,x,y,k,ans=[],vis=None,path=None,paths=None):
+  if vis==None:
+    vis=[[False for _ in grid[i]] for i in range(len(grid))]
+  if path==None: path=[]; paths=[]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  outofsubgrid = (y<initxy[1] or x<initxy[0] or y>initxy[1]+k-1 or x>initxy[0]+k-1)
+
+  if invalidate or outofsubgrid or vis[y][x]==True:
+    return None
+  
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+
+  if len(npath) == k:
+    paths.append(tuple(npath))
+    npath = []
+    if paths not in ans and len(paths)==k:
+      ans.append(paths)
+  dfs(grid,initxy,x+1,y,k,ans,vis,npath,paths)
+  dfs(grid,initxy,x-1,y,k,ans,vis,npath,paths)
+  dfs(grid,initxy,x,y+1,k,ans,vis,npath,paths)
+  dfs(grid,initxy,x,y-1,k,ans,vis,npath,paths)
+
+  return ans
+
+k = 3
+
+def subgrids(grid,k):
+  for y in range(len(grid)):
+    for x in range(len(grid[y])):
+      result = dfs(grid,(x,y),x,y,k)
+  
+  return result
+
+#print(dfs(grid,(0,0),0,0,k))
+
+search = subgrids(grid,k)
+print(search)
+
+sumrows = [[0 for _ in search[i]] for i in range(len(search))]
+sumcols = [[0 for _ in search[i]] for i in range(len(search))]
+
+for y in range(len(search)):
+  for x in range(len(search[y])):
+    sumrows[y][x] = sum(search[y][x])
+
+print(sumrows)
+
+columns = []
+
+for r in range(len(search)):
+  columns.append([[col[i] for col in search[r]] for i in range(len(search[r]))])
+
+for y in range(len(columns)):
+  for x in range(len(columns[y])):
+    sumcols[y][x] = sum(columns[y][x])
+
+print(sumcols)

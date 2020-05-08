@@ -1,0 +1,26 @@
+Instance Store vs EBS
+
+EBS -> Elastic Block Store, allows you to create storage volumes and attach them to EC2 instances. A virtual hard disk in the cloud. 
+- Volumes are virtual hard disk that exist on EBS.
+- Volumes must be the same az as the EC2 instance.
+- IOPS stands for input output per second
+- Snapshots are incremental point in time copies of volumes, exist on S3. this means only the blocks that have changed since the last snapshot would be moved to s3.
+- Snapshots on root device volumes, stop the instance before taking the snapshot, although you can take snapshot while instance is running.
+- Can create AMI's from volumes and snapshots
+- EBS volume sizes and storage types can ge changed
+- Note you cannot mount 1 EBS to multiple EC2 instances.
+- If you terminate an EC2 Instance the root volume will be deleted but additional volumes will not be deleted.
+- Root volumes can't be encrypted once created
+
+Instance Store -> Ephemeral storage created from a template that is stored in S3 and lives on the physical hardware.
+- Instance stores are ephemeral -> when the instance stops or terminates then the instance-store device is deleted (unlike EBS).
+- Instance store cannot be stopped only rebooted or terminated.
+- Rebooting you will not lose data (same for EBS)
+- Instance store root volume will be deleted on termination (unlike EBS).
+- Only certain EC2 instances can have instance stores.
+- Size is fixed since the storage is on the physical host.
+- The disk type (SSD, HDSD) and capacity are also fixed and depends on the EC2 instance.
+- Application durability
+- Usage: generally you want to use the instance store for caching or storing temporary data. This way you can get the fast access that instance stores provide at the same time you are not affected by the ephemeral nature.
+
+

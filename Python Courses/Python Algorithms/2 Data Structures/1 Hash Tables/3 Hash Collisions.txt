@@ -1,0 +1,21 @@
+Hash Collisions
+
+Collision -> When a key maps to an already occupied slot in a table.
+
+Handling Collisions:
+
+1) Chaining -> Make each cell of the table point to a linked list.
+- Easy to implement
+- Hash tables never full
+- Cache performance not good
+- Extra space required increasing search time O(N)
+- Used when number of keys is unknown
+
+2) Open Addressing -> Probe through the table until an available slot is found.
+- Linear probing -> Probe to the next slot.
+- More complex to implement
+- Hash tables can get full
+- Better caching performance
+- No extra space required
+- Used when frequency and number of keys known
+

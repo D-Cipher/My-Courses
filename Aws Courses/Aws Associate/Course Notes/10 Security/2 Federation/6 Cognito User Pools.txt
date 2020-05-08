@@ -1,0 +1,11 @@
+User Pools
+
+User Pools -> user directories that are used to manage sign-up and sign-in functionality for mobile and web apps.
+- Users can sign in directly to a user pool or indirectly through a web identity provider. 
+- Cognito acts as an identity broker
+- Authentication generates a JSON web token (JWTs).
+
+Identity Pools -> Used to obtain temporary access to AWS resouces.
+- Support both authenticated and unauthenticated identities. 
+- Can retrieve a unique Cognito identifier (Cognito ID) for your end user immediately.
+- Supports S3 or DynamoDB.

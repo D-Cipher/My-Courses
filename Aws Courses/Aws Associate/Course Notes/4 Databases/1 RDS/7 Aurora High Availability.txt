@@ -1,0 +1,21 @@
+Aurora High Availability
+
+High Availability
+- Aurora keeps 6 copies of your data, 2 copies of data in each AZ accross 3 AZs.
+- Designed to handle loss of up to 2 copies of data without affecting database write availability and up to 3 copies without affecting read availability.
+- Automatic detection of failures and automatically repair disk segments
+
+Aurora Global Database -> Aurora is globally distributed, there is no cross-region replication option.
+
+Fault Tolerant
+1) Automatic Failover -> Aurora flips the CNAME to a replica and promoting it to the primary.
+2) If none exist, attempts to create a new DB in the same AZ.
+3) If unable, tries creating new DB in another AZ.
+
+Storage and Reliability
+- Automated backups are enabled by default
+- Backups do not impact performance
+- Snapshots do not impact performance
+- Can share snapshots with other AWS accounts
+
+Aurora Scaling -> Dynamically adjust the number of Aurora read replicas provisioned for an Aurora DB cluster to handle changes in active connections or workload.

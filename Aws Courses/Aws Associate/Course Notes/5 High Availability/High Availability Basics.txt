@@ -1,0 +1,25 @@
+High Availability Design Architecture
+
+Design high availability and/or fault tolerant solutions -> instead of treating failure as an unusual exceptional event, treat it as a normal operational event.
+- Always design for failure
+- Use multiple AZs and multiple regions
+- Multi-AZ vs Read Replica for RDS
+- Scaling Up vs Scaling Out
+- Consider the cost element, don't overkill
+- Know difference between S3 storage classes
+
+High Availability -> Ability of a system or system component to be always operational.
+
+Fault Tolerant -> User does not experience any inpact or reduction in performance from a fault.
+
+Pilot Light -> Minimal version of the environment should always be running in a disastor recovery scenario.
+- AWS maintains pilot light by configuring and running the most critical core elements of your system.
+- When time comes for recovery you can provision full-scale environment around critical core.
+
+Types of Recovery:
+1) Recovery Point Objective (RPO) -> tolerance of data loss due to time inbetween backups, how much data is at risk of being lost if system goes down (longer time inbetween backups more data loss).
+2) Recovery Time Objective (RTO) -> tolerance of time of recovery, how long the system will be down before it starts running again.
+
+Types of Scaling:
+1) Vertical Scaling (scaling up) -> Changing the size of the instance for more compute or memory.
+2) Horizontal Scaling (scaling out) -> Changing the number of instances for more compute or memory

@@ -1,0 +1,11 @@
+Queue Types
+1) Standard Queues (default) -> allows nearly unlimited number of transactions, there maybe messages that are sent multiple times
+- Ulimited throughtput
+- A-least once delivery
+- Best effort ordering
+
+2) FIFO Queues -> orders the queues to that only one message sent at a time.
+- High Throughput -> 3K messages per second with batching, 300/sec without.
+- Exactly-once processing
+- First-in first-out delivery
+

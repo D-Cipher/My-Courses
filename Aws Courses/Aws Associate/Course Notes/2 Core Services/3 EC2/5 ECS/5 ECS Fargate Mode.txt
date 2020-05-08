@@ -1,0 +1,8 @@
+Fargate Mode
+
+Fargate Mode -> Uses container hosts that are completely managed by AWS. 
+- You have no visibility into the underlying architecture
+- Automatically manages the service end to end.
+- Serverless approach to containers.
+- Task storage on Fargate is ephemeral, when task stops the storage is deleted.
+- Only supports images hosted on ECR or Docker Hub.

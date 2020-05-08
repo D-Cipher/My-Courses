@@ -1,0 +1,77 @@
+'''
+Given an array A of integers, return true if and only if it is a valid mountain array. A valid mountain array has an increasing subarray followed by a decreasing subarray.
+
+Conditions are:
+
+1) array length >= 3
+2) There exists some i with 0 < i < A.length - 1 such that:
+A[0] < A[1] < ... A[i-1] < A[i]
+A[i] > A[i+1] > ... > A[A.length - 1]
+
+Example 1:
+
+Input: [2,1]
+Output: false
+Example 2:
+
+Input: [3,5,5]
+Output: false
+Example 3:
+
+Input: [0,3,2,1]
+Output: true
+'''
+
+mount = [1,2,3,4,1,0]
+
+#=== Brute Force
+def validMount(mount):
+  '''
+  Time: O(N); Space: O(N)
+  '''
+  valid = True
+  apex = max(mount)
+  apexLoc = mount.index(apex)
+
+  if apexLoc==0 or apexLoc==len(mount)-1:
+    valid = False
+
+  frontRange = range(apexLoc)
+
+  for i in frontRange:
+    if mount[i] >= mount[i+1]:
+      valid = False
+
+  backRange = range(apexLoc,len(mount))
+
+  for i in backRange:
+    if i+1 < len(mount):
+      if mount[i] <= mount[i+1]:
+        valid = False
+  
+  return valid
+
+print(validMount(mount))
+
+#=== Sliding Window
+'''
+Time: O(N); Space: O(1)
+'''
+
+mount = [1,2,4,3,1,0]
+
+valid = False
+i = 1
+
+while (i<len(mount) and mount[i]>mount[i-1]):
+  i+=1
+
+if i>1 and i!=len(mount):
+  while (i<len(mount) and mount[i-1]>mount[i]):
+    i+=1
+  
+  if i == len(mount):
+    valid = True
+
+print(valid)
+

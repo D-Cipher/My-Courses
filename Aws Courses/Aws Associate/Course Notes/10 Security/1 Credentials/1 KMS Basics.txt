@@ -1,0 +1,24 @@
+KMS
+
+Key Management Service (KMS) -> Manage the encryption keys that encrypt data.
+- Customer software-based key management
+- Use directly from application
+- Encryption Keys are regional
+- You can generate a key material through KMS
+- You can import your own key
+- Integrated with S3, EBS, RDS, EMR, Redshift, Elastic Transcoder, WorkMail
+
+Data Key -> Key used to encrypt your data.
+
+Envelope Encryption -> Process of encrypting your DATA KEY using a cusomer master key.
+
+Customer Master Keys (CMKs) -> Used by KMS to perform encryption
+- Can be created, rotated, and disabled from IAM console
+- Can be imported, but never be exported
+
+CMKs Properties:
+- Alias
+- Creation date
+- Description
+- Key state
+- Key material (either customer provided or AWS provided)

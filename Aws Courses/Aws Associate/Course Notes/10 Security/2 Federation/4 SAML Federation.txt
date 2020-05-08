@@ -1,0 +1,7 @@
+SAML Federation
+
+SAML Federation -> Allows users with Active Directory identities and corporate credentials to have role assigned in IAM
+- AD acts as an identity provider using Security Assertion Markup Language (SAML) for identity federation.
+- Integrates with Microsoft Active Directory and AWS Directory Service.
+- AssumeRoleWithSAML -> Uses secure assertion markup language to authenticate through active directory, API requests temporary security credentials.
+- Compatible with Single Sign-On (SSO)

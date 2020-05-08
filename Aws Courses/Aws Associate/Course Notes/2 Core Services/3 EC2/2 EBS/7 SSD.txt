@@ -1,0 +1,23 @@
+SSD
+
+Solid State Drives (SSD)
+- Usage: Transactional workloads
+- Workload type: Small and Random I/O operations
+- Performance: Input output per second (IOPS) optimized
+- Bootable: YES
+- Cost: High to moderate
+
+SSD Use Cases:
+- Mission critical business applications that need sustained IOPS performance
+- Compatible with large relational database workloads: DynamoDB, Oracle, Microsoft SQL
+
+SDD Drive Types:
+
+1) General Purpose SSD (GP2) -> Balance price and performance.
+- 3 IOPS per GB to 16K IOPS per GB
+- 1 GB to 16 TB Volume
+
+2) Provisioned IOPS SSD (IO1) -> Highest Performance SSD volume. Designed for IO intensive apps like large relational or NoSQL databases. Mission critical apps.
+- 50 IOPS per GB to 64K IOPS per GB
+- 4 GB to 16 TB Volume
+

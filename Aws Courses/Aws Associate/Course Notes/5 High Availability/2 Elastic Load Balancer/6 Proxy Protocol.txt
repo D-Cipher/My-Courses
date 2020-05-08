@@ -1,0 +1,11 @@
+Proxy Protocol
+
+Proxy Protocol -> Carries TCP/SSL client IP and port information. 
+
+Proxy Protocol Headers -> Identifies IP address of client when you have a ELB that uses TCP back-end connections
+
+Requirements:
+1) Make sure front-end listener is configured for TCP or SSL
+2) Make sure back-end listener is configured for TCP
+3) Make sure you enable Proxy Protocol ELB
+4) Make sure your ELB is not behind a proxy server

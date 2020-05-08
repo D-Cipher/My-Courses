@@ -1,0 +1,49 @@
+Binary Search Tree
+
+Binary Search Tree (BST) -> Binary trees where left sub tree have values <= to the node and right sub tree have values >= node.
+     5
+   /   \
+  3     7
+ / \   / \
+2   4 6   8
+
+```
+class Node:
+
+  def __init__(self,value):
+    self.left = None
+    self.right = None
+    self.data = value
+
+  def __str__(self):
+    return str(self.data)
+
+def preorder(node):
+  if node != None:
+    print(node.data)
+    preorder(node.left)
+    preorder(node.right)
+
+def insert(root,node):
+  if root == None:
+    root = node
+    return
+  if root.data < node.data:
+    if root.right == None:
+      root.right = node
+    else:
+      insert(root.right, node)
+  else:
+    if root.left == None:
+      root.left = node
+    else:
+      insert(root.left, node)
+
+root = Node(5) 
+insert(root, Node(3))
+insert(root, Node(2))
+insert(root, Node(4))
+insert(root, Node(7))
+insert(root, Node(6))
+insert(root, Node(8))
+```

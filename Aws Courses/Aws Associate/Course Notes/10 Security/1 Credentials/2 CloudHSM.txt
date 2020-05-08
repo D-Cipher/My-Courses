@@ -1,0 +1,17 @@
+CloudHSM
+
+CloudHSM -> Cryptographic service allows users to generate encryption keys in the cloud.
+- Generate, store, import, export, and manage cryptographic keys
+- Symmetric and asymmetric key pair compatible.
+- Use cryptographic hash functions to compute message digests and hash-based message authentication codes (HMACs).
+- Cryptographically sign data (including code signing) and verify signatures.
+
+Custom Key Store -> Location where CloudHSM generated keys are stored.
+- You cannot import your own keys into the Custom Key Store.
+
+Hardware Security Module (HSM) -> Dedicated appliance for managing keys
+- FIPS 140-2 compliant
+- Use directly from application
+- HSM is customer managed single tenant key store compared to KMS which is multi-tenant AWS owned and managed
+- Warning: Keys are lost permanently if you do not have a copy
+

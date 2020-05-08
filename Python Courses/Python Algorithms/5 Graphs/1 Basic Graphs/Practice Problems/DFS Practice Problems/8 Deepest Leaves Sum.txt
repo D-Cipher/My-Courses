@@ -1,0 +1,48 @@
+'''LeetCode #1302 Deepest Leaves Sum
+Given a binary tree, return the sum of values of its deepest leaves.
+
+Example 1:
+Input: root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+Output: 15 
+#8 + 7 = 15
+
+Constraints:
+
+The number of nodes in the tree is between 1 and 10^4.
+The value of nodes is between 1 and 100.
+'''
+
+from Implementations import Graph # Import graph class created in graph implementations
+
+graph = Graph()
+tree = [1,2,3,4,5,None,6,7,None,None,None,None,8]
+graph.binaryTree(tree)
+print(graph) #{1: [2, 3], 2: [4, 5], 3: [6], 4: [7], 6: [8]}
+
+def dfs(graph,node,ans=[],vis=None,path=None):
+  if vis==None: vis=set([])
+  if path==None: path=[node]
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      npath = path + [b]
+      if len(graph[b]) == 0:
+        ans.append(tuple(npath))
+
+      dfs(graph,b,ans,vis,npath)
+
+  return ans
+
+paths = (dfs(graph,1))
+result = 0
+
+for p in paths:
+  mlength = len(max(paths,key=len))
+  if len(p) == mlength:
+    result += p[mlength-1]
+
+print(result)
+

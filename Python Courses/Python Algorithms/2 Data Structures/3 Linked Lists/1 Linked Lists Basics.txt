@@ -1,0 +1,12 @@
+Linked Lists
+
+Link List -> Linear data structure where elements are not stored in contiguous order in memory, instead each element contains a pointer than points to the next element.
+- Example: 5->1->3->7
+- Head is start of linked list
+- Tail is end of linked list
+- Advantage: insert and deletions at te begining of linked list is O(1)
+- Disadvantage: cannot use binary search since sorting difficult
+
+1) Singly Linked List -> One node only points to the next node
+
+2) Doubly Linked List -> One node points to both the next node and previous node

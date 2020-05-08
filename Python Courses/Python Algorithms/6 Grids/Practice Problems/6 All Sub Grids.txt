@@ -1,0 +1,49 @@
+'''
+Find all 2x2 subgrids in a grid that move starting from right then down.
+Input: [[1,2,3],
+	4,5,6]]
+Output: [[1,2,5,4],[2,3,6,5]]
+'''
+grid = [
+[1,2,3],
+[4,5,6],
+[7,8,9]]
+
+def dfs(grid,initxy,x,y,k,ans=[],vis=None,path=None):
+  if vis==None:
+    vis=[[False for _ in grid[i]] for i in range(len(grid))]
+  if path==None: path=[]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  outofsubgrid = (y<initxy[1] or x<initxy[0] or y>initxy[1]+k-1 or x>initxy[0]+k-1)
+
+  if invalidate or outofsubgrid or vis[y][x]==True:
+    return None
+  
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+
+  if len(npath) == k*k:
+    ans.append(tuple(npath))
+
+  dfs(grid,initxy,x+1,y,k,ans,vis,npath)
+  dfs(grid,initxy,x-1,y,k,ans,vis,npath)
+  dfs(grid,initxy,x,y+1,k,ans,vis,npath)
+  dfs(grid,initxy,x,y-1,k,ans,vis,npath)
+
+  return ans
+
+k = 2
+
+def subgrids(grid,k):
+  for y in range(len(grid)):
+    for x in range(len(grid[y])):
+      result = dfs(grid,(x,y),x,y,k)
+  
+  return result
+
+#print(dfs(grid,(0,0),0,0,k))
+
+search = subgrids(grid,k)
+print(search)

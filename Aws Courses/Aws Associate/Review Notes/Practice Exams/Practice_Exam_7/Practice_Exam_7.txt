@@ -1,0 +1,182 @@
+IAM
+
+S3
+You are working as a Principal Solutions Architect for a leading digital news company which has both an on-premises data center as well as an AWS cloud infrastructure. They store their graphics, audios, videos, and other multimedia assets primarily in their on-premises storage server and use an S3 Standard storage class bucket as a backup. Their data are heavily used for only a week (7 days) but after that period, it will be infrequently used by their customers. You are instructed to save storage costs in AWS yet maintain the ability to fetch their media assets in a matter of minutes for a surprise annual data audit, which will be conducted both on-premises and on their cloud storage. Which of the following options should you implement to meet the above requirement? (Choose 2)
+a) Set a lifecycle policy in the bucket to transition the data to Glacier after one week (7 days)
+b) Set a lifecycle policy in the bucket to transition data to S3 - Standard IA storage class after one week (7 days)
+c) Set a lifecycle policy in the bucket to transition data to S3 Glacier Deep Archive storage class after one week (7 days)
+d) Set a lifecycle policy in the bucket to transition data to S3 - Standard IA after 30 days
+
+EC2
+You are building a prototype for a cryptocurrency news website of a small startup. The website will be deployed to a Spot EC2 Linux instance and will use Amazon Aurora as its database. You requested a spot instance at a maximum price of $0.04/hr which has been fulfilled immediately and after 90 minutes, the spot price increases to $0.06/hr and then your instance was terminated by AWS. In this scenario, what would be the total cost of running your spot instance?
+a) $0.08
+b) $0.07
+c) $0.06
+d) $0.04
+
+A Junior DevOps Engineer deployed a large EBS-backed EC2 instance to host a NodeJS web app in AWS which was developed by an IT contractor. He properly configured the security group and used a key pair named "tutorialsdojokey" which has a tutorialsdojokey.pem private key file. The EC2 instance works as expected and the junior DevOps engineer can connect to it using an SSH connection. The IT contractor was also given the key pair and he has made various changes in the instance as well to the files located in .ssh folder to make the NodeJS app work. After a few weeks, the IT contractor and the junior DevOps engineer cannot connect the EC2 instance anymore, even with a valid private key file. They are constantly getting a "Server refused our key" error even though their private key is valid. In this scenario, which one of the following options is not a possible reason for this issue?
+a) You are using SSH private key but the corresponding public key is not in the authoried_keys file.
+b) You do not have permissions for your authorized_keys file.
+c) You dont have permissions for the .ssh folder.
+d) SSH private key that you are using has file permissions of 0777.
+
+An application is hosted on an EC2 instance with multiple EBS Volumes attached and uses Amazon Neptune as its database. To improve data security, you encrypted all of the EBS volumes attached to the instance to protect the confidential data stored in the volumes. Which of the following statements are true about encrypted Amazon Elastic Block Store volumes? (Choose 2)
+a) All data moving between volume and the instance are encrypted
+b) Snapshots are automatically encrypted
+c) Snapshots are not automatically encrypted
+d) Only the data in the volume is encrypted and not all the data moving between the volume and the instance
+e) Volume created from the encrypted snapshot are not encrypted
+
+You have EC2 instances running on your VPC. You have both UAT and production EC2 instances running. You want to ensure that employees who are responsible for the UAT instances do not have the access to work on the production instances to minimize security risks. Which of the following would be the best way to achieve this?
+a) Launch the UAT and production EC2 into seperate VPCs connected by VPC peering.
+b) Create an IAM policy with condition which allow access only to EC2 instances that are used for production or development
+c) Launch the UAT and production instances in different AZs and use MFA.
+d) Define tags on the UAT and production servers and add a condition to the IAM policy which allows access to specific tags.
+
+You recently launched a fleet of on-demand EC2 instances to host a massively multiplayer online role-playing game (MMORPG) server in your VPC. The EC2 instances are configured with Auto Scaling and AWS Systems Manager. What can you use to configure your EC2 instances without having to establish a RDP or SSH connection to each instance?
+a) AWS Config
+b) CodePipeline
+c) Run Command
+d) EC2Config
+
+You are planning to migrate a MySQL database from your on-premises data center to your AWS Cloud. This database will be used by a legacy batch application which has steady-state workloads in the morning but has its peak load at night for the end-of-day processing. You need to choose an EBS volume which can handle a maximum of 450 GB of data and can also be used as the system boot volume for your EC2 instance. Which of the following is the most cost-effective storage type to use in this scenario?
+a) Provisioned IOPS SSD
+b) Throughtput Optimized HDD
+c) General Purpose SSD
+d) Cold HDD
+
+You are setting up a cost-effective architecture for a log processing application which has frequently accessed, throughput-intensive workloads. The application should be hosted in an On-Demand EC2 instance in your VPC. Which of the following is the most suitable EBS volume type to use in this scenario? 
+a) Provisioned IOPS SSD
+b) Throughtput Optimized HDD
+c) General Purpose SSD
+d) Cold HDD
+
+A leading bank has an application that is hosted on an Auto Scaling group of EBS-backed EC2 instances. As the Solutions Architect, you need to provide the ability to fully restore the data stored in their EBS volumes by using EBS snapshots. Which of the following approaches provide the lowest cost for Amazon Elastic Block Store snapshots?
+a) Maintain two snapshots: original snapshot and latest incremental snapshot
+b) Maintain a volume snapshot; subsequent snapshots will overwrite one another
+c) Just maintain a single snapshot of EBS volume since the latest snapshot is both incremental and complete
+d) Maintain the most current snapshot and then archive the original and incremental snapshots to Glacier
+
+You are working for a large financial firm in the country. They have an AWS environment which contains several Reserved EC2 instances hosted in a web application that has been decommissioned last week. To save cost, you need to stop incurring charges for the Reserved instances as soon as possible. What cost-effective steps will you take in this circumstance? (Choose 2)
+a) Stop the reserve instance as soon as possible
+b) Contact AWS to cancel your AWS subscription
+c) Go to the reserve instance marketplace and sell the reserve instance
+d) Terminate the reserve instance as soon as possible to avoid getting billed at the on-demand price when it expired
+e) Convert the reserve instance into an on-demand instance.
+
+VPC
+An On-Demand EC2 instance is launched into a VPC subnet with the Network ACL configured to allow all inbound traffic and deny all outbound traffic. The instance security group has an inbound rule to allow SSH from any IP address and does not have any outbound rules. In this scenario, what are the changes needed to allow SSH connection to the instance?
+a) Outbound security group needs to be modified to allow outbound traffic
+b) Outbound network ACL needs to be modified to allow outbound traffic
+c) No action needed
+d) Both outbound security group and outbound network ACL need to be modified to allow outbout traffic
+
+You have a web application running on EC2 instances which processes sensitive financial information. All of the data are stored on an Amazon S3 bucket. The financial information is accessed by users over the Internet. The security team of the company is concerned that the Internet connectivity to Amazon S3 is a security risk. In this scenario, what will you do to resolve this security concern?
+a) Change the web architecture to access the financial data through a Gateway VPC Endpoint
+b) Change the web architecture to access the financial data in your S3 bucket through VPN connection
+c) Change the web architecture to access the financial data in your S3 bucket through a custom VPC endpoint
+d) Change the web architecture to access the financial data in your S3 bucket through AWS PrivateLink
+
+A local bank has an in-house application which handles sensitive financial data in a private subnet. After the data is processed by the EC2 worker instances, they will be delivered to S3 for ingestion by other services. How should you design this solution so that the data does not pass through the public Internet?
+a) Create an Internet gateway in the public subnet with a corresponding route entry that directs data to S3
+b) Configure a VPC interface endpoint along with a corresponding route entry that directs data to S3
+c) Configure a VPC Gateway Endpoint along with a corresponding route entry that directs data to S3
+d) Provision a NAT gateway in a private subnet with a corresponding route entry that directs data to S3
+
+Lambda
+
+Monitoring
+Your IT Director instructed you to ensure that all of the AWS resources in your VPC do not go beyond their service limit. Which of the following services can help in this task?
+a) Cloudwatch
+b) EC2
+c) Trusted Advisor
+d) SNS
+
+You are working as a Solutions Architect for a leading technology company where you are instructed to troubleshoot the operational issues of your cloud architecture by logging the AWS API call history of your AWS resources. You need to quickly identify the most recent changes made to resources in your environment, including creation, modification, and deletion of AWS resources. One of the requirements is that the generated log files should be encrypted to avoid any security issues. Which of the following is the most suitable approach to implement the encryption?
+a) Use CloudTrail and configure the destination Glacier archive to use SSE
+b) Use CloudTrail and configure the desination S3 bucket to use SSE
+c) Use CloudTrail and ensure that SSE option is enabled for the trail in CloudTrail console.
+d) Use CloudTrail with its default settings
+
+An application is hosted in an On-Demand EC2 instance and is using Amazon SDK to communicate to other AWS services such as S3, DynamoDB, and many others. As part of the upcoming IT audit, you need to ensure that all API calls to your AWS resources are logged and durably stored. Which is the most suitable service that you should use to meet this requirement?
+a) CloudWatch
+b) CloudTrail
+c) X-Ray
+d) API Gateway
+
+The social media company that you are working for needs to capture the detailed information of all HTTP requests that went through their public-facing application load balancer every five minutes. They want to use this data for analyzing traffic patterns and for troubleshooting their web applications in AWS. Which of the following options meet the customer requirements?
+a) Enable CloudTrail for application load balancer
+b) Enable access logs on the application load balancer
+c) Add CloudWatch Logs agent on the application load balancer
+d) Enable CloudWatch metrics on the application load balancer
+
+Databases
+You are an IT Consultant for a top investment bank which is in the process of building its new Forex trading platform. To ensure high availability and scalability, you designed the trading platform to use an Elastic Load Balancer in front of an Auto Scaling group of On-Demand EC2 instances across multiple Availability Zones. For its database tier, you chose to use a single Amazon Aurora instance to take advantage of its distributed, fault-tolerant and self-healing storage system. In the event of system failure on the primary database instance, what happens to Amazon Aurora during the failover?
+a) Aurora flips the CNAME for your db to point to the healthy replica, which in turn is promoted to become the primary.
+b) Auora will first attempt to create a new DB in the same AZ as the original instance. If unable, then Aurora will attempt to create a new DB in a different AZ.
+c) Aurora flips the A record for your db to point to the healthy replica, which in turn is promoted to become the primary.
+d) Auora will first attempt to create a new DB in a different AZ as the original instance. If unable, then Aurora will attempt to create a new DB in the same AZ.
+
+You are working for a large financial company. In their enterprise application, they want to apply a group of database-specific settings to their Relational Database Instances. Which of the following options can be used to easily apply the settings in one go for all of the Relational database instances?
+a) Security Groups
+b) Network ACL
+c) Parameter Groups
+d) IAM Roles
+
+High Availability
+You are designing an online banking application which needs to have a distributed session data management. Currently, the application is hosted on an Auto Scaling group of On-Demand EC2 instances across multiple Availability Zones with a Classic Load Balancer that distributes the load. Which of the following options should you do to satisfy the given requirement?
+a) Set up an AWS Systems Manager Session Manager
+b) Enable the sticky sessions feature in Classical Load Balancer
+c) Use ElastiCache
+d) Use the GetSessionToken action in AWS STS for session management
+
+An application is hosted in an Auto Scaling group of EC2 instances. To improve the monitoring process, you have to configure the current capacity to increase or decrease based on a set of scaling adjustments. This should be done by specifying the scaling metrics and threshold values for the CloudWatch alarms that trigger the scaling process. Which of the following is the most suitable type of scaling policy that you should use?
+a) Target tracking scaling
+b) Step scaling
+c) Simple scaling
+d) Scheduled scaling
+
+You are assigned to design a highly available architecture in AWS. You have two target groups with three EC2 instances each, which are added to an Application Load Balancer. In the security group of the EC2 instance, you have verified that the port 80 for HTTP is allowed. However, the instances are still showing out of service from the load balancer. What could be the root cause of this issue?
+a) Instances are using the wrong AMI
+b) Health check configurations is not properly defined
+c) Wrong instance type was used for the EC2
+d) Wrong subnet was used in your VPC
+
+You are managing a global news website which has a very high traffic. To improve the performance, you redesigned the application architecture to use a Classic Load Balancer with an Auto Scaling Group in multiple Availability Zones. However, you noticed that one of the Availability Zones is not receiving any traffic. What is the root cause of this issue?
+a) Auto Scaling should be disabled for the load balancer to route traffic to multiple AZs
+b) By default, you are not allowed to use load balancer with multiple AZs. You have to send a request form to AWS in order for this to work.
+c) The AZ is not properly added to the load balancer which is not recieving any traffic.
+d) Classic Load Balancer is down 
+
+You have a web application hosted on a fleet of EC2 instances located in two Availability Zones that are all placed behind an Application Load Balancer. As a Solutions Architect, you have to add a health check configuration to ensure your application is highly-available. Which health checks will you implement?
+a) HTTP or HTTPS health check
+b) ICMP health check
+c) FTP health check
+d) TCP health check
+
+Content Delivery
+You are working as a solutions architect for a large financial company. They have a web application hosted in their on-premises infrastructure which they want to migrate to AWS cloud. Your manager had instructed you to ensure that there is no downtime while the migration process is on-going. In order to achieve this, your team had decided to divert 50% of the traffic to the new application in AWS and the other 50% to the application hosted in their on-premises infrastructure. Once the migration is over and the application works with no issues, a full diversion to AWS will be implemented. Which of the following steps will you do to satisfy this requirement?
+a) Network Load Balancer to divert traffic between the on-premise and AWS hosted application.
+b) Application Load Balancer to divert traffic between the on-premise and AWS hosted application.
+c) Route 53 with Failover routing to divert traffic between the on-premise and AWS hosted application.
+d) Route 53 with Weighted routing to divert traffic between the on-premise and AWS hosted application.
+
+Deployments
+You created a new CloudFormation template that creates 4 EC2 instances and are connected to one Elastic Load Balancer (ELB). Which section of the template should you configure to get the Domain Name Server hostname of the ELB upon the creation of the AWS stack?
+a) Resources
+b) Parameters
+c) Outputs
+d) Mappings
+
+Analytics
+
+Applications
+
+Security
+A news company is planning to use a Hardware Security Module (CloudHSM) in AWS for secure key storage of their web applications. You have launched the CloudHSM cluster but after just a few hours, a support staff mistakenly attempted to log in as the administrator three times using an invalid password in the Hardware Security Module. This has caused the HSM to be zeroized, which means that the encryption keys on it have been wiped. Unfortunately, you did not have a copy of the keys stored anywhere else. How can you obtain a new copy of the keys that you have stored on Hardware Security Module?
+a) Resport a snapshot of the Hardward Security Module
+b) Contact AWS Support and they will provide you a copy of the keys
+c) The keys are lost permanently if you did not have a copy
+d) Use the CLI to get a copy of the keys
+
+Developer Tools

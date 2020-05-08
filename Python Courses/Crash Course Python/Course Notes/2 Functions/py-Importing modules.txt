@@ -1,5 +1,0 @@
-import pyperclip
-#note: third party import. $sudo pip3 install pyperclip
-
-pyperclip.copy("Hellow World")
-pyperclip.paste()

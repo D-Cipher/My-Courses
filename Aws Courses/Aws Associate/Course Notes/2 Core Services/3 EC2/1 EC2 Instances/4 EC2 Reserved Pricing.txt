@@ -1,0 +1,22 @@
+EC2 Reserved Pricing
+
+Reserved Pricing -> capacity reservation for 1 to 3 year terms. Reserved instances cannot be moved between regions.
+
+Types of Reserved:
+1) Standard Reserved -> long term contracts thats 75% off on demand instances, longer the contract longer the discount.
+2) Convertible Reserved -> Allows you to change between different instance types, 54% off on demand instances.
+3) Scheduled Reserved -> Reserve capacity for specific windows of time that is predictable and reoccurring, think a school with scheduled hours.
+
+Comparing Standard vs Convertible
+- Standard is less flexible cannot reconfigure
+- Standard you cannot move between regions
+- Convertible allows more flexibility reconfiguring the instance
+- Can move between AZ
+- CANNOT move between Regions
+- Can be used in Placement Groups
+
+Billing:
+- Billed even if terminated if you have not reached end of the reserved term.
+- Billed at the on-demand price when it expires, terminating will prevent this.
+
+Reserved Instance Marketplace -> Sell your unused reserved instances if the capacity is no longer needed.

@@ -1,0 +1,94 @@
+import json
+import os
+import boto3
+import decimal
+from datetime import datetime
+from boto3.dynamodb.conditions import Key as dynamoKey
+
+class DynamoPaginatedScanner:
+    """Scans raw data from dynamodb with pagination scan."""
+
+    def __init__(self, dynamodb_resource, table):
+        self.local_db = dynamodb_resource
+        self.table = table
+
+    def _scan_pagination_wrapper(self, target, **kwargs):
+        """Handles scans of data over 1mb.
+        https://stackoverflow.com/a/38619425/."""
+
+        response = target.scan(**kwargs)
+        data = []
+        if 'Items' in response:
+            data.extend(self._replace_decimals(response['Items']))
+        while response.get('LastEvaluatedKey'):
+            response = target.scan(ExclusiveStartKey=response['LastEvaluatedKey'], **kwargs)
+            if 'Items' in response:
+                data.extend(self._replace_decimals(response['Items']))
+        return data
+
+    def _replace_decimals(self, obj):
+        """Helper function replaces Decimal() and Binary() objects.
+        https://github.com/boto/boto3/issues/369/."""
+
+        if isinstance(obj, list):
+            for i in range(len(obj)):
+                obj[i] = self._replace_decimals(obj[i])
+            return obj
+        elif isinstance(obj, dict):
+            for k in obj.keys():
+                obj[k] = self._replace_decimals(obj[k])
+            return obj
+        elif isinstance(obj, decimal.Decimal):
+            if obj % 1 == 0:
+                return int(obj)
+            else:
+                return float(obj)
+        else:
+            return obj
+
+    def pscan(self, start_date, end_date=None, fields=[]):
+        """Scans for data from a given UTC start date to now() in a given table.
+        Example Params: 
+        start_date = '1970-01-01 00:00:00',
+        end_date = '2020-01-01 00:00:00',
+        fields = ['timestampUnix', 'ddbuuid']"""
+
+        # Unix date conversion
+        start_date_unix = int(datetime.strptime(start_date, '%Y-%m-%d %H:%M:%S').timestamp())
+
+        if end_date==None:
+            end_date_unix = int(datetime.now().timestamp())
+        else:
+            end_date_unix = int(datetime.strptime(end_date, '%Y-%m-%d %H:%M:%S').timestamp())
+
+        fe = dynamoKey('timestampUnix').between(start_date_unix, end_date_unix)
+
+        if len(fields) >= 1:
+            pe = ', '.join(fields)
+            return self._scan_pagination_wrapper(self.table,
+                ProjectionExpression=pe,
+                FilterExpression=fe)
+        else:
+            return self._scan_pagination_wrapper(self.table, FilterExpression=fe)
+
+def lambda_handler(event, context):
+
+    dynamodb = boto3.resource('dynamodb', 'us-west-2')
+    table = dynamodb.Table('bid_analysis_table')
+    ddbscanner = DynamoPaginatedScanner(dynamodb,table)
+    
+    items = ddbscanner.pscan(start_date='2019-12-01 00:00:00',
+                            end_date='2020-01-01 00:00:00',
+                            fields=['timestampUnix', 'ddbuuid'])
+
+    for item in items:
+        response = table.update_item(
+            Key=item,
+            UpdateExpression='SET #s = :awardStatus',
+            ExpressionAttributeNames={
+                '#s' : 'awardStatus'},
+            ExpressionAttributeValues={
+                ':awardStatus' : 'Pending'})
+
+    return {'statusCode': 200,'body': json.dumps('Successfully Updated.')}
+

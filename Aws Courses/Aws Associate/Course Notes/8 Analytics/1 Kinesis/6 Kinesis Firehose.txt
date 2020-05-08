@@ -1,0 +1,12 @@
+Kinesis Firehose
+
+Kinesis Firehose -> Load streaming data into data stores and analytics tools.
+- Data analyzed as it comes in, ei it triggers a lambda function that processes it and then stores in another service
+- Convert data from JSON to Parquet or ORC
+- Can invoke Lambda function to transform incoming data and deliver transformed data to destinations.
+
+Main Kinesis Consumers:
+- S3 -> concatenates multiple incoming records and saves to S3
+- Redshift -> saves to S3 then issues Redshift COPY command
+- ElasticSearch -> generates bulk request to index multiple records to elasticsearch cluster
+- Splunk -> concatenates bytes deliver to splunk

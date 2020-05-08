@@ -1,0 +1,12 @@
+Storage Gateway Interfaces
+
+Supports three storage interfaces: file, volume, tape.
+1) File gateway -> object storage that stores files in S3. 
+- NFS or SMB protocols 
+- Objects written through file gateway can be directly access in S3.
+
+2) Volume Gateway -> block stroage that stores hard disk drive volumes in S3. 
+- Uses iSCSI protocol to stored volumes. (iSCSV)
+- To access iSCSI volumes you can take EBS snapshot and create them as EBS volumes.
+
+3) Tape Gateway (VTL) -> Virtual tape based backup, use iSCSI virtual tape library (VTL) and stores in S3 or Glacier.

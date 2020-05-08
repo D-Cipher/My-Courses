@@ -1,0 +1,16 @@
+Kinesis Client Library
+
+Kinesis Client Library (KCL) -> Downloaded on to consumer, ensures that every shard is processed by the record processor.
+- Manages number of record processors relative to the number of shards and consumers
+- Load balances job across all of the record processors
+- Tracks number of shards in the stream
+- Discovers new shards when resharding
+
+Consumers -> Instances that are consuming the data, using the Kinesis Client Library.
+
+Scaling out:
+- Number of instances should not exceed number of shards except for failover purposes
+- You never need multiple instances to handle processing one shard
+- You can have one consumer processing multiple shards, hence even if more shards are added does not necessarily mean you need to add more consumers.
+- Use CPU utilization to determine quantity of consumers (not number of shards).
+- Use ASGs to scale based on CPU utilization load on your consumers

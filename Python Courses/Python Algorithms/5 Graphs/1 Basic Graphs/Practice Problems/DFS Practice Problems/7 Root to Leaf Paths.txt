@@ -1,0 +1,40 @@
+'''LeetCode #257 Binary Tree Paths
+Given a binary tree, return all root-to-leaf paths.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Input:
+
+      1
+    /   \
+   2     3
+  /  \
+ 5    7
+
+Output: ["1->2->5", "1->2->7", "1->3"]
+
+Explanation: All root-to-leaf paths are: 1->2->5, 1->3
+'''
+from collections import defaultdict
+
+graph = defaultdict(list,{1:[2,3],2:[5,7],7:[]})
+
+def dfs(graph,node,ans=[],vis=None,path=None):
+  if vis==None: vis=set([])
+  if path==None: path=[node]
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      npath = path + [b]
+      if len(graph[b]) == 0:
+        ans.append(tuple(npath))
+      dfs(graph,b,ans,vis,npath)
+  
+  return ans
+
+print(dfs(graph,1))

@@ -1,0 +1,6 @@
+SES
+
+Simple Email Service (SES) -> Service to efficiently and securely send high volume e-mails. 
+- Once you have verified that you are the owner of an e-mail address, you can send e-mails through SES to any other e-mail address without the recipient's consent. 
+- SES takes care of the engineering required to ensure delivery of their e-mails (without the right security, SES can be a spammers dream).
+- Not used for channel publisher/subscriber service, this is SNS.

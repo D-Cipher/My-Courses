@@ -1,0 +1,8 @@
+Bring Your Own IP
+
+Bring Your Own IP (BYOIP) -> Provision and advertise your own whitelisted IP range to your AWS account by registering your IP with Route Origin Authorization.
+
+Route Origin Authorization -> Document you can create through Regional Internet Registry (RIR) that authorizes Amazon to advertise on a specific address range.
+- Allows you to bring your public IPv4 address ranges from your on-premise network to your AWS account.
+- You on-premise addresses will appear in your account address pool.
+- BYOIP -> You can create Elastic IP addresses from your address pool to use with AWS resources

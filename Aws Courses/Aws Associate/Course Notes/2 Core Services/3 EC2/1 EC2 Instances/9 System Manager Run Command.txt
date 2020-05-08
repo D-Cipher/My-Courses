@@ -1,0 +1,9 @@
+Systems Manager Run Command
+
+Systems Manager Run Command -> Configure multiple instances without having to login to each instance.
+- lets you remotely and securely manage the configuration of your managed instances. 
+- Automate common administrative tasks and perform ad hoc configuration changes at scale. 
+- You can use Run Command from console, CLI, SDKs. 
+- Run Command is offered at no additional cost.
+
+describe-instances command -> Shows the status of the EC2 instances including the recently terminated instances. It also returns a StateReason of why the instance was terminated.

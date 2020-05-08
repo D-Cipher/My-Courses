@@ -1,0 +1,6 @@
+Resource Groups
+
+Resource Groups -> Use groups to organize your AWS resources. Resource groups make it easier to monitor, manage, and automate tasks on large numbers of resources at one time.
+- Check health and status of various resources simultaneously
+- Maintain seperate sets of resources in different stages (alpha, beta, release).
+- Manage different versions of environments.

@@ -1,0 +1,23 @@
+Kinesis Streams
+
+Kinesis Streams -> Non-persistent data store via individual shards for 24 hours to 7 days to be analyzed by other services to be processed.
+- each data record has a sequence number that is assigned by Streams
+- Allows for real-time data analysis based on heuristics
+
+Main consumers of Kinesis Stream:
+- EC2
+- AWS Lambda
+- Spark on EMR
+- Kinesis Data Analytics
+
+Store Results of Kinesis Stream:
+- S3
+- DynamoDB
+- Redshift
+- EMR
+- Kinesis Firehose
+
+Kinesis Agent -> pre-built Java application that offers the easiest way to send data to your Kinesis stream.
+
+ 
+

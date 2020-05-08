@@ -1,0 +1,42 @@
+VPC Overview
+
+Virtual Private Cloud (VPC) -> lets you provision an isolated section of AWS where you can launch your AWS resources in a virtual network that you define. You chave full control over the virtual network, including:
+- Assign IP address ranges
+- Creating subnets both private with no internet access and public
+- Configure routing tables
+- Creating internet network gateway (IGW) attached to VPC (one gateway per VPC)
+- Subnet network access control list (ACL), these are stateless meaning inbound and outbound traffic must be specified.
+- Creating Hardware VPN connection between your corporate datacenter and your vpc, use aws cloud as an extension of your corporate datacenter
+- You cannot have a subnet that spreads across multiple AZs, but you can have multiple subnets within one AZs.
+- You can have up to 5 VPCs per Region and 200 subnets per VPC.
+- By default, when VPC is created it comes with Route Table, ACL, and Security Group (does not come with any Subnets).
+
+CIDR block size:
+- Amazon allows VPC CIDR block size to be between /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses).
+- Amazon reserves 5 IP address the first four and the last address (0,1,2,3,255).
+
+CIDR Calculator for VPCs -> 2 to the power of 32 minus the CIDR notation minus 5 to get the available hosts.
+- Example: /28 is (2^(32-28))-5 = 11 available hosts
+
+IP Address Range Examples:
+- 10.0.0.0/16 - corporate internal address
+- 172.16.0.0/12 - 12 prefix
+- 192.168.0.0/16 - home addresses
+
+Common Ports:
+HTTP = 80
+HTTPS = 443
+SSH = 22
+TCP = 3389
+
+Default VPC -> Amazon provided VPC designed to be user friendly for testing and immediately deploying resources.
+- All subnets in default VPC have a route out to the internet. 
+- Each EC2 instance has both a public and private IP address. 
+- If you delete the default VPC you can recover it, but do not delete it!
+
+Private IP Address -> Static IP address that is automatically assigned to an instance when launched in a VPC and does not change even if the instance is restarted.
+- Instances launched from VPC, private IP remains associated with instance even if stopped or restarted.
+- Instances launched in EC2-Classic, private IP is released when stopped or terminated
+
+Penetration Testing -> Until recently customers were not permitted to conduct Penetration Testing without AWS engagement. However that has changed. There are still conditions though.
+

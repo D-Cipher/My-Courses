@@ -1,0 +1,5 @@
+Cloud Directory
+
+Cloud Directory -> Highly scalable directory store for your applications hierarchical data.
+- Objects organized into hierarchies to support organizational changes
+- Upload JSON file for schema creation

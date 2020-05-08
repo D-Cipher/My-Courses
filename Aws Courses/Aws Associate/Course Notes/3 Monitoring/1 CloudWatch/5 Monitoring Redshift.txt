@@ -1,0 +1,14 @@
+Monitoring Redshift
+
+Enhanced VPC Routing -> Forces all Copy and Unload traffic between your cluster and your data repository through VPC.
+- Tightly manage flow of data between redshift and other resources.
+- After enabling Enhanced VPC Routing, you can use VPC flow logs to monitor Copy and Unload traffic. 
+
+Database Audit Logging -> tracks authentication attempts, connections, disconnections, changes to your db users, and queries. Logs are stored in S3.
+
+Performance metrics -> Cloudwatch metrics monitors physical aspects of the cluster: CPU utilization, latency, throughput
+
+Query/Load Performance -> Monitor database activity
+
+Default Disk Space Alarm -> Optionally configure Cloudwatch alarm to monitor average percent disk space used across nodes.
+

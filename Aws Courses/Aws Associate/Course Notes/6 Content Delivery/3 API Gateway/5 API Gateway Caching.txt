@@ -1,0 +1,7 @@
+API Gateway Caching
+
+API Gateway Caching -> Allows for caching, reduce the number of calls made to the actual endpoint. 
+- Provisioned for specific stages of your APIs
+- Customizable keys
+
+Time-to-Live (TTL) -> Configurable option to to increase time caches are stored. Enhance the performance response times and reduce load on back-end services.

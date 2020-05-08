@@ -1,0 +1,53 @@
+'''
+You need to devise a strategy to save people of different weights, given your boat has a maximum weight constraint. You are given an array with each element being the weight of a person. The boat has a limit of an amount of max weight it can carry and can carry a max number of 2 people at the same time. Provided the sum of the weight of those people is at most limit. Return the minimum number of boats to carry every given person.  (It is guaranteed each person can be carried by a boat.)
+
+Example 1:
+
+Input: people = [1,2], limit = 3
+Output: 1
+Explanation: 1 boat (1, 2)
+Example 2:
+
+Input: people = [3,2,2,1], limit = 3
+Output: 3
+Explanation: 3 boats (1, 2), (2) and (3)
+Example 3:
+
+Input: people = [3,5,3,4], limit = 5
+Output: 4
+Explanation: 4 boats (3), (3), (4), (5)
+Note:
+
+1 <= people.length <= 50000
+1 <= people[i] <= limit <= 30000
+'''
+
+# nlimit = 2 #Each boat can carry at most 2 people
+arr = [3,1,2,6,4,4,2,6,6]
+arr.sort()
+print(arr)
+wlimit = 6
+numBoats = 0
+
+if arr[end] > wlimit:
+  print('Not Possible.')
+
+strt = 0
+end = len(arr) - 1
+
+while strt <= end:
+
+  weight = arr[strt] + arr[end]
+
+  if weight > wlimit:
+    numBoats += 1
+    end -= 1
+  else:
+    numBoats += 1
+    strt += 1
+    end -= 1
+
+print(numBoats)
+
+
+

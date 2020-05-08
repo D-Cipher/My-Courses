@@ -1,0 +1,27 @@
+'''
+Implementing a Grid:
+'''
+from pprint import pprint
+
+height = 4
+width = 3
+
+grid = [[(x,y) for x in range(1,width+1)] 
+          for y in range(1,height+1)]
+
+pprint(grid,width=80)
+
+# Row
+print(grid[0])
+
+# Col
+def grid_col(index):
+  return [col[index] for col in grid]
+
+print(grid_col(0))
+
+# Visit Row
+print(grid[0][1])
+
+# Visit Col
+print(grid[1][0])

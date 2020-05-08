@@ -1,0 +1,24 @@
+Health Check Configurations
+
+Health Checks -> Application Load Balancer periodically sends requrest to its registeered targests to test their status.
+- ELB only routes requests to healthy targets
+- Often times if instances are out of service from the load balancer the reason is Health Check configuration are not properly defined.
+
+Health Check States:
+- Initial -> LB registering health check
+- Healthy -> Target is healthy
+- Unhealthy -> Target did not respond or failed
+- Unused -> Target not registered with target group or group is not using listener rule
+- Draining -> Target is deregistering
+
+Health Check Types:
+- HTTP and HTTPS -> offered in Application Load Balancers
+- TCP -> offered in Network Load Balancers
+
+Termination of unhealthy instances:
+1) If connection draining, Auto Scaling waits for in-flight requests
+2) Terminates unhealthy instances before launching replacement
+
+Standby State -> Instances in standby state is still managed by ASG and are counted as normal, but do not count towards workload. 
+- Does not perform health check on standbys
+- Great for performing updates and troubleshooting on the instance without impacting the ASG

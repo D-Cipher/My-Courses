@@ -1,0 +1,5 @@
+StackSets
+
+StackSets -> Extends cloudformation stacks across multiple accounts and multiple regions with a single operation
+- Stack managed by an admin account
+- Must set up a trust relationship between admin account and target account

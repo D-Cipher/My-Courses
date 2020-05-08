@@ -1,0 +1,56 @@
+from collections import defaultdict
+
+class Graph:
+  def __init__(self):
+    self.graph = defaultdict(list)
+  
+  def __str__(self):
+    return str(self.graph)
+
+  def __getitem__(self, item):
+    return self.graph[item]
+
+  def keys(self):
+    return self.graph.keys()
+
+  def insertEdge(self,v1,v2):
+    self.graph[v1].append(v2)
+    return (v1,v2)
+  
+  def insertEdgeList(self, edges):
+    for (v1, v2) in edges:
+      self.insertEdge(v1,v2)
+    return self.graph
+
+  def binaryTree(self, arr):
+    shift = 0
+    for i in range(len(arr)):
+      pt = i*2 + 1 + shift
+      if arr[i] == None: shift -= 2
+      c = 0
+
+      while c <= 1:
+        if pt+c <= len(arr)-1:
+          if arr[pt+c] != None and arr[i] != None:
+            self.graph[arr[i]].append(arr[pt+c])
+        c+=1
+    return self.graph
+
+if __name__ == '__main__':
+  graph = Graph()
+  tree = [2,1,5,None,None,6,7,8]
+  graph.binaryTree(tree)
+  #edges = [[2,1],[2,5],[5,6],[5,7],[6,8]]
+  #tree.insertEdgeList(edges)
+
+  print(graph) # {2:[1,5], 5:[6,7], 6:[8]} 
+  '''
+  2
+ / \
+1   5
+   / \
+  6   7
+ /
+8
+  '''
+

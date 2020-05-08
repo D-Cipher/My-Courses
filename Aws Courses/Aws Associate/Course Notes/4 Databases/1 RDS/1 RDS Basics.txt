@@ -1,0 +1,21 @@
+RDS Basics
+
+RDS -> Relational Database Service
+- Used for complex transactions or complex queries
+- Used for medium to high query / write rate
+- Used when you only need a single worker node
+- High durability
+- Provisioned IOPS -> used for optimizing online transaction processing
+- Error Node -> used to check RDS for an error shown in the response from the Amazon RDS API.
+
+Read-after-write Consistency -> Will always return the most up-to-date data.
+
+Database Engines -> MySQL, Microsoft SQL Server, PostgreSQL, Oracle,  Maria, and Aurora
+- Note that besides Aurora the other RDS are NOT cloud based.
+
+Storage types -> Magnetic, General Purpose (SSD), and Provisioned IOPS
+
+IAM DB Authentication -> You can authentication your db instances using IAM.
+- Credentials to the database are managed by IAM
+- You do not need a password to connect to the db, instead you can use authentication token
+- Compatible for MySQL and PostgreSQL

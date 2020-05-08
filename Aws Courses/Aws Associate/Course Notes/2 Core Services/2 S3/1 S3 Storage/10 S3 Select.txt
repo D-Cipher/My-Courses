@@ -1,0 +1,16 @@
+S3 Select
+
+S3 Select -> Provides ability to retrieve a select SUBSET of data from an object in S3 using SQL expressions.
+- Applications do not have to use compute resources to scan and filter the data from an object
+- Increase query performance by 400%, and reducing query costs by 80%
+- Use SELECT instead of GET to take advantage of S3 Select
+
+Supported formats:
+- CSV
+- JSON
+- Apache Parquet
+
+Also compressed formats:
+- GZIP
+- BZIP2
+

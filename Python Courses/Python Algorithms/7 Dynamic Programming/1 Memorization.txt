@@ -1,0 +1,52 @@
+Memorization
+
+Caching -> a way to store values so you can use them later on.
+
+Memorization -> specific way of using caching that involves caching the return value of a function to speed up our programs.
+
+Cached_property vs lru_cache -> In python, we can implement memorization with either of these packages from the functools library. 
+- Cached_property can only be used on methods, meaning the functions must belong to an object.
+- Cached_property is a property and it cannot take arguments.
+- @lru_cache(maxsize=1000) -> Allows for more caches. If maxsize is not specified it will default to cache 128 most recently used values.
+
+Example:
+```
+from functools import lru_cache
+#from functools import cached_property
+#Use cached_property when caching in a class
+
+# Caching using lru_cache
+@lru_cache
+def calc(num):
+  print('computing stuff....')
+  return num*2
+
+print(calc(5))
+print(calc(5))
+print(calc(5))
+
+# Without Caching
+def calcNoCache(num):
+  #print('computing stuff....')
+  return num*2
+
+#print(calcNoCache(5))
+#print(calcNoCache(5))
+#print(calcNoCache(5))
+
+# With Caching using Dictionary
+cache = {}
+
+def calcGlobal(num):
+  if (num in cache):
+    return cache[num]
+  else:
+    #print('computing stuff....')
+    cache[num] = num*2
+    return cache[num]
+
+#print(calcGlobal(5))
+#print(calcGlobal(5))
+#print(calcGlobal(5))
+
+```

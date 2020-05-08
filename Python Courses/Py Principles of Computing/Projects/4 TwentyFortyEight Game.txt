@@ -1,0 +1,207 @@
+"""
+2048 Game
+Implement the full 2048 puzzle game.
+Details: https://en.wikipedia.org/wiki/2048_(video_game).
+(Need to add score keeping and simple game over. Height and width define.)
+"""
+import os
+import random
+from pprint import pprint
+
+class MergeArr:
+  
+  def zerotoback(self, arr):
+    pt = 0
+
+    for i in range(len(arr)):
+      if arr[i] != 0:
+        arr[pt] = arr[i]
+        pt += 1
+
+    for i in range(pt, len(arr)):
+      arr[i] = 0
+
+  def merge(self, arr, inverse=False):
+    if inverse == True:
+      arr = arr[::-1]
+
+    strt = 0
+    pt = 1
+    end = len(arr) - 1
+
+    while strt < end:
+      self.zerotoback(arr)
+
+      if arr[strt] == arr[pt]:
+        arr[strt] += arr[pt]
+        arr[pt] = 0
+      strt += 1
+      pt = strt + 1
+    
+    if inverse == True:
+      result = arr[::-1]
+    else:
+      result = arr
+
+    return result
+
+class TfeGameLogic:
+
+  def __init__(self,merlogic,w=4,h=4):
+    self.width = w
+    self.height = h
+    self.m = merlogic
+    self.grid = [[2,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,2]]
+
+  def _getzeros(self,grid,x=0,y=0,ans=None,vis=None):
+    if vis==None: vis=set([]); ans=[]
+
+    for y in range(len(grid)):
+      if x < len(grid[y]) and (x,y) not in vis:
+        vis.add((x,y))
+        if grid[y][x] == 0:
+          ans.append((x,y))
+        self._getzeros(grid,x+1,y,ans,vis)
+    return ans
+
+  def _spawn(self,grid,num=2):
+    zeros = self._getzeros(grid,0,0,None,None)
+    if len(zeros) > 0:
+      pt = zeros[random.randrange(0,len(zeros))]
+      x = pt[0]
+      y = pt[1]
+      grid[y][x] = num
+
+      return pt
+
+  def newgrid(self):
+    self.grid = [[
+      0 for x in range(self.width)]
+      for y in range(self.height)]
+    
+    zeros = self._getzeros(self.grid,0,0,None,None)
+
+    vis = []
+
+    while len(vis) < 2:
+      selected = zeros[random.randrange(0,len(zeros))]
+      if selected not in vis:
+        vis.append(selected)
+
+    for pt in vis:
+      x = pt[0]
+      y = pt[1]
+      self.grid[y][x] = random.choice([2,4])
+
+    self.printgrid()
+    return vis
+
+  def printgrid(self):
+    pprint(self.grid,width=self.width*5)
+
+  def leftmove(self,inverse=False):
+    grid = [row.copy() for row in self.grid]
+    ngrid = [self.m.merge(row,inverse) for row in grid]
+    if ngrid != self.grid:
+      self._spawn(ngrid)
+      self.grid = ngrid
+      self.printgrid()
+    else:
+      print('Invalid move.')
+
+  def upmove(self,inverse=False):
+    ngrid = [row.copy() for row in self.grid]
+    for i in range(len(ngrid[0])):
+      ncol = self.m.merge([col[i] for col in ngrid],inverse)
+      for j in range(len(ncol)):
+        ngrid[j][i] = ncol[j]
+    
+    if ngrid != self.grid:
+      self._spawn(ngrid)
+      self.grid = ngrid
+      self.printgrid()
+    else:
+      print('Invalid move.')
+
+class TfeGameInstance:
+
+  def __init__(self,gmlogic):
+    self.gmlogic = gmlogic
+
+  def _splashscreen(self):
+    self._clearscreen()
+    print('Welcome to 2048!')
+    print('Details: wikipedia.org/wiki/2048_(video_game)')
+    print(' ')
+    print('Controls:')
+    print('[n] New Game, [k] Quit')
+
+  def _clearscreen(self):
+    os.system('cls' if os.name=='nt' else 'clear')
+
+  def _makemove(self,mv):
+    if mv == 'w':
+      self.gmlogic.upmove()
+    elif mv == 's':
+      self.gmlogic.upmove(inverse=True)
+    elif mv == 'a':
+      self.gmlogic.leftmove()
+    elif mv == 'd':
+      self.gmlogic.leftmove(inverse=True)
+    else:
+      pass
+    return mv
+
+  def _play(self):
+    status = None
+    while True:
+      mv = input()
+      if mv == 'k' or mv == 'n':
+        status = mv
+        self._clearscreen()
+        break
+      else:
+        move = self._makemove(mv)
+        if move == 'k' or move == 'n':
+          status = move
+          self._clearscreen()
+          break
+    return status
+  
+  def _newgame(self):
+    status = None
+    while True:
+      self._splashscreen()
+      print('[w] Up, [s] Down, [a] Left, [d] Right')
+      print(' ')
+      print('====New Game===')
+      print(' ')
+      self.gmlogic.newgrid()
+      play = self._play()
+      if play == 'k':
+        status = play
+        self._clearscreen()
+        break
+    return status
+
+  def run(self):
+    while True:
+      self._splashscreen()
+      print(' ')
+      options = input()
+
+      if options == 'k':
+        self._clearscreen()
+        break
+      
+      if options == 'n':
+        newgame = self._newgame()
+        if newgame == 'k':
+          self._clearscreen()
+          break
+
+if __name__ == '__main__':
+  merlogic = MergeArr()
+  gmlogic = TfeGameLogic(merlogic)
+  gm = TfeGameInstance(gmlogic)
+  gm.run()

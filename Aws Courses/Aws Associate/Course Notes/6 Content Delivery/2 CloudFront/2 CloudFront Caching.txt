@@ -1,0 +1,17 @@
+CloudFront Caching
+
+CloudFront Caching -> Object is cached by CloudFront once a successful request has been made to the origin. It will remain cached until the time to live has expired
+
+Time To Live (TTL) -> Duration objects are cached, after the time is up then object in cache will be deleted.
+
+Cache-Control and Expires headers -> Allows you to control how long objects stay in the cache. 
+
+Cache-Control max-age -> Lets you specify max time of expiration.
+- Minimum of 0 seconds for web distributions
+- Minimum of 3600 seconds for RTMP distributions
+
+Invalidation -> You can invalidate cached objects when adding new data, but there is a charge and not recommended.
+
+Versioned Objects -> Give objects versioned file names to control which file a request returns even if the user has a version cached. AWS recommends this if file updates are frequent.
+- CloudFront access logs includes file names
+- Can serve several different file versions to users

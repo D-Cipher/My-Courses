@@ -1,0 +1,14 @@
+Common SSH Errors
+
+Connecting to EC2 Instances you need to you update the instance user data to append the specified SSH public key to the authorized_keys file, which sets the appropriate ownership and file permissions for the SSH directory and files contained in it.
+
+Server Refused Our Key Error:
+- You are using an SSH private key but the corresponding public key is not in the authorized_keys file.
+- You do not have permissions for your authorized_keys file.
+- You do not have permissions for the .ssh folder.
+- Your authorized_keys file or .ssh folder is not named correctly.
+- Your authorized_keys file or .ssh folder was deleted.
+- Your instance was launched without a key, or it was launched with an incorrect key.
+
+Unprotected Private Key File Error:
+- The private key does not have a 600 permissions, for example it has 777.

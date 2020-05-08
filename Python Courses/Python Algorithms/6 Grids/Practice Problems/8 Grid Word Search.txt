@@ -1,0 +1,44 @@
+'''LeetCode #79 Word Search
+
+Given a 2D board and a word, find if the word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+board =[['A','B','C','E'],['S','F','C','S'],['A','D','E','E']]
+
+Given word = "ABCCED", return true.
+Given word = "SEE", return true.
+Given word = "ABCB", return false.
+
+Note: Answer in Udemy: leetcode-in-python-50-algorithms-coding-interview-questions
+'''
+
+grid = [
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']]
+
+def dfs(grid,target,x,y,ans=[],vis=None,path=None):
+  if vis==None:
+    vis=[[False for _ in grid[i]] for i in range(len(grid))]
+  if path==None: path=[]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+
+  if invalidate or vis[y][x]==True or target in ans:
+    return None
+
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+  #print(''.join(npath))
+  if target in ''.join(npath):
+    ans.append(target)
+  dfs(grid,target,x+1,y,ans,vis,npath)
+  dfs(grid,target,x-1,y,ans,vis,npath)
+  dfs(grid,target,x,y+1,ans,vis,npath)
+  dfs(grid,target,x,y-1,ans,vis,npath)
+  vis[y][x] = False
+
+  return ans
+
+print(dfs(grid,'EES',0,0))

@@ -1,0 +1,16 @@
+Scaling Events
+
+How it works:
+- Install CloudWatch Monitoring Scripts in your EC2 instances to collect and monitor the custom metric (memory usage), which will be used by your Auto Scaling Group as a trigger for scaling.
+- ELB balances the load across our instances
+- CloudWatch monitors the instances' health
+- CloudWatch sends an alarm if CPU utilization level is exceeded
+- Auto Scaling Policy intercepts the alarm and determines how many instances to launch and what kind of instance it should be.
+
+Monitoring -> CloudWatch lets the ASG know when to scale in and when to scale out.
+- CloudWatch monitors: CPU utilization, Network metrics, Queue Size
+- CloudWatch Logs -> stores the data
+- Provides default and custom metrics
+
+Load Balancing -> Elastic Load Balancer distributes traffic across the instances.
+- Each time ASG creates an instance it will register it with the ELB.

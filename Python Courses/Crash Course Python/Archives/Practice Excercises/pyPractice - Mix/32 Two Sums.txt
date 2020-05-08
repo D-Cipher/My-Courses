@@ -1,0 +1,62 @@
+'''
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+'''
+
+nums = [2, 7, 11, 15]
+target = 9
+
+# Brute Force
+def twosums_brute(nums, target):
+    
+    anslist = []
+    
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if i != j:
+                if target == nums[i] + nums[j]:
+                    anslist.append([i,j])
+    if len(anslist) > 0:
+        return anslist[0]
+    else:
+        return "No two numbers added to target"
+    
+print(twosums_brute(nums, target))
+
+# Hash Function
+def twosums_hash(nums, target):
+  ht = dict()
+  anslist = []
+
+  for i in range(len(nums)):
+    if nums[i] in ht:
+      anslist.append([nums.index(ht[nums[i]]), nums.index(nums[i])])
+    else:
+      ht[target - nums[i]] = nums[i]
+
+  if len(anslist) > 0:
+      return anslist[0]
+  else:
+      return "No two numbers added to target"
+
+print(twosums_hash(nums, target))
+
+#While Checker
+def twosums_checker(nums, target):
+  ans = None
+  f = 0
+  l = len(nums) - 1
+
+  while f <= l:
+    if nums[f] + nums[l] == target:
+      ans = [f,l]
+      break
+    elif nums[f] + nums[l] < target:
+      f += 1
+    elif nums[f] + nums[l] > target:
+      l -= 1
+
+  return ans
+
+print(twosums_checker(nums, target))

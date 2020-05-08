@@ -1,0 +1,21 @@
+CloudTrail
+
+Cloud Trail -> Record any activity of your AWS account used for auditing.
+- Monitors API Calls, identifies users, source of IP addresses.
+- Actions taken are recorded as events and saved last 90 days in Event History
+- CloudTrail is automatically enabled
+- Encryption enabled by default
+
+CloudTrail Event Logging:
+- Management Events -> Insights into management operations performed on AWS
+- Data Events -> Insights into resource operations performed on AWS 
+
+Regional vs Global
+- For most services, events are recorded in the region where the action occurred. 
+- For global services, events are delivered to any trail that includes global services.
+- Enable "--is-multi-region-trail" if multi-region is required.
+- Enable "--include-global-service-events" if trial includes global services.
+
+CloudTrail vs CloudWatch
+- CloudTrail asks: who is provision what resource in AWS?
+- CloudWatch asks: what is network through put or disk IO?

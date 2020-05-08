@@ -1,0 +1,9 @@
+Lambda@Edge
+
+Lambda@Edge -> Lets you run Lambda functions to customize the content that CloudFront delivers. Execute functions in AWS locations closer to the user. Functions run in response to CloudFront events.
+1) Viewer Request -> Runs after CloudFront recieves request from user
+2) Viewer Response -> Runs before CloudFront forwards response to user
+3) Origin Request -> Runs before CloudFront forwards request to the origin
+4) Origin Response -> Runs after CloudFront recieves response from origin
+
+Lambda@Edge together with Kinesis you can process real-time streaming data in close geographical proximity to your users.

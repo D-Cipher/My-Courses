@@ -1,0 +1,84 @@
+1. In the Source Account, create S3 bucket access policy for Source Bucket. 
+Name: bucket-access-for-<SOURCE BUCKET NAME>
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GeneralPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AdvancedPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*",
+                "s3:Put*",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<SOURCE BUCKET NAME>/*",
+                "arn:aws:s3:::<SOURCE BUCKET NAME>"
+            ]
+        }
+    ]
+}
+```
+2. In the Source Account, create Assumed Access role for Destination Account and attach the Assumed Access policy.
+Name: access-role-for-<DESTINATION ACCOUNT>
+
+3. Go to Destination Account and create a policy to assume the role: ```access-role-for-<DESTINATION ACCOUNT>```.
+Name: assume-role-policy-for-<SOURCE ACCOUNT>
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AssumeRolePermission",
+            "Effect": "Allow",
+            "Action": [
+                "sts:AssumeRole"
+            ],
+            "Resource": "arn:aws:iam::<SOURCE ACCOUNT>:role/access-role-for-<DESTINATION ACCOUNT>"
+        }
+    ]
+}
+```
+4. In the Destination Account, create the assumed role and attach the ```assume-role-policy-for-<SOURCE ACCOUNT>```.
+Name: assume-role-for-<SOURCE ACCOUNT>
+
+5. Go back to the Source Account and edit the Trust Relationship for ```access-role-for-<DESTINATION ACCOUNT>``` to the following:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "s3.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringLike": {
+          "sts:ExternalId": "arn:aws:iam::<DESTINATION ACCOUNT>:role/assume-role-for-<SOURCE ACCOUNT>"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<DESTINATION ACCOUNT>:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {}
+    }
+  ]
+}
+```
+

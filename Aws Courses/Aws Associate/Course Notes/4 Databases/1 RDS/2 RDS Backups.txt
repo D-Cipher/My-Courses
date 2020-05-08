@@ -1,0 +1,20 @@
+RDS Backups
+
+Backup Options
+1) Automated Backups -> Enabled by default, recover you database to any point in time within a "retention period". 
+- Will take a full daily snapshot. Allows you to do a point in time recovery down to the day. 
+- Free S3 storage space equal to db size used for backup. 
+- Backups are taking in define window and storage may be suspended while data is being backed up.
+- Will be deleted after RDS is deleted
+- You can make backup window take effect immediately
+- Backup retention can be set from 1 day to 35 days
+
+2) Database Snapshots -> taken manually, stored even if after you delete the original RDS.
+- Restoring the backup it will restore to a new RDS instance with a new DNS endpoint.
+- On RDS, I/O may be briefly suspended while the backup process initializes may briefly elevate latency.
+
+Backup Best practices:
+- Ensure Automated backups are enabled
+- Use InnoDB as storage engine
+- Partition larger tables so size does not exeed 16TB.
+- MyISAM storage engine is not recommended

@@ -1,0 +1,8 @@
+DynamoDB Transactions
+
+DynamoDB Transactions -> Support mission critical applications that need an all-or-nothing read/writes.
+- Allows you to implement complex business logic and queries into one single transaction.
+- ACID Transactions (Atomic, Consistent, Isolated, Durable)
+- No partial completed transactions
+- Checks for prerequisite conditions before writing to table
+- Example: Financial Transactions

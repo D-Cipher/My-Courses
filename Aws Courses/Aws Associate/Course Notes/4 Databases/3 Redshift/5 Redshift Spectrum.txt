@@ -1,0 +1,11 @@
+Redshift Spectrum
+
+Redshift Spectrum -> Enables you to run queries against exabytes of unstructured data in S3 without having to load or transform any data.
+- No loading or transformation is required 
+- Scans only columns needed by your query rather than entire rows
+- Supports data compressing algorithms
+- Automatically scales query compute capacity based on the data being retrieved.
+- Spectrum does not use Enhanced VPC routing
+
+Supported Data Formats:
+CSV, TSV, ORC, Parquet, TextFile, RCFile, RegexSerDe, SequenceFile, Avro, and Grok

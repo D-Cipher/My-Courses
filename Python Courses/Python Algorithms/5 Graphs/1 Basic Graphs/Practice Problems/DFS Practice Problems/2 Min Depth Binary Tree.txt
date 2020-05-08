@@ -1,0 +1,42 @@
+'''LeetCode #111 Minimum Depth of Binary Tree
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Given binary tree [3,9,20,null,null,15,7],
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return 3,9.
+'''
+from Implementations import Graph # Import graph class created in graph implementations
+
+graph = Graph()
+tree = [3,9,20,None,None,15,7]
+graph.binaryTree(tree)
+print(graph) #{3:[9,20],20:[15,7]}
+
+#DFS
+def dfs(graph,node,ans=[],vis=None,path=None):
+  if vis==None: vis=set([])
+  if path==None: path=[node]
+
+  branch = graph[node]
+
+  for b in branch:
+    if b not in vis:
+      vis.add(b)
+      npath = path + [b]
+      ans.append(tuple(npath))
+      dfs(graph,b,ans,vis,npath)
+  
+  return ans
+
+print(min(dfs(graph,3)))

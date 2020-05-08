@@ -1,0 +1,13 @@
+Athena
+
+Athena -> interactive query service that makes it easy to analyze export data in S3 using standard SQL. 
+- Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries you run. 
+- Point Athena to your data in S3, define the schema, and start querying using SQL. 
+- Most results are delivered within seconds. 
+- No need for complex ETL jobs to prepare your data for analysis. 
+- Easy for user with SQL skills to quickly analyze large-scale datasets.
+
+Supported formats:
+- Apache ORC
+- JSON
+- Apache Parquet

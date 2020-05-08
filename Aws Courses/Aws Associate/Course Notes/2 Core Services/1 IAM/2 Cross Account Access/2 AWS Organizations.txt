@@ -1,0 +1,20 @@
+AWS Organizations
+
+AWS Organizations -> Offers policy based management for multiple AWS accounts
+- Provides policy framework for multiple AWS accounts
+- Create groups of accounts then apply policies to all accounts
+- Eventually consistent
+
+Consolidated Billing -> enables you to set up a single payment method for all AWS accounts in your organization and view combined charges.
+
+Service Control Policy -> Policy that specifies the services and actions users in the member account has access to.
+
+Organization -> collection of AWS accounts organized and managed centrally
+
+Master Account -> Account to manage your organization, cannot be changed
+
+Member Accounts -> Child accounts that are managed by master account
+
+Administrative root -> Top level container in your organization hierarchy
+
+Organization Unit (OU) -> Group of AWS accounts in an organization

@@ -1,0 +1,7 @@
+DynamoDB Cross Region Rep
+
+DynamoDB Cross Region Replication -> Enabling allows you to replicate your tables across multiple regions
+
+Global tables -> provides fully managed solution of deploying multi-region, multi-master database
+- Specify which region you want the table to be available
+- DynamoDB performs all tasks to create identical table in the region and propagate data changes 

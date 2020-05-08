@@ -1,0 +1,39 @@
+#Dictionaries
+
+example_dict = {"Airplane" : "A flying machine", "Shoes" : "Footwear for your feet", "Boss" : "A person that manages"}
+
+empty_dict = {}
+
+facebook_user1 = {"username" : "will123", "userid": "fb20893", "age": "23", "sex" : "male", "connection" : ["jamie453", "john88", "max555"]}
+
+facebook_user1["sex"]
+
+facebook_user1["connection"][0]
+
+facebook_user1["sex"] = "yes please"
+
+len(facebook_user1)
+
+facebook_user1.pop("sex")
+
+print(facebook_user1)
+
+list(facebook_user1.keys())
+
+list(facebook_user1.values())
+
+for i in facebook_user1.keys():
+	print(i)
+
+
+"""
+Practice Problem: Create a dictionary of foods and prices then add up to total prices of all of the foods in the dictionary
+Answer:
+food_dict = {"Country Fried Steak" : 8.99, "Sausage and Biscuits" : 6.79, "New York Strip" : 17.99}
+
+totalCost = 0.0
+
+totalCost = food_dict["Country Fried Steak"] + food_dict["Sausage and Biscuits"] + food_dict["New York Strip"]
+
+print(totalCost)
+"""

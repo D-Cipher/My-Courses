@@ -1,0 +1,37 @@
+Capacity Management
+
+Provisioned Throughput Capacity Model -> Mechinism to define the upper and lower limits of read/write capacity units in DynamoDBs. 
+- Pay based on provisioning reguardless of whether you use or not
+- Reserved capacity -> one-time fee to commit to minimal usage level
+- Table or global secondary index can increase/decrease capacity when traffic spikes/decreases
+- More cost effective on read heavy workloads
+
+On-Demand Capacity Model -> allows changes based on pay as you go. Charges apply on your read, writing, and storing data
+- Don't need to specify capacity requirements
+- DynamoDB automatically scales based on workloads
+
+DynamoDB Auto Scaling -> Optional feature taht allows read-write capacity to adjust automatically in response to traffic patterns.
+
+Types of Reads:
+1) Eventual Consistent Read -> Default, consistency across all copies of data is usually within a second, if more than one second then consistency will eventually be reached. Best read performance option.
+
+2) Strongly Consistent Reads -> Allowed, returns result that reflects all writes that recieved a successful response prior to the read. Best if app needs consistency with one second or less. 
+- No strongly consistent reads across regions
+
+Capacity Units Consumption
+1) Read Capacity Unit (RCU) -> 2x Eventually Consistent Read at 4KB per second OR 1x Strongly Consistent Read at 4KB per second
+- GetItem -> reads one item.
+- BatchGetItem -> Reads up to 100 items.
+- Scan -> reads all items in table.
+- Query -> reads multiple items that have the same partition key
+
+2) Write Capacity Unit (WCU) -> 1x Write at 1KB per second
+- PutItem -> writes one item
+- BatchWriteItem -> writes up to 25 items
+- UpdateItem -> modifies one item
+- DeleteItem -> removes one item
+
+Calculating Needed Capacity Units 
+- Question: Application needs to read 80 items per second, each item is 3KB in size. How many CUs needed?
+- Answser: 3KB / 4KB = .75, round to 1, 80 / 1 = 80 Strongly Read Capacity Units and 80 / 2 = 40 Eventually Read Capacity Units
+

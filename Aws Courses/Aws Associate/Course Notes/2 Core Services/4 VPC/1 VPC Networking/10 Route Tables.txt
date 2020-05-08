@@ -1,0 +1,9 @@
+Route Tables
+
+Route Tables -> Set of rules called routes that are used to determine where network traffic is directed to.
+- VPC comes with one main route table pre-configured.
+- One subnet can only be associated with one route table at a time. 
+- Multiple subnets can be associated with the same route table.
+- Cannot delete the main route table, but you can replace it.
+- Must update the route table of any subnet that you want to use a gateway.
+- Longest prefix match -> used to select the most specific route across the intended VPC peering connection.

@@ -1,0 +1,25 @@
+'''
+Okkee
+Write a function that takes an integer and returns a string with the given number of "k"s and "e"s each of which equal to the integer.
+
+Examples
+okemaker(5) = "Okkkkkeeeee"
+
+okemaker(1) = "Oke"
+'''
+
+num = 5
+
+def okemaker(num, count=None, prefix=None,sufix=''):
+  if count==None: count = num
+  if prefix==None: prefix = 'O'
+
+  if count > 0:
+    prefix += 'k'
+    sufix += 'e'
+    newcount = count - 1
+    return okemaker(num, newcount, prefix, sufix)
+
+  return prefix + sufix
+
+print(okemaker(num))

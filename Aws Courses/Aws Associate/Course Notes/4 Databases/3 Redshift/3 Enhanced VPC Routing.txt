@@ -1,0 +1,6 @@
+Enhanced VPC Routing
+
+Enhanced VPC Routing -> Forces all COPY and UNLOAD traffic through the VPC
+- Allows you to VPC endpoint to access Redshift without traversing the internet
+- Enable VPC flow logs to monitor the COPY and UNLOAD traffic
+- You can manage flow of data between your cluster and other resources. 

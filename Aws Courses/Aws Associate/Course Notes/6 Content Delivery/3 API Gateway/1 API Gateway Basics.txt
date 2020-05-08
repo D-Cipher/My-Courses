@@ -1,0 +1,21 @@
+API Gateway
+
+API Gateway -> Fully managed service that allows developers to manage api to backend services. Front door for applications to access data, business logic, or functionality from your backend services.
+- Expose HTTPs endpoints to Restful API
+- Serverlessly connect to other services in AWS
+- Sends each API endpoint to different targets
+- Run efficiently with low cost
+- Scale automatically
+- Track and control usage by API Key
+- Throttle requests to prevent attacks
+- Connect to cloudwatch for logging results
+- Maintain multiple versions of your API, ei: test, dev, and prod apis
+- All API Gateway expose HTTPS endpoints only, does not support unencrypted HTTP
+- Decouples client application from back-end using endpoint for API requests
+
+Configuration
+- Define API container
+- Define resources
+- Set responses
+
+ 

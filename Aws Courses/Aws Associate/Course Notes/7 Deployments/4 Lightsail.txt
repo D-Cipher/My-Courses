@@ -1,0 +1,5 @@
+Lightsail
+
+Lightsail -> For developers to quickly deploy virtual private servers. 
+- Launch virtual machines, SSD-based storage, data transfer, DNS management, and a static IP.
+- Does not let you duplicate resources from your VPC.

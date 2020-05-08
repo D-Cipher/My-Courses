@@ -1,0 +1,15 @@
+DAX Cache
+
+DynamoDB Accelerator (DAX) -> fully managed clustered in-memory cache for DynamoDB
+- Delivers 10x read performance 
+- Ideal for read-heavy bursty workloads
+- Write-through cache -> data is written to cache and back end store at the same time.
+- Allows you to point API calls to DAX.
+- Reduces the load on main table
+- May reduce provisioned read capacity and save money.
+- Caters to Eventually Consistent reads
+- Not useful for write intensive apps
+
+Cache Hit -> if item queried is in the cache it will return the result to the application
+
+Cache Miss -> if item queried is not in the cache, dax will perform an eventually consistent read on DynamoDB

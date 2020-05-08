@@ -1,0 +1,14 @@
+AWS Shield
+
+AWS Shield -> Distributed Denial of Service (DDoS) protection to safeguard applications running on AWS.
+
+Standard:
+- always-on monitoring to inspect traffic to detect malicious traffic attacks
+- automatically mitigate attacks without impact to application
+- Use with CloudFront and Route53
+- Provided at no charge
+
+Advanced:
+- Enhanced detection monitors network and application layer.
+- Protects traffic on Elastic IP, Load Balancing, CloudFront, and Route53
+- 1 year subscription.

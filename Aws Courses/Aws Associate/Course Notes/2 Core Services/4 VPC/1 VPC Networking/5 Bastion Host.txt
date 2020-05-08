@@ -1,0 +1,8 @@
+Bastion Host
+
+Bastion Host -> Special purpose computer specially designed to withstand attacks. Sits in the public subnet and only point of accesses into your private subnets.
+- You can get bastion host AMIs from the aws community AMI market place
+- Used to securely administer EC2 instances
+- Cannot use a NAT Gateway as a Bastion host.
+- Small instance -> Bastion hosts doesn't need much computing power to process SSH (port 22) or RDP (port 3389) connections.
+- Bastion hosts are recommended to enforce control and visibility in securing operating systems and applications

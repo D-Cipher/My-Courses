@@ -1,0 +1,48 @@
+'''Grid DFS Combinations
+Get all four-directionally (horizontal or vertical) connected numbers greater than zero and all single numbers grater than 0 where all four directions are connected to 0s or to the edge of the grid.
+Input: [
+  [4,2,0,0],
+  [0,0,7,4],
+  [0,7,3,0],
+  [0,0,0,2]]
+Output: [[4,2],[7,3,7,4],[2]] #Order does not matter.
+'''
+
+grid = [
+  [4,2,0,0],
+  [0,0,7,4],
+  [0,7,3,0],
+  [0,0,0,2]]
+
+def dfs(grid,x,y,ans=None,vis=None,pos=None):
+  if ans==None: ans=[]
+  if pos==None: pos=[]
+  if vis==None:
+    vis = [[False for _ in grid[i]] for i in range(len(grid))]
+  
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+  if invalidate or vis[y][x]==True or grid[y][x]==0:
+    return None
+  
+  vis[y][x] = True
+  if (x,y) not in pos:
+    pos.append((x,y))
+    ans.append(grid[y][x])
+  
+  dfs(grid,x+1,y,ans,vis,pos)
+  dfs(grid,x-1,y,ans,vis,pos)
+  dfs(grid,x,y+1,ans,vis,pos)
+  dfs(grid,x,y-1,ans,vis,pos)
+  vis[y][x] = False
+  grid[y][x] = 0
+
+  return ans
+
+result = []
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    if grid[y][x] != 0:
+      search = dfs(grid,x,y)
+      result.append(tuple(search))
+
+print(result)

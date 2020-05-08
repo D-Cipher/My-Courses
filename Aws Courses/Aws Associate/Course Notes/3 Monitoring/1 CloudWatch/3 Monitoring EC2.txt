@@ -1,0 +1,28 @@
+Monitoring EC2
+
+EC2 Monitoring Options
+1) Standard Monitoring (default) -> every 5 Mins
+2) Enable Detailed Monitoring -> every 1 Mins
+
+EC2 Standard Monitoring Includes:
+- CPU Utilization
+- Network Utilization
+- Disk Performance
+- Disk Read/Writes
+
+EC2 Standard Monitoring Does NOT Inlcude:
+- Memory Utilization
+- Disk Space
+- Disk Swap
+- File Space
+- Log collection
+
+Monitoring EC2 application errors:
+1) Look for logs for keywords related to the application error to create a custom metric.
+2) Use Cloudwatch Alarms for the custom metric to invoke action to restart the instance.
+
+CloudWatch Agent -> Unified agent allows you to collect system-level metrics for your EC2 instances and on premise servers.
+- Allows you to collect logs and send them to CloudWatch logs.
+- Installed by: Command line, SSM Agent, or CloudFromation
+- CloudWatch Logs Insights -> enables you to interactively search, analyze logs, and perform queries.
+

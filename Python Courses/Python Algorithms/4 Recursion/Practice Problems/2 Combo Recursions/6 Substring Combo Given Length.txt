@@ -1,0 +1,23 @@
+'''
+Given a set of characters and a positive integer k, return all possible strings of length k that can be formed from the given set.
+
+Example
+Input: set[] = ['a', 'b'], k = 3
+Output: ['aaa', 'aab', 'aba', 'abb', 'baa', 'bab', 'bba', 'bbb']
+'''
+
+strlist = ['a','b']
+k = 3
+
+def kcombos(strlist,k,ans=[],curr=''):
+  if len(curr) == k:
+      ans.append(curr)
+
+  for i in range(len(strlist)):
+    newcurr = curr + strlist[i]
+    if len(newcurr) <= k:
+      kcombos(strlist,k,ans,newcurr)
+  
+  return ans
+
+print(kcombos(strlist,k))

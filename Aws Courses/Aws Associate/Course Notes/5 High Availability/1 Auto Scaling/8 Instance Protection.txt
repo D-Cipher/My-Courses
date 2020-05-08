@@ -1,0 +1,6 @@
+Instance Protection
+
+Instance Protection -> Protects instance from ASG scaling actions
+- Protection disabled by default
+
+Termination Protection -> An option on the EC2 instance that also protects it from deletions

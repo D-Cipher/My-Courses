@@ -1,0 +1,17 @@
+VPC Endpoints
+
+VPC Endpoints -> Virtual devices that allow communication between instances and other AWS resources without leaving aws network.
+- virtual devices that are horizontally scaled, redundant, highly available
+- Enables you to privately connect your VPC to suppored AWS services powered by PrivateLink.
+- Instances within your VPC do not require public IP address to communicate with these services. 
+- Traffic between VPC and other services do not leave Amazon network.
+- Does not risk availability or cause bandwidth constraints on your network traffic.
+- Support IPv4 traffic only
+- Same region only
+
+Types:
+1) VPC Interface Endpoints -> ENI with a private IP address for accessing VPN and Direct Connect connections.
+
+2) VPC Gateway Endpoints -> VPC endpoints that allow communication between supported AWS services.
+- S3
+- DynamoDB

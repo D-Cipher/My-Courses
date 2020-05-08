@@ -1,0 +1,9 @@
+Failover Configurations
+
+Active-Active Failover -> All resources will be available, but when unavailable it will stop including resource when responding to queries.
+- Configured using any routing policy or combination of routing policies except for the failover routing policy.
+- Always active unless deemed unhealthy.
+
+Active-Passive Failover -> Primary resources will be available while secondary resources will be on standby in case primary becomes unavailable.
+- Can only be configured with failover routing policy
+

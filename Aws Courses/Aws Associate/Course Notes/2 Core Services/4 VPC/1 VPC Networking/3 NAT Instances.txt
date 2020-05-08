@@ -1,0 +1,14 @@
+NAT Instances
+
+Network Address Translation (NAT) -> Allows EC2 instances in private subnet to securely communicate out to the internet for software updates. 
+
+NAT Instance -> Single EC2 instance used for NAT.
+- NAT instances must be in a public subnet
+- There must be a route out of the private subnet to the NAT instance
+- Amount of traffic NAT instance can support depends on instance size.
+- Bottlenecking could be a problem, need to increase instance size.
+- Create high availability using Autoscaling groups and multiple subnets in different AZs, and script to automate failover.
+
+Disabiling Source and Destination Checks -> NAT instances must be able to send and receive traffic when the source or destination is not itself so source/destination checks must be disabled.
+- Each EC2 instance performs source/destination checks by default. This means that the instance must be the source or destination of any traffic it sends or receives. 
+- Be sure to turn it off when creating a NAT instance.

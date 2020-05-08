@@ -1,0 +1,16 @@
+Cluster Snapshots
+
+Cluster Snapshots -> Point-in-time backups of the cluster that are stored in S3 using SSL.
+- Two types: Automated and Manual
+- Periodically takes incremental snapshots tracks changes to cluster since last snapshot
+- Storage for snapshot is free up to the storage capacity of the cluster
+- By default, manual snapshots are retained indefinately
+
+Availability 
+- Currently only single AZ, no Multi-AZ clusters
+- Can restore snapshots into new AZs in case of outage
+
+Cross-Region Snapshots -> Allows you to copy snapshots for a cluster to another region.
+- When enabled, all new manual and automatic snapshots are copied to the specified region. 
+
+

@@ -1,0 +1,15 @@
+Memcached
+
+Memcached -> Simple object caching to offload your db and multi-threaded performance.
+- Multi-threading
+- Low maintenance
+- Easy to horizonally scale with Auto Discovery
+- Not Multi-AZ
+- Nodes are expendable and can grow or shrink
+
+Use Memcached If:
+- No persistence needed
+- Multi-threading
+- Need nodes for scaling
+
+

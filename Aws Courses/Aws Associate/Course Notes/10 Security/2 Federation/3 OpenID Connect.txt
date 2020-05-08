@@ -1,0 +1,5 @@
+OpenID Connect
+
+OpenID Connect -> Authentication protocol that allows users to verify identity based on an Authorization Server which acts as the identity provider.
+- Integrates well with Cognito
+- When user starts the app OpenID Connect will redirect to the OpenID compliant identity provider to authenticate and retrieve ID token to be used to exchange for JWT token. 

@@ -1,0 +1,52 @@
+Practice Exam 2
+
+IAM
+
+S3
+A,D
+D
+A,B
+B
+
+EC2
+B
+C,D
+D
+
+VPC
+A
+D
+C
+
+Lambda
+A
+C
+
+Databases
+A
+B,D
+D
+B
+D
+
+High Availability
+A
+C
+C,D
+
+Content Delivery
+
+Deployments
+
+Analytics
+
+Applications
+B,E
+A,C
+C,D
+
+Security
+
+Developer Tools
+D
+

@@ -1,0 +1,14 @@
+Monitoring RDS
+
+RDS Performance Insights -> Monitors instance load to troubleshoot database performance
+
+RDS Default Monitoring -> CloudWatch gathers metrics about CPU utilization from the hypervisor for a DB instance.
+
+RDS Enhanced Monitoring -> Monitor metrics on the operating system (OS) that your DB instance runs on in real time.
+- Enhanced Monitoring gathers its metrics from an agent on the instance.
+- By default, stored in the CloudWatch Logs for 30 days.
+
+RDS Enhanced Monitoring metrics:
+1) Child processes -> Shows summary of RDS processes that support the database.
+2) RDS processes -> Shows summary of resources used by RDS management agent.
+3) OS processes -> Shows summary of kernal and system processes.

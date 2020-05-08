@@ -1,0 +1,77 @@
+class Node:
+
+  def __init__(self,value):
+    self.left = None
+    self.right = None
+    self.data = value
+
+  def __str__(self):
+    return str(self.data)
+
+def preorder(node):
+  if node != None:
+    print(node.data)
+    preorder(node.left)
+    preorder(node.right)
+
+def insert(root,node):
+  if root == None:
+    root = node
+    return
+  if root.data < node.data:
+    if root.right == None:
+      root.right = node
+    else:
+      insert(root.right, node)
+  else:
+    if root.left == None:
+      root.left = node
+    else:
+      insert(root.left, node)
+
+def minValue(node):
+  while node.left != None:
+    node = node.left
+  return node
+
+def deleteNode(node,key):
+  if node == None:
+    return node
+  
+  if key < node.data:
+    node.left = deleteNode(node.left.key)
+  elif key > node.data:
+    node.right = deleteNode(node.right.key)
+  else:
+    if node.left == None:
+      temp = node.right
+      node = None
+      return temp
+    elif node.right == None:
+      temp = node.left
+      node = None
+      return temp
+    
+    temp = minValue(node.right)
+    node.data = temp.data
+    node.right = deleteNode(node.right, temp.data)
+  
+
+root = Node(5) 
+insert(root, Node(3))
+insert(root, Node(2))
+insert(root, Node(4))
+insert(root, Node(7))
+insert(root, Node(6))
+insert(root, Node(8))
+
+deleteNode(root, 7)
+preorder(root) # 5,3,2,4,8,6
+
+'''
+     5
+   /   \
+  3     7
+ / \   / \
+2   4 6   8
+'''

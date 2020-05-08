@@ -1,0 +1,5 @@
+DNS Hostname
+
+DNS resolution and DNS hostnames -> must be enabled in the VPC configurations in order for EC2 instance in the VPC to have associated DNS hostname.
+- Default VPC automatically provides instances with public and private DNS hostname
+- Non-Default VPC requires manual enable

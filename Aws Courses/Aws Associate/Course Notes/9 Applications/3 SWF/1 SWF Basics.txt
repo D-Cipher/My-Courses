@@ -1,0 +1,21 @@
+SWF
+
+Simple Work Flow (SWF) -> way of coordinating work across distributed application components. Designed as a coordination of tasks tool. 
+- Combine digital environment with human actions. 
+- Executions last up to 1 year
+- Task-oriented API
+- ensure tasks assigned only once never duplicated
+- keeps track of all tasks and events in an application
+- SWF uses long polling
+- Ensures that a task is never duplicated and is assigned only once. 
+- Enable you to coordinate your workflow without worrying about duplicate, lost, or conflicting tasks.
+
+Domain -> a collection of related workflows
+
+SWF process:
+1) Workflow starters -> initiates the workflow execution
+2) Activity Task -> tells the activity worker to perform a function
+3) Decision Task -> tells the decider the state of the workflow so the decider can determine the next activity.
+4) Deciders -> Control flow of activities.
+5) Activity Workers -> Carry out activity tasks.
+

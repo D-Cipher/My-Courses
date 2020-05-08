@@ -1,0 +1,35 @@
+'''
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+'''
+
+import math
+
+arr = [2,5,6,7,11,15]
+target = 17
+
+strt = 0
+end = len(arr) - 1
+ans = None
+
+while strt <= end:
+  total = arr[strt] + arr[end]
+
+  if total > target:
+    end -= 1
+  elif total < target:
+    strt += 1
+  else:
+    ans = [strt,end]
+    break
+
+print(ans)
+

@@ -1,0 +1,9 @@
+CloudFront Origins
+
+Origin -> origin of the files that will be distributed 
+
+CloudFront can use various origins:
+1) S3 buckets -> place objects in S3 that you want Cloudfront to deliever or configure bucket as website endpoints for your origin
+2) Media store or Media package -> MediaStore container or MediaPackage for streaming video
+3) EC2 -> custom origin using HTTP server
+4) CloudFront Origin Group for Failover -> used for origin failover to designate primary origin and secondary origin that CloudFront automatically switches to when primary origin returns failed HTTP status code.

@@ -1,0 +1,8 @@
+SQS Configurations
+
+"VisibilityTimeOut" -> When a consumer retrieves the message, it will be hidden from consumers for a fixed period.
+- 12 hour time out
+
+"DelaySeconds" -> When a message is added to the SQS queue, it will be hidden from the consumer for a fixed period.
+
+"WaitTimeSeconds" -> When the consumer instance polls for new work, the consumer instance will wait a certain time until it has a full workload before closing the connection.

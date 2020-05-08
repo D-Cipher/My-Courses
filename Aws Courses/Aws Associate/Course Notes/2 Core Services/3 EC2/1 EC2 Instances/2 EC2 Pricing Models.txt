@@ -1,0 +1,28 @@
+EC2 Pricing Models
+
+Pricing Models:
+1) On Demand -> pay fixed rate by the hour with no commitment
+2) Spot Pricing -> Bid for a price you want for the capacity
+3) Reserved Pricing -> capacity reservation for 1 to 3 year terms. Reserved instances cannot be moved between regions.
+4) Dedicated Hosts -> Physical EC2 dedicated for your use, paid by the hour.
+5) Dedicated Instances -> Instances run on hardware dedicated to single customer. Automatic instance placement and billing per instance.
+
+EC2 Billing works as follows:
+- Billed in the running state.
+- Billed in the stopping state when preparing to hibernate.
+- EBS Volumes attached to stopped EC2 Instances.
+- Not billed in the pending state.
+- Not billed in the preparing to stop state.
+- Not billed in the stop state.
+- Not billed in terminated state UNLESS it is a reserved instance that has not reached end of the reserved term.
+
+EC2 Compute Cost Considerations:
+1) Clock hours of server time
+2) Machine configurations
+3) Machine purchase type
+4) Number of instances
+5) Load balancing
+6) Detailed monitoring
+7) Auto Scaling
+8) Elastic IP addresses
+9) Operating systems and software packages

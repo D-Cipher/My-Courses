@@ -1,0 +1,23 @@
+Auto Scaling
+
+Auto Scaling -> service allows for scalable resources, used for applications that experience variable load.
+- Scale applications based on resource tags or AWS CloudFormation stacks. 
+- Create scaling plan. Define how each of the resources in your application should be scaled. 
+- Create target track scaling policy. AG keeps scale at target value based scaling strategy.
+- Auto Scaling is free to use.
+- Allows for graceful failure where the impact of failure is reduced by launching replacement instances.
+
+Rebalancing -> Auto Scaling will try to rebalance instances across AZs. It will launch in AZ with fewer instances before terminating in AZ with more instances to rebalance.
+
+Predefined Strategies
+1) optimize availability
+2) optimize costs
+3) balance the two. 
+
+Custom strategy -> define your target values, set the min/max values for the resources.
+
+Useful for variations in traffic flow:
+1) Cyclical traffic -> high business hours and low overnight hours
+2) On/off workloads -> batch processing, testing, periodic analysis
+3) Variable traffic -> marketing campaigns, periods of spiky growth
+

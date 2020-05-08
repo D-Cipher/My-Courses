@@ -1,0 +1,5 @@
+CloudTrail Encryption
+
+CloudTrail Encryption -> CloudTrail event log files are encrypted using SSE by default.
+- You can choose to encrypt your log files with an AWS Key Management Service (AWS KMS) key.
+

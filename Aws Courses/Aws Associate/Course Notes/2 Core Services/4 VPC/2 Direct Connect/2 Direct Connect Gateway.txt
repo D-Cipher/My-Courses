@@ -1,0 +1,12 @@
+Direct Connect Gateway
+
+Direct Connect Gateway -> connects to your VPC using the following ways:
+
+1) Virtual Private Gateway -> Connects different VPCs to direct connect gateway using a private virtual interface.
+- Anchors the VPN connection on the server side (AWS)
+- VPCs can be in different regions or accounts
+
+2) Transit Gateway -> Connects different VPCs to direct connect gateway using transit virtual interface or VPNs. 
+- Used for multiple VPCs in the same Region.
+- Manage a single connection for multiple VPCs or VPNs that are in the same Region.
+- Advertise prefixes from on-premises to AWS and from AWS to on-premises.

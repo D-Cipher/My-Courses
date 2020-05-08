@@ -1,0 +1,17 @@
+Cheatsheet Supported DNS Records
+
+Route 53 currently supports the following DNS records:
+1) "A" record -> IPv4 address record
+2) "AAAA" record -> IPv6 address record
+3) CNAME -> Canonical name record
+4) CAA -> Certificate authority authorization
+5) MX -> Mail exchange record
+6) NAPTR -> Name authority pointer record
+7) NS -> Name server record
+8) PTR -> Pointer record which is a reverse of an "A" record. Way of looking up a name against an IP address.
+9) SOA -> Start of Authority Record
+10) SPF -> Sender policy framework
+11) SRV -> service locator
+12) TXT -> text record
+
+Does not support DNSSEC Domain name system security extensions.

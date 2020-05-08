@@ -1,0 +1,6 @@
+EC2 Mode
+
+EC2 Mode -> Allows you to utilize EC2 instances provisioned by ECS
+- Use images retrieved from registry to deploy them into the ECS host
+- You have full control of the underlying architecture
+- Storage can be used with Docker volumes

@@ -1,0 +1,77 @@
+#Programming Fundementals: For Loops and While Loops
+
+#========While Loops========
+
+track = 0
+
+tracksPlayed = []
+
+while track < 8:
+  tracksPlayed.append(track)
+  track += 1
+
+print(tracksPlayed)
+
+"""
+Practice Problem: Desplay the first 10 of the 5x table 5,10,15,20...
+ 
+Answer:
+x = 1
+
+fiveTimesTable = []
+
+while x < 10:
+  fiveTimesTable.append(x*5)
+  x+=1
+
+print(fiveTimesTable)
+
+Practice Problem : Create a list from 1 to 100 and using a while loop create another list that is each number multiplied by 10. Do the same thing, but this time use a for loop.
+ 
+ Answer:
+
+longNumList = range(1,101)
+
+n = 0
+
+whileLoop_ans = []
+
+while n < len(longNumList):
+  whileLoop_ans.append(longNumList[n] * 10)
+  n += 1
+
+print(whileLoop_ans)
+
+forLoop_ans = []
+
+for number in longNumList:
+  forLoop_ans.append(number * 10)
+
+print(forLoop_ans)
+"""
+
+"""
+Practice Problem: Noober is a Non-Player Character (NPC) in the roll playing video game Baldur's Gate known for being extremely annoying (http://baldursgate.wikia.com/wiki/Tolerating_Noober). He will follow the player around and continue endlessly repeating several lines and forcing the player to reply to him. The only way to make him stop is to kill him. 
+Create a function that will bring this belove character to life. Use a while loop wrapped around an input() and have the break be typing the word kill in the input. Use the given nooberLines list as lines Noober says.
+
+import random
+
+def nooberNPC():
+  nooberLines = ["Hi, I'm Noober. Nice place, huh?","So, killed any monsters yet?","What's that big weapon for?","Ugh, I think i stepped in something.","What time is it?","Those colours look pretty stoopid on you...","What about now?","What about now?","What about now?","What about now?","Are you gonna throw rocks at me?","Are you gonna throw rocks at me?","What about now?","What time is it?","What time is it?"]
+  killed = False
+  
+  randNum = random.randrange(len(nooberLines))
+  print(nooberLines[randNum])
+  
+  while killed == False:
+    reply = input("Reply: ").lower()
+    
+    if reply == "kill":
+      print("You killed Noober!")
+      killed = True
+    else:
+      randNum = random.randrange(len(nooberLines))
+      print(nooberLines[randNum])
+      
+nooberNPC()
+"""

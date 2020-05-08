@@ -1,0 +1,75 @@
+Practice Exam 1_Key
+
+IAM
+1. C
+2. B, D
+3. C
+4. C,D,F
+5. A,B,D,E
+
+CloudWatch
+6. A
+7. C, E
+
+S3
+8. D
+9. A
+10. A
+11. A
+12. A
+13. C
+14. A
+15. A, C
+16. B, C
+
+EC2
+17. A
+18. C
+19. B
+20. D
+
+CloudFormation
+21. B
+22. D
+
+Auto Scaling
+23. C
+24. C
+25. B, E, F
+26. A
+
+Databases
+27. A, B, D
+28. B
+29. A
+30. D
+31. A, E
+32. C
+33. A, B
+
+Route53
+34. C, E
+35. D
+
+VPC
+36. C
+37. C
+38. B
+39. C, D
+40. A, B, F
+41. C, D
+42. A
+43. C, E
+44. D, E
+
+SQS
+45. A
+46. C
+
+High Availability
+47. B
+48. B, D, E, G
+49. C
+50. B
+51. A
+52. B, D

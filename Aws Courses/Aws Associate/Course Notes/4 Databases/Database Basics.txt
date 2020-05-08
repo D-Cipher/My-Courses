@@ -1,0 +1,12 @@
+Databases Overview
+
+1) Relational Database -> Collection of data items with pre-defined relationships between them. These items are organized as a set of tables with columns and rows. Tables are used to hold information about the objects to be represented in the database.
+
+2) Non-relational Database -> Collection of data items with flexible schemas for building modern applications. Rather than columns, rows, and cells, Non-relational dbs use a collection of documents with key value pairs. Example json and non-SQL. Big advantage is you can easily add fields into the data. (dynamodb)
+
+3) Datawarehousing -> analytics and business intelligence. Used for OLAP. (redshift)
+- OLTP -> transaction processing, simple queries but lots of hits
+- OLAP -> analytics processing, complicated queries but few hits
+
+4) ElastiCache -> caches most commonly used queries in-memory caches, takes huge load off of your databases. (memcached and redis)
+

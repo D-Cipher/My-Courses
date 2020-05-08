@@ -1,0 +1,28 @@
+DNS Records
+
+Alias -> Route 53 extension to the DNS that let you route traffic to AWS resources and from one record in a hosted zone to another.
+- Can create alias record for root domain (example.com)
+- Can create alias record for subdomains (portal.example.com)
+
+Zone Apex -> root domain, top node of a DNS namespace.
+
+"A" Record -> Authoritative response from name servers that points NS to an IP address for IPv4. Maps to AWS resources recommended set an Alias.
+
+"AAAA" Record -> Authoritative response from name servers that points NS to an IP address for IPv6.
+
+CNAME -> Similar to Alias, resource record that maps one domain to another domain, but cannot map to root domains, only subdomains.
+
+Resource Mapping:
+AWS does not recommend you directly map an "A"/"AAAA" record to an IP address, instead create an alias of the record which allow you to map to specific AWS resource domain or zone apex.
+
+Example Use Case:
+1) User connects to the DNS through their browser 
+2) Browser connects to the Top Level Domain Server querying it for the authoritative DNS records
+3) Top Level Domain Server is going to point it to the NS record.
+4) That will then match up with the NS Records server which will give us a Start of Authority (SOA). 
+5) Within the SOA that is where it will look up the "A"/"AAAA" record which takes the name and points to an IP address.
+6) Alias associated with our "A"/"AAAA" mapped to AWS resources will take the user to those resources.
+
+Other Records:
+MX Records -> E-mail records.
+PTR Records -> Reverse of an "A" record. Way of looking up a name against an IP address.

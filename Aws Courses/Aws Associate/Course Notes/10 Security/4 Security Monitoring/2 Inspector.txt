@@ -1,0 +1,7 @@
+Inspector
+
+Inspector -> Enables you to analyze the behavior of your AWS resources and helps you identify potential security issues.
+- Install agents on your EC2 instances
+- Run assessments
+- Analyze findings and fix security issues
+- Not used for general logging

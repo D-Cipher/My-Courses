@@ -1,0 +1,7 @@
+Data Pipeline 
+
+Data Pipeline -> Move, integrate, and process data across compute and storage resources.
+- Move data between different AWS services and on-premises data sources
+- Schedule compute activities to process data
+- Primarily used for moving data between compute and starage
+- Does not work with streaming data

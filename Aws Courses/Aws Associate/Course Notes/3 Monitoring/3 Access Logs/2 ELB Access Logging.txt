@@ -1,0 +1,12 @@
+ELB Access logging
+
+ELB Access logs -> Optional feature in ELB that provides access logs that capture detailed information about requests sent to your load balancer
+- Store logs in S3
+- Can use EMR to analyze log files
+
+Detailed information:
+- Time request recieved
+- Client IP address
+- Latency
+- Request path
+- Server response

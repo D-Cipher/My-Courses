@@ -1,0 +1,8 @@
+Storage Gateway
+
+Storage Gateway -> Virtual or Physical Device that allows you to replicate data into AWS. Connects on premise infrastructure to the cloud.
+- Integrates on-premise applications and workflows with AWS block and object cloud storage. 
+- Provides low-latency performance by caching frequently accessed data on premise.
+- All data transferred between any type of gateway appliance and storage is encrypted by SSL.
+- Effectively acts as a file system mounted to an S3 bucket
+

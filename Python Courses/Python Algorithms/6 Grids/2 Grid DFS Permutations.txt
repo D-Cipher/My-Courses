@@ -1,0 +1,36 @@
+'''Grid DFS Permutations
+Traverse a Grid with DFS starting from (0,0).
+'''
+from pprint import pprint
+
+grid = [
+  [0,6,0],
+  [7,5,9]]
+# Output = [[0,6,0,9],[0,6,5,9],[0,7,5,9],[0,7,5,6,0,9]]
+
+pprint(grid,width=20)
+
+def dfs(grid,x,y,ans=None,vis=None,path=None):
+  if ans==None: ans=[]
+  if path==None: path=[]
+  if vis==None:
+    vis = [[False for _ in grid[i]] 
+            for i in range(len(grid))]
+
+  invalidate = (y<0 or x<0 or y>=len(grid) or x>=len(grid[y]))
+  if invalidate or vis[y][x] == True:
+    return None
+  
+  vis[y][x] = True
+  npath = path + [grid[y][x]]
+  ans.append(tuple(npath))
+  dfs(grid,x+1,y,ans,vis,npath)
+  dfs(grid,x-1,y,ans,vis,npath)
+  dfs(grid,x,y+1,ans,vis,npath)
+  dfs(grid,x,y-1,ans,vis,npath)
+  vis[y][x] = False
+
+  return ans
+
+pprint(dfs(grid,0,0),width=80)
+

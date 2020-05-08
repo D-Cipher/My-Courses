@@ -1,0 +1,43 @@
+'''LeetCode #1239 Maximum Length of a Concatenated String with Unique Characters
+
+Given an array of strings arr. String s is a concatenation of a sub-sequence of arr which have unique characters.
+
+Return the maximum possible length of s.
+
+Input: arr = ["un","iq","ue"]
+Output: 4
+Explanation: All possible concatenations are "","un","iq","ue","uniq" and "ique".
+Maximum length is 4.
+
+Input: arr = ["cha","r","act","ers"]
+Output: 6
+Explanation: Possible solutions are "chaers" and "acters".
+
+Input: arr = ["abcdefghijklmnopqrstuvwxyz"]
+Output: 26
+'''
+#arr = ['un','iq','ue']
+
+arr = ["cha","r","act","ers"]
+
+def isUnique(chars):
+  for i in range(len(chars)):
+    if chars.count(chars[i]) > 1:
+      return False
+  return True
+
+def dfs(arr,ans=[],cur=''):
+
+  for i in range(len(arr)):
+    if arr[i] not in cur:
+      ncur = cur + arr[i]
+      if ncur not in ans and isUnique(ncur):
+        if len(ans) == 0:
+          ans.append(ncur)
+        else:
+           if ncur >= max(ans,key=len):
+             ans.append(ncur)
+      dfs(arr,ans,ncur)
+  return len(max(ans,key=len))
+
+print(dfs(arr))

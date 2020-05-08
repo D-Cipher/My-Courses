@@ -1,0 +1,18 @@
+Scaling Policies
+
+1) Dynamic Scaling (aka Auto Scaling or Reactive Scaling) -> Scales based on targeted scaling policies.
+
+Types of Dynamic Scaling:
+ a) Target tracking scaling -> Scale based on target value of a metric. Works like a thermostat, turns on when below a certain temp and turns off when above a certain temp.
+ b) Step scaling -> Scale based on a set of scaling adjustments. Specified scaling metrics and threshold values triggered by CloudWatch alarms.
+ c) Simple scaling ->  Scaled based on a single scaling adjustment.
+
+2) Manual Scaling (aka Scheduled Scaling) -> Scales based on known load that will appear on future.
+- Works great when you know there is a large load on your system at a certain time.
+- Scales for predictable peaks and cyclical jobs.
+
+3) Predictive Scaling -> Scales based on machine learning, analyze historical workload of resources and forecasts the future load for the next two days(ASGs only currently):
+- Load Forcasting -> analyzes 14 days of history of load metrics and forcast demand for next two days.
+- Scheduled scaling actions -> schedules scaling actions ahead of time before implementing them.
+- Max capacity behavior -> defines the min and max capacity limits.
+

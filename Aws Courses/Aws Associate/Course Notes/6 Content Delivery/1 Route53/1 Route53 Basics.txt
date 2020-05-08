@@ -1,0 +1,28 @@
+Route53 Basics
+
+Route53 -> highly available DNS to provide a way to route end users to Internet applications.
+- Translates names like example.com to ip address like 192.0.2.1 that computers can use to connect ot each other.
+- Route53 because DNS is on port 53.
+- You cannot automatically register EC2 instances with private hosted zones
+
+Request originations -> By design, Route53 service does not respond to requests originating from outside the VPC.
+- You can resolve DNS outside the VPC, but services outside the VPC cannot resolve yours.
+
+Domain Name System (DNS) -> convert human friendly domain names into Internet Protocol IP addresses. 
+
+Time to Live (TTL) -> Length that that DNS recored is cached on either a resolving server or on the local PC. Default TTL is 48 hours. When user visits an address it will cache the record for 48 hours.
+
+IP addresses -> are used by computers to identify each other on a network. IP addresses commonly come in 2 forms, IPv4 and IPv6
+- IPv4 -> a 32 bit field and has over 4 billion different addresses, address is running out.
+- IPv6 -> 128 bits created to solve the problem of running out of IPv4. 340 undecillion different addresses.
+- Elastic Load Balancers do not have a pre-defined IPv4 address, you resolve them using DNS name.
+
+Internet Assigned Numbers Authority (IANA) -> root zone database of all available top level domains: www.iana.org/domains/root/db. 
+
+Domain name registrar -> registering authority that can assign domain names under top-level domains. Domain names are registered with InterNIC a service of ICANN.
+- ICANN -> enforces uniqueness of the domain names.
+- WhoIS database -> central database where domains are registered.
+
+Top Level Domains (TLD) -> the last word in the domain name is the top level (.com, .edu, .org, .uk, .au)
+- Second level domain -> second word before the last word in domain (.co in .co.uk, .com in .com.au)
+

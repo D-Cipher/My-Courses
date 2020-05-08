@@ -1,0 +1,7 @@
+Data Lifecycle Manager
+
+Data Lifecycle Manager (DLM) -> you can manage the lifecycle of your AWS resources. You create lifecycle policies, which are used to automate operations of EBS and other resources.
+- Automates the creation, retention, and deletion of snapshots for EBS volumes.
+- Protects valuable data by enforcing a regular backup schedule.
+- Retains backups as required by auditors or internal compliance.
+- Reduce storage costs by deleting outdated backups.

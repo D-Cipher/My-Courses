@@ -1,0 +1,47 @@
+'''LeetCode #22 Generate Parentheses
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+For example, given n = 3, a solution set is:
+["((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"]
+'''
+
+class GenerateParens:
+
+  def isOpening(self,c):
+    if c == '(':
+      return True
+    else:
+      return False
+
+  def isParen(self,chars,st = []):
+    for c in chars:
+      if self.isOpening(c):
+        st.append(c)
+      else:
+        if len(st) > 0:  
+          st.pop()
+        else:
+          return False
+  
+    if len(st) == 0:
+      return True
+    else:
+      return False
+
+  def gen(self,num,chars=None,ans=[],cur='',index=0):
+    if chars == None: chars = '()'*num
+
+    for i in range(index,len(chars)):
+      if len(cur+chars[i]) <= len(chars) and cur+chars[i] not in ans:
+        ncur = cur + chars[i]
+        if self.isParen(ncur,st=[]) and len(ncur) == len(chars):
+          ans.append(ncur)
+        self.gen(num,chars,ans,ncur,i)
+    return ans
+
+gp = GenerateParens()
+print(gp.gen(3))

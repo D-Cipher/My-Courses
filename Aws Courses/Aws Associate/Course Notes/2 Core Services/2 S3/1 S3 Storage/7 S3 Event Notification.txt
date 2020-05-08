@@ -1,0 +1,10 @@
+S3 Event Notification
+
+S3 Event Notification -> Enables you to receive notifications when certain events happen in your bucket. 
+- Add a notification configuration to identify the events you want Amazon S3 to publish
+- Set destinations where you want Amazon S3 to send the event notifications
+
+Destinations to publish events:
+- SNS
+- SQS
+- Lambda

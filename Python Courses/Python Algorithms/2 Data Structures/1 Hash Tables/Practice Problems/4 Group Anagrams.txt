@@ -1,0 +1,41 @@
+'''
+Given an array of strings, group anagrams together. Anagrams are different words that use the same letters.
+
+Example:
+
+Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+Output:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
+
+Note:
+
+All inputs will be in lowercase.
+The order of your output does not matter.
+
+{
+  "eat" : ["eat", "tea", ...],
+  "tan" : ["tan",...],
+}
+'''
+
+arr = ["eat", "tea", "tan", "ate", "nat", "bat"]
+
+ht = dict()
+
+for word in arr:
+  key = ''.join(sorted(word))
+  if key in ht:
+    if word not in ht[key]:
+      ht[key].append(word)
+  else:
+    ht[key] = [word]
+
+print(ht)
+
+ans = [ht[key] for key in ht.keys()]
+
+print(ans)

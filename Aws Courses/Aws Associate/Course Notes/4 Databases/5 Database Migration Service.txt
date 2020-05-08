@@ -1,0 +1,14 @@
+Database Migration Service
+
+Database Migration Service -> Supports homogeneous migrations and heterogeneous migrations between different database platforms.
+- Compatible for converting RDS to EC2-based databases
+- Source database can be located in your own premises, running on an EC2 instance, or RDS database. 
+- Target database can be EC2 or RDS.
+
+Schema Converstion Tool -> Makes heterogeneous database migrations by automatically converting the source database schema to a format compatible target database
+- Scans your database source code for embedded SQL statements and convert them as part of database conversion.
+
+Migration Process:
+1) Use the Schema Conversion Tool to convert the source schema and code to match that of the target database 
+2) Use Database Migration Service to migrate data from the source database to the target database. 
+3) All the required data type conversions will automatically be done in Database Migration Service during the migration. 

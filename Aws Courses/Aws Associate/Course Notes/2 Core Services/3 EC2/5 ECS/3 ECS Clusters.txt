@@ -1,0 +1,7 @@
+ECS Clusters
+
+ECS Clusters -> Logical grouping of container instances that you can place tasks on
+- Can contain tasks using BOTH Fargate and EC2 Modes
+- Each container can only be a part of one cluster at a time
+- Region specific
+- EC2 type clusters can contain different container instance types

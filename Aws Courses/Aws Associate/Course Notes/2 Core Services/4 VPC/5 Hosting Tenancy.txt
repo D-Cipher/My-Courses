@@ -1,0 +1,20 @@
+Hosting Tenancy
+
+Hosting Tenancy -> Tenancy ensures all EC2 instances that are launched in a VPC run on a particular tenancy attribute whether default or dedicated configuration. 
+
+Tenancy attribute
+1) Default -> Your instance runs on shared hardware.
+2) Dedicated -> Your instance runs on single-tenant hardware.
+3) Host -> Your instance runs on a Dedicated Host, which is an isolated server with configurations that you can control.
+
+Dedicated Hosts -> Physical EC2 dedicated for your use, paid by the hour.
+- Good for regulatory requirements where not allowed for multi-tenant virtualization.
+- Good for licensing requirements 
+- Can be purchased On-Demand
+- Can be purchased as reserved
+
+Note:
+- You cannot change the tenancy of an instance from default to dedicated/host after you've launched it and vice versa.
+- You can change the tenancy attribute of your VPC from dedicated to default using the AWS CLI/SDK. 
+- You cannot change the VPC from default to dedicated though.  
+- You can transition between Dedicated and Host by stopping and starting the instance.

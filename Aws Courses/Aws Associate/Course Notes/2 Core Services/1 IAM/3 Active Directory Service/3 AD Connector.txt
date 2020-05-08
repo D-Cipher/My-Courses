@@ -1,0 +1,19 @@
+AD Connector
+
+AD Connector -> Proxy service allows users to log on to AWS application by forwarding sign-in request to on-premise AD for authentication.
+- Eliminates need for synchronization 
+- Eliminates need for trust relationships
+- Not compatible with RDS
+- Requires assumed IAM Role to define permissions to access AWS services 
+
+Types:
+1) Small AD Connector up to 500 users
+2) Large AD Connector up to 5000 users
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+IAM
+
+S3
+1. Your company likes the idea of storing files on AWS. However, low-latency service of the last few days of files is important to customer service. Which Storage Gateway configuration would you use to achieve both of these ends? (Choose 2)
+a) Gateway-VTL
+b) File Gateways
+c) Gateway-Cached
+d) Gateway-Stored
+e) Gateway-Snapshot
+
+2. Which of the following URL formats does S3 support in pointing to bucket "mynewbucket"? (Choose 2)
+a) http://mynewbucket.s3-aws-region.aws.com
+b) http://s3.aws-region.amazonaws.com/mynewbucket
+c) http://mynewbucket.s3-aws-region.amazonaws.com
+d) http://mynewbucket.s3.aws-region.amazonaws.com
+e) http://s3-aws-region.aws.com/mynewbucket
+f) http://s3-aws-region.amazonaws.com/mynewbucket
+g) http://s3-aws-region.amazon.com/mynewbucket
+h) http://mynewbucket.s3-aws-region.amazon.com
+
+3. When coding a routine to upload to S3, you have the option of using either single part upload or multipart upload. Identify all the possible reasons below to use Multipart upload. (Choose 4)
+a) Multipart upload delivers the ability to pause and resume object uploads.
+b) Multipart upload delivers the ability to begin an upload before you know the final object size.
+c) Multipart upload delivers improved throughput.
+d) Multipart upload delivers quick recovery from network issues.
+e) Multipart upload delivers the ability to append data into an open data file.
+f) Multipart upload delivers improved security in transit
+
+4. Which native AWS service will act as a file system mounted on an S3 bucket?
+a) Amazon S3
+b) Amazon Elastic File System
+c) Amazon Elastic Block Store
+d) AWS Storage Gateway
+
+5. To add an object to an S3 bucket, the PUT operation is used. As part of crafting a PUT, the programmer can add instructions called Request Headers. Which of the following are valid S3 Request Headers? (Choose 4)
+a) x-aws-meta-
+b) x-aws-storage-class
+c) x-amz-storage-class
+d) Content-Length
+e) x-amz-meta-
+f) Content-MD5
+g) Cache-Enable
+
+EC2
+6. When copying an AMI, which of the following types of information must be manually copied to the new instance? (Choose 3)
+a) S3 bucket permissions
+b) User-defined tags
+c) Launch permissions
+d) User data
+
+7. You have been engaged by a company to design and lead a migration to an AWS environment. The team is concerned about the capabilities of the new environment, especially when it comes to avoiding bottlenecks. The design calls for about 20 instances (C3.2xLarge) pulling jobs/messages from SQS. Network traffic per instance is estimated to be around 500 Mbps at the beginning and end of each job. Which network configuration should you plan on deploying?
+a) Choose a different instance type that better matched the traffic demand.
+b) Deploy as a Cluster Placement Group as the aggregated burst traffic could be around 10 Gbps.
+c) Activate EBS-Optimization on the instance to maximize network throughput.
+d) Use a 2nd Network Interface to separate the SQS traffic for the storage traffic.
+e) Spread the Instances over multiple AZs to minimize the traffic concentration and maximize fault-tolerance.
+
+VPC
+8. You work for a famous bakery that is deploying a hybrid cloud approach. Their legacy IBM AS400 servers will remain on-premise within their own datacenter. However, they will need to be able to communicate to the AWS environment over a site-to-site VPN connection. What do you need to do to establish the VPN connection?
+a) Create a dedicated NAT and deploy this to the public subnet.
+b) Connect to the environment using AWS Direct Connect.
+c) Set an ASN for the Virtual Private Gateway.
+d) Assign a public IP address to your Amazon VPC Gateway.
+e) Update your route table to add a route for the NAT to 0.0.0.0/0.
+
+9. You have a MySQL database running on an EC2 instance in a private subnet. You can connect via SSH, but you are unable to apply updates to the database server via the NAT instance. What might you do to remedy this problem?
+a) Ensure that "Source/Destination Checks" is disabled on the NAT instance.
+b) Replace the NAT instance.
+c) Ensure that the Security Group allows HTTP traffic.
+d) Modify the Security Group to allow SSH traffic from anywhere.
+
+10. To establish a successful site-to-site VPN connection from your on-premise network to an AWS Virtual Private Cloud, which of the following might be combined & configured? (Choose 4)
+a) A NAT instance
+b) A VPC with Hardware VPN Access
+c) A Virtual Private Gateway
+d) An on-premise Customer Gateway
+e) A private subnet in your VPC
+f) A Virtual Customer Gateway
+
+11. Following advice from your consultant, you have configured your VPC to use Dedicated hosting tenancy. A subsequent change to your application has rendered the performance gains from dedicated tenancy superfluous, and you would now like to recoup some of these greater costs. How do you revert to Default hosting tenancy??
+a) Create AMIs of all your instances and use them to create new instances using Default hosting.
+b) Create AMIs of all your instances. Create a new VPC with Default as the hosting tenancy attribute, and use them to create new instances using Default tenancy.
+c) Use the AWS CLI to modify the Instance Placement attribute of each instance and the VPC tenancy attribute of the VPC
+d) Nothing - it is not possible to move from a dedicated tenancy to a default tenancy
+
+12. You have launched a NAT instance into a public subnet, and you have configured all relevant security groups, network ACLs, and routing policies to allow this NAT to function. However, EC2 instances in the private subnet still cannot communicate out to the internet. What troubleshooting steps should you take to resolve this issue?
+a) Enable Source/Destination Check on the NAT instance.
+b) Configure all traffic to go out via the Elastic Load Balancer.
+c) Disable the Source/Destination Check on your NAT instance.
+d) Update Route 53 to allow traffic to flow out from your VPC.
+
+13. You have been asked to create VPC for your company. The VPC must support both Internet-facing web applications (i.e., they need to be publicly accessible) and internal private applications (i.e., they are not publicly accessible and can be accessed only over VPN). The internal private applications must be inside a private subnet. Both the internet-facing and private applications must be able to leverage at least three Availability Zones for high availability. At a minimum, how many subnets must you create within your VPC to achieve this?
+a) 3
+b) 4
+c) 6
+d) 5
+
+Lambda
+
+Monitoring
+14. You are developing a web application, and you are maintaining separate sets of resources for your alpha, beta, and release environments. Each version runs on Amazon EC2 with an EBS volume. You use Elastic Load Balancing to manage traffic and Amazon Route 53 to manage your domain. What's the best way to check the health and status of all three groups of services simultaneously??
+a) Create a resource group containing each set of resources and view all three environments from a single, group dashboard.
+b) Access CloudTrail audits for each set or resources.
+c) Use CloudWatch to proactively monitor each environment.
+d) Maintain an open console for each set of resources.
+
+
+Databases
+
+
+High Availability
+15. You work for a cosmetic company which has their production website on AWS. The site itself is in a two-tier configuration with web servers in the front end and database servers at the back end. The site is using Elastic Load Balancing and auto-scaling across 3 AZs. The databases maintain consistency by replicating changes to each other as and when they occur. This requires the databases to have extremely low latency. Your website needs to be highly redundant and must be designed so that if one availability zone goes offline and Auto Scaling cannot launch new instances in the remaining Availability Zones, the site will not go offline. How can the current architecture be enhanced to ensure this?
+a) Deploy your site in three different AZs within the same region. Configure the Auto Scaling minimum to handle 33 percent of the peak load per zone.
+b) Deploy your site in three different AZs within the same region. Configure the Auto Scaling minimum to handle 50 percent of the peak load per zone.
+c) Deploy your website in 2 different regions. Configure Route 53 with Weighted Routing. Assign a weight of 25% to region 1 and a weight of 75% to region 2.
+d) Deploy your website in 2 different regions. Configure Route 53 with a failover routing policy, and set up health checks on the primary site.
+
+16. Although your application customarily runs at 30% usage, you have identified a recurring usage spike (>90%) between 8pm and midnight daily. What is the most cost-effective way to scale your application to meet this increased need?
+a) Deploy additional EC2 instances to meet the demand.
+b) Use Proactive Cyclic Scaling to boost your capacity at a fixed interval.
+c) Manually deploy Reactive Event-based Scaling each night at 7:45.
+d) Increase the size of the Resource Group to meet demand.
+
+Content Delivery
+17. Your company has just purchased another company. As part of the merger, your team has been instructed to cross-connect the corporate networks. You run all your confidential corporate services in a VPC and use Route 53 for your Internal DNS. The merged company has all their confidential corporate services and Internal DNS on-premises. After establishing a Direct Connect service between your VPC and their on-premise network, and confirming all the routing, firewalls, and authentication, you find that while you can resolve names against their DNS, the services in the other company are unable to resolve names of your AWS services. Why might this be happening??
+a) By design, The AWS DNS service does not respond to requests originating from outside the VPC.
+b) AWS Route 53 is an Internet service, and the other company needs to do lookups and zone transfers via the Internet, not the Direct-Connect link.
+c) The computers are not configured properly. You need to add the IP address of the Route 53 private hosted zone resolver into the DNS options of the IP stack.
+d) Route 53 is not an industry-standard DNS service, and zone transfers and name resolution must be done via a proprietary API.
+e) You cannot use DNS in this way. You need to merge the zones under a parent zone registered with ICANN.
+
+
+Deployments
+18. Which AWS services allow you to natively run Docker containers? (Choose 3)
+a) ECS
+b) EC2
+c) Elastic Beanstalk
+d) Fargate
+
+
+Analytics
+
+Applications
+19. You are reviewing Change Control requests, and you note that there is a change designed to reduce wasted CPU cycles by increasing the value of "VisibilityTimeout" attribute. What does this mean?
+a) While processing a message, a consumer instance can amend the message visibility counter by a fixed amount.
+b) When a new message is added to the SQS queue, it will be hidden from consumer instances for a fixed period.
+c) When the consumer instance polls for new work the SQS service will allow it to wait a certain time for a message to be available before closing the connection.
+d) While processing a message, a consumer instance can reset the message visibility by restarting the preset timeout counter.
+e) When the consumer instance polls for new work, the consumer instance will wait a certain time until it has a full workload before closing the connection.
+f) When a consumer instance retrieves a message, that message will be hidden from other consumer instances for a fixed period.
+
+20. You are reviewing Change Control requests and you note that there is a proposed change designed to reduce errors due to S3 Eventual Consistency by updating the "DelaySeconds" attribute. What does this mean?
+a) When a consumer instance retrieves a message, that message will be hidden in the queue for a fixed period.
+b) When a new message is added to the SQS queue, it will be hidden from consumer instances for a fixed period.
+c) While processing a message, a consumer instance can reset the message visibility by restarting the preset timeout counter.
+d) When the consumer instance polls for new work, the SQS service will allow it to wait a certain time for a message to be available before closing the connection.
+e) When the consumer instance polls for new work, the consumer instance will wait a certain time until it has a full workload before closing the connection.
+f) While processing a message, a consumer instance can amend the message visibility counter by a fixed amount.
+
+21. You are reviewing Change Control requests, and you note that there is a change designed to reduce costs by updating the "WaitTimeSeconds" attribute. What does this mean?
+a) While processing a message, a consumer instance can amend the message visibility counter by a fixed amount.
+b) While processing a message, a consumer instance can reset the message visibility by restarting the preset timeout counter.
+c) When a new message is added to the SQS queue, it will be hidden from consumer instances for a fixed period.
+d) When a consumer instance retrieves a message, that message will be hidden in the queue for a fixed period.
+e) When the consumer instance polls for new work, the consumer instance will wait a certain time until it has a full workload before closing the connection.
+f) When the consumer instance polls for new work, the SQS service will allow it to wait a certain time for one or more messages to be available before closing the connection.
+
+Security
+
+Developer Tools

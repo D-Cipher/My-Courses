@@ -1,0 +1,30 @@
+'''
+Find the inner grid which is the grid within the grid, where none of it's edges are touching the boundries.
+Input: [
+  [0,1,0,0],
+  [1,0,1,0],
+  [0,1,1,0],
+  [0,0,0,1]]
+Output: [[0,1],[1,1]]
+'''
+
+grid = [
+  [0,1,0,0],
+  [1,0,1,0],
+  [0,1,1,0],
+  [0,0,0,1]]
+
+row = []
+subgrid = []
+
+for y in range(len(grid)):
+  for x in range(len(grid[y])):
+    if x>=1 and y>=1 and y<len(grid)-1 and x<len(grid[y])-1:
+      row.append(grid[y][x])
+
+      if x==len(grid[y])-2:
+        subgrid.append(row))
+        row = []
+
+print(subgrid)
+

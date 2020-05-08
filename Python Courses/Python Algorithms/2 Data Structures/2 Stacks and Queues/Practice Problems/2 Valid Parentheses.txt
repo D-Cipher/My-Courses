@@ -1,0 +1,58 @@
+'''
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+
+Example:
+
+Input: "()[]{}"
+Output: true
+
+Input: "{[}]"
+Output: false
+
+Input: "{[]}"
+Output: true
+'''
+
+s = '{[}]'
+st = []
+
+mapping = { 
+  ']' : '[',
+  ')' : '(',
+  '}' : '{'
+}
+
+def isOpening(br):
+  if br=='(' or br=='[' or br=='{':
+    return True
+  else:
+    return False
+
+def getTop():
+  if len(st) > 0:
+    return st[-1]
+  else:
+    return None
+
+def isValid(s):
+  for br in s:
+    if isOpening(br):
+      st.append(br)
+    else:
+      if getTop() == mapping[br]:
+        st.pop()
+
+  if len(st) == 0:
+    return True
+  else:
+    return False
+
+print(isValid(s))
+
+

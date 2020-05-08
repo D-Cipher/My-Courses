@@ -1,0 +1,22 @@
+'''
+First uppercase letter in a string (Iterative and Recursive)
+Given a string find its first uppercase letter
+
+Input : geeksforgeeKs
+Output : K
+
+Input  : geekS
+Output : S
+'''
+
+def firstupper(word, i=0):
+
+  if i > len(word) - 1:
+    return None
+
+  if word[i].isupper():
+    return word[i]
+
+  return firstupper(word, i+1)
+
+print(firstupper('geeksforgeeKs'))

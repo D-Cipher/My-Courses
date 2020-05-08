@@ -1,0 +1,22 @@
+Direct Connect
+
+AWS Direct Connect -> cloud service solution that establish a direct dedicated network connection from your premises to AWS network. Network service that provides an alternative to using the Internet to connect customer on-premise sites to AWS.
+- Uses an ethernet fiber-optic cable connection 
+- One end of the cable is connected to your router, the other to an AWS Direct Connect router. 
+- directly connects into AWS data center
+- useful for high throughput workloads
+- reduce network cost
+- increase bandwidth throughput
+- more secure and consistent network experience
+
+Virtual Interfaces (VIFs) -> Direct Connect can be configured to allow public services to connect over public VIF and private subnets to connect over private VIF
+
+Connecting to Multiple VPCs and regions:
+1) Implement Direct Connect in closest region 
+2) Use Direct Connect Gateway to create private VIFs to each region
+
+Cross connect -> cross-network connection requires Letter of Authorization and Connecting Facility Assignment (LOA-CFA)
+
+Customer Gateway -> physical or virtual appliance that anchors the connection on the client side.
+- Provides information to AWS about your customer gateway device.
+- Requires an internet-routable IP address (static) of the customer gateway external interface.

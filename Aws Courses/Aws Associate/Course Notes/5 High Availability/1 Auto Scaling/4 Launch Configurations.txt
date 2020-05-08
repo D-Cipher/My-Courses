@@ -1,0 +1,16 @@
+Launch Configurations
+
+1) Launch Configurations -> allows you to set up the configurations that your ASGs will use to scale.
+- Can specify EC2 instance size and AMI name
+- Can specify time you want the scaling to happen.
+- Only one launch configuration for an Auto Scaling group at a time. 
+- CANNOT modify a launch configuration after you created it.
+
+2) Auto Scaling Group -> References the launch configurations to create EC2 instances
+- Specifies min, max, and desired number of instances
+- May reference an ELB
+- Specifies healh check type
+
+3) Auto Scaling Policy
+- Specifies how much to scale (in or out)
+- Multiple policies may be attached to ASG

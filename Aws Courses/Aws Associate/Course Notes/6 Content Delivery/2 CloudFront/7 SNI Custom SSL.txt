@@ -1,0 +1,7 @@
+SNI Custom SSL
+
+Server Name Indication Custom SSL -> Allows you to use your own SSL certificates with CloudFront.
+- Relies on Transport Layer Security (TLS) protocol.
+- Allows multiple domains to serve SSL traffic over the same IP address.
+- You can host multiple TLS secured applications, each with its own TLS certificate, behind a single load balancer.
+- ALB will automatically choose the optimal TLS certificate for each client.

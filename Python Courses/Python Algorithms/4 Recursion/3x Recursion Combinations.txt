@@ -1,0 +1,61 @@
+## Basic Get Contiguous Combinations
+loops_1 = 0
+def getSubstringBasic(chars,ans=[],cur=''):
+  global loops_1
+  for i in range(len(chars)):
+    newcur = cur + chars[i]
+    loops_1 += 1
+    if newcur in chars:
+      ans.append(newcur)
+      #print(ans)
+      getSubstringBasic(chars,ans,newcur)
+  
+  return ans
+
+print(getSubstringBasic('abc')) # ['a','ab','abc','b','bc','c']
+print(loops_1) #21 total loops
+
+## Get Contiguous Combinations with Moving Index
+loops_2 = 0
+def getSubstringAdv(chars,ans=[],cur='',index=0):
+  global loops_2
+  for i in range(index,len(chars)):
+    newcur = cur + chars[i]
+    loops_2 += 1
+    if newcur in chars:
+      ans.append(newcur)
+      #print(ans)
+      getSubstringAdv(chars,ans,newcur,i)
+  
+  return ans
+
+print(getSubstringAdv('abc')) # ['a','ab','abc','b','bc','c']
+print(loops_2) #13 total loops! Cut down alot of the already visited loops.
+
+## Get Contiguous Combinations with Moving Index and Removing Duplicates
+def getSubstring(chars,ans=[],cur='',index=0):
+  for i in range(index,len(chars)):
+    newcur = cur + chars[i]
+    if newcur in chars and newcur not in ans:
+      ans.append(newcur)
+      #print(ans)
+      getSubstring(chars,ans,newcur,i)
+  
+  return ans
+
+print(getSubstring('abcab')) # ['a', 'ab', 'abc', 'abca', 'abcab', 'b', 'bc', 'bca', 'bcab', 'c', 'ca', 'cab']
+
+## Get Contiguous Combinations with Moving Index and Removing Duplicates and Popping Current
+def dfs(chars,ans=[],cur='',index=0):
+  for i in range(index,len(chars)):
+    cur += chars[i]
+    if cur in chars and cur not in ans:
+      ans.append(cur)
+      #print(ans)
+      getSubstring(chars,ans,cur,i)
+      cur = cur[:-1]
+  
+  return ans
+
+print(dfs('abcab')) # ['a', 'ab', 'abc', 'abca', 'abcab', 'b', 'bc', 'bca', 'bcab', 'c', 'ca', 'cab']
+

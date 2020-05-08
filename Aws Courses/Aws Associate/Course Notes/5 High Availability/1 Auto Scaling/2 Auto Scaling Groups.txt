@@ -1,0 +1,13 @@
+Auto Scaling Groups
+
+Auto Scaling Groups -> Easy way to scale a service horizontally.
+- Launch or terminate instances
+- Automatically register new instances with load balancers
+- Can launch across AZs
+
+EC2 Auto Scaling Groups -> Launch or terminate EC2 instances in an Auto Scaling group.
+
+EC2 Spot Fleet Requests -> Launch or terminate instances from a Spot Fleet request, or automatically replace instances that get interrupted for price or capacity reasons.
+
+Cool Down -> configurable setting in ASG that does not launch or terminate additional instances before previous scaling activity takes effect.
+- Default cool down is 300 seconds

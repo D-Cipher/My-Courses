@@ -1,0 +1,36 @@
+'''
+Given a string, return a list of all possible palindromic partition combinations.
+
+Examples :
+
+Input  : ainia
+Output : [a, i, n, ini, ainia]
+
+Input  : books
+Output : [b, o, oo, k, s]
+'''
+
+word = 'nitin'
+
+def isPalap(chars):
+  strt = 0
+  end = len(chars) - 1
+  result = True
+  while strt <= end:
+    if chars[strt] != chars[end]:
+      result = False
+      break
+    strt += 1
+    end -= 1
+  return result
+
+def allPalaps(word, ans=[], curr='', index=0):
+  for i in range(index,len(word)):
+    newcurr = curr + word[i]
+    if newcurr in word and newcurr not in ans:
+      if isPalap(newcurr): ans.append(newcurr)
+      allPalaps(word,ans,newcurr,i)
+  
+  return ans
+
+print(allPalaps(word))

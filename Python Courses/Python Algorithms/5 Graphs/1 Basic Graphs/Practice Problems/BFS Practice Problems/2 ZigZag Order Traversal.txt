@@ -1,0 +1,48 @@
+'''LeetCode #103 Binary Tree Zigzag Level Order Traversal
+Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+
+For example:
+Given binary tree [10,9,20,null,null,15,7],
+        10
+       /  \
+      5   20
+     /   /  \
+    8   3    7
+   / \      / \
+  9   6    1   2
+return its level order traversal as:
+[[10], [20, 5], [8, 3, 7], [2, 1, 6, 9]]
+'''
+
+from Implementations import Graph # Import graph class created in graph implementations
+
+graph = Graph()
+tree = [10,5,20,8,None,3,7,9,6,None,None,1,2]
+graph.binaryTree(tree)
+print(graph) #{10:[5,20],5:[8],8:[9,6],20:[3,7],7:[1,2]}
+
+def bfs(graph,node,ans=[],vis=None,q=None,cur=[],n=None):
+  if vis==None: vis=set([node]); ans=[[node]]; n=1
+  if q==None: q=[node]
+
+  while q:
+    branch = graph[q.pop(0)]
+    n-=1
+
+    for b in branch:
+      if b not in vis:
+        vis.add(b)
+        q.append(b)
+        cur.append(b)
+    
+    if n == 0:
+      if len(cur) > 0:
+        if len(ans) % 2 == 1:
+          cur = cur[::-1]
+        ans.append(cur)
+      cur = []
+      n = len(q)
+
+  return ans
+
+print(bfs(graph,10))

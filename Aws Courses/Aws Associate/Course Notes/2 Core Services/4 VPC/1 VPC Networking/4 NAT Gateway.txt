@@ -1,0 +1,10 @@
+NAT Gateway
+
+NAT Gateway -> Highly available, secure, AWS provided EC2 instances spread across multiple AZs for you to use for NAT.
+- Sits in the public subnet allows private subnet to securely communicate out to internet via router.
+- Redundant inside the AZ
+- Only have one NAT Gateway per one AZ.
+- Start with 5G throughput scales to 45G.
+- AWS will handle patching.
+- No need to disable source and destination check.
+- NAT gateway in one AZ can be a single point of failure 

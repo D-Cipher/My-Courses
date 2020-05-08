@@ -1,0 +1,16 @@
+Step Functions
+
+Step Functions -> Serverless orchestration for applications, lets you coordinate components of distributed application and microservices.
+- Cost effective way to automate the recurring tasks and coordinate multiple AWS services.
+- Graphical console to visualize components of your application
+- Run tasks in AWS Cloud, on your servers, or on any system that has access to AWS.
+- Use JSON inputs to define state machines
+
+Use cases:
+- Patch management
+- Infrastructure selection
+- Data synchronization
+- High volume event processing
+- Short-duration high-event-rate workloads
+
+

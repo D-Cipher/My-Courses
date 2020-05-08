@@ -1,0 +1,7 @@
+Regional Edge Caches
+
+Regional Edge Caches -> Located between origin and edge locations, aimed to get content closer to user.
+- Enabled by default
+- Have a larger cache than edge location so your objects can remain cached longer
+- No additional charge
+- You can write to regional edge caches

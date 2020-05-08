@@ -1,0 +1,8 @@
+Workload Management
+
+Parameter Group -> Group of parameters that apply to all databases you create in the cluster. 
+
+Workload Management (WLM) -> WLM is part of the parameter group configuration. Allows you to define the number of query queues that are available and how queries are routed to those queues for processing. 
+- Default WLM contains one queue that can run up to 5 queries concurently.
+- Add additional queues and configure WLM properties if you want more control over query processing.
+- Cannot modify default parameter group and default WLM, must create custom WLM and associate new parameter group to it.

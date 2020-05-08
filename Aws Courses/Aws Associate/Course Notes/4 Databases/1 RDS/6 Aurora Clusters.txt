@@ -1,0 +1,7 @@
+Aurora Endpoints
+
+Types:
+1) Cluster endpoint -> Connects to Primary DB Instance for the DB cluster. Only one that can perform write operations.
+2) Reader endpoint -> Connects to Aurora Replica. Provides load-balancing for read only connection. 
+3) Custom endpoint -> Connects to a set of DB Instances that you choose. Provides load balancing and you define the purpose of the endpoint. 
+4) Instance endpoint -> For diagnosing capacity or performance issues. Connects directly to the instance. 

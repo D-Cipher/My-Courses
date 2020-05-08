@@ -1,0 +1,42 @@
+"""
+Merge 2048
+Implement a merge function of all of the tile values in a single row in the game 2048. Details: https://en.wikipedia.org/wiki/2048_(video_game)
+"""
+
+class MergeArr:
+  
+  def zerotoback(self, arr):
+    pt = 0
+
+    for i in range(len(arr)):
+      if arr[i] != 0:
+        arr[pt] = arr[i]
+        pt += 1
+
+    for i in range(pt, len(arr)):
+      arr[i] = 0
+
+  def merge(self, arr):
+    strt = 0
+    pt = 1
+    end = len(arr) - 1
+
+    while strt < end:
+      self.zerotoback(arr)
+
+      if arr[strt] == arr[pt]:
+        arr[strt] += arr[pt]
+        arr[pt] = 0
+      strt += 1
+      pt = strt + 1
+    
+    return arr
+
+m = MergeArr()
+
+print(m.merge([2,0,2,4]))
+print(m.merge([0,0,2,2]))
+print(m.merge([2,2,0,0]))
+print(m.merge([2,2,2,2,2]))
+print(m.merge([8,16,16,8]))
+

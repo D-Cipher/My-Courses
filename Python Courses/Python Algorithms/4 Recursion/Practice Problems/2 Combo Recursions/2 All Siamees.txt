@@ -1,0 +1,50 @@
+'''
+Given a string, find all unique contiguous substrings that have the same first and last letter.
+
+Examples :
+
+Input  : S = "abcab"
+Output : [a, abca, b, bcab, c]
+
+Input  : S = "aba"
+Output : [a, b, aba]
+'''
+
+chars = 'abcab'
+
+def siemees(chars,ans=[],curr='',index=0):
+
+  for i in range(index, len(chars)):
+    newcurr = curr + chars[i]
+    if newcurr in chars and newcurr not in ans:
+      if newcurr[0] == newcurr[-1]: ans.append(newcurr)
+      siemees(chars,ans,newcurr,i)
+  return ans
+
+print(siemees(chars))
+
+# Using recursive pointers
+
+chars = 'abcab'
+
+def subrepeatspt(chars,strt=0,pt=0,result=[],trial=''):
+  end = len(chars) - 1
+  
+  if pt > end:
+    strt += 1
+    pt = strt
+    trial = ''
+    
+  if strt > end:
+    return result
+
+  trial += chars[pt]
+
+  if trial[0] == trial[-1]:
+    result.append(trial)
+  
+  pt += 1
+
+  return subrepeatspt(chars,strt,pt,result,trial)
+
+print(subrepeatspt(chars))

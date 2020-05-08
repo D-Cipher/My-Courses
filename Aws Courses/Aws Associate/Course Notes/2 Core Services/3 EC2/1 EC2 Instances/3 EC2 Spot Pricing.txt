@@ -1,0 +1,19 @@
+EC2 Spot Pricing
+
+Spot Pricing -> Bid for a price you want for the capacity.
+- Instances can be TERMINATED by EC2 for capacity requirements with a 2-minute notification
+- Applications with flexible start and end times
+- Available for low compute prices
+- Feasible for urgent computing needs for large amounts of capacity
+
+Interrupt behavior -> You can specify what you want spot instance to do
+- Terminate (default)
+- Stop
+- Hibernate
+
+If running less than hour: 
+- Not billed for partial hour if terminated by EC2.
+- Billed for partial hour if terminated by you.
+
+If running more than hour:
+- Billed for full and partial hours.

@@ -1,0 +1,7 @@
+EMR Basics
+
+EMR -> Allows you to process vast amounts of data using Hadoop framework running on EC2 and S3. 
+- Uses Apache Hadoop as distributed data processing engine
+- Supports data-intensive distributed applications runing on large clusters of commodity hardware
+- All nodes for given cluster are launched in the same AZ as the EC2 instance
+

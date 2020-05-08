@@ -1,0 +1,6 @@
+IoT Core
+
+IoT Core -> Allows connected devices easily and securely interact with cloud applications and other devices. 
+- Provides secure communication
+- Data processing across different kinds of connected devices
+- Across locations so you can easily build IoT applications.

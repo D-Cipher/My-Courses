@@ -1,0 +1,6 @@
+GuardDuty
+
+GuardDuty -> Continuous monitors service and analyzes data from: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs. Uses machine learning to identify malicious activity within AWS. 
+- Detects escalations of privileges, exposed credentials, communication with malicious IPs, URLs, domains.
+- Detects compromised instances, unusual API calls, password policy changes.
+

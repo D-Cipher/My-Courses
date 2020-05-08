@@ -1,0 +1,17 @@
+ECS Tasks
+
+ECS Tasks -> Environments running on ECS containers
+
+IAM role for Tasks Definitions -> Allows assigning role directly to ECS task rather than container instance. 
+- You can have one task use one role while another task use another role
+- Only one role can be attached to one Task Definition
+
+Task Definitions -> Specific parameters attached to Docker containers required to run them on ECS.
+- Container images to use and repository location
+- How much CPU and memory used with each container
+- Volumes to use
+- Ports that should be opened
+- Docker networking
+- IAM role
+- Environment variables
+- User Data

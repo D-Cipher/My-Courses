@@ -1,0 +1,16 @@
+Cross Account Access
+
+Cross Account Access -> makes it easy for you to switch roles in a multi-account environment.
+- You can sign into the AWS console using an IAM user and switch the console to manage another account without having to enter a new user name or password.
+- Recommended for having one account for development resources and one account for production resources
+
+Steps:
+1) Identify account numbers
+2) Create group in IAM on Dev account
+3) Create user in IAM on Dev account
+4) Log intto Prod account
+5) Create "read-write-app-bucket" policy
+6) Create "UpdateApp" Cross Account Role, apply policy to role
+7) Log in to Dev account
+8) Create new inline policy, apply to developer group
+9) Login and switch accounts from Dev to Prod.

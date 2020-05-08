@@ -1,0 +1,38 @@
+DynamoDB
+
+DynamoDB -> NoSQL database service for application that need consistent, millisecond latency. Supports both document and key-value data models.
+- Fully managed automatically scales its storage capacity, user simply needs to increase write capacity.
+- Stored on SSD storage
+- Spread across 3 geographic distinct data center
+- On-demand backup capability 
+- Point-in-time recovery restore table any point in last 35 days 
+- Eventually Consistent Reads by default
+- Strongly Consistent Reads allowed
+- IAM conditions -> Allow restricting user access to their own records only in DynamoDB. Access Control all managed through IAM.
+
+Use DynamoDB for:
+- Simple Get/Put requests and simple queries
+- Massive read/write rates
+- Scaling and Sharding
+- RDBMS customizations
+- Good for managing web sessions
+- Good for storing metadata of S3 objects
+- Bad for storing Binary Large Objects (BLOB) that are too large a chunk of data.
+
+Best Practices:
+- Keep items small and compress large attributes
+- Store frequently and less frequently accessed in seperate tables
+- Objects 400KB store in S3 and use ObjectID pointers to Dynamo.
+
+Tables -> Dynamo DB is made up of tables which are a colection items made of key-value pairs.
+- Global Tables -> solution for deploying multi-region, multi-master db, without having to build an maintain replicas
+
+Items -> collection of attributes, these are the rows of the table
+
+Attributes -> these are the columns of the table
+
+Documents -> supports the key-value pair structure, can be written in JSON, HTML, XML.
+
+Keys -> name of the data
+
+Value -> data itself

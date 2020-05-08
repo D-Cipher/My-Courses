@@ -1,0 +1,21 @@
+Active Directory Service
+
+Active Directory Service -> Enables AWS resources to use managed Microsoft Active Directory (AD) in the cloud. 
+- Deploys across two AZs in a region by default
+- Compatible with SAML based authentication
+- Best choice for more than 5000 users
+- Standalone AD service in the cloud 
+
+Schema -> Set of rules that defermine the type and format of data that can be included in the db. Fields and tables in the database.
+
+AD Trust Relationships -> Permission allows you to integrate your local AD with Directory Service
+- Does not support replication mode on to on-premise AD, trust relationships is more secure
+
+AD Domain Controller -> Allows you to authenticate to an on-premise AD. 
+- Installable for your existing domain on EC2
+- Must establish a VPN or Direct Connect connection
+
+Creating a New Directory:
+1) Create a new Domain
+2) Establish a trust relationship with on-premise domain
+

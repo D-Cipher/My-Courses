@@ -1,0 +1,20 @@
+CloudFormation
+
+CloudFormation -> Create and deploy related AWS resources together as a unit. 
+- Lets you describe your architectures in JSON templates 
+- Makes it very easy to make copies of your architecture.
+- Use declarative programing languages to deply AWS resources
+- Use templates and stacks to provision resources
+- Create, update, and delete sets of resources as a single unit or stack. 
+- You can relaunch your architecture from scratch.
+- Duplicate resources from your VPC.
+
+IMPORTANT: CloudFormation is Global, but there maybe regional differences in services, make sure to use MAPPINGS to define those specifications.
+
+Stack -> A unit of resources that are deployed together, described using JSON. 
+
+Quick Starts -> you can access pre-built templates to create and deploy complex cloud environments and stand them up very quickly. https://aws.amazon.com/quickstart/
+
+Updating Stacks:
+- Direct update -> directly update stack
+- Change Set -> preview changes first before deploy

@@ -1,0 +1,18 @@
+Glacier
+
+Glacier -> Data archiving retrieval times are configurable from minutes to hours. 
+
+Deep Archive -> Lowest cost storage but retrieval is 12 hours.
+
+Vault Lock -> Glacier vaults can have one resource-based vault access policy and one Vault Lock policy attached to it.
+- Vault Lock policy -> access policy can help you enforce regulatory and compliance requirements
+- After locking the policy the policy becomes immutable
+
+Using Glacier Tiers:
+- You cannot upload data directly to Glacier, you must set a lifecycle policy or use the API or CLI
+- You can upload data to S3 and set the lifecycle policy to transition data to Glacer after 0 days for immediate transition
+- Retrieved data is avaliable for 24 hours by default
+- Glacier must complete a job before you get the output
+- Data encrypted by default at rest
+- Retrieved data will not be encrypted if upload was unencrypted
+- Deleting within 90 days will be charged

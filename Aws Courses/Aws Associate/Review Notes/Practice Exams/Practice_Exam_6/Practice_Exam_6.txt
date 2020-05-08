@@ -1,0 +1,164 @@
+IAM
+1. A company is using hundreds of AWS resources in multiple AWS regions. They require a way to uniquely identify all of their AWS resources that will allow them to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls. Which of the following is the most suitable option to use in this scenario? 
+a) Resource ID
+b) Service Namespaces
+c) Amazon Resource Name
+d) Tags
+
+S3
+2. You are planning to reduce the amount of data that Amazon S3 transfers to your servers in order to lower your operating costs as well as to lower the latency of retrieving the data. To accomplish this, you need to use simple structured query language (SQL) statements to filter the contents of Amazon S3 objects and retrieve just the subset of data that you need. Which of the following services will help you accomplish this requirement?
+a) RDS
+b) Redshift Spectrum
+c) S3 Select
+d) Step Functions
+
+3. You are working for a major financial firm in Wall Street where you are tasked to design an application architecture for their online trading platform which should have high availability and fault tolerance. The application is using an Amazon S3 bucket located in the us-east-1 region to store large amounts of intraday financial data. To avoid any costly service disruptions, what will you do to ensure that the stored financial data in the S3 bucket would not be affected even if there is an outage in one of the Availability Zones or a regional service failure in us-east-1?
+a) Copy S3 to an EBS backed EC2 instance
+b) Create a Lifecycle Policy
+c) Use Storage Gateway to keep a backup of the data
+d) Do nothing since S3 can withstand an outage of one AZ or an entire region
+e) Enable Cross-Region Replication 
+
+4. You are working for a media company and you need to configure an Amazon S3 bucket to serve static assets for your public-facing web application. Which methods ensure that all of the objects uploaded to the S3 bucket can be read publicly all over the Internet? (Choose 2)
+a) Set premissions of the object to public read during the upload
+b) Configure the ACL of the S3 bucket to set all objects to be publically readable
+c) Configure S3 bucket policy to set all objects to public read
+d) Create an IAM role to set the objects inside the bucket to public read
+
+EC2
+5. A data analytics company has been building its new generation big data and analytics platform on their AWS cloud infrastructure. They need a storage service that provides the scale and performance that their big data applications require such as high throughput to compute nodes coupled with read-after-write consistency and low-latency file operations. In addition, their data needs to be stored redundantly across multiple AZs and allows concurrent connections from multiple EC2 instances hosted on multiple AZs. Which of the following AWS storage services will you use to meet this requirement?
+a) EFS
+b) EBS
+c) S3
+d) Glacier
+
+6. You have a prototype web application that uses one Spot EC2 instance. What will happen to the instance by default if it gets interrupted by Amazon EC2 for capacity requirements?
+a) Instance will terminate
+b) Instance will be stopped
+c) Instance will restart
+d) On-Demand instances can be interrupted by EC2
+
+7. To save costs, your manager instructed you to analyze and review the setup of your AWS cloud infrastructure. You should also provide an estimate of how much your company will pay for all of the AWS resources that they are using. In this scenario, which of the following will incur costs? (Choose 2)
+a) Running EC2 instances
+b) Stopped EC2 instances
+c) EBS volumes attached to stopped EC2 instances
+d) Using VPC
+e) Public Data
+
+8. You are working as a Solutions Architect for a financial firm which is building an internal application that processes loans, accruals, and interest rates for their clients. They require a durable storage service that is able to handle future increases in storage capacity of up to 16 TB and can provide the lowest-latency access to their data. Their web application will be hosted in a single m5ad.24xlarge Reserved EC2 instance which will process and store data to the storage service. Which of the following would be the most suitable storage service that you should use to meet this requirement?
+a) EBS
+b) Storage Gateway
+c) S3
+d) EFS
+
+VPC
+
+Lambda
+9. A financial company instructed you to automate the recurring tasks in your department such as patch management, infrastructure selection, and data synchronization to improve their current processes. You need to have a service which can coordinate multiple AWS services into serverless workflows. Which of the following is the most cost-effective service to use in this scenario?
+a) SWF
+b) Lambda
+c) Step Functions
+d) Batch
+
+10. An application is using a RESTful API hosted in AWS which uses Amazon API Gateway and AWS Lambda. There is a requirement to trace and analyze user requests as they travel through your Amazon API Gateway APIs to the underlying services. Which of the following is the most suitable service to use to meet this requirement?
+a) VPC Flow Logs
+b) CloudWatch
+c) CloudTrail
+d) X-Ray
+
+Monitoring
+11. You are employed by a large electronics company that uses Amazon Simple Storage Service. For reporting purposes, they want to track and log every request access to their S3 buckets including the requester, bucket name, request time, request action, referrer, turnaround time, and error code information. The solution should also provide more visibility into the object-level operations of the bucket. Which is the best solution among the following options that can satisfy the requirement?
+a) Enable CloudTrail to audit all S3 bucket access.
+b) Enable server access logging for all required S3 buckets.
+c) Enable Requester Pays options to track access via Billing.
+d) Enable S3 Event Notifications for PUT and POSTS.
+
+12. There is a new compliance rule in your company that audits every Windows and Linux EC2 instances each month to view any performance issues. They have more than a hundred EC2 instances running in production, and each must have a logging function that collects various system details regarding that instance. The SysOps team will periodically review these logs and analyze their contents using AWS Analytics tools, and the result will need to be retained in an S3 bucket. In this scenario, what is the most efficient way to collect and analyze logs from the instances with minimal effort?
+a) Install the unified CloudWatch Logs agent in each instance with automatically collects and pushes data to CloudWatch Logs. Analyze the log data with CloudWatch Logs Insights.
+b) Install AWS SDK in each instance and create a custom script that would collect and push data to CloudWatch Logs. Enable CloudWatch detailed monitoring and use CloudWatch Logs Insights to analyze log data of all instances.
+c) Install System Manager Agent (SSM Agent) in each instance which will automatically collect an push data to CloudWatch Logs. Set up a CloudWatch dashboard to properly analyze the log data of all instances.
+d) Install AWS Inspector Agent in each instance which will collect and push data to CloudWatch Logs. Set up a CloudWatch dashboard to properly analyze the log data of all instances.  
+
+13. You are a Big Data Engineer who is assigned to handle the online enrollment system database of a prestigious university, which is hosted in RDS. You are required to monitor the database metrics in Amazon CloudWatch to ensure the availability of the enrollment system. What are the enhanced monitoring metrics that Amazon CloudWatch gathers from Amazon RDS DB instances which provide a more accurate information? (Choose 2)
+a) Amount of available random access memory
+b) Average number of disk IO operations per second during polling period
+c) Percent CPU utilization
+d) RDS child processes
+e) OS processes
+
+Databases
+
+High Availability
+14. You have an Auto Scaling group which is configured to launch new t2.micro EC2 instances when there is a significant load increase in the application. To cope with the demand, you now need to replace those instances with a larger t2.2xlarge instance type. How would you implement this change?
+a) Change the instance type in the current launch configuration.
+b) Create another ASG and attach the new instance type.
+c) Create a new launch configuration with the new instance type and update the ASG.
+d) Change the instance type of each EC2 instance manually.
+
+15. Your company has a two-tier environment in its on-premises data center which is composed of an application tier and database tier. You are instructed to migrate their environment to the AWS cloud, and to design the subnets in their VPC with the following requirements: There is an application load balancer that would distribute the incoming traffic among the servers in the application tier. The application tier and the database tier must not be accessible from the public Internet. The application tier should only accept traffic coming from the load balancer. The database tier contains very sensitive data. It must not share the same subnet with other AWS resources and its custom route table with other instances in the environment. The environment must be highly available and scalable to handle a surge of incoming traffic over the Internet. How many subnets should you create to meet the above requirements?
+a) 2
+b) 3
+c) 4
+d) 6
+
+16. An auto-scaling group of Linux EC2 instances is created with basic monitoring enabled in CloudWatch. You noticed that your application is slow so you asked one of your engineers to check all of your EC2 instances. After checking your instances, you noticed that the auto scaling group is not launching more instances as it should be, even though the servers already have high memory usage. What is the best solution that will fix this issue?
+a) Install AWS SDK in EC2. Create script to trigger Auto Scaling.
+b) Install CloudWatch monitoring scripts in the instance. Send custom metrics to CloudWatch which will trigger your Auto Scaling group to scale up
+c) Enable detailed monitoring on the instances
+d) Modify the scaling policy to increase the threshold to scale up the number of instances.
+
+17. A bank portal application is hosted in an Auto Scaling group of EC2 instances behind a Classic Load Balancer (CLB). You are required to set up the architecture so that any back-end EC2 instances that you de-register should complete the in-progress requests first before the de-registration process takes effect. Conversely, if a back-end instance fails health checks, the load balancer should not send any new requests to the unhealthy instance but should allow existing requests to complete. How will you configure your load balancer to satisfy the above requirement?
+a) Configure Sticky Sessions
+b) Configure both Cross-Zone Load Balancing and Sticky Sessions
+c) Configure Connection Drain
+d) Configure Proxy Protocol
+
+Content Delivery
+
+Deployments
+18. The company you are working for has a set of AWS resources hosted in ap-northeast-1 region. You have been asked by your IT Manager to create an AWS CLI shell script that will call an AWS service which could create duplicate resources in another region in the event that ap-northeast-1 region fails. The duplicated resources should also contain the VPC Peering configuration and other networking components from the primary stack. Which of the following AWS services could help fulfill this task?
+a) LightSail
+b) SQS
+c) CloudFormation
+d) SNS
+
+Analytics
+19. A real-time data analytics application is using AWS Lambda to process data and store results in JSON format to an S3 bucket. To speed up the existing workflow, you have to use a service where you can run sophisticated Big Data analytics on your data without moving them into a separate analytics system. Which of the following group of services can you use to meet this requirement?
+a) S3 Select, Neptune, DynamoDB DAX
+b) X-Ray, Neptune, DynamoDB
+c) Glue, Glacier, Redshift
+d) S3 Select, Athena, Redshift Spectrum
+
+20. A data analytics company, which uses machine learning to collect and analyze consumer data, is using Redshift cluster as their data warehouse. You are instructed to implement a disaster recovery plan for their systems to ensure business continuity even in the event of an AWS region outage. Which of the following is the best approach to meet this requirement?
+a) Create a scheduled job that will automatically take the snapshot from your cluster and store it to an S3 bucket. Restore the snapshot in case of an AWS region outage.
+b) Do nothing because Redshift is highly available, fully-managed data warehouse which can withstand outage of an entire region.
+c) Use Automated snapshots of your cluster.
+d) Enable Cross-Region Snapshots Copy in your cluster.
+
+21. You are working as a Solutions Architect for a startup in which you are tasked to develop a custom messaging service that will also be used to train their AI for an automatic response feature which they plan to implement in the future. Based on their research and tests, the service can receive up to thousands of messages a day, and all of these data are to be sent to Amazon EMR for further processing. It is crucial that none of the messages will be lost, no duplicates will be produced and that they are processed in EMR in the same order as their arrival. Which of the following options should you implement to meet the startup's requirements?
+a) Kinesis Stream to collect messages.
+b) Default SQS queue to handle messages.
+c) SNS Topic to handle messages.
+d) Data Pipeline to handle messages.
+
+22. To save cost, a company decided to change their third-party data analytics tool to a cheaper solution. They sent a full data export on a CSV file which contains all of their analytics information. You then save the CSV file to an S3 bucket for storage. Your manager asked you to do some validation on the provided data export. In this scenario, what is the most cost-effective and easiest way to analyze export data using a standard SQL?
+a) Create a migration tool to load CSV from S3 to DynamoDB. Run SQL queries on DynamoDB.
+b) Use mysqldump to load CSV export from S3 to a MySQL RDS instance. Run SQL queries on the RDS instance.
+c) Use Athena to analyze the export data file in S3.
+d) Use the unload command in Redshift to read in the S3 data and run queries in Redshift. 
+
+Applications
+23. You have a web-based order processing system which is currently using a queue in Amazon SQS. The support team noticed that there are a lot of cases where an order was processed twice. This issue has caused a lot of trouble in your processing and made your customers very unhappy. Your IT Manager has asked you to ensure that this issue does not happen again. What can you do to prevent this from happening again in the future?
+a) Alter retention period of SQS.
+b) Alter visibility timeout of SQS.
+c) Replace SQS with SWF.
+d) Change the message size in SQS.
+
+Security
+24. You are working as a Solutions Architect for a leading financial firm where you are responsible in ensuring that their applications are highly available and safe from common web security vulnerabilities. Which is the most suitable AWS service to use to mitigate Distributed Denial of Service (DDoS) attacks from hitting your back-end EC2 instances?
+a) WAF
+b) AWS Shield
+c) Firewall manager
+d) GuardDuty
+
+Developer Tools

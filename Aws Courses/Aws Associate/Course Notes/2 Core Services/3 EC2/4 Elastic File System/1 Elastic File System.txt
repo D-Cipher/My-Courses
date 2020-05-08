@@ -1,0 +1,20 @@
+EFS
+
+Elastic File System (EFS) -> File storage solution that allows you to create and configure file systems for shared storage.
+- Low-latency FILE OPERATION 
+- Read-after-write consistency
+- Allows concurrent connections from multiple EC2 instances hosted on multiple AZs
+- Posix compliant solution
+- Supports NFSv4.1 and 4.1 protocol
+- Compatable with Linux-based AMIs for EC2
+
+Mount Targets -> EC2 connects to network instances within the VPC that connect to the EFS. Can only connect to one target at a time.
+
+EFS Storage
+- Storage capacity is elastic meaning it will grow and shrink based on need. 
+- Petabyte-scale file storage
+- You only pay for the storage you use. Pay as you go.
+- Data stored across multiple AZs
+- Can support life-cycle management option for Infrequently Accessed storage.
+
+EFS Max IO mode -> Scale to higher level of aggregated throughput but with slightly higher latency for file operations

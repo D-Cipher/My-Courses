@@ -1,0 +1,11 @@
+Enhanced Networking
+
+Enhanced networking -> Uses single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types. 
+
+SR-IOV -> A method of device virtualization that provides higher I/O performance and lower CPU utilization when compared to traditional virtualized network interfaces. 
+
+Advantages:
+1) Higher Network performance, higher packet per second (PPS).
+2) Higher bandwidth
+3) Consistently lower inter-instance latencies
+4) No additional charge for using enhanced networking.

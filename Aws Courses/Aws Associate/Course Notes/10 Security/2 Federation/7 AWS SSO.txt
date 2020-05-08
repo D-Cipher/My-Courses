@@ -1,0 +1,11 @@
+AWS SSO
+
+AWS Single Sign-One (SSO) -> Enables users to use AD credentials to access AWS applications and inegrates with other applications that support SAML 2.0 (Office 365, Salesforce, Box).
+- Allows you to manage multiple AWS accounts and business applications, in a centralize user access management to these cloud services
+- Single location to access these accounts and applications without a password
+
+Process:
+1) Portal first verifies the user identity in organization.
+2) Generates a SAML authentication response.
+3) User browser posts SAML assertion
+4) AWS send sign-in URL as a redirect and client browser redirected to Console

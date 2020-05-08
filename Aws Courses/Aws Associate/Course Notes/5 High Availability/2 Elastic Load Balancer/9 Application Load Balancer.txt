@@ -1,0 +1,19 @@
+Application Load Balancer
+
+Application Load Balancer (ALB) -> Best suited for balancing HTTP/HTTPS. Application aware meaning intelligently load balance based on detected changes.
+- layer 7 application level
+- Sees all the changes to the HTTP and make decisions on load balancing
+- Requires at least 2 subnets.
+
+Benefits:
+- Path-based routing
+- Host-based routing
+- Bi-directional communication via WebSockets
+- Supports routing to different application on a single instance
+- Supports registering targets by IP address
+- Dynamic port mapping -> Can run multiple tasks from a single service on a container host
+- Compatible with ECS
+
+Load balancing on-premise applications:
+1) Use IP addresses as targets
+2) Must have a Direct Connect or VPN connection 

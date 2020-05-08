@@ -1,0 +1,23 @@
+HDD
+
+Hard Disk Drive (HDD)
+- Usage: Streaming workloads, consistent and fast-throughtput
+- Workloads type: Large and Sequential I/O operations
+- Performance: Mebibyte per second (MiB/s) optimized
+- Bootable: NO
+- Cost: Low
+
+HDD Use Cases:
+- Data warehouses, Big Data databases, Log processing Applications
+- Throughput-optimized storage for large volumes
+- Cold storage
+
+HDD Drive Types:
+
+1) Throughput Optimized HHD (ST1) -> Data written in sequence for Data warehouses and Big data. It is magnetic.
+- 500 IOPS per volume
+
+2) Cold HDD (SC1) -> Low-cost infrequent services for file servers. It is megnetic.
+- 250 IOPS per volume
+
+3) Magnetic (Standard) -> Lowest cost infrequent data storage. Bootable.

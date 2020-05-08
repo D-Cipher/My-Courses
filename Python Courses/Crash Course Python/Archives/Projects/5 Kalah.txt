@@ -1,0 +1,175 @@
+import os
+import random
+
+class Kalah:
+
+  def __init__(self):
+    self.board = (0,0,0,0,0,1,0)
+    self.totalmoves = 0
+
+  def printboard(self):
+    print('        1  2  3  4  5  6 Kalah')
+    print('Board: ' + str(self.board))
+    print('Total Moves: ' + str(self.totalmoves))
+    print('Make your move...')
+
+  def illegal(self):
+    print('Illegal Move')
+
+  def invalid(self):
+    print('Invalid Entry')
+
+  def shuffleboard(self):
+    self.totalmoves = 0
+    newboard = list(self.board)
+
+    for i in range(len(self.board)):
+      ceiling = len(self.board) - i
+      if ceiling == 0:
+        newboard[i] = 0
+      else:
+        newboard[i] = random.randrange(0,ceiling)
+
+    if sum(newboard) == 0:
+      newboard[5] = 0
+
+    self.board = tuple(newboard)
+    self.printboard()
+    return self.board
+  
+  def wincondition(self, win):
+    status = None
+  
+    while True:
+      if win == True:
+        print(' ')
+        print('You Win! (n) New Game, (q) Quit')
+      else:
+        print(' ')
+        print('Dead board. (n) New Game, (q) Quit')
+      
+      status = input()
+
+      if status == 'q' or status == 'n':
+        break
+
+    return status
+
+  def checkboard(self):
+    tboard = list(self.board)[:6]
+
+    if sum(tboard) == 0:
+      return self.wincondition(True)
+
+    possible = 0
+    i = 0
+
+    while i <= len(tboard)-1:
+      ceiling = len(tboard) - i
+      if tboard[i] != 0:
+        if tboard[i] <= ceiling:
+          possible += 1
+      i += 1
+
+    if possible <= 0:
+      return self.wincondition(False)
+
+    return None
+
+  def makeMove(self, pointer):
+    
+    newboard = list(self.board)
+
+    if pointer == '':
+      self.printboard()
+      return self.checkboard()
+
+    ### Error handling
+    try: index = int(pointer) - 1
+    except: self.invalid(); return self.board
+
+    if index > 6 or index < 0:
+      self.illegal()
+      return self.checkboard()
+
+    if newboard[index] == 0:
+      self.illegal()
+      return self.checkboard()
+
+    ### Movement Logic 
+    newboard[index] = 0
+    counter = 1
+
+    while counter <= self.board[index]:
+      if index+counter > len(self.board) - 1:
+        self.illegal()
+        return self.checkboard()
+
+      newboard[index+counter] = self.board[index+counter] + 1
+      counter += 1
+
+    self.totalmoves += 1
+    self.board = tuple(newboard)
+    self.printboard()
+    return self.checkboard()
+
+  def splashscreen(self):
+      self.clearscreen()
+      print('Welcome to Kalah!')
+      print('Details: https://en.wikipedia.org/wiki/Kalah')
+      print(' ')
+      print('Type:')
+      print('(n) New Game, (q) Quit')
+      print(' ')
+
+  def clearscreen(self):
+    os.system('cls' if os.name=='nt' else 'clear')
+
+  def play(self):
+    status = None
+    while True:
+      mv = input()
+      if mv == 'q' or mv == 'n':
+        status = mv
+        self.clearscreen()
+        break
+      else:
+        move = self.makeMove(mv)
+        if move == 'q' or move == 'n':
+          status = move
+          self.clearscreen()
+          break
+    return status
+
+  def newgame(self):
+      status = None
+      while True:
+        self.splashscreen()
+        print('====New Game===')
+        self.shuffleboard()
+        play = self.play()
+        if play == 'q':
+          status = play
+          self.clearscreen()
+          break
+      return status
+
+  def run(self):
+    while True:
+      self.splashscreen()
+      options = input()
+
+      if options == 'q':
+        self.clearscreen()
+        break
+      
+      if options == 'n':
+        newgame = self.newgame()
+        if newgame == 'q':
+          self.clearscreen()
+          break
+
+if __name__ == '__main__':
+
+  game = Kalah()
+  game.run()

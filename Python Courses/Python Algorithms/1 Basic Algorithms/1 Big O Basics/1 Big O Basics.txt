@@ -1,0 +1,30 @@
+## Big O Notation
+
+Big O -> gives a way to express the efficiency of your code and make trade offs between space and time.
+- Time Complexity = How much time it takes to run algroithm
+- Space Complexity = How much memory needed to run algroithm
+
+Additional Rules of Big O
+- Constants can be Ignored: 5N + 1 = O(N)
+- Ignore Smaller Terms: 3N^2 + 5N + 3 = O(N^2)
+
+Constant Complexity O(1) -> Number of Operations will be the same no matter how big N increases.
+- Arithmetic Operations
+- Assignments
+- Direct Array Elemets access by indexing
+
+Linear Complexity O(N) -> Number of Operations will increase linearly as N increases.
+- Time Complexity: For Loops
+- Space Complexity: Storing a list, Hash tables, Strings, Stacks, Queues 
+
+Polynomial Complexity O(N^c) -> Number of Operations will increase to the power of c as N increases.
+- Time Complexity: Nested Loop
+
+Examples:
+1) ans = n*(n+1)/2
+Big O: O(1)
+2) for i in range(0,n):
+	ans += nums[i]
+Big O: O(N)
+
+

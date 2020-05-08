@@ -1,0 +1,6 @@
+Monitoring ASGs
+
+Basic Monitoring -> Enabled by default, ASG instances metrics to CloudWatch about the every 5 mins.
+
+Detailed Monitoring -> Sends metrics every 1 minute, chargable
+- Enabled by default if launch configurations were created from CLI

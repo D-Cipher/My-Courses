@@ -1,0 +1,15 @@
+EC2 Basics
+
+Elastic Compute Cloud (EC2) - web service provides resizable compute capacity in the cloud. A computer in the cloud.
+- 20 On-Demand instances per region
+- 200 TB of aggregated PIOPS volumes per region
+
+Main Types of EC2 Instances:
+
+1) General Purpose -> All around instances that provide balance of compute, memory, and networking.
+
+2) Storage Optimized -> High sequential read and write databases, data warehouses, and file servers. Also able to deliver on low-latency and IOPS intensive workloads.
+
+3) Compute Optimized -> High-performance processors for CPU intensive apps, CPU intensive dbs, graphics, and media transcoding.
+
+4) Memory Intensive -> RAM intensive, in memory data processing workloads. For example: Apache, SAP, Spark.

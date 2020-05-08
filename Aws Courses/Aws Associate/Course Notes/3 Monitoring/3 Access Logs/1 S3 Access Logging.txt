@@ -1,0 +1,12 @@
+S3 Server Access Logging
+
+S3 Server Access Logging -> Logs detailed information about every access request sent to the S3 bucket including the referrer and turn-around time information.
+
+Track and log request access for:
+- requester
+- bucket name
+- request time
+- request action
+- referrer
+- turnaround time
+- error code

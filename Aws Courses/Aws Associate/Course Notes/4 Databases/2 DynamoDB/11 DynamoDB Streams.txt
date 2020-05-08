@@ -1,0 +1,9 @@
+DynamoDB Stream
+
+DynamoDB Stream -> Optional feature that captures data modification events (inserts, updates, deletes) in DynamoDB.
+- Logs are encrypted and stored for 24 hours
+- Access using dedicated endpoint such as streams.dynamodb.x.amazonaws.com
+- Primary key recorded by default
+- Can capture before and after states of items
+- Mainly used for tiggering events based on changes in the table
+- Shards -> Streams are organized into groups or shards. 

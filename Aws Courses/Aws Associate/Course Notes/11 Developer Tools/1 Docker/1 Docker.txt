@@ -1,0 +1,7 @@
+Docker
+
+Docker -> Open source technology that allows you to create applications on top of containers.
+
+Container -> executable software package that contains application, runtime, libraries running on the engine on top of OS. 
+- Provides the isolation of virtualization like virtual machines but more light weight.
+- Containers share an operating system so they don't need to run their own set of Operating System.

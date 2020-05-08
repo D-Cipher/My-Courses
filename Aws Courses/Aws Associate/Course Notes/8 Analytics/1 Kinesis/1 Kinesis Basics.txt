@@ -1,0 +1,17 @@
+Kinesis Basics
+
+Kinesis -> Platform for you to send your streaming data to.
+- Collect, process, analyze real time 
+- Data producer -> Application that emits data records.
+- Data consumer -> Retrieves and process the data.
+- Data stream -> Logical group of shards, data retained 24hrs to 7days.
+- Shard -> Sequence of data records each with unique id.
+- Pay for what you transmit through the service does not require capacity specifications.
+
+Streaming Data -> Data that is continuously generated, can be real-time, and can come from many different devices. Send in data records simultaneously, and in small sizes.
+- Online purchases
+- Stock Prices
+- Gaming Data
+- Social Network Data
+- Geospatial data 
+- iOT sensor data

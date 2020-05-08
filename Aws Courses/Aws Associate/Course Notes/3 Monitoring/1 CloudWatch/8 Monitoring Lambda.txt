@@ -1,0 +1,8 @@
+Monitoring Lambda
+
+Lambda automatically monitors functions on your behalf and reports the metrics to CloudWatch.
+- Invocations -> Total invoked requests.
+- Latency -> Duration of the requests.
+- Throttling -> amount throttled
+- DeadLetterErrors -> Error rates
+- IteratorAge -> age of the iterations

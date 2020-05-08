@@ -1,0 +1,61 @@
+#Programming Fundementals: Basic Variables
+
+# Overview of Programming
+
+#Programming, specifically high-level programming -> is using language that is more like human language which is then translated to machine language through an interperter or compiler for the computer to understand. (example: Python)
+
+#IDE or "Integrated development environment" -> a tool where you both write code and it compiles the code for you and allows you to debug it. IDEs usually combine code editors, debuggers, and built-in tools for compiling and running applications. They can be virtual or installed on your machines.
+
+#Interpreter vs Compiler -> Interpreter directly executes the instructions in the source programming language. Compiler scans the entire program and then translates the whole program into machine code.
+
+#=======Basic Variables: String, Bool, Int, Float=======
+
+#Variable -> A store of information, a piece of data we want the computer to store
+
+# ASCII-code -> Bit patterns that are the conversion between high level to low level. See https://www.ascii-code.com/. When we code we see variables, but the computer actually sees binary bit patterns. Hence in the back end our code is being translated to bits.
+
+countryName = "United States"
+
+countryCode = "111"
+
+numSongs = 100
+
+numGrams = 20.0
+
+favoriteSong = True
+
+testType = type(numGrams)
+
+numSongs = numSongs + 1
+
+numSongs += 1
+
+countryCode = countryCode + "5"
+
+#Basic Math and Conversions
+
+numGramsHalf = numGrams / 2
+
+numGramsDoubled = numGrams * 2
+
+numSongsModulo = numSongs % 2
+
+currentSong = "the current song is: " + str(numSongs)
+
+#Note: Python variables are weakly typed meaning the variable type does not need to be declared. Other languages like C you must declare the type (so called strongly typed)
+
+"""
+Practice Problem: Tax Machine calculates the tax on an item. Create a variable "price" as an Int and a "tax rate" as a Float and multiply them together and convert the result into a String that reads:
+The tax is: (answer)
+
+Answer:
+
+price = 20
+tax_rate = .05
+prefix = "The tax is: "
+tax = float(price)*tax_rate
+answer = prefix + "$" + str(totalPrice)
+print(answer)
+
+"""
+

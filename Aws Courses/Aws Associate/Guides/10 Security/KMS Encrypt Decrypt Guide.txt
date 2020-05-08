@@ -1,0 +1,33 @@
+1. Create 2 policies.
+KMS-Encryptor = "kms:Encrypt", "kms:ReEncrypt*"
+KMS-Decryptor = "kms:Decrypt", "kms:Enable*", "kms:DescribeKey", "kms:GetPublicKey", "kms:GenerateDataKey*"
+2. Create 2 roles and add policy to roles.
+EC2-KMS-Encryptor
+EC2-KMS-Decryptor
+3. Set up EFS.
+-make sure the add the nfs in the security group of efs
+4. Launch Encryptor instance: KMS-Encryptor-Instance.
+- create a directory called efs in the instance.
+- install the amazon-efs-utils: sudo yum install -y amazon-efs-utils
+- mount efs to efs folder: sudo mount -t efs -o tls fs-ac79922d:/ efs
+- create secret.txt outside the folder
+- encrypt into the folder with this command:
+```
+aws kms encrypt --key-id cb4d9060-2d4d-4c8f-9a42-796e61ba36ca --region us-east-1 --plaintext fileb://secret.txt --output text --query CiphertextBlob | base64 --decode > efs/encryptedsecret.txt
+```
+5. Launch Decryptor instance: KMS-Decryptor-Instance.
+- create a directory called efs in the instance. 
+- install the amazon-efs-utils: sudo yum install -y amazon-efs-utils
+- mount efs to efs folder: sudo mount -t efs -o tls fs-ac79922d:/ efs
+- decrypt message
+```
+aws kms decrypt --ciphertext-blob fileb://efs/encryptedsecret.txt --region us-east-1 --output text --query Plaintext | base64 --decode > decryptedsecret.txt
+```
+6. Re-encrypt encrypted message
+```
+aws kms re-encrypt --destination-key-id cb4d9060-2d4d-4c8f-9a42-796e61ba36ca --region us-east-1 --ciphertext-blob fileb://efs/encryptedsecret.txt | base64 > efs/newencryption.txt 
+```
+7. Enable key rotation
+```
+aws kms enable-key-rotation --key-id cb4d9060-2d4d-4c8f-9a42-796e61ba36ca --region us-east-1
+```

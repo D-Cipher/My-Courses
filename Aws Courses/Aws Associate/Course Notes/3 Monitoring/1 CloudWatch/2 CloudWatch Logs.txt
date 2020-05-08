@@ -1,0 +1,14 @@
+Cloudwatch Logs
+
+CloudWatch Logs -> Aggregates, monitors, and store log data.
+- By default, logs never expire
+- Use Logs Insights to analyze log data
+- Monitor EC2 instance logs
+- Monitor CloudTrail logs
+- Monitor Route 53 DNS queries
+- Monitor VPC through VPC Flow Logs
+
+Storage options for logs:
+1) CloudWatch Logs
+2) Splunk -> centralized logging system
+3) S3 using a custom script

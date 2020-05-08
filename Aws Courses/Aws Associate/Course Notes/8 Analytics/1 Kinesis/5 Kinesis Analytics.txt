@@ -1,0 +1,5 @@
+Kinesis Analytics
+
+Kinesis Analytics -> works with Streams and Firehose to analyze the data on the fly.
+- Serverless application
+- Build quick SQL queries and Java applications using built-in templates and operators from common processing functions to analyze real-time data
